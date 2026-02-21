@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Media & Press | Dr. Chee Wai Wong — Vitreoretinal Surgeon, Singapore</title>
-  <meta name="description" content="Media appearances, press features, conference presentations, and public education work by Singapore vitreoretinal surgeon Dr. Chee Wai Wong." />
+  <meta name="description" content="Media appearances, press features, and conference presentations by Singapore vitreoretinal surgeon Dr. Chee Wai Wong." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -17,7 +17,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); text-decoration: none; }
     .nav-logo span { color: var(--teal); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
@@ -33,9 +33,7 @@
     .hero-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 1rem; }
     .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 300; color: #fff; line-height: 1.08; margin-bottom: 1.25rem; }
     .hero h1 strong { font-weight: 600; }
-    .hero .lead { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 600px; margin-bottom: 2.5rem; }
-    .hero-chips { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .hero-chip { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 2rem; padding: 0.4rem 1.1rem; font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 300; }
+    .hero .lead { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 600px; }
 
     /* SECTION STRUCTURE */
     .section { max-width: 1100px; margin: 0 auto; padding: 4rem 4rem 0; }
@@ -44,43 +42,28 @@
     .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
     .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; font-weight: 400; color: var(--navy); margin-bottom: 2rem; }
 
-    /* FEATURED MEDIA */
-    .featured-media { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    /* MEDIA CARDS */
+    .media-grid-featured { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
     .media-card { background: #fff; border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
     .media-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(15,35,64,0.1); }
-    .media-card.large { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
-    .media-card-visual { background: linear-gradient(135deg, #0f2340 0%, #1a3a5c 100%); padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; position: relative; overflow: hidden; }
+    .media-card-visual { background: linear-gradient(135deg, #0f2340 0%, #1a3a5c 100%); padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; position: relative; overflow: hidden; }
     .media-card-visual::before { content: ''; position: absolute; top: -30px; right: -30px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(42,124,124,0.18) 0%, transparent 65%); }
-    .media-outlet { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+    .media-outlet { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
     .media-type-badge { display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.65rem; border-radius: 2rem; margin-bottom: 0.75rem; }
     .badge-tv { background: rgba(192,57,43,0.2); color: #e07060; border: 1px solid rgba(192,57,43,0.2); }
     .badge-print { background: rgba(200,169,110,0.15); color: var(--gold); border: 1px solid rgba(200,169,110,0.2); }
-    .badge-podcast { background: rgba(90,60,140,0.2); color: #a080d0; border: 1px solid rgba(90,60,140,0.2); }
-    .badge-conference { background: rgba(42,124,124,0.2); color: var(--teal-light); border: 1px solid rgba(42,124,124,0.2); }
-    .badge-online { background: rgba(15,35,64,0.15); color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.1); }
     .badge-radio { background: rgba(60,100,160,0.2); color: #80a8e0; border: 1px solid rgba(60,100,160,0.2); }
-    .media-card-visual h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: #fff; line-height: 1.3; position: relative; z-index: 1; }
-    .media-card-body { padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; }
-    .media-card-body p { font-size: 0.88rem; color: var(--muted); font-weight: 300; line-height: 1.7; margin-bottom: 1.25rem; }
-    .media-meta { display: flex; align-items: center; justify-content: space-between; }
+    .badge-online { background: rgba(42,124,124,0.15); color: var(--teal-light); border: 1px solid rgba(42,124,124,0.2); }
+    .media-card-visual h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: #fff; line-height: 1.35; position: relative; z-index: 1; }
+    .media-card-body { padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; flex: 1; }
+    .media-card-body p { font-size: 0.85rem; color: var(--muted); font-weight: 300; line-height: 1.7; margin-bottom: 1rem; }
+    .media-meta { display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid var(--border); }
     .media-date { font-size: 0.72rem; color: var(--muted); font-weight: 300; }
-    .media-link { font-size: 0.8rem; color: var(--teal); font-weight: 500; text-decoration: none; transition: gap 0.2s; display: flex; align-items: center; gap: 0.3rem; }
+    .media-link { font-size: 0.8rem; color: var(--teal); font-weight: 500; text-decoration: none; }
     .media-link:hover { color: var(--teal-light); }
 
-    /* MEDIA GRID — smaller cards */
-    .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .media-item { background: #fff; border: 1px solid var(--border); border-radius: 0.85rem; padding: 1.4rem; transition: transform 0.2s, box-shadow 0.2s; }
-    .media-item:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(15,35,64,0.08); }
-    .mi-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.6rem; }
-    .mi-outlet { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-    .mi-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--navy); line-height: 1.3; margin-bottom: 0.45rem; }
-    .mi-desc { font-size: 0.8rem; color: var(--muted); font-weight: 300; line-height: 1.6; margin-bottom: 0.9rem; }
-    .mi-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid var(--border); }
-    .mi-date { font-size: 0.7rem; color: var(--muted); }
-    .mi-link { font-size: 0.75rem; color: var(--teal); text-decoration: none; font-weight: 500; }
-
     /* SPEAKING */
-    .speaking-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: 1rem; overflow: hidden; margin-bottom: 1.5rem; }
+    .speaking-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: 1rem; overflow: hidden; }
     .speaking-item { background: #fff; padding: 1.5rem 1.75rem; display: grid; grid-template-columns: 80px 1fr auto; gap: 1.5rem; align-items: center; transition: background 0.15s; }
     .speaking-item:hover { background: var(--warm-white); }
     .speaking-year { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--gold); line-height: 1; }
@@ -88,10 +71,8 @@
     .speaking-title { font-size: 0.95rem; font-weight: 400; color: var(--navy); margin-bottom: 0.15rem; }
     .speaking-location { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
     .speaking-role { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 2rem; white-space: nowrap; }
-    .role-keynote { background: rgba(200,169,110,0.12); color: #9a7030; border: 1px solid rgba(200,169,110,0.2); }
     .role-invited { background: rgba(42,124,124,0.1); color: var(--teal); border: 1px solid rgba(42,124,124,0.15); }
-    .role-panel { background: rgba(15,35,64,0.07); color: var(--navy); border: 1px solid rgba(15,35,64,0.12); }
-    .role-chair { background: rgba(90,60,140,0.1); color: #7050a0; border: 1px solid rgba(90,60,140,0.15); }
+    .role-speaker { background: rgba(15,35,64,0.07); color: var(--navy); border: 1px solid rgba(15,35,64,0.12); }
 
     /* MEDIA ENQUIRIES */
     .enquiry-section { background: var(--navy); padding: 4rem; margin-top: 4rem; }
@@ -118,12 +99,10 @@
     footer a:hover { color: var(--teal-light); }
 
     @media (max-width: 960px) {
-      nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
+      #navbar { padding: 1rem 1.5rem; } .nav-links { display: none; }
       .hero { padding: 7rem 1.5rem 4rem; }
       .section { padding: 3rem 1.5rem 0; }
-      .featured-media { grid-template-columns: 1fr; }
-      .media-card.large { grid-template-columns: 1fr; }
-      .media-grid { grid-template-columns: 1fr; }
+      .media-grid-featured { grid-template-columns: 1fr; }
       .speaking-item { grid-template-columns: 60px 1fr; }
       .speaking-role { display: none; }
       .enquiry-section { padding: 3rem 1.5rem; }
@@ -134,16 +113,15 @@
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="cheewaiwong.html">Dr. <span>Chee Wai</span> Wong</a>
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">Dr. <span>Chee Wai</span> Wong</a>
   <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="patient-education.html">Patient Info</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="blog.html">Eye Health Insights</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#education">Patient Info</a></li>
+    <li><a href="index.html#blog">Insights</a></li>
     <li><a href="media.html" class="active">Media</a></li>
-    <li><a href="contact.html" class="nav-cta">Book Appointment</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Book Appointment</a></li>
   </ul>
 </nav>
 
@@ -151,158 +129,111 @@
   <div class="hero-inner">
     <p class="hero-eyebrow">Media & Press</p>
     <h1>In the media.<br><strong>In the conversation.</strong></h1>
-    <p class="lead">Dr. Wong contributes to public and professional discourse on retinal disease, high myopia, and surgical innovation — through broadcast media, print, conferences, and public health campaigns.</p>
-    <div class="hero-chips">
-      <span class="hero-chip">Television & Radio</span>
-      <span class="hero-chip">Press & Online</span>
-      <span class="hero-chip">International Conferences</span>
-      <span class="hero-chip">Public Health Campaigns</span>
-      <span class="hero-chip">Podcast Appearances</span>
-    </div>
+    <p class="lead">Dr. Wong contributes to public and professional discourse on retinal disease, high myopia, and surgical innovation — through broadcast media, print, and international conferences.</p>
   </div>
 </section>
 
-<!-- FEATURED MEDIA -->
+<!-- PRESS & BROADCAST -->
 <div class="section" style="padding-top:4rem;">
-  <p class="section-label">Featured</p>
-  <p class="section-title">Recent highlights</p>
+  <p class="section-label">Press & Broadcast</p>
+  <p class="section-title">Media appearances</p>
 
-  <div class="featured-media">
-    <!-- Large feature -->
-    <div class="media-card large">
+  <div class="media-grid-featured">
+
+    <div class="media-card">
       <div class="media-card-visual">
         <div>
           <span class="media-type-badge badge-tv">Television</span>
           <p class="media-outlet">Channel NewsAsia</p>
         </div>
-        <h3>Singapore's myopia epidemic: What the numbers don't tell you</h3>
+        <h3>Sustained-release liposomal steroid to eliminate inflammation after cataract surgery</h3>
       </div>
       <div class="media-card-body">
-        <p>Dr. Wong spoke to Channel NewsAsia about the structural consequences of high myopia — moving the public conversation beyond spectacle prescriptions to the retinal complications that affect a growing proportion of Singapore's adult population. The segment covered myopic macular degeneration, the role of annual surveillance, and what parents can do to slow progression in children.</p>
+        <p>Dr. Wong's invention — a sustained-release liposomal steroid applied at the end of cataract surgery — was featured on Channel NewsAsia, covering its mechanism, clinical results, and potential to replace conventional post-operative eye drop regimens.</p>
         <div class="media-meta">
-          <span class="media-date">2024</span>
-          <a href="#" class="media-link">Watch segment →</a>
+          <span class="media-date">2021</span>
         </div>
       </div>
     </div>
 
     <div class="media-card">
-      <div class="media-card-visual" style="background: linear-gradient(135deg, #1a0a2e 0%, #0f2340 100%); min-height:160px;">
+      <div class="media-card-visual" style="background: linear-gradient(135deg, #1a0a2e 0%, #0f2340 100%);">
         <div>
           <span class="media-type-badge badge-print">Print</span>
           <p class="media-outlet">The Straits Times</p>
         </div>
-        <h3>When floaters are not just floaters</h3>
+        <h3>New drug delivery innovation targets post-cataract inflammation</h3>
       </div>
       <div class="media-card-body">
-        <p>Feature article on retinal emergencies — explaining the clinical distinction between benign vitreous floaters and the warning signs of retinal tear or detachment.</p>
+        <p>Print coverage of Dr. Wong's sustained-release liposomal steroid technology, discussing its development from research to clinical application and its implications for cataract surgery patients.</p>
         <div class="media-meta">
-          <span class="media-date">2024</span>
-          <a href="#" class="media-link">Read article →</a>
+          <span class="media-date">2021</span>
         </div>
       </div>
     </div>
 
     <div class="media-card">
-      <div class="media-card-visual" style="background: linear-gradient(135deg, #0a2a1a 0%, #0f3530 100%); min-height:160px;">
+      <div class="media-card-visual" style="background: linear-gradient(135deg, #0a1f0a 0%, #0f2a1a 100%);">
         <div>
-          <span class="media-type-badge badge-podcast">Podcast</span>
-          <p class="media-outlet">Healthier SG Podcast</p>
+          <span class="media-type-badge badge-print">Print</span>
+          <p class="media-outlet">Lianhe Zaobao</p>
         </div>
-        <h3>The myopia generation: what Singapore's children face at 40</h3>
+        <h3>持续释放脂质体类固醇用于白内障手术后消炎</h3>
       </div>
       <div class="media-card-body">
-        <p>A deep-dive conversation on the long-term ocular consequences of childhood myopia — and why the myopia control conversation needs to start much earlier.</p>
+        <p>Mandarin-language coverage of Dr. Wong's liposomal steroid innovation for post-cataract inflammation, reaching Singapore's Chinese-speaking community with information on this new surgical advance.</p>
         <div class="media-meta">
-          <span class="media-date">2023</span>
-          <a href="#" class="media-link">Listen →</a>
+          <span class="media-date">2021</span>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- PRESS GRID -->
-<div class="section" style="padding-top:3rem;">
-  <p class="section-label">Press & Online</p>
-  <p class="section-title">Selected coverage</p>
-  <div class="media-grid">
-
-    <div class="media-item">
-      <div class="mi-top">
-        <span class="mi-outlet">Lianhe Zaobao</span>
-        <span class="media-type-badge badge-print" style="font-size:0.55rem;">Print</span>
+    <div class="media-card">
+      <div class="media-card-visual" style="background: linear-gradient(135deg, #0a1428 0%, #0f2040 100%);">
+        <div>
+          <span class="media-type-badge badge-radio">Radio</span>
+          <p class="media-outlet">English-language Radio</p>
+        </div>
+        <h3>Radio interview on age-related macular degeneration and high myopia</h3>
       </div>
-      <p class="mi-title">高度近视的隐形代价</p>
-      <p class="mi-desc">Mandarin-language feature on the silent retinal complications of high myopia — reaching Singapore's Chinese-speaking community with evidence-based information on surveillance and prevention.</p>
-      <div class="mi-foot">
-        <span class="mi-date">2024</span>
-        <a href="#" class="mi-link">Read →</a>
+      <div class="media-card-body">
+        <p>Live radio interview covering the growing burden of age-related macular degeneration and high myopia in Singapore — including risk factors, surveillance, and when patients should seek specialist care.</p>
+        <div class="media-meta">
+          <span class="media-date">2019 – 2021</span>
+        </div>
       </div>
     </div>
 
-    <div class="media-item">
-      <div class="mi-top">
-        <span class="mi-outlet">TODAY Singapore</span>
-        <span class="media-type-badge badge-online" style="font-size:0.55rem; background:rgba(15,35,64,0.08); color:var(--navy); border-color:rgba(15,35,64,0.15);">Online</span>
+    <div class="media-card">
+      <div class="media-card-visual" style="background: linear-gradient(135deg, #1a100a 0%, #2a1a0a 100%);">
+        <div>
+          <span class="media-type-badge badge-radio">Radio</span>
+          <p class="media-outlet">Chinese-language Radio</p>
+        </div>
+        <h3>高度近视与老年黄斑变性</h3>
       </div>
-      <p class="mi-title">Retinal detachment: the eye emergency most people don't know to fear</p>
-      <p class="mi-desc">Patient education article explaining warning signs, risk factors in myopes, and why time-to-surgery is the most important determinant of visual outcome.</p>
-      <div class="mi-foot">
-        <span class="mi-date">2023</span>
-        <a href="#" class="mi-link">Read →</a>
-      </div>
-    </div>
-
-    <div class="media-item">
-      <div class="mi-top">
-        <span class="mi-outlet">HealthHub (MOH)</span>
-        <span class="media-type-badge badge-online" style="font-size:0.55rem; background:rgba(42,124,124,0.1); color:var(--teal); border-color:rgba(42,124,124,0.2);">Gov Health</span>
-      </div>
-      <p class="mi-title">Myopia in Singapore: expert perspectives on prevention and control</p>
-      <p class="mi-desc">Contributing expert for the Ministry of Health's public-facing myopia resource hub — providing clinical guidance on atropine therapy, orthokeratology, and outdoor time recommendations.</p>
-      <div class="mi-foot">
-        <span class="mi-date">2023</span>
-        <a href="#" class="mi-link">View resource →</a>
+      <div class="media-card-body">
+        <p>Mandarin-language radio interview on age-related macular degeneration and high myopia — discussing the retinal complications of high myopia and prevention strategies for Singapore's Chinese-speaking audience.</p>
+        <div class="media-meta">
+          <span class="media-date">2019 – 2021</span>
+        </div>
       </div>
     </div>
 
-    <div class="media-item">
-      <div class="mi-top">
-        <span class="mi-outlet">938NOW / Mediacorp Radio</span>
-        <span class="media-type-badge badge-radio" style="font-size:0.55rem;">Radio</span>
+    <div class="media-card">
+      <div class="media-card-visual" style="background: linear-gradient(135deg, #0f1a0a 0%, #1a2f0f 100%);">
+        <div>
+          <span class="media-type-badge badge-online">Online</span>
+          <p class="media-outlet">Mettanews.id · Indonesia</p>
+        </div>
+        <h3>Health Talk: Diabetes and its complications on the eye</h3>
       </div>
-      <p class="mi-title">Eye health after 50: what Singaporeans need to know</p>
-      <p class="mi-desc">Live radio interview on age-related retinal conditions — covering macular degeneration, floaters, and when to seek urgent assessment.</p>
-      <div class="mi-foot">
-        <span class="mi-date">2023</span>
-        <a href="#" class="mi-link">Listen →</a>
-      </div>
-    </div>
-
-    <div class="media-item">
-      <div class="mi-top">
-        <span class="mi-outlet">The Business Times</span>
-        <span class="media-type-badge badge-print" style="font-size:0.55rem;">Print</span>
-      </div>
-      <p class="mi-title">Eden Ophthalmic: taking sustained drug delivery from bench to clinic</p>
-      <p class="mi-desc">Profile of Dr. Wong's co-founded ophthalmic biotech startup, covering the Phase I/II clinical trial of its sustained-release intravitreal drug delivery technology.</p>
-      <div class="mi-foot">
-        <span class="mi-date">2022</span>
-        <a href="#" class="mi-link">Read →</a>
-      </div>
-    </div>
-
-    <div class="media-item">
-      <div class="mi-top">
-        <span class="mi-outlet">Lancet Digital Health</span>
-        <span class="media-type-badge badge-online" style="font-size:0.55rem; background:rgba(200,169,110,0.12); color:#9a7030; border-color:rgba(200,169,110,0.2);">Landmark Study</span>
-      </div>
-      <p class="mi-title">AI-based diabetic retinopathy screening achieves diagnostic parity</p>
-      <p class="mi-desc">Press coverage of the Lancet Digital Health publication from the Singapore Eye Research Institute — for which Dr. Wong is a contributing author — validating autonomous AI screening for diabetic retinopathy.</p>
-      <div class="mi-foot">
-        <span class="mi-date">2021</span>
-        <a href="#" class="mi-link">View study →</a>
+      <div class="media-card-body">
+        <p>Dr. Wong spoke at a HealthMetrics Indonesia health talk in Solo on diabetic retinopathy — explaining how elevated blood sugar damages retinal blood vessels and the importance of early screening and blood sugar management.</p>
+        <div class="media-meta">
+          <span class="media-date">August 2025</span>
+          <a href="https://mettanews.id/kupas-tuntas-kaitan-diabetes-dengan-stroke-dan-komplikasi-pada-mata-bersama-healthmetrics-indonesia/" target="_blank" rel="noopener" class="media-link">Read article →</a>
+        </div>
       </div>
     </div>
 
@@ -316,76 +247,31 @@
 
   <div class="speaking-list">
     <div class="speaking-item">
-      <div class="speaking-year">2024</div>
+      <div class="speaking-year">2025</div>
       <div>
-        <p class="speaking-conference">Asia-Pacific Academy of Ophthalmology (APAO)</p>
-        <p class="speaking-title">Surgical management of myopic foveoschisis: when to operate and what to expect</p>
-        <p class="speaking-location">Tokyo, Japan</p>
+        <p class="speaking-conference">International Myopia Meeting 2025</p>
+        <p class="speaking-title">How I use retina workplace to manage high myopia patients — overview and clinical workflow for optimal management</p>
+        <p class="speaking-location">Singapore</p>
       </div>
       <span class="speaking-role role-invited">Invited Speaker</span>
     </div>
     <div class="speaking-item">
-      <div class="speaking-year">2024</div>
+      <div class="speaking-year">2025</div>
       <div>
-        <p class="speaking-conference">Singapore National Eye Centre Annual Symposium</p>
-        <p class="speaking-title">Late IOL dislocation: risk stratification and surgical decision-making</p>
-        <p class="speaking-location">Singapore</p>
+        <p class="speaking-conference">HealthMetrics Indonesia Health Talk</p>
+        <p class="speaking-title">Diabetes and its complications on the eye — diabetic retinopathy, risk factors, and prevention</p>
+        <p class="speaking-location">Solo, Indonesia</p>
       </div>
-      <span class="speaking-role role-panel">Panellist</span>
+      <span class="speaking-role role-speaker">Speaker</span>
     </div>
     <div class="speaking-item">
       <div class="speaking-year">2023</div>
       <div>
-        <p class="speaking-conference">American Academy of Ophthalmology (AAO) Annual Meeting</p>
-        <p class="speaking-title">12-year longitudinal outcomes of myopic retinal detachment: lessons from the SEED cohort</p>
-        <p class="speaking-location">San Francisco, USA</p>
-      </div>
-      <span class="speaking-role role-invited">Invited Speaker</span>
-    </div>
-    <div class="speaking-item">
-      <div class="speaking-year">2023</div>
-      <div>
-        <p class="speaking-conference">Ophthalmological Society of Singapore (OSS) Annual Congress</p>
-        <p class="speaking-title">Phacoemulsification-vitrectomy combined surgery: technique and outcomes update</p>
+        <p class="speaking-conference">Asia-Pacific Cataract & Refractive Surgery Society (APACRS)</p>
+        <p class="speaking-title">Invited presenter</p>
         <p class="speaking-location">Singapore</p>
       </div>
-      <span class="speaking-role role-chair">Session Chair</span>
-    </div>
-    <div class="speaking-item">
-      <div class="speaking-year">2022</div>
-      <div>
-        <p class="speaking-conference">World Ophthalmology Congress (WOC)</p>
-        <p class="speaking-title">Sustained-release intravitreal drug delivery: from concept to Phase I/II clinical trial</p>
-        <p class="speaking-location">Dubai, UAE</p>
-      </div>
-      <span class="speaking-role role-keynote">Keynote</span>
-    </div>
-    <div class="speaking-item">
-      <div class="speaking-year">2022</div>
-      <div>
-        <p class="speaking-conference">International Society of Refractive Surgery (ISRS)</p>
-        <p class="speaking-title">Retinal risk after LASIK in high myopia: what the refractive surgeon must know</p>
-        <p class="speaking-location">Chicago, USA</p>
-      </div>
       <span class="speaking-role role-invited">Invited Speaker</span>
-    </div>
-    <div class="speaking-item">
-      <div class="speaking-year">2021</div>
-      <div>
-        <p class="speaking-conference">Asia-Pacific Vitreo-Retina Society (APVRS)</p>
-        <p class="speaking-title">Biometry-based scleral buckling: improving anatomical outcomes in myopic retinal detachment</p>
-        <p class="speaking-location">Virtual (COVID-19)</p>
-      </div>
-      <span class="speaking-role role-invited">Invited Speaker</span>
-    </div>
-    <div class="speaking-item">
-      <div class="speaking-year">2020</div>
-      <div>
-        <p class="speaking-conference">WHO/IAPB Myopia Management Expert Panel</p>
-        <p class="speaking-title">Contributing expert — International evidence-based guidelines on myopia control</p>
-        <p class="speaking-location">Geneva (Virtual)</p>
-      </div>
-      <span class="speaking-role role-panel">Expert Panellist</span>
     </div>
   </div>
 </div>
@@ -401,25 +287,17 @@
         <li>Print and online feature articles</li>
         <li>Health awareness campaigns</li>
         <li>Medical conference commentary</li>
-        <li>Podcast and video appearances</li>
-        <li>Expert opinions on eye health policy</li>
+        <li>Expert opinions on eye health</li>
       </ul>
-      <a href="contact.html" class="btn-gold">Send an Enquiry</a>
+      <a href="index.html#contact" class="btn-gold">Send an Enquiry</a>
     </div>
     <div class="enquiry-contact">
       <h3>Contact for media</h3>
       <div class="enq-row">
         <span class="enq-icon">📞</span>
         <div>
-          <p class="enq-label">Clinic</p>
-          <p class="enq-value"><a href="tel:+6564703366">6470 3366</a></p>
-        </div>
-      </div>
-      <div class="enq-row">
-        <span class="enq-icon">💬</span>
-        <div>
-          <p class="enq-label">WhatsApp</p>
-          <p class="enq-value"><a href="https://wa.me/6592357063">+65 9235 7063</a></p>
+          <p class="enq-label">Phone</p>
+          <p class="enq-value"><a href="tel:+6592357063">+65 9235 7063</a></p>
         </div>
       </div>
       <div class="enq-row">
@@ -450,11 +328,10 @@
 <footer>
   <span>© 2025 Dr. Chee Wai Wong · Asia Pacific Eye Centre, Gleneagles Hospital, Singapore</span>
   <span>
-    <a href="about.html">About</a> ·
-    <a href="research.html">Research</a> ·
-    <a href="blog.html">Eye Health Insights</a> ·
+    <a href="index.html#about">About</a> ·
+    <a href="index.html#blog">Insights</a> ·
     <a href="media.html">Media</a> ·
-    <a href="contact.html">Contact</a>
+    <a href="index.html#contact">Contact</a>
   </span>
 </footer>
 </body>
