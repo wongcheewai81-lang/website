@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eye Health Insights | Dr. Chee Wai Wong — Vitreoretinal Surgeon, Singapore</title>
+  <meta name="description" content="In-depth articles on retinal detachment, high myopia, macular hole, floaters, and IOL dislocation — written by Singapore vitreoretinal surgeon Dr. Chee Wai Wong." />
+  <meta name="keywords" content="eye health Singapore, retinal detachment guide, high myopia complications, macular hole Singapore, floaters treatment, dislocated IOL Singapore, vitreoretinal surgeon blog" />
+  <meta property="og:title" content="Eye Health Insights — Dr. Chee Wai Wong" />
+  <meta property="og:description" content="Clinical articles on retinal and macular conditions — written for patients, carers, and referring clinicians by Singapore vitreoretinal specialist Dr. Chee Wai Wong." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f2340; --teal: #2a7c7c; --teal-light: #3d9e9e;
+      --gold: #c8a96e; --cream: #faf7f2; --warm-white: #fff8f0;
+      --text: #1a2e3b; --muted: #6b7f8a; --border: rgba(15,35,64,0.1);
+      --urgent: #c0392b;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { background: var(--navy) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 2rem; }
+
+    /* HERO */
+    .blog-hero { background: var(--navy); padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
+    .blog-hero::before { content: ''; position: absolute; bottom: -100px; right: -80px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(42,124,124,0.12) 0%, transparent 65%); pointer-events: none; }
+    .blog-hero::after { content: ''; position: absolute; top: 20%; left: -60px; width: 350px; height: 350px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,110,0.07) 0%, transparent 65%); pointer-events: none; }
+    .blog-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 1rem; }
+    .blog-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 300; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
+    .blog-hero h1 strong { font-weight: 600; }
+    .blog-hero .lead { font-size: 1rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.5); max-width: 480px; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .hero-stat { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.75rem; padding: 1.25rem; text-align: center; }
+    .hero-stat .n { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--gold); line-height: 1; display: block; }
+    .hero-stat .l { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 0.3rem; line-height: 1.5; display: block; }
+
+    /* FILTER BAR */
+    .filter-bar { background: var(--warm-white); border-bottom: 1px solid var(--border); padding: 1rem 4rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .filter-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-right: 0.5rem; }
+    .filter-btn { font-size: 0.78rem; font-weight: 500; padding: 0.4rem 1rem; border-radius: 2rem; border: 1px solid var(--border); background: #fff; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover { border-color: var(--teal); color: var(--teal); }
+    .filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+    /* FEATURED ARTICLE */
+    .featured-section { max-width: 1100px; margin: 0 auto; padding: 3.5rem 4rem 0; }
+    .section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .featured-card { display: grid; grid-template-columns: 1fr 1fr; background: var(--navy); border-radius: 1.25rem; overflow: hidden; text-decoration: none; transition: transform 0.25s, box-shadow 0.25s; }
+    .featured-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(15,35,64,0.25); }
+    .featured-visual { background: linear-gradient(135deg, #0a1e14 0%, #12332a 50%, #1a4040 100%); padding: 3rem; display: flex; flex-direction: column; justify-content: flex-end; position: relative; min-height: 320px; }
+    .featured-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 30%, rgba(42,124,124,0.2) 0%, transparent 60%); }
+    .featured-badge { position: absolute; top: 1.5rem; left: 1.5rem; background: var(--urgent); color: #fff; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 2rem; }
+    .featured-icon { font-size: 4rem; line-height: 1; margin-bottom: 1rem; position: relative; z-index: 1; }
+    .featured-topic { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 0.5rem; position: relative; z-index: 1; }
+    .featured-visual h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; color: #fff; line-height: 1.25; position: relative; z-index: 1; }
+    .featured-body { padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .featured-tag-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .atag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 2rem; }
+    .atag-emergency { background: rgba(192,57,43,0.12); color: var(--urgent); border: 1px solid rgba(192,57,43,0.2); }
+    .atag-myopia { background: rgba(42,124,124,0.12); color: var(--teal); border: 1px solid rgba(42,124,124,0.2); }
+    .atag-macular { background: rgba(200,169,110,0.15); color: #9a7030; border: 1px solid rgba(200,169,110,0.25); }
+    .atag-guide { background: rgba(15,35,64,0.08); color: var(--navy); border: 1px solid rgba(15,35,64,0.15); }
+    .atag-cataract { background: rgba(61,158,158,0.1); color: var(--teal-light); border: 1px solid rgba(61,158,158,0.2); }
+    .featured-body p { font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.75; flex: 1; margin-bottom: 1.5rem; }
+    .featured-meta { display: flex; align-items: center; justify-content: space-between; }
+    .featured-meta .read-time { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+    .btn-read { font-size: 0.82rem; font-weight: 500; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
+    .btn-read:hover { gap: 0.7rem; }
+
+    /* ARTICLE GRID */
+    .articles-section { max-width: 1100px; margin: 0 auto; padding: 2.5rem 4rem 5rem; }
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .article-card { background: #fff; border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; text-decoration: none; transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15,35,64,0.1); }
+    .card-visual { height: 140px; display: flex; align-items: center; justify-content: center; font-size: 3rem; position: relative; overflow: hidden; }
+    .card-visual.v-retina { background: linear-gradient(135deg, #0a1520 0%, #0f2340 100%); }
+    .card-visual.v-myopia { background: linear-gradient(135deg, #0a2a1a 0%, #0f3530 100%); }
+    .card-visual.v-macular { background: linear-gradient(135deg, #1a0a2e 0%, #0f2340 100%); }
+    .card-visual.v-floaters { background: linear-gradient(135deg, #0c1f2e 0%, #1a3040 100%); }
+    .card-visual.v-iol { background: linear-gradient(135deg, #0e1f30 0%, #162840 100%); }
+    .card-visual::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 40%, rgba(42,124,124,0.15) 0%, transparent 60%); }
+    .card-visual span { position: relative; z-index: 1; }
+    .card-urgency-badge { position: absolute; top: 0.75rem; left: 0.75rem; z-index: 2; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 2rem; background: var(--urgent); color: #fff; }
+    .card-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); line-height: 1.3; margin-bottom: 0.6rem; }
+    .card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; font-weight: 300; flex: 1; margin-bottom: 1.1rem; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .card-read-time { font-size: 0.72rem; color: var(--muted); }
+    .card-arrow { font-size: 0.8rem; color: var(--teal); font-weight: 500; }
+
+    /* EMERGENCY STRIP */
+    .emergency-strip { background: linear-gradient(90deg, #8b1a1a 0%, var(--urgent) 100%); padding: 2rem 4rem; }
+    .emergency-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .emergency-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: #fff; margin-bottom: 0.3rem; }
+    .emergency-text p { font-size: 0.88rem; color: rgba(255,255,255,0.65); font-weight: 300; }
+    .emergency-symptoms { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .esym { font-size: 0.75rem; font-weight: 500; padding: 0.3rem 0.85rem; border-radius: 2rem; background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+    .btn-emergency { background: #fff; color: var(--urgent); font-size: 0.85rem; font-weight: 600; padding: 0.75rem 1.75rem; border-radius: 2rem; text-decoration: none; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }
+    .btn-emergency:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+
+    /* ABOUT DR WONG STRIP */
+    .about-strip { background: var(--warm-white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 3rem 4rem; }
+    .about-strip-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; gap: 3rem; align-items: center; }
+    .about-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; flex-shrink: 0; }
+    .about-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--navy); margin-bottom: 0.35rem; }
+    .about-text p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; font-weight: 300; max-width: 580px; }
+    .about-stats { display: flex; gap: 1.5rem; }
+    .as { text-align: center; }
+    .as .n { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--navy); line-height: 1; }
+    .as .l { font-size: 0.68rem; color: var(--muted); line-height: 1.4; }
+
+    /* CTA */
+    .cta-section { background: var(--navy); padding: 5rem 4rem; text-align: center; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 300; color: #fff; margin-bottom: 0.75rem; }
+    .cta-section h2 strong { font-weight: 600; }
+    .cta-section p { font-size: 0.95rem; color: rgba(255,255,255,0.4); font-weight: 300; max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.75; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--navy); padding: 0.85rem 2.25rem; border-radius: 3rem; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.25s; }
+    .btn-gold:hover { background: #d9bf91; transform: translateY(-2px); }
+    .btn-outline { display: inline-block; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); padding: 0.85rem 2.25rem; border-radius: 3rem; font-size: 0.88rem; font-weight: 400; text-decoration: none; transition: all 0.25s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+
+    footer { background: #07141f; color: rgba(255,255,255,0.35); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; flex-wrap: wrap; gap: 1rem; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: var(--teal-light); }
+
+    @media (max-width: 1000px) {
+      nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
+      .blog-hero { padding: 7rem 1.5rem 4rem; }
+      .blog-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .filter-bar { padding: 1rem 1.5rem; }
+      .featured-section, .articles-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-visual { min-height: 200px; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .emergency-strip { padding: 2rem 1.5rem; }
+      .about-strip { padding: 2rem 1.5rem; }
+      .about-strip-inner { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+      .about-stats { justify-content: center; }
+      .cta-section { padding: 3.5rem 1.5rem; }
+      footer { flex-direction: column; text-align: center; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="cheewaiwong.html">Dr. <span>Chee Wai</span> Wong</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="patient-education.html">Patient Info</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="blog.html">Eye Health Insights</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="contact.html" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="blog-hero-inner">
+    <div>
+      <p class="hero-eyebrow">Eye Health Insights</p>
+      <h1>Clinical writing<br>for patients<br><strong>who want answers.</strong></h1>
+      <p class="lead">In-depth articles on retinal and macular conditions — written to give patients, families, and referring clinicians a clear, honest picture of what is happening, what the options are, and what to expect.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="n">5</span>
+        <span class="l">Long-form clinical articles</span>
+      </div>
+      <div class="hero-stat">
+        <span class="n">116+</span>
+        <span class="l">Peer-reviewed publications behind the writing</span>
+      </div>
+      <div class="hero-stat">
+        <span class="n">H-36</span>
+        <span class="l">H-Index · 4,491 citations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">Filter by</span>
+  <button class="filter-btn active" onclick="filterCards('all', this)">All Articles</button>
+  <button class="filter-btn" onclick="filterCards('emergency', this)">Emergencies</button>
+  <button class="filter-btn" onclick="filterCards('myopia', this)">Myopia</button>
+  <button class="filter-btn" onclick="filterCards('macular', this)">Macular</button>
+  <button class="filter-btn" onclick="filterCards('surgery', this)">Surgery & Recovery</button>
+</div>
+
+<!-- FEATURED: RETINAL DETACHMENT -->
+<section class="featured-section">
+  <p class="section-label">Most Read</p>
+  <a href="article-retinal-detachment.html" class="featured-card">
+    <div class="featured-visual">
+      <span class="featured-badge">🔴 Emergency</span>
+      <span class="featured-icon">👁</span>
+      <p class="featured-topic">Retinal Surgery</p>
+      <h2>Retinal Detachment: Symptoms, Surgery & Recovery</h2>
+    </div>
+    <div class="featured-body">
+      <div>
+        <div class="featured-tag-row">
+          <span class="atag atag-emergency">Time-Critical</span>
+          <span class="atag atag-myopia">High-Myopia Risk</span>
+          <span class="atag atag-guide">Complete Guide</span>
+        </div>
+        <p>A shadow or curtain appearing in your vision is a surgical emergency. This comprehensive guide covers the warning signs, why high myopes are most at risk, what vitrectomy and scleral buckling involve step-by-step, and what visual recovery looks like — including Dr. Wong's landmark 1,032-patient study on outcomes.</p>
+      </div>
+      <div class="featured-meta">
+        <span class="read-time">15 min read</span>
+        <span class="btn-read">Read article →</span>
+      </div>
+    </div>
+  </a>
+</section>
+
+<!-- ARTICLE GRID -->
+<section class="articles-section">
+  <p class="section-label">All Articles</p>
+  <div class="articles-grid" id="article-grid">
+
+    <a href="article-high-myopia.html" class="article-card" data-tags="myopia surgery">
+      <div class="card-visual v-myopia"><span>🔬</span></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="atag atag-myopia">High Myopia</span>
+          <span class="atag atag-guide">Long-Read</span>
+        </div>
+        <p class="card-title">High Myopia: Why Glasses Aren't the End of the Story</p>
+        <p class="card-desc">A strong prescription is just the beginning. What decades of axial elongation silently do to the retina and macula — and what annual surveillance catches before it's too late.</p>
+        <div class="card-footer">
+          <span class="card-read-time">12 min read</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-macular-hole.html" class="article-card" data-tags="macular surgery">
+      <div class="card-visual v-macular"><span>🎯</span></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="atag atag-macular">Macular Surgery</span>
+          <span class="atag atag-guide">Patient Guide</span>
+        </div>
+        <p class="card-title">Macular Hole: What It Is, Who Gets It & Face-Down Recovery</p>
+        <p class="card-desc">A gap dead centre in your vision — alarming, but highly fixable with surgery. Includes an honest guide to face-down positioning: what it involves, why it matters, and how to survive it.</p>
+        <div class="card-footer">
+          <span class="card-read-time">14 min read</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-floaters.html" class="article-card" data-tags="emergency guide">
+      <div class="card-visual v-floaters"><span>💧</span></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="atag atag-guide">Patient Guide</span>
+          <span class="atag atag-myopia">Myopia Risk</span>
+        </div>
+        <p class="card-title">Eye Floaters: When to Panic, When Not To</p>
+        <p class="card-desc">Most floaters are harmless. A sudden shower of them, or flashes alongside new ones, is not. A clear clinical decision framework — red, amber, green — for every scenario.</p>
+        <div class="card-footer">
+          <span class="card-read-time">10 min read</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-iol-dislocation.html" class="article-card" data-tags="surgery macular">
+      <div class="card-visual v-iol"><span>🔷</span></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="atag atag-cataract">Cataract & IOL</span>
+          <span class="atag atag-guide">Surgical Guide</span>
+        </div>
+        <p class="card-title">Dislocated Intraocular Lens: Causes, Symptoms & Surgery</p>
+        <p class="card-desc">An IOL implanted during cataract surgery can shift out of position years later — causing sudden double vision or blur. Why it happens, who is at risk, and what vitreoretinal surgery involves.</p>
+        <div class="card-footer">
+          <span class="card-read-time">13 min read</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-epiretinal-membrane.html" class="article-card" data-tags="macular surgery">
+      <div class="card-visual" style="background:linear-gradient(135deg,#1a0e28 0%,#2a1a48 60%,#0f2340 100%); height:140px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-size:2.4rem; filter:drop-shadow(0 2px 12px rgba(200,169,110,0.3));">🔬</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="atag tag-macular">Macular Disease</span><span class="atag atag-guide">Patient Guide</span></div>
+        <p class="card-title">Epiretinal Membrane: When to Watch, When to Operate</p>
+        <p class="card-desc">A thin scar on the macular surface causing distortion and blur. The surgical decision is more nuanced than most patients realise — and knowing when not to rush matters.</p>
+        <div class="card-footer">
+          <span class="card-read-time">11 min read</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="article-diabetic-retinopathy.html" class="article-card" data-tags="prevention">
+      <div class="card-visual" style="background:linear-gradient(135deg,#0e2218 0%,#0f2340 60%,#1a2e0e 100%); height:140px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-size:2.4rem; filter:drop-shadow(0 2px 12px rgba(42,124,124,0.4));">🩺</span>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="atag tag-diabetes">Diabetic Eye Disease</span><span class="atag atag-guide">Prevention First</span></div>
+        <p class="card-title">Diabetic Retinopathy: What Every Diabetic Patient Must Know</p>
+        <p class="card-desc">The leading cause of preventable blindness in working-age adults. Almost entirely avoidable with timely screening — but it causes no symptoms until it is advanced.</p>
+        <div class="card-footer">
+          <span class="card-read-time">14 min read</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- EMERGENCY STRIP -->
+<div class="emergency-strip">
+  <div class="emergency-inner">
+    <div class="emergency-text">
+      <h3>Experiencing any of these symptoms now?</h3>
+      <p>These are ophthalmic emergencies. Do not wait for a scheduled appointment.</p>
+    </div>
+    <div class="emergency-symptoms">
+      <span class="esym">Shadow in vision</span>
+      <span class="esym">Sudden floater shower</span>
+      <span class="esym">Flashing lights</span>
+      <span class="esym">Central distortion</span>
+      <span class="esym">Sudden blur in cataract eye</span>
+    </div>
+    <a href="contact.html" class="btn-emergency">Contact the Clinic Today</a>
+  </div>
+</div>
+
+<!-- ABOUT DR WONG -->
+<section class="about-strip">
+  <div class="about-strip-inner">
+    <div class="about-avatar">CW</div>
+    <div class="about-text">
+      <h3>Dr. Chee Wai Wong — About the Author</h3>
+      <p>Dr. Wong is a vitreoretinal surgeon at Asia Pacific Eye Centre, Gleneagles Hospital, Singapore. He holds subspecialty certification in vitreoretinal surgery and a PhD focused on myopic retinal disease. He has authored 116+ peer-reviewed papers (H-Index 36, 4,491 citations), co-edited a Springer textbook on myopia, and contributed to the WHO/IAPB international myopia guidelines. His clinical focus is retinal surgery, macular disease, and the long-term ocular consequences of high myopia.</p>
+    </div>
+    <div class="about-stats">
+      <div class="as"><p class="n">116+</p><p class="l">Publications</p></div>
+      <div class="as"><p class="n">H-36</p><p class="l">H-Index</p></div>
+      <div class="as"><p class="n">2</p><p class="l">Patents</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Have a concern about<br><strong>your retina or vision?</strong></h2>
+  <p>Reading is a good start. A proper assessment with Dr. Wong — including dilated fundus examination and OCT — is the definitive step. Clinics at Gleneagles Hospital, Singapore.</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-gold">Book an Appointment</a>
+    <a href="patient-education.html" class="btn-outline">Patient Education Hub</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Dr. Chee Wai Wong · Asia Pacific Eye Centre, Gleneagles Hospital, Singapore</span>
+  <span><a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="research.html">Research</a> · <a href="blog.html">Eye Health Insights</a> · <a href="contact.html">Contact</a></span>
+</footer>
+
+<script>
+  function filterCards(tag, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('#article-grid .article-card[data-tags]');
+    cards.forEach(card => {
+      if (tag === 'all') {
+        card.style.display = '';
+        return;
+      }
+      const tags = card.dataset.tags || '';
+      card.style.display = tags.includes(tag) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>
