@@ -737,6 +737,7 @@
       letter-spacing: 0.04em; padding-top: var(--sp-2);
       border-top: 1px solid var(--rule); margin-top: auto;
     }
+    /* .blog-meta replaced by .blog-meta-row for richer layout */
 
     /* ── CONTACT ── */
     #contact { background: var(--page); }
@@ -915,6 +916,126 @@
     .float-cta.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .float-cta:hover { background: var(--teal-lt); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(42,124,124,0.4); }
 
+    /* ── SCROLL PROGRESS ── */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 400;
+      height: 3px; transform: scaleX(0); transform-origin: left;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--teal-lt) 60%, var(--gold) 100%);
+      pointer-events: none;
+      transition: transform 0.08s linear;
+    }
+
+    /* ── PAGE FADE-IN ── */
+    body { animation: pageFadeIn 0.5s cubic-bezier(0.22,1,0.36,1) both; }
+    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none; background: none; border: none; padding: 6px;
+      cursor: pointer; position: relative;
+      width: 38px; height: 38px; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--navy); border-radius: 2px; position: absolute;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), opacity 0.2s;
+    }
+    .nav-hamburger span:nth-child(1) { transform: translateY(-6px); }
+    .nav-hamburger span:nth-child(3) { transform: translateY(6px); }
+    #navbar.mob-open .nav-hamburger span:nth-child(1) { transform: rotate(45deg); }
+    #navbar.mob-open .nav-hamburger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    #navbar.mob-open .nav-hamburger span:nth-child(3) { transform: rotate(-45deg); }
+
+    /* ── MOBILE NAV PANEL ── */
+    .mobile-nav-panel {
+      position: fixed; top: 72px; left: 0; right: 0; z-index: 195;
+      background: rgba(250,247,242,0.97);
+      backdrop-filter: blur(20px) saturate(1.4);
+      -webkit-backdrop-filter: blur(20px) saturate(1.4);
+      border-bottom: 1px solid var(--rule);
+      padding: var(--sp-2) var(--sp-4);
+      display: flex; flex-direction: column;
+      transform: translateY(-8px); opacity: 0; pointer-events: none;
+      transition: transform 0.32s cubic-bezier(0.22,1,0.36,1),
+                  opacity 0.32s cubic-bezier(0.22,1,0.36,1);
+    }
+    .mobile-nav-panel.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .mobile-nav-panel a {
+      font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--navy);
+      text-decoration: none; padding: 14px 0;
+      border-bottom: 1px solid var(--rule); transition: color 0.2s;
+    }
+    .mobile-nav-panel a:last-child { border-bottom: none; }
+    .mobile-nav-panel a:hover { color: var(--teal); }
+    .mobile-nav-panel .mob-cta {
+      margin-top: var(--sp-2); text-transform: none;
+      background: var(--navy); color: #fff !important;
+      padding: 0.8rem 1.5rem; border-radius: 100px; text-align: center;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em;
+    }
+    .mobile-nav-panel .mob-cta:hover { background: var(--teal); }
+
+    /* ── JOURNEY STEP TAGS ── */
+    .journey-step-tag {
+      display: inline-block; font-size: 0.57rem; font-weight: 700;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 100px; margin-bottom: 6px;
+    }
+    .j-safe   .journey-step-tag { background: rgba(42,124,124,0.18);  color: var(--teal-lt); }
+    .j-watch  .journey-step-tag { background: rgba(200,169,110,0.18); color: var(--gold); }
+    .j-urgent .journey-step-tag { background: rgba(192,57,43,0.22);   color: #e07868; }
+    .j-resolved .journey-step-tag { background: rgba(42,124,124,0.28); color: var(--teal-lt); }
+    .journey-timeline::before {
+      background: linear-gradient(90deg,
+        rgba(42,124,124,0.5)  0%,  rgba(42,124,124,0.5)  32%,
+        rgba(200,169,110,0.6) 32%, rgba(200,169,110,0.6) 55%,
+        rgba(192,57,43,0.65)  55%, rgba(192,57,43,0.65)  78%,
+        rgba(42,124,124,0.6)  78%, rgba(42,124,124,0.6)  100%
+      );
+      height: 2px; top: 23px;
+    }
+    .journey-dot { width: 48px; height: 48px; font-size: 1.25rem; }
+
+    /* ── BLOG META ROW ── */
+    .blog-meta-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; padding-top: var(--sp-2); border-top: 1px solid var(--rule);
+      margin-top: auto;
+    }
+    .blog-read-time {
+      font-size: 0.68rem; color: rgba(107,127,138,0.7); letter-spacing: 0.04em;
+    }
+    .blog-arrow {
+      width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(42,124,124,0.07); border: 1px solid rgba(42,124,124,0.15);
+      display: flex; align-items: center; justify-content: center; color: var(--teal);
+      transition: background 0.2s, color 0.2s, transform 0.25s cubic-bezier(0.22,1,0.36,1);
+    }
+    .blog-card:hover .blog-arrow { background: var(--teal); color: #fff; transform: translate(2px,-2px); }
+
+    /* ── CONTACT HOURS GRID ── */
+    .contact-hours-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;
+    }
+    .hours-pill {
+      background: rgba(42,124,124,0.05); border: 1px solid rgba(42,124,124,0.10);
+      border-radius: 10px; padding: 9px 14px;
+    }
+    .hours-pill-day {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.10em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 3px;
+    }
+    .hours-pill-time { font-size: 0.82rem; color: var(--navy); }
+    .contact-directions-btn {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: var(--sp-2);
+      font-size: 0.8rem; font-weight: 500; color: var(--teal);
+      text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s;
+    }
+    .contact-directions-btn:hover { color: var(--navy); }
+    .contact-directions-btn:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       #navbar { padding: 0 var(--sp-5); }
@@ -928,6 +1049,7 @@
     @media (max-width: 768px) {
       #navbar { padding: 0 var(--sp-3); }
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
       #hero { grid-template-columns: 1fr; padding: 96px var(--sp-4) var(--sp-5); }
       .hero-right { display: none; }
       .about-grid, .contact-grid, .journey-footer { grid-template-columns: 1fr; }
@@ -942,6 +1064,7 @@
   </style>
 </head>
 <body>
+<div id="scroll-progress" aria-hidden="true"></div>
 
 <!-- ══════════════════════ NAV ══════════════════════ -->
 <nav id="navbar">
@@ -977,7 +1100,20 @@
     <li><a href="#blog">Insights</a></li>
     <li><a href="#contact" class="nav-cta">Book Consultation</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+<div class="mobile-nav-panel" id="mobileNav" aria-hidden="true">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#myopia">Myopia</a>
+  <a href="#education">Patients</a>
+  <a href="#blog">Insights</a>
+  <a href="#contact" class="mob-cta">Book Consultation</a>
+</div>
 
 
 <!-- ══════════════════════ HERO ══════════════════════ -->
@@ -1221,36 +1357,42 @@
     <div class="journey-timeline reveal" style="transition-delay:0.1s;">
       <div class="journey-step">
         <div class="journey-dot j-safe">👶</div>
+        <span class="journey-step-tag">Low Risk</span>
         <p class="journey-age">Age 6–10</p>
         <p class="journey-event">Myopia begins</p>
         <p class="journey-note">Glasses. Normal life. Most parents think the story ends here.</p>
       </div>
       <div class="journey-step">
         <div class="journey-dot j-safe">📈</div>
+        <span class="journey-step-tag">Progressing</span>
         <p class="journey-age">Age 10–20</p>
         <p class="journey-event">Progressive myopia</p>
         <p class="journey-note">Each dioptre stretches the eye ~0.35mm. At –8D, the eye is significantly elongated.</p>
       </div>
       <div class="journey-step">
         <div class="journey-dot j-watch">🔍</div>
+        <span class="journey-step-tag">Caution</span>
         <p class="journey-age">Age 20–40</p>
         <p class="journey-event">Silent structural changes</p>
         <p class="journey-note">Retina thins. Lattice degeneration. Risk accumulates invisibly.</p>
       </div>
       <div class="journey-step">
         <div class="journey-dot j-watch">⚠️</div>
+        <span class="journey-step-tag">Warning</span>
         <p class="journey-age">Age 40–55</p>
         <p class="journey-event">Early complications</p>
         <p class="journey-note">Macular traction. Foveoschisis. 10.3% develop macular degeneration within 12 years.</p>
       </div>
       <div class="journey-step">
         <div class="journey-dot j-urgent">🚨</div>
+        <span class="journey-step-tag">Critical</span>
         <p class="journey-age">Age 50+</p>
         <p class="journey-event">Surgical emergency</p>
         <p class="journey-note">Retinal detachment. Macular hole. Surgery within hours or days.</p>
       </div>
       <div class="journey-step">
         <div class="journey-dot j-resolved">👁️</div>
+        <span class="journey-step-tag">Protected</span>
         <p class="journey-age">With Dr. Wong</p>
         <p class="journey-event">Vision preserved</p>
         <p class="journey-note">The earlier the relationship begins, the better the outcome at every stage.</p>
@@ -1507,7 +1649,10 @@
           <span class="blog-tag">Retinal Health</span>
           <h3 class="blog-title">Floaters and Flashes: When Should You Worry?</h3>
           <p class="blog-excerpt">Most floaters are harmless, but some are a sign of something serious. Here's how to tell the difference — and when to call your doctor immediately.</p>
-          <div class="blog-meta">Dr. Chee Wai Wong · 5 min read</div>
+          <div class="blog-meta-row">
+            <span class="blog-read-time">Dr. Chee Wai Wong · 5 min read</span>
+            <span class="blog-arrow" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8L8 2M8 2H4M8 2V6"/></svg></span>
+          </div>
         </div>
       </a>
       <a href="blog.html" class="blog-card">
@@ -1516,7 +1661,10 @@
           <span class="blog-tag">Treatment</span>
           <h3 class="blog-title">Intravitreal Injections: What to Expect and Why They Work</h3>
           <p class="blog-excerpt">Many patients feel nervous about eye injections. I explain the procedure step by step — and why the discomfort is far less than you'd expect.</p>
-          <div class="blog-meta">Dr. Chee Wai Wong · 6 min read</div>
+          <div class="blog-meta-row">
+            <span class="blog-read-time">Dr. Chee Wai Wong · 6 min read</span>
+            <span class="blog-arrow" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8L8 2M8 2H4M8 2V6"/></svg></span>
+          </div>
         </div>
       </a>
       <a href="blog.html" class="blog-card">
@@ -1525,7 +1673,10 @@
           <span class="blog-tag">Seniors &amp; Ageing</span>
           <h3 class="blog-title">Protecting Your Parents' Vision: A Family Guide to AMD</h3>
           <p class="blog-excerpt">Age-related macular degeneration affects 1 in 3 people over 75. Here's what adult children need to know to support their parents through diagnosis and treatment.</p>
-          <div class="blog-meta">Dr. Chee Wai Wong · 7 min read</div>
+          <div class="blog-meta-row">
+            <span class="blog-read-time">Dr. Chee Wai Wong · 7 min read</span>
+            <span class="blog-arrow" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8L8 2M8 2H4M8 2V6"/></svg></span>
+          </div>
         </div>
       </a>
     </div>
@@ -1676,31 +1827,52 @@
 
         <div class="contact-details">
           <div class="contact-item">
-            <div class="contact-icon">📍</div>
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
             <div class="contact-item-text">
               <strong>Clinic Location</strong>
               Asia Pacific Eye Centre<br>Gleneagles Hospital, Level 3 Hospital Block<br>6A Napier Road, Singapore 258500
+              <a href="https://maps.google.com/?q=Asia+Pacific+Eye+Centre+Gleneagles+Hospital+6A+Napier+Road+Singapore" target="_blank" rel="noopener" class="contact-directions-btn">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Get Directions
+              </a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">📞</div>
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            </div>
             <div class="contact-item-text">
               <strong>Phone</strong>
               <a href="tel:+6592357063">+65 9235 7063</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">✉️</div>
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
             <div class="contact-item-text">
               <strong>Email</strong>
               <a href="mailto:contact@asiapacificeyecentre.com.sg">contact@asiapacificeyecentre.com.sg</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">🕐</div>
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
             <div class="contact-item-text">
               <strong>Clinic Hours</strong>
-              Mon–Fri: 9am – 5pm · Sat: 9am – 1pm
+              <div class="contact-hours-grid">
+                <div class="hours-pill">
+                  <div class="hours-pill-day">Mon – Fri</div>
+                  <div class="hours-pill-time">9:00 am – 5:00 pm</div>
+                </div>
+                <div class="hours-pill">
+                  <div class="hours-pill-day">Saturday</div>
+                  <div class="hours-pill-time">9:00 am – 1:00 pm</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1845,6 +2017,49 @@
 
     if (heroStats)    obs.observe(heroStats);
     if (researchGrid) obs.observe(researchGrid);
+  })();
+</script>
+
+<!-- ── SCROLL PROGRESS ── -->
+<script>
+  (function () {
+    var bar = document.getElementById('scroll-progress');
+    function updateBar() {
+      var scrollTop = window.scrollY || window.pageYOffset;
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docH > 0 ? scrollTop / docH : 0;
+      bar.style.transform = 'scaleX(' + pct + ')';
+    }
+    window.addEventListener('scroll', updateBar, { passive: true });
+    updateBar();
+  })();
+</script>
+
+<!-- ── MOBILE NAV ── -->
+<script>
+  (function () {
+    var btn   = document.getElementById('navHamburger');
+    var panel = document.getElementById('mobileNav');
+    var nav   = document.getElementById('navbar');
+    if (!btn || !panel) return;
+    function close() {
+      panel.classList.remove('open');
+      nav.classList.remove('mob-open');
+      btn.setAttribute('aria-expanded', 'false');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+    btn.addEventListener('click', function () {
+      var isOpen = panel.classList.toggle('open');
+      nav.classList.toggle('mob-open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    });
+    panel.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', close);
+    });
+    document.addEventListener('click', function (e) {
+      if (!nav.contains(e.target) && !panel.contains(e.target)) close();
+    });
   })();
 </script>
 
