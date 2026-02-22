@@ -64,6 +64,8 @@
       pointer-events: none;
       mix-blend-mode: overlay;
     }
+    /* Ensure section content renders above grain overlay */
+    .grain > .section-inner { position: relative; z-index: 1; }
 
     /* ── NAV ── */
     #navbar {
@@ -291,7 +293,15 @@
     }
 
     /* ── ABOUT ── */
-    #about { background: var(--cream); }
+    #about {
+      background-color: var(--cream);
+      background-image:
+        radial-gradient(ellipse 55% 45% at 90% 15%, rgba(42,124,124,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 35% at 5% 85%, rgba(200,169,110,0.06) 0%, transparent 55%),
+        radial-gradient(circle, rgba(15,35,64,0.04) 1px, transparent 1px);
+      background-size: auto, auto, 28px 28px;
+      background-repeat: no-repeat, no-repeat, repeat;
+    }
     .about-grid {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: var(--sp-7); align-items: start;
@@ -421,7 +431,7 @@
     .pillar-card:hover::after { transform: scaleX(1); }
     .pillar-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem; font-weight: 300; color: rgba(200,169,110,0.12); line-height: 1;
+      font-size: 3.5rem; font-weight: 300; color: rgba(200,169,110,0.18); line-height: 1;
       margin-bottom: var(--sp-1); display: block;
     }
     .pillar-label {
@@ -445,6 +455,7 @@
     #research {
       background: linear-gradient(135deg, #071626 0%, #0a1e30 50%, #071a1a 100%);
       border-top: 1px solid rgba(255,255,255,0.05);
+      position: relative; overflow: hidden;
     }
     .research-header {
       display: flex; align-items: flex-end; justify-content: space-between;
@@ -568,7 +579,14 @@
     .btn-ghost-light:focus-visible { outline: 2px solid rgba(250,247,242,0.4); outline-offset: 3px; }
 
     /* ── SERVICES ── */
-    #services { background: var(--page); }
+    #services {
+      background-color: var(--page);
+      background-image:
+        radial-gradient(ellipse 50% 60% at 95% 50%, rgba(42,124,124,0.06) 0%, transparent 55%),
+        radial-gradient(circle, rgba(15,35,64,0.045) 1px, transparent 1px);
+      background-size: auto, 28px 28px;
+      background-repeat: no-repeat, repeat;
+    }
     .services-header {
       display: flex; justify-content: space-between; align-items: flex-end;
       margin-bottom: var(--sp-5); flex-wrap: wrap; gap: var(--sp-3);
@@ -602,6 +620,16 @@
       color: var(--teal);
     }
     .service-card.featured .service-icon { background: rgba(15,35,64,0.08); color: var(--navy); }
+    .service-card::after {
+      content: ''; position: absolute;
+      bottom: -20px; right: -20px;
+      width: 88px; height: 88px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(42,124,124,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .service-card.featured::after {
+      background: radial-gradient(circle, rgba(15,35,64,0.07) 0%, transparent 70%);
+    }
     .service-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.15rem; font-weight: 400; color: var(--navy);
@@ -623,7 +651,14 @@
     .btn-navy:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
     /* ── EDUCATION ── */
-    #education { background: var(--cream); }
+    #education {
+      background-color: var(--cream);
+      background-image:
+        radial-gradient(ellipse 45% 55% at 5% 20%, rgba(42,124,124,0.07) 0%, transparent 60%),
+        radial-gradient(circle, rgba(15,35,64,0.04) 1px, transparent 1px);
+      background-size: auto, 32px 32px;
+      background-repeat: no-repeat, repeat;
+    }
     .edu-grid {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: var(--sp-2); margin-top: var(--sp-5);
@@ -670,7 +705,11 @@
     .btn-teal-outline:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
 
     /* ── MEDIA ── */
-    #media { background: var(--page); }
+    #media {
+      background-color: var(--page);
+      background-image: radial-gradient(circle, rgba(15,35,64,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
     .media-header {
       display: flex; justify-content: space-between; align-items: flex-end;
       margin-bottom: var(--sp-5); flex-wrap: wrap; gap: var(--sp-3);
@@ -680,11 +719,12 @@
     }
     .media-card {
       background: #fff; border-radius: 14px; padding: var(--sp-4);
-      border: 1px solid var(--rule); box-shadow: var(--sh-sm);
+      border: 1px solid var(--rule); border-left: 3px solid rgba(200,169,110,0.5); box-shadow: var(--sh-sm);
       transition: box-shadow 0.25s cubic-bezier(0.22,1,0.36,1),
-                  transform 0.2s cubic-bezier(0.22,1,0.36,1);
+                  transform 0.2s cubic-bezier(0.22,1,0.36,1),
+                  border-left-color 0.25s cubic-bezier(0.22,1,0.36,1);
     }
-    .media-card:hover { box-shadow: var(--sh-md); transform: translateY(-3px); }
+    .media-card:hover { box-shadow: var(--sh-md); transform: translateY(-3px); border-left-color: rgba(200,169,110,0.85); }
     .media-outlet {
       font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--teal); margin-bottom: var(--sp-2);
@@ -699,7 +739,14 @@
     }
 
     /* ── BLOG ── */
-    #blog { background: var(--cream); }
+    #blog {
+      background-color: var(--cream);
+      background-image:
+        radial-gradient(ellipse 50% 50% at 50% 100%, rgba(42,124,124,0.06) 0%, transparent 60%),
+        radial-gradient(circle, rgba(15,35,64,0.04) 1px, transparent 1px);
+      background-size: auto, 28px 28px;
+      background-repeat: no-repeat, repeat;
+    }
     .blog-header {
       display: flex; justify-content: space-between; align-items: flex-end;
       margin-bottom: var(--sp-5); flex-wrap: wrap; gap: var(--sp-3);
@@ -717,15 +764,16 @@
     .blog-card:hover { box-shadow: var(--sh-md); transform: translateY(-4px); }
     .blog-card:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 16px; }
     .blog-thumb {
-      height: 160px; background: linear-gradient(135deg, #0f2340, #1a4040);
+      height: 170px; background: linear-gradient(135deg, #0f2340, #1a4040);
       display: flex; align-items: center; justify-content: center;
       font-size: 2.5rem; position: relative; overflow: hidden;
     }
     .blog-thumb::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, transparent 30%, rgba(15,35,64,0.5) 100%);
+      background: linear-gradient(to bottom, transparent 20%, rgba(15,35,64,0.6) 100%);
     }
+    .blog-thumb > svg { position: relative; z-index: 1; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3)); }
     .blog-content { padding: var(--sp-4); flex: 1; display: flex; flex-direction: column; }
     .blog-tag {
       font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
@@ -747,7 +795,15 @@
     /* .blog-meta replaced by .blog-meta-row for richer layout */
 
     /* ── CONTACT ── */
-    #contact { background: var(--page); }
+    #contact {
+      background-color: var(--page);
+      background-image:
+        radial-gradient(ellipse 60% 50% at 100% 0%, rgba(42,124,124,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 0% 100%, rgba(200,169,110,0.05) 0%, transparent 50%),
+        radial-gradient(circle, rgba(15,35,64,0.035) 1px, transparent 1px);
+      background-size: auto, auto, 32px 32px;
+      background-repeat: no-repeat, no-repeat, repeat;
+    }
     .contact-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); align-items: start;
     }
@@ -871,7 +927,16 @@
     }
 
     /* ── TESTIMONIALS ── */
-    #testimonials { background: var(--navy); }
+    #testimonials { background: var(--navy); position: relative; overflow: hidden; }
+    #testimonials::before {
+      content: '\201C';
+      position: absolute; top: -20px; left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28rem; font-weight: 300; line-height: 1;
+      color: rgba(255,255,255,0.015);
+      pointer-events: none; user-select: none;
+    }
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1313,7 +1378,7 @@
 
 
 <!-- ══════════════════════ PILLARS ══════════════════════ -->
-<section id="pillars" class="section">
+<section id="pillars" class="section grain">
   <div class="section-inner">
     <div class="pillars-header reveal">
       <p class="eyebrow eyebrow-gold" style="justify-content:center;">Who Dr. Wong Is</p>
@@ -1356,7 +1421,7 @@
 
 
 <!-- ══════════════════════ RESEARCH STRIP ══════════════════════ -->
-<section id="research" class="section">
+<section id="research" class="section grain">
   <div class="section-inner">
     <div class="research-header reveal">
       <div>
@@ -1399,7 +1464,7 @@
 
 
 <!-- ══════════════════════ MYOPIA JOURNEY ══════════════════════ -->
-<section id="myopia" class="section">
+<section id="myopia" class="section grain">
   <div class="section-inner">
     <div class="journey-header reveal">
       <p class="eyebrow" style="color:rgba(61,158,158,0.9);">The Myopia Cascade</p>
@@ -1409,42 +1474,42 @@
 
     <div class="journey-timeline reveal" style="transition-delay:0.1s;">
       <div class="journey-step">
-        <div class="journey-dot j-safe">👶</div>
+        <div class="journey-dot j-safe"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(61,158,158,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12C5.5 6 9.5 4 12 4s6.5 2 10 8c-3.5 6-7.5 8-10 8s-6.5-2-10-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
         <span class="journey-step-tag">Low Risk</span>
         <p class="journey-age">Age 6–10</p>
         <p class="journey-event">Myopia begins</p>
         <p class="journey-note">Glasses. Normal life. Most parents think the story ends here.</p>
       </div>
       <div class="journey-step">
-        <div class="journey-dot j-safe">📈</div>
+        <div class="journey-dot j-safe"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(61,158,158,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
         <span class="journey-step-tag">Progressing</span>
         <p class="journey-age">Age 10–20</p>
         <p class="journey-event">Progressive myopia</p>
         <p class="journey-note">Each dioptre stretches the eye ~0.35mm. At –8D, the eye is significantly elongated.</p>
       </div>
       <div class="journey-step">
-        <div class="journey-dot j-watch">🔍</div>
+        <div class="journey-dot j-watch"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <span class="journey-step-tag">Caution</span>
         <p class="journey-age">Age 20–40</p>
         <p class="journey-event">Silent structural changes</p>
         <p class="journey-note">Retina thins. Lattice degeneration. Risk accumulates invisibly.</p>
       </div>
       <div class="journey-step">
-        <div class="journey-dot j-watch">⚠️</div>
+        <div class="journey-dot j-watch"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
         <span class="journey-step-tag">Warning</span>
         <p class="journey-age">Age 40–55</p>
         <p class="journey-event">Early complications</p>
         <p class="journey-note">Macular traction. Foveoschisis. 10.3% develop macular degeneration within 12 years.</p>
       </div>
       <div class="journey-step">
-        <div class="journey-dot j-urgent">🚨</div>
+        <div class="journey-dot j-urgent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(224,120,104,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
         <span class="journey-step-tag">Critical</span>
         <p class="journey-age">Age 50+</p>
         <p class="journey-event">Surgical emergency</p>
         <p class="journey-note">Retinal detachment. Macular hole. Surgery within hours or days.</p>
       </div>
       <div class="journey-step">
-        <div class="journey-dot j-resolved">👁️</div>
+        <div class="journey-dot j-resolved"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(61,158,158,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
         <span class="journey-step-tag">Protected</span>
         <p class="journey-age">With Dr. Wong</p>
         <p class="journey-event">Vision preserved</p>
@@ -1771,7 +1836,7 @@
 
 <!-- ══════════════════════ TESTIMONIALS ══════════════════════ -->
 <!-- PLACEHOLDER: Replace the three quotes below with real verified patient testimonials before publishing -->
-<section id="testimonials" class="section">
+<section id="testimonials" class="section grain">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;">
       <p class="eyebrow eyebrow-gold" style="justify-content:center;">Patient Experiences</p>
