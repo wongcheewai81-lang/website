@@ -24,7 +24,7 @@
     "@type": "Physician",
     "name": "Dr Chee Wai Wong",
     "url": "https://www.cheewaiwong.com",
-    "image": "https://www.cheewaiwong.com/images/dr-chee-wai-wong.jpg",
+    "image": "https://cheewaiwong.com/images/dr-chee-wai-wong.jpg",
     "description": "Specialist vitreoretinal surgeon with over 15 years of experience treating complex retinal and macular diseases",
     "medicalSpecialty": [
       "Ophthalmology",
@@ -169,7 +169,10 @@
 
     /* ── Hero ── */
     .about-hero { background: var(--navy); color: #fff; padding: 4rem 2rem 3.5rem; }
-    .about-hero-inner { max-width: 860px; margin: 0 auto; }
+    .about-hero-inner { max-width: 860px; margin: 0 auto; display: flex; gap: 3rem; align-items: flex-start; }
+    .about-hero-text { flex: 1; min-width: 0; }
+    .about-hero-photo { flex-shrink: 0; width: 200px; }
+    .about-hero-photo img { width: 100%; border-radius: 0.6rem; display: block; border: 3px solid rgba(200,169,110,0.35); }
     .about-tag { display: inline-block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,169,110,0.4); padding: 0.25rem 0.75rem; border-radius: 20px; margin-bottom: 1.25rem; }
     .about-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; margin-bottom: 1rem; }
     .about-hero h1 strong { font-weight: 600; color: var(--gold); }
@@ -232,6 +235,8 @@
 
     @media (max-width: 640px) {
       .nav-links { display: none; }
+      .about-hero-inner { flex-direction: column-reverse; gap: 1.5rem; }
+      .about-hero-photo { width: 140px; }
       .about-meta { flex-direction: column; gap: 1rem; }
       .condition-grid, .principle-grid { grid-template-columns: 1fr; }
     }
@@ -256,6 +261,7 @@
 
 <div class="about-hero">
   <div class="about-hero-inner">
+    <div class="about-hero-text">
     <div class="about-tag">Specialist Profile</div>
     <h1>Dr Chee Wai Wong<br><strong>Vitreoretinal Surgeon</strong></h1>
     <p class="lead">Specialist vitreoretinal surgeon with over 15 years of experience treating diseases of the retina, macula, and vitreous. Practising at Asia Pacific Eye Centre, Gleneagles Hospital, Singapore.</p>
@@ -276,6 +282,10 @@
         <span class="about-meta-label">Qualifications</span>
         <span class="about-meta-value">MBBS · MMed · FAMS · PhD</span>
       </div>
+    </div>
+    </div><!-- /.about-hero-text -->
+    <div class="about-hero-photo">
+      <img src="images/dr-chee-wai-wong.jpg" alt="Dr Chee Wai Wong, Vitreoretinal Surgeon, Asia Pacific Eye Centre, Gleneagles Hospital Singapore" />
     </div>
   </div>
 </div>
