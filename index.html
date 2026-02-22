@@ -2412,6 +2412,9 @@
         if (res.ok) {
           form.style.display = 'none';
           success.style.display = 'block';
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_submit', { event_category: 'contact', event_label: 'appointment_request' });
+          }
         } else {
           res.json().then(function (data) {
             netErr.style.display = 'block';
