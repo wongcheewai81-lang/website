@@ -811,6 +811,23 @@
     .btn-form:hover { background: var(--teal); transform: translateY(-1px); }
     .btn-form:active { transform: translateY(0); }
     .btn-form:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+    .btn-form:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .form-group input.invalid, .form-group select.invalid, .form-group textarea.invalid {
+      border-color: #c0392b; box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+    }
+    .form-error-msg { font-size: 0.72rem; color: #c0392b; margin-top: 3px; display: none; }
+    .form-group.has-error .form-error-msg { display: block; }
+    .form-success {
+      display: none; text-align: center; padding: 2.5rem 1rem;
+    }
+    .form-success-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(42,124,124,0.1); display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 1rem;
+    }
+    .form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--navy); margin-bottom: 0.5rem; }
+    .form-success p { font-size: 0.88rem; color: var(--muted); font-weight: 300; }
+    .form-network-error { display: none; font-size: 0.82rem; color: #c0392b; background: rgba(192,57,43,0.06); border: 1px solid rgba(192,57,43,0.15); border-radius: 8px; padding: 0.75rem 1rem; margin-top: 0.75rem; }
 
     /* ── FOOTER ── */
     footer {
@@ -1925,36 +1942,65 @@
       <div class="reveal" style="transition-delay:0.12s;">
         <div class="contact-form-wrap">
           <p class="form-title">Send Us a Message</p>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-first">First Name</label>
-              <input id="f-first" type="text" placeholder="e.g. Mei Ling" />
+
+          <!-- SUCCESS STATE -->
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2a7c7c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Message received</h3>
+            <p>Thank you — we'll be in touch within one business day. For urgent eye concerns, please call us directly on <a href="tel:+6592357063" style="color:var(--teal);">+65 9235 7063</a>.</p>
+          </div>
+
+          <!-- ─────────────────────────────────────────────────────────────────
+               Formspree: create a free form at https://formspree.io and replace
+               "YOUR_FORM_ID" in the action URL below with your actual form ID.
+               ───────────────────────────────────────────────────────────────── -->
+          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New Appointment Request — Dr Chee Wai Wong" />
+
+            <div class="form-row">
+              <div class="form-group" id="fg-first">
+                <label for="f-first">First Name <span style="color:#c0392b;">*</span></label>
+                <input id="f-first" name="first_name" type="text" placeholder="e.g. Mei Ling" autocomplete="given-name" />
+                <span class="form-error-msg">Please enter your first name.</span>
+              </div>
+              <div class="form-group" id="fg-last">
+                <label for="f-last">Last Name <span style="color:#c0392b;">*</span></label>
+                <input id="f-last" name="last_name" type="text" placeholder="e.g. Tan" autocomplete="family-name" />
+                <span class="form-error-msg">Please enter your last name.</span>
+              </div>
+            </div>
+            <div class="form-group" id="fg-email">
+              <label for="f-email">Email Address <span style="color:#c0392b;">*</span></label>
+              <input id="f-email" name="email" type="email" placeholder="e.g. meiling@email.com" autocomplete="email" />
+              <span class="form-error-msg">Please enter a valid email address.</span>
             </div>
             <div class="form-group">
-              <label for="f-last">Last Name</label>
-              <input id="f-last" type="text" placeholder="e.g. Tan" />
+              <label for="f-phone">Phone Number</label>
+              <input id="f-phone" name="phone" type="tel" placeholder="+65 XXXX XXXX" autocomplete="tel" />
             </div>
-          </div>
-          <div class="form-group">
-            <label for="f-phone">Phone Number</label>
-            <input id="f-phone" type="tel" placeholder="+65 XXXX XXXX" />
-          </div>
-          <div class="form-group">
-            <label for="f-reason">Reason for Visit</label>
-            <select id="f-reason">
-              <option value="">Please select...</option>
-              <option>Retinal Detachment (urgent)</option>
-              <option>Macular Degeneration Follow-up</option>
-              <option>Diabetic Eye Check</option>
-              <option>Second Opinion</option>
-              <option>General Retinal Consultation</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="f-msg">Message (optional)</label>
-            <textarea id="f-msg" placeholder="Tell us briefly about your symptoms or concerns..."></textarea>
-          </div>
-          <button class="btn-form" type="button">Request Appointment →</button>
+            <div class="form-group" id="fg-reason">
+              <label for="f-reason">Reason for Visit <span style="color:#c0392b;">*</span></label>
+              <select id="f-reason" name="reason">
+                <option value="">Please select...</option>
+                <option>Retinal Detachment (urgent)</option>
+                <option>Macular Degeneration Follow-up</option>
+                <option>Diabetic Eye Check</option>
+                <option>Second Opinion</option>
+                <option>General Retinal Consultation</option>
+              </select>
+              <span class="form-error-msg">Please select a reason for your visit.</span>
+            </div>
+            <div class="form-group">
+              <label for="f-msg">Message (optional)</label>
+              <textarea id="f-msg" name="message" placeholder="Tell us briefly about your symptoms or concerns..."></textarea>
+            </div>
+            <button class="btn-form" type="submit" id="formSubmitBtn">Request Appointment →</button>
+            <div class="form-network-error" id="formNetworkError">
+              Something went wrong sending your message. Please try again, or call us on <a href="tel:+6592357063" style="color:#c0392b;">+65 9235 7063</a>.
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -1972,7 +2018,7 @@
         <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#3d9e9e" stroke-width="2.2" stroke-linecap="round"/>
         <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#c8a96e" stroke-width="4" stroke-dasharray="36 9999" stroke-dashoffset="-72" stroke-linecap="round"/>
       </svg>
-      <div class="footer-left">© 2025 Dr. Chee Wai Wong · Vitreoretinal Surgeon · Asia Pacific Eye Centre, Gleneagles Hospital, Singapore</div>
+      <div class="footer-left">© 2026 Dr. Chee Wai Wong · Vitreoretinal Surgeon · Asia Pacific Eye Centre, Gleneagles Hospital, Singapore</div>
     </div>
     <nav class="footer-links" aria-label="Footer navigation">
       <a href="#about">About</a>
@@ -2103,6 +2149,82 @@
     });
     document.addEventListener('click', function (e) {
       if (!nav.contains(e.target) && !panel.contains(e.target)) close();
+    });
+  })();
+</script>
+
+<!-- ── CONTACT FORM ── -->
+<script>
+  (function () {
+    var form     = document.getElementById('contactForm');
+    var success  = document.getElementById('formSuccess');
+    var netErr   = document.getElementById('formNetworkError');
+    var submitBtn = document.getElementById('formSubmitBtn');
+    if (!form) return;
+
+    function markValid(el, groupId) {
+      var g = document.getElementById(groupId);
+      if (!g) return;
+      el.classList.remove('invalid');
+      g.classList.remove('has-error');
+    }
+
+    function markInvalid(el, groupId) {
+      var g = document.getElementById(groupId);
+      if (!g) return;
+      el.classList.add('invalid');
+      g.classList.add('has-error');
+    }
+
+    function validate() {
+      var ok = true;
+      var first  = document.getElementById('f-first');
+      var last   = document.getElementById('f-last');
+      var email  = document.getElementById('f-email');
+      var reason = document.getElementById('f-reason');
+
+      if (!first.value.trim())  { markInvalid(first,  'fg-first');  ok = false; } else { markValid(first,  'fg-first'); }
+      if (!last.value.trim())   { markInvalid(last,   'fg-last');   ok = false; } else { markValid(last,   'fg-last'); }
+      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { markInvalid(email, 'fg-email'); ok = false; } else { markValid(email, 'fg-email'); }
+      if (!reason.value)        { markInvalid(reason, 'fg-reason'); ok = false; } else { markValid(reason, 'fg-reason'); }
+      return ok;
+    }
+
+    // Live clear-on-fix for required fields
+    ['f-first','f-last','f-email','f-reason'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', function () { el.classList.remove('invalid'); document.getElementById('fg-' + id.replace('f-',''))?.classList.remove('has-error'); });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      netErr.style.display = 'none';
+      if (!validate()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          res.json().then(function (data) {
+            netErr.style.display = 'block';
+          }).catch(function () { netErr.style.display = 'block'; });
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request Appointment →';
+        }
+      }).catch(function () {
+        netErr.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Request Appointment →';
+      });
     });
   })();
 </script>
