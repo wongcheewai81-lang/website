@@ -836,6 +836,76 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--navy); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-4);
+      margin-top: var(--sp-5);
+    }
+    .tcard {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .tcard-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 3px; }
+    .tcard-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.12rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(250,247,242,0.85);
+      flex: 1;
+    }
+    .tcard-author {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .tcard-condition {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: rgba(250,247,242,0.32);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* ── FLOATING CTA ── */
+    .float-cta {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 500;
+      background: var(--teal);
+      color: #fff;
+      padding: 0.85rem 1.6rem;
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(42,124,124,0.35), 0 2px 8px rgba(42,124,124,0.2);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.35s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                  background 0.2s;
+      pointer-events: none;
+    }
+    .float-cta.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .float-cta:hover { background: var(--teal-lt); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(42,124,124,0.4); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       #navbar { padding: 0 var(--sp-5); }
@@ -857,6 +927,8 @@
       .form-row { grid-template-columns: 1fr; }
       .section { padding: var(--sp-6) var(--sp-4); }
       footer { padding: var(--sp-4); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .float-cta { bottom: 20px; right: 20px; padding: 0.75rem 1.3rem; }
     }
   </style>
 </head>
@@ -962,6 +1034,13 @@
   </svg>
 </section>
 
+
+<!-- wave: dark hero → white logo strip -->
+<div aria-hidden="true" style="background:#ffffff; overflow:hidden; height:64px; line-height:0; margin-top:-1px;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%; height:64px; display:block;">
+    <path d="M0,0 L1440,0 L1440,22 Q720,64 0,22 Z" fill="#07162a"/>
+  </svg>
+</div>
 
 <!-- ══════════════════════ LOGO STRIP ══════════════════════ -->
 <div style="background:#ffffff; border-bottom:1px solid rgba(15,35,64,0.08); display:flex; align-items:center; justify-content:center; gap:48px; padding:28px 48px; flex-wrap:wrap;">
@@ -1433,6 +1512,57 @@
 </section>
 
 
+<!-- wave: light blog → dark testimonials -->
+<div aria-hidden="true" style="background:var(--navy); overflow:hidden; height:64px; line-height:0; margin-bottom:-1px;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%; height:64px; display:block;">
+    <path d="M0,0 L1440,0 L1440,22 Q720,64 0,22 Z" fill="#f0ece4"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════ TESTIMONIALS ══════════════════════ -->
+<!-- PLACEHOLDER: Replace the three quotes below with real verified patient testimonials before publishing -->
+<section id="testimonials" class="section">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;">
+      <p class="eyebrow eyebrow-gold" style="justify-content:center;">Patient Experiences</p>
+      <h2 class="heading heading-cream">What patients say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard reveal">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">Dr. Wong's expertise gave me back my vision after a retinal detachment. His precision and calm assurance throughout were extraordinary.</p>
+        <div>
+          <div class="tcard-author">M.L.</div>
+          <div class="tcard-condition">Retinal Detachment</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.1s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">After decades of severe myopia, I finally found a surgeon who understood every complication and explained my options clearly. Life-changing.</p>
+        <div>
+          <div class="tcard-author">J.T.</div>
+          <div class="tcard-condition">High Myopia Complication</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.2s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">Professional, thorough, and genuinely caring. Dr. Wong ensured I fully understood my condition before any decision was made. I trust no one else with my eyes.</p>
+        <div>
+          <div class="tcard-author">S.K.</div>
+          <div class="tcard-condition">Macular Degeneration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave: dark testimonials → light contact -->
+<div aria-hidden="true" style="background:var(--page); overflow:hidden; height:64px; line-height:0; margin-top:-1px;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%; height:64px; display:block;">
+    <path d="M0,0 L1440,0 L1440,22 Q720,64 0,22 Z" fill="var(--navy)"/>
+  </svg>
+</div>
+
 <!-- ══════════════════════ CONTACT ══════════════════════ -->
 <section id="contact" class="section">
   <div class="section-inner">
@@ -1556,6 +1686,22 @@
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => revealObserver.observe(el));
+</script>
+
+<!-- ── FLOATING CTA ── -->
+<a href="#contact" class="float-cta" id="floatCta">Book Consultation</a>
+<script>
+  (function () {
+    var btn = document.getElementById('floatCta');
+    var hero = document.getElementById('hero');
+    function update() {
+      var scrollY = window.scrollY || window.pageYOffset;
+      var threshold = hero ? hero.offsetHeight * 0.6 : 500;
+      btn.classList.toggle('visible', scrollY > threshold);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
 </script>
 
 </body>
