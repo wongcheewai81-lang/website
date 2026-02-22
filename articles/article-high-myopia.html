@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High Myopia: Managing a Lifetime of Retinal Risk | Dr. Chee Wai Wong</title>
+  <meta name="description" content="High myopia is more than a need for thick glasses — it carries serious long-term risks to the retina and macula. Dr. Chee Wai Wong explains the complications, monitoring, and treatment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #0f2340; --teal: #2a7c7c; --teal-light: #3d9e9e; --gold: #c8a96e; --cream: #faf7f2; --text: #1a2e3b; --muted: #6b7f8a; --border: rgba(15,35,64,0.1); --urgent: #c0392b; --urgent-bg: #fdf2f0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: var(--navy) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 2rem; }
+    .article-hero { background: linear-gradient(135deg, #0e1a2e 0%, #0a2040 50%, var(--navy) 100%); padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -40px; right: 8%; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(42,90,140,0.12) 0%, transparent 65%); }
+    .article-hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+    .article-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .article-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.85rem; border-radius: 2rem; }
+    .tag-macular { background: rgba(200,169,110,0.15); color: var(--gold); border: 1px solid rgba(200,169,110,0.25); }
+    .tag-guide { background: rgba(42,124,124,0.2); color: var(--teal-light); border: 1px solid rgba(42,124,124,0.2); }
+    .tag-emergency { background: rgba(192,57,43,0.18); color: #e87060; border: 1px solid rgba(192,57,43,0.25); }
+    .tag-myopia { background: rgba(42,90,140,0.2); color: #6ea8d8; border: 1px solid rgba(42,90,140,0.25); }
+    .tag-cataract { background: rgba(120,80,160,0.18); color: #b08ed8; border: 1px solid rgba(120,80,160,0.25); }
+    .article-date { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .article-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 300; color: #fff; line-height: 1.12; margin-bottom: 1.25rem; }
+    .article-hero h1 strong { font-weight: 600; }
+    .article-hero .lead { font-size: 1.08rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.6); max-width: 640px; }
+    .article-byline { margin-top: 2rem; display: flex; align-items: center; gap: 1rem; }
+    .byline-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #fff; flex-shrink: 0; }
+    .byline-name { font-size: 0.9rem; font-weight: 500; color: #fff; }
+    .byline-cred { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 4rem; max-width: 1100px; margin: 0 auto; padding: 4rem 4rem 6rem; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 500; color: var(--navy); line-height: 1.2; margin: 2.5rem 0 1rem; }
+    .article-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--navy); margin: 2rem 0 0.75rem; }
+    .article-body p { font-size: 0.97rem; line-height: 1.8; color: var(--text); margin-bottom: 1.25rem; font-weight: 300; }
+    .article-body p strong { font-weight: 600; color: var(--navy); }
+    .article-body ul, .article-body ol { margin: 0.75rem 0 1.25rem 1.25rem; }
+    .article-body li { font-size: 0.95rem; line-height: 1.75; color: var(--text); margin-bottom: 0.4rem; font-weight: 300; }
+    .article-body li strong { font-weight: 600; }
+    .pull-quote { border-left: 3px solid var(--teal); padding: 1rem 1.5rem; margin: 2rem 0; background: rgba(42,124,124,0.04); border-radius: 0 0.75rem 0.75rem 0; }
+    .pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; font-weight: 400; color: var(--navy); line-height: 1.55; margin: 0; }
+    .pull-quote cite { display: block; font-size: 0.75rem; font-style: normal; color: var(--muted); margin-top: 0.5rem; font-family: 'DM Sans', sans-serif; }
+    .info-box { background: rgba(42,124,124,0.06); border: 1px solid rgba(42,124,124,0.15); border-radius: 1rem; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+    .info-box h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+    .info-box p, .info-box li { font-size: 0.9rem; color: var(--text); line-height: 1.65; font-weight: 300; }
+    .info-box ul { padding-left: 1rem; }
+    .info-box li { margin-bottom: 0.3rem; }
+    .urgent-box { background: var(--urgent-bg); border: 1px solid rgba(192,57,43,0.2); border-radius: 1rem; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+    .urgent-box h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--urgent); margin-bottom: 0.75rem; }
+    .urgent-box p, .urgent-box li { font-size: 0.9rem; color: var(--text); line-height: 1.65; font-weight: 300; }
+    .urgent-box ul { padding-left: 1rem; }
+    .urgent-box li { margin-bottom: 0.3rem; }
+    .decision-box { background: var(--navy); border-radius: 1rem; padding: 1.75rem; margin: 2rem 0; }
+    .decision-box h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .decision-col { margin-bottom: 1rem; }
+    .decision-col:last-child { margin-bottom: 0; }
+    .decision-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 2rem; display: inline-block; margin-bottom: 0.5rem; }
+    .dl-watch { background: rgba(42,124,124,0.25); color: var(--teal-light); }
+    .dl-operate { background: rgba(200,169,110,0.2); color: var(--gold); }
+    .dl-urgent { background: rgba(192,57,43,0.25); color: #e87060; }
+    .decision-col ul { padding-left: 1rem; }
+    .decision-col li { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.65; margin-bottom: 0.3rem; font-weight: 300; }
+    .grade-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .grade-card { background: #fff; border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.2rem; }
+    .grade-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--teal); line-height: 1; margin-bottom: 0.3rem; }
+    .grade-name { font-size: 0.78rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+    .grade-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; font-weight: 300; }
+    .surgery-step { display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .step-num { background: var(--navy); color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-body h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+    .step-body p { font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.6; font-weight: 300; }
+    .stat-callout { background: var(--navy); border-radius: 1rem; padding: 1.5rem; margin: 1.75rem 0; text-align: center; }
+    .stat-callout .n { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; }
+    .stat-callout .l { font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 300; margin-top: 0.3rem; line-height: 1.5; }
+    .sidebar-card { background: #fff; border-radius: 1rem; border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .sidebar-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .sidebar-stat { text-align: center; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .sidebar-stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .sidebar-stat .n { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--navy); }
+    .sidebar-stat .l { font-size: 0.72rem; color: var(--muted); line-height: 1.5; }
+    .btn-book { display: block; background: var(--navy); color: #fff; text-align: center; padding: 0.85rem 1rem; border-radius: 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-top: 1rem; transition: background 0.2s; }
+    .btn-book:hover { background: var(--teal); }
+    .toc-list { list-style: none; }
+    .toc-list li { border-bottom: 1px solid var(--border); }
+    .toc-list li:last-child { border-bottom: none; }
+    .toc-list a { display: block; font-size: 0.82rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; transition: color 0.2s; font-weight: 300; }
+    .toc-list a:hover { color: var(--teal); }
+    .article-footer-cta { background: var(--navy); padding: 4rem; text-align: center; }
+    .article-footer-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; color: #fff; margin-bottom: 0.75rem; }
+    .article-footer-cta h2 strong { font-weight: 600; }
+    .article-footer-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.45); font-weight: 300; max-width: 480px; margin: 0 auto 2rem; line-height: 1.7; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--navy); padding: 0.85rem 2.25rem; border-radius: 3rem; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.25s; }
+    .btn-gold:hover { background: #d9bf91; transform: translateY(-2px); }
+    .related-articles { background: var(--cream); padding: 4rem; }
+    .related-inner { max-width: 1100px; margin: 0 auto; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+    .related-card { background: #fff; border-radius: 1rem; border: 1px solid var(--border); padding: 1.5rem; text-decoration: none; transition: box-shadow 0.25s, transform 0.2s; display: block; }
+    .related-card:hover { box-shadow: 0 8px 32px rgba(15,35,64,0.1); transform: translateY(-3px); }
+    .related-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+    .related-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--navy); line-height: 1.35; margin-bottom: 0.4rem; }
+    .related-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; font-weight: 300; }
+    footer { background: #07141f; color: rgba(255,255,255,0.35); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; flex-wrap: wrap; gap: 1rem; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: var(--teal-light); }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
+      .article-hero { padding: 7rem 1.5rem 4rem; }
+      .article-layout { grid-template-columns: 1fr; gap: 0; padding: 2.5rem 1.5rem 4rem; }
+      .article-sidebar { order: -1; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .grade-grid { grid-template-columns: 1fr; }
+      .related-articles, .article-footer-cta { padding: 3rem 1.5rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Dr. <span>Chee Wai</span> Wong</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../index.html#education">Patient Info</a></li>
+    <li><a href="../index.html#research">Research</a></li>
+    <li><a href="../blog.html">Eye Health Insights</a></li>
+    <li><a href="../media.html">Media</a></li>
+    <li><a href="../index.html#contact" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-meta">
+      <span class="article-tag tag-myopia">High Myopia</span>
+      <span class="article-tag tag-guide">Patient Guide</span>
+      <span class="article-date">For patients, parents & referring clinicians</span>
+    </div>
+    <h1>High Myopia:<br><strong>Managing a Lifetime<br>of Retinal Risk</strong></h1>
+    <p class="lead">High myopia is not simply a strong spectacle prescription — it is a structural condition that reshapes the eye and carries lifelong risks to the retina, macula, and optic nerve. Understanding those risks is the first step in managing them effectively.</p>
+    <div class="article-byline">
+      <div class="byline-avatar">CW</div>
+      <div>
+        <p class="byline-name">Dr. Chee Wai Wong</p>
+        <p class="byline-cred">Vitreoretinal Surgeon · MBBS MMed FAMS PhD · Asia Pacific Eye Centre, Gleneagles Hospital</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-layout">
+  <article class="article-body">
+
+    <p>Myopia — short-sightedness — affects an extraordinary proportion of the population in Singapore and across East Asia. Studies consistently show that 80–90% of young adults in this region are myopic, driven by a combination of genetic predisposition and lifestyle factors including near work and reduced outdoor time. Globally, myopia is projected to affect half the world's population by 2050.</p>
+
+    <p>For most people, myopia is a manageable inconvenience corrected with spectacles, contact lenses, or refractive surgery. But for those with <strong>high myopia</strong> — conventionally defined as a prescription of –6.00 dioptres or more, or an axial length exceeding 26 millimetres — the condition represents something fundamentally different. The elongated eye is under chronic mechanical stress, and the structural consequences accumulate over a lifetime.</p>
+
+    <h2 id="what-is-high-myopia">What Changes in a Highly Myopic Eye</h2>
+    <p>The fundamental problem in high myopia is axial elongation — the eye is physically longer than it should be. A normal adult eye measures approximately 23–24 mm from front to back. A highly myopic eye may measure 27, 28, or even 32 mm. Every millimetre of additional length stretches the retina, choroid, and sclera over a larger area, thinning them in the process.</p>
+    <p>This thinning has consequences. The retinal periphery becomes fragile and prone to tears. The macula — the central, most important zone of the retina — is subject to mechanical distortion and compromised blood supply. The optic nerve enters the eye at an increasingly oblique angle as the eye elongates, predisposing to glaucomatous damage. And the sclera itself can develop staphylomata — outward bulging areas of thinned, weakened wall — particularly at the posterior pole.</p>
+
+    <div class="pull-quote">
+      <p>"High myopia does not stop progressing when the prescription stabilises. The eye continues to age differently from a normal eye. Patients with high myopia need lifelong specialist surveillance — not just a new pair of glasses every two years."</p>
+      <cite>— Dr. Chee Wai Wong</cite>
+    </div>
+
+    <h2 id="complications">The Complication Cascade</h2>
+    <p>Myopic macular degeneration (MMD) is the most feared complication of high myopia, and the leading cause of irreversible vision loss in patients with high myopia. It progresses through recognisable stages, visible on fundus examination and OCT.</p>
+
+    <div class="grade-grid">
+      <div class="grade-card">
+        <p class="grade-name" style="font-size:0.9rem;">Tessellated fundus</p>
+        <p class="grade-desc">Earliest change — the retinal pigment epithelium becomes visible through a thinned retina, giving a tiled appearance. Usually no visual impact but signals elevated risk.</p>
+      </div>
+      <div class="grade-card">
+        <p class="grade-name" style="font-size:0.9rem;">Diffuse chorioretinal atrophy</p>
+        <p class="grade-desc">Loss of RPE and choriocapillaris over a broader area. Central vision begins to be affected as atrophy involves the macula.</p>
+      </div>
+      <div class="grade-card">
+        <p class="grade-name" style="font-size:0.9rem;">Lacquer cracks</p>
+        <p class="grade-desc">Breaks in Bruch's membrane caused by mechanical stretching. These can bleed acutely (subretinal haemorrhage) and are associated with subsequent CNV development.</p>
+      </div>
+      <div class="grade-card">
+        <p class="grade-name" style="font-size:0.9rem;">Myopic CNV</p>
+        <p class="grade-desc">Choroidal neovascularisation — abnormal blood vessel growth through lacquer cracks. Causes acute central vision loss. Treatable with anti-VEGF injections.</p>
+      </div>
+    </div>
+
+    <p>Beyond MMD, high myopia carries substantially elevated risks of:</p>
+    <ul>
+      <li><strong>Retinal detachment</strong> — up to 10 times the risk of the general population; the stretched peripheral retina is prone to lattice degeneration and tears</li>
+      <li><strong>Myopic traction maculopathy</strong> — vitreoretinal traction causing the macula to split (foveoschisis) or develop a hole; affects approximately 7% of highly myopic eyes over time</li>
+      <li><strong>Glaucoma</strong> — the structural vulnerability of the optic nerve head in myopic eyes increases susceptibility</li>
+      <li><strong>Cataract</strong> — nuclear cataracts develop earlier and progress faster in highly myopic eyes</li>
+      <li><strong>Posterior staphyloma</strong> — progressive outward bulging of the posterior sclera, causing macular distortion</li>
+    </ul>
+
+    <div class="stat-callout">
+      <p class="n">1 in 10</p>
+      <p class="l">Highly myopic eyes develop significant macular complications over a 12-year follow-up<br>Risk rises sharply above –8.00 dioptres and with axial lengths exceeding 28 mm</p>
+    </div>
+
+    <h2 id="children">For Parents: Slowing Progression in Children</h2>
+    <p>The most effective time to intervene in myopia is during childhood, when the eye is still growing. Once the prescription has stabilised in adulthood, the elongation has already occurred. The two most evidence-based strategies for slowing axial elongation in myopic children are:</p>
+
+    <h3>Low-dose atropine eye drops</h3>
+    <p>Nightly application of atropine 0.01% or 0.05% has been shown in multiple randomised trials (including landmark Singapore-based studies) to slow myopia progression by 50–70% compared to placebo, with minimal side effects at low doses. Treatment is typically continued from age 6–8 through adolescence, until progression stabilises. Children on atropine still require spectacle or contact lens correction; the drops slow the progression, they do not reverse existing myopia.</p>
+
+    <h3>Orthokeratology (Ortho-K)</h3>
+    <p>Overnight rigid contact lenses that temporarily reshape the cornea, allowing spectacle-free daytime vision. Beyond the refractive benefit, orthokeratology lenses reduce peripheral hyperopic defocus on the retina — the signal thought to drive axial elongation. Multiple studies show significant reductions in axial elongation compared to standard spectacles. They are suitable for motivated children from approximately age 8–10 and require careful hygiene compliance to minimise infection risk.</p>
+
+    <div class="info-box">
+      <h4>Outdoor time matters</h4>
+      <p>Epidemiological studies consistently show that children who spend more time outdoors have lower rates of myopia onset and slower progression. The mechanism appears to involve bright outdoor light stimulating dopamine release in the retina, which inhibits axial elongation. Current evidence suggests at least 90 minutes of outdoor time per day provides meaningful protective effect — independent of near work habits.</p>
+    </div>
+
+    <h2 id="adults">For Adults: Monitoring and Surveillance</h2>
+    <p>For adults with established high myopia, the goal shifts from prevention to surveillance — detecting complications early, when treatment is most effective. The following monitoring programme is appropriate for most patients with high myopia (–6.00 or above):</p>
+
+    <div class="surgery-step"><span class="step-num">1</span><div class="step-body"><h4>Annual dilated fundus examination</h4><p>A dilated exam allows examination of the peripheral retina (where tears are most likely) and the posterior pole. This is the cornerstone of surveillance. Intervals may be shortened to 6-monthly if significant peripheral changes or macular pathology is present.</p></div></div>
+    <div class="surgery-step"><span class="step-num">2</span><div class="step-body"><h4>OCT of the macula</h4><p>Optical coherence tomography provides detailed assessment of macular architecture, detecting early foveoschisis, lamellar holes, and epiretinal membranes — changes that may not be visible on fundus examination.</p></div></div>
+    <div class="surgery-step"><span class="step-num">3</span><div class="step-body"><h4>Amsler grid at home</h4><p>A simple grid test that patients can use between appointments to monitor for new central distortion or missing areas of vision — the hallmarks of myopic CNV. Any change should prompt same-week specialist review.</p></div></div>
+    <div class="surgery-step"><span class="step-num">4</span><div class="step-body"><h4>Intraocular pressure monitoring</h4><p>Given the elevated glaucoma risk in highly myopic eyes, IOP should be checked regularly. Standard IOP measurements may underestimate true pressure in myopic eyes due to thinner corneas — a factor the ophthalmologist should account for.</p></div></div>
+
+    <h2 id="treatment">When Treatment Is Needed</h2>
+    <p>The specific treatment depends on the complication encountered:</p>
+    <ul>
+      <li><strong>Peripheral retinal tears</strong> — prophylactic laser photocoagulation or cryotherapy to seal the break before it causes a detachment. Straightforward outpatient procedure.</li>
+      <li><strong>Retinal detachment</strong> — surgical repair (vitrectomy or scleral buckling, see retinal detachment article). Urgency depends on whether the macula is involved.</li>
+      <li><strong>Myopic CNV</strong> — intravitreal anti-VEGF injections (ranibizumab, bevacizumab, or aflibercept). Myopic CNV typically responds well to anti-VEGF with fewer injections needed compared to age-related macular degeneration. Early treatment is critical to prevent irreversible scarring.</li>
+      <li><strong>Myopic traction maculopathy / foveoschisis</strong> — vitrectomy to relieve vitreoretinal traction, sometimes combined with ILM peeling. Indicated when progressive visual loss or a full-thickness macular hole is developing.</li>
+      <li><strong>Cataract</strong> — phacoemulsification, with careful attention to intraocular lens selection in highly myopic eyes (biometry is more complex in long eyes).</li>
+    </ul>
+
+    <div class="urgent-box">
+      <h4>Seek urgent review if you experience</h4>
+      <ul>
+        <li>Sudden new floaters or flashes of light</li>
+        <li>A shadow, curtain, or veil across any part of your vision</li>
+        <li>New central distortion or a blurry spot in your central vision</li>
+        <li>A dark spot appearing in your central vision (may indicate myopic CNV or haemorrhage)</li>
+      </ul>
+    </div>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <h3>My prescription has not changed in ten years. Am I safe?</h3>
+    <p>Prescription stability does not mean the eye has stopped changing. Axial length — the physical length of the eye — can continue to increase even when the measured prescription appears stable. More importantly, the degenerative changes associated with high myopia (retinal thinning, lacquer cracks, macular changes) develop independent of refraction changes. Continued specialist surveillance is important regardless of prescription stability.</p>
+
+    <h3>Can I have LASIK if I have high myopia?</h3>
+    <p>LASIK and other refractive surgeries correct the optical prescription — they do not alter the underlying axial length or reduce the retinal risks of high myopia. A successfully treated patient who no longer needs thick spectacles still has a highly myopic eye with all its associated risks and surveillance requirements. This is an important point that is sometimes not communicated clearly in the context of refractive surgery.</p>
+
+    <h3>My child has –3.00 dioptre myopia at age 10. Should I be worried?</h3>
+    <p>Early onset and rapid progression are the most important risk factors for eventually reaching high myopia. A child with –3.00 at age 10 is at meaningful risk of reaching –6.00 or beyond by adulthood without intervention. This is exactly the scenario where myopia control (atropine and/or orthokeratology) should be discussed with a specialist. The goal is to slow progression before the eye elongates to the threshold where significant complications become likely.</p>
+
+    <h3>Is there any treatment to reduce existing axial length?</h3>
+    <p>Currently, no treatment reliably reduces established axial length in adults. Scleral reinforcement surgery (posterior scleral reinforcement) has been studied for progressive high myopia in children, but it is not widely performed and evidence for long-term benefit remains limited. Research into scleral cross-linking and other structural approaches is ongoing.</p>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <p class="sidebar-label">On This Page</p>
+      <ul class="toc-list">
+        <li><a href="#what-is-high-myopia">What changes in a myopic eye</a></li>
+        <li><a href="#complications">Complication cascade</a></li>
+        <li><a href="#children">For parents: slowing progression</a></li>
+        <li><a href="#adults">For adults: surveillance</a></li>
+        <li><a href="#treatment">When treatment is needed</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <p class="sidebar-label">At a Glance</p>
+      <div class="sidebar-stat"><p class="n">80–90%</p><p class="l">East Asian young adults affected by myopia</p></div>
+      <div class="sidebar-stat"><p class="n">7%</p><p class="l">Of highly myopic eyes develop traction maculopathy</p></div>
+      <div class="sidebar-stat"><p class="n">50–70%</p><p class="l">Slowing of progression with low-dose atropine</p></div>
+      <a href="../index.html#contact" class="btn-book">Book a Consultation</a>
+    </div>
+    <div class="sidebar-card">
+      <p class="sidebar-label">Key point</p>
+      <p style="font-size:0.85rem; color:var(--text); font-weight:300; line-height:1.65;">Prescription stability does not mean the eye has stopped changing. <strong style="color:var(--navy);">Annual dilated fundus examination</strong> is recommended for all adults with high myopia, regardless of symptom status.</p>
+    </div>
+    <div class="sidebar-card">
+      <p class="sidebar-label">Related Reading</p>
+      <p style="font-size:0.82rem; color:var(--muted); margin-bottom:0.75rem; font-weight:300;">→ <a href="article-retinal-detachment.html" style="color:var(--teal); text-decoration:none;">Retinal Detachment Guide</a></p>
+      <p style="font-size:0.82rem; color:var(--muted); margin-bottom:0.75rem; font-weight:300;">→ <a href="article-epiretinal-membrane.html" style="color:var(--teal); text-decoration:none;">Epiretinal Membrane Guide</a></p>
+      <p style="font-size:0.82rem; color:var(--muted); font-weight:300;">→ <a href="article-floaters.html" style="color:var(--teal); text-decoration:none;">Eye Floaters & PVD</a></p>
+    </div>
+  </aside>
+</div>
+
+<section class="article-footer-cta">
+  <h2>Living with<br><strong>high myopia?</strong></h2>
+  <p>Annual specialist surveillance is the most important step high myopia patients can take to protect their vision. Dr. Wong provides comprehensive retinal assessment and myopia management for patients of all ages.</p>
+  <a href="../index.html#contact" class="btn-gold">Book an Assessment</a>
+</section>
+
+<section class="related-articles">
+  <div class="related-inner">
+    <p style="font-size:0.68rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--teal); margin-bottom:0.5rem;">Further Reading</p>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:var(--navy);">More from Dr. Wong</h2>
+    <div class="related-grid">
+      <a href="article-retinal-detachment.html" class="related-card">
+        <p class="related-tag">Surgical Emergency</p>
+        <p class="related-title">Retinal Detachment: Warning Signs, Surgery & Recovery</p>
+        <p class="related-desc">High myopia is one of the most significant risk factors for retinal detachment. Know the warning signs.</p>
+      </a>
+      <a href="article-floaters.html" class="related-card">
+        <p class="related-tag">Patient Guide</p>
+        <p class="related-title">Eye Floaters: When to Panic, When Not To</p>
+        <p class="related-desc">Floaters are common in myopic eyes. Understanding when they signal something serious could protect your vision.</p>
+      </a>
+      <a href="article-epiretinal-membrane.html" class="related-card">
+        <p class="related-tag">Macular Disease</p>
+        <p class="related-title">Epiretinal Membrane: When to Watch, When to Operate</p>
+        <p class="related-desc">Highly myopic eyes have an elevated risk of epiretinal membrane formation. What to watch for and when to act.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Dr. Chee Wai Wong · Asia Pacific Eye Centre, Gleneagles Hospital, Singapore</span>
+  <span><a href="../index.html#about">About</a> · <a href="../index.html#services">Services</a> · <a href="../index.html#research">Research</a> · <a href="../blog.html">Eye Health Insights</a> · <a href="../index.html#contact">Contact</a></span>
+</footer>
+</body>
+</html>
