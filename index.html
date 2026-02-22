@@ -446,15 +446,23 @@
     .research-header .heading { margin-bottom: 0; }
     .research-grid {
       display: grid; grid-template-columns: repeat(4,1fr);
-      gap: 1px; background: rgba(255,255,255,0.06);
-      border-radius: 12px; overflow: hidden;
+      gap: var(--sp-2);
     }
     .research-stat {
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
       padding: var(--sp-4) var(--sp-3); text-align: center;
-      transition: background 0.25s;
+      transition: background 0.25s, border-color 0.25s,
+                  transform 0.3s cubic-bezier(0.22,1,0.36,1);
     }
-    .research-stat:hover { background: rgba(255,255,255,0.06); }
+    .research-stat:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-3px);
+    }
     .research-stat-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.2rem; font-weight: 300; color: var(--gold); line-height: 1; display: block;
@@ -583,9 +591,10 @@
       width: 44px; height: 44px; border-radius: 10px;
       background: rgba(42,124,124,0.08);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; margin-bottom: var(--sp-3);
+      margin-bottom: var(--sp-3);
+      color: var(--teal);
     }
-    .service-card.featured .service-icon { background: rgba(15,35,64,0.08); }
+    .service-card.featured .service-icon { background: rgba(15,35,64,0.08); color: var(--navy); }
     .service-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.15rem; font-weight: 400; color: var(--navy);
@@ -1009,15 +1018,15 @@
     </div>
     <div class="hero-stats-row">
       <div class="hero-stat">
-        <span class="hero-stat-num">116+</span>
+        <span class="hero-stat-num" data-count-to="116" data-suffix="+">116+</span>
         <span class="hero-stat-label">Publications</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-num">H-36</span>
+        <span class="hero-stat-num" data-count-to="36" data-prefix="H-">H-36</span>
         <span class="hero-stat-label">H-Index</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-num">Top 2%</span>
+        <span class="hero-stat-num" data-count-to="2" data-prefix="Top " data-suffix="%">Top 2%</span>
         <span class="hero-stat-label">Stanford / Elsevier</span>
       </div>
     </div>
@@ -1191,19 +1200,19 @@
     </div>
     <div class="research-grid reveal" style="transition-delay:0.1s;">
       <div class="research-stat">
-        <span class="research-stat-num">116+</span>
+        <span class="research-stat-num" data-count-to="116" data-suffix="+">116+</span>
         <span class="research-stat-label">Peer-reviewed papers</span>
       </div>
       <div class="research-stat">
-        <span class="research-stat-num">H-36</span>
+        <span class="research-stat-num" data-count-to="36" data-prefix="H-">H-36</span>
         <span class="research-stat-label">H-Index</span>
       </div>
       <div class="research-stat">
-        <span class="research-stat-num">4,491</span>
+        <span class="research-stat-num" data-count-to="4491" data-comma="true">4,491</span>
         <span class="research-stat-label">Total citations</span>
       </div>
       <div class="research-stat">
-        <span class="research-stat-num">Top 2%</span>
+        <span class="research-stat-num" data-count-to="2" data-prefix="Top " data-suffix="%">Top 2%</span>
         <span class="research-stat-label">Stanford / Elsevier 2022</span>
       </div>
     </div>
@@ -1303,22 +1312,46 @@
 
     <div class="services-grid reveal" style="transition-delay:0.1s;">
       <div class="service-card featured">
-        <div class="service-icon">👁️</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M15 9l1.5-1.5" stroke-width="1.2" opacity="0.7"/>
+          </svg>
+        </div>
         <div class="service-name">Retinal Detachment Surgery</div>
         <p class="service-desc">A medical emergency. Dr. Wong offers emergency and elective surgical repair using vitrectomy and advanced techniques to restore and preserve vision.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">🔬</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="5" stroke-width="1"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
         <div class="service-name">Macular Degeneration</div>
         <p class="service-desc">Age-related macular degeneration (AMD) is the leading cause of vision loss in seniors. Dr. Wong provides intravitreal injections and personalised management plans.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">💉</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2c0 0-7 9.5-7 13.5a7 7 0 0 0 14 0C19 11.5 12 2 12 2z"/>
+            <path d="M9 16a3.5 3.5 0 0 0 4.5 0" stroke-width="1.2" opacity="0.7"/>
+          </svg>
+        </div>
         <div class="service-name">Diabetic Retinopathy</div>
         <p class="service-desc">Patients with diabetes are at high risk for retinal damage. Dr. Wong provides laser treatment, intravitreal injections, and surgical care tailored to your condition.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">🩺</div>
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="5" y="2" width="14" height="20" rx="2"/>
+            <path d="M9 7h6"/>
+            <path d="M9 11h6"/>
+            <path d="M9 15h4"/>
+          </svg>
+        </div>
         <div class="service-name">Retinal Consultations</div>
         <p class="service-desc">Comprehensive retinal assessment including OCT imaging, fundus photography, fluorescein angiography, and personalised care planning.</p>
       </div>
@@ -1686,6 +1719,53 @@
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => revealObserver.observe(el));
+</script>
+
+<!-- ── STAT COUNTER ANIMATION ── -->
+<script>
+  (function () {
+    function animateCounter(el) {
+      var target = parseInt(el.dataset.countTo, 10);
+      var prefix = el.dataset.prefix || '';
+      var suffix = el.dataset.suffix || '';
+      var useComma = el.hasAttribute('data-comma');
+      var duration = 1400;
+      var startTime = null;
+
+      function format(n) {
+        var rounded = Math.round(n);
+        if (useComma) return rounded.toLocaleString('en-US');
+        return rounded.toString();
+      }
+
+      function tick(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var elapsed = timestamp - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + format(ease * target) + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = prefix + format(target) + suffix;
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    var counterEls = document.querySelectorAll('[data-count-to]');
+    var counterObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counterEls.forEach(function (el) { counterObs.observe(el); });
+  })();
 </script>
 
 <!-- ── FLOATING CTA ── -->
