@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f2340'/%3E%3Cpath d='M 22 4 C 3 4 3 28 22 28' fill='none' stroke='%233d9e9e' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M 22 4 C 3 4 3 28 22 28' fill='none' stroke='%23c8a96e' stroke-width='5' stroke-dasharray='7 9999' stroke-dashoffset='-12' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age-Related Macular Degeneration (AMD): What You Need to Know | Dr. Chee Wai Wong</title>
+  <meta name="description" content="Singapore vitreoretinal surgeon Dr. Chee Wai Wong explains AMD — the difference between dry and wet AMD, risk factors, symptoms, and modern treatments including anti-VEGF injections." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #0f2340; --teal: #2a7c7c; --teal-light: #3d9e9e; --gold: #c8a96e; --cream: #faf7f2; --text: #1a2e3b; --muted: #6b7f8a; --border: rgba(15,35,64,0.1); --urgent: #c0392b; --urgent-bg: #fdf2f0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: var(--navy) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 2rem; }
+    .article-hero { background: linear-gradient(135deg, #0a1428 0%, #0f2340 50%, #1a2a10 100%); padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -40px; right: 8%; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 65%); }
+    .article-hero::after { content: ''; position: absolute; bottom: -60px; left: 5%; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(42,124,124,0.07) 0%, transparent 65%); }
+    .article-hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+    .article-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .article-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.85rem; border-radius: 2rem; }
+    .tag-macular { background: rgba(200,169,110,0.15); color: var(--gold); border: 1px solid rgba(200,169,110,0.25); }
+    .tag-guide { background: rgba(42,124,124,0.2); color: var(--teal-light); border: 1px solid rgba(42,124,124,0.2); }
+    .tag-emergency { background: rgba(192,57,43,0.18); color: #e87060; border: 1px solid rgba(192,57,43,0.25); }
+    .tag-myopia { background: rgba(42,90,140,0.2); color: #6ea8d8; border: 1px solid rgba(42,90,140,0.25); }
+    .tag-cataract { background: rgba(120,80,160,0.18); color: #b08ed8; border: 1px solid rgba(120,80,160,0.25); }
+    .article-date { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .article-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 300; color: #fff; line-height: 1.12; margin-bottom: 1.25rem; }
+    .article-hero h1 strong { font-weight: 600; }
+    .article-hero .lead { font-size: 1.08rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.6); max-width: 640px; }
+    .article-byline { margin-top: 2rem; display: flex; align-items: center; gap: 1rem; }
+    .byline-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #fff; flex-shrink: 0; }
+    .byline-name { font-size: 0.9rem; font-weight: 500; color: #fff; }
+    .byline-cred { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 4rem; max-width: 1100px; margin: 0 auto; padding: 4rem 4rem 6rem; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 500; color: var(--navy); line-height: 1.2; margin: 2.5rem 0 1rem; }
+    .article-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--navy); margin: 2rem 0 0.75rem; }
+    .article-body p { font-size: 0.97rem; line-height: 1.8; color: var(--text); margin-bottom: 1.25rem; font-weight: 300; }
+    .article-body p strong { font-weight: 600; color: var(--navy); }
+    .article-body ul, .article-body ol { margin: 0.75rem 0 1.25rem 1.25rem; }
+    .article-body li { font-size: 0.95rem; line-height: 1.75; color: var(--text); margin-bottom: 0.4rem; font-weight: 300; }
+    .article-body li strong { font-weight: 600; }
+    .pull-quote { border-left: 3px solid var(--teal); padding: 1rem 1.5rem; margin: 2rem 0; background: rgba(42,124,124,0.04); border-radius: 0 0.75rem 0.75rem 0; }
+    .pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; font-weight: 400; color: var(--navy); line-height: 1.55; margin: 0; }
+    .pull-quote cite { display: block; font-size: 0.75rem; font-style: normal; color: var(--muted); margin-top: 0.5rem; font-family: 'DM Sans', sans-serif; }
+    .info-box { background: rgba(42,124,124,0.06); border: 1px solid rgba(42,124,124,0.15); border-radius: 1rem; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+    .info-box h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+    .info-box p, .info-box li { font-size: 0.9rem; color: var(--text); line-height: 1.65; font-weight: 300; }
+    .info-box ul { padding-left: 1rem; }
+    .info-box li { margin-bottom: 0.3rem; }
+    .urgent-box { background: var(--urgent-bg); border: 1px solid rgba(192,57,43,0.2); border-radius: 1rem; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+    .urgent-box h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--urgent); margin-bottom: 0.75rem; }
+    .urgent-box p, .urgent-box li { font-size: 0.9rem; color: var(--text); line-height: 1.65; font-weight: 300; }
+    .urgent-box ul { padding-left: 1rem; }
+    .urgent-box li { margin-bottom: 0.3rem; }
+    .decision-box { background: var(--navy); border-radius: 1rem; padding: 1.75rem; margin: 2rem 0; }
+    .decision-box h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .decision-col { margin-bottom: 1rem; }
+    .decision-col:last-child { margin-bottom: 0; }
+    .decision-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 2rem; display: inline-block; margin-bottom: 0.5rem; }
+    .dl-watch { background: rgba(42,124,124,0.25); color: var(--teal-light); }
+    .dl-operate { background: rgba(200,169,110,0.2); color: var(--gold); }
+    .dl-urgent { background: rgba(192,57,43,0.25); color: #e87060; }
+    .decision-col ul { padding-left: 1rem; }
+    .decision-col li { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.65; margin-bottom: 0.3rem; font-weight: 300; }
+    .grade-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .grade-card { background: #fff; border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.2rem; }
+    .grade-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--teal); line-height: 1; margin-bottom: 0.3rem; }
+    .grade-name { font-size: 0.78rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+    .grade-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; font-weight: 300; }
+    .surgery-step { display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+    .step-num { background: var(--navy); color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-body h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+    .step-body p { font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.6; font-weight: 300; }
+    .stat-callout { background: var(--navy); border-radius: 1rem; padding: 1.5rem; margin: 1.75rem 0; text-align: center; }
+    .stat-callout .n { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; }
+    .stat-callout .l { font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 300; margin-top: 0.3rem; line-height: 1.5; }
+    .sidebar-card { background: #fff; border-radius: 1rem; border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .sidebar-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .sidebar-stat { text-align: center; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .sidebar-stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .sidebar-stat .n { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--navy); }
+    .sidebar-stat .l { font-size: 0.72rem; color: var(--muted); line-height: 1.5; }
+    .btn-book { display: block; background: var(--navy); color: #fff; text-align: center; padding: 0.85rem 1rem; border-radius: 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-top: 1rem; transition: background 0.2s; }
+    .btn-book:hover { background: var(--teal); }
+    .toc-list { list-style: none; }
+    .toc-list li { border-bottom: 1px solid var(--border); }
+    .toc-list li:last-child { border-bottom: none; }
+    .toc-list a { display: block; font-size: 0.82rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; transition: color 0.2s; font-weight: 300; }
+    .toc-list a:hover { color: var(--teal); }
+    .article-footer-cta { background: var(--navy); padding: 4rem; text-align: center; }
+    .article-footer-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; color: #fff; margin-bottom: 0.75rem; }
+    .article-footer-cta h2 strong { font-weight: 600; }
+    .article-footer-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.45); font-weight: 300; max-width: 480px; margin: 0 auto 2rem; line-height: 1.7; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--navy); padding: 0.85rem 2.25rem; border-radius: 3rem; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: background 0.25s, transform 0.25s; }
+    .btn-gold:hover { background: #d9bf91; transform: translateY(-2px); }
+    .related-articles { background: var(--cream); padding: 4rem; }
+    .related-inner { max-width: 1100px; margin: 0 auto; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+    .related-card { background: #fff; border-radius: 1rem; border: 1px solid var(--border); padding: 1.5rem; text-decoration: none; transition: box-shadow 0.25s, transform 0.2s; display: block; }
+    .related-card:hover { box-shadow: 0 8px 32px rgba(15,35,64,0.1); transform: translateY(-3px); }
+    .related-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+    .related-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--navy); line-height: 1.35; margin-bottom: 0.4rem; }
+    .related-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; font-weight: 300; }
+    footer { background: #07141f; color: rgba(255,255,255,0.35); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; flex-wrap: wrap; gap: 1rem; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: var(--teal-light); }
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 500; width: 50px; height: 50px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,0.38); text-decoration: none; transition: background 0.2s, transform 0.2s; }
+    .wa-float:hover { background: #20bd5a; transform: translateY(-2px); }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
+      .article-hero { padding: 7rem 1.5rem 4rem; }
+      .article-layout { grid-template-columns: 1fr; gap: 0; padding: 2.5rem 1.5rem 4rem; }
+      .article-sidebar { order: -1; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .grade-grid { grid-template-columns: 1fr; }
+      .related-articles, .article-footer-cta { padding: 3rem 1.5rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Dr. <span>Chee Wai</span> Wong</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../index.html#education">Patient Info</a></li>
+    <li><a href="../index.html#research">Research</a></li>
+    <li><a href="../blog.html">Eye Health Insights</a></li>
+    <li><a href="../media.html">Media</a></li>
+    <li><a href="../fees.html">Fees</a></li>
+    <li><a href="../index.html#contact" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-meta">
+      <span class="article-tag tag-macular">Macular Disease</span>
+      <span class="article-tag tag-guide">Patient Guide</span>
+      <span class="article-date">For patients &amp; referring clinicians</span>
+    </div>
+    <h1>Age-Related Macular Degeneration:<br><strong>What You Need to Know</strong></h1>
+    <p class="lead">AMD is the leading cause of irreversible central vision loss in people over 50. But with early detection and modern anti-VEGF treatment, many patients can maintain useful vision for years. The key is awareness and timely action.</p>
+    <div class="article-byline">
+      <div class="byline-avatar">CW</div>
+      <div>
+        <p class="byline-name">Dr. Chee Wai Wong</p>
+        <p class="byline-cred">Vitreoretinal Surgeon · MBBS MMed FAMS PhD · Asia Pacific Eye Centre, Gleneagles Hospital</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-layout">
+  <article class="article-body">
+
+    <p>Age-related macular degeneration, or AMD, is the leading cause of irreversible central vision loss in people over the age of 50 in the developed world. It is a condition I see every day in my practice, and it is one that generates a great deal of worry among patients and their families. That worry is understandable. The macula is the part of the retina responsible for sharp, central vision — the vision you rely on for reading, recognising faces, and driving. When it deteriorates, daily life becomes significantly more difficult.</p>
+
+    <p>But here is what I want patients to know from the outset: while AMD is a serious condition, it is not a death sentence for your vision. With early detection and modern treatments, many patients can maintain useful vision for years. The key, as with so many things in medicine, is awareness and timely action.</p>
+
+    <h2 id="what-is-the-macula">What Is the Macula, and Why Does It Matter?</h2>
+
+    <p>The retina is the thin layer of tissue at the back of the eye that captures light and converts it into the nerve signals your brain interprets as vision. The macula is a small, specialised area at the very centre of the retina, roughly the size of a pinhead. Despite its tiny size, it is responsible for the detailed central vision that allows you to read this article, recognise a friend across the room, or thread a needle.</p>
+
+    <p>The rest of the retina handles your peripheral (side) vision. This is why patients with advanced AMD can often still move around and navigate their environment. They lose the fine, central detail but retain a sense of the broader visual scene.</p>
+
+    <h2 id="dry-vs-wet-amd">Dry AMD vs Wet AMD</h2>
+
+    <p>AMD comes in two forms, and understanding the difference is important because the treatment and prognosis are quite different.</p>
+
+    <h3>Dry AMD (Atrophic AMD)</h3>
+
+    <p>This is the more common form, accounting for about 80–90% of all AMD cases. In dry AMD, the light-sensitive cells in the macula gradually break down over time. Yellow deposits called <strong>drusen</strong> accumulate under the retina, and the macular tissue slowly thins and atrophies.</p>
+
+    <p>Dry AMD tends to progress slowly, often over years. In its early stages, you may not notice any symptoms at all. As it advances, you may experience gradual blurring of central vision, difficulty reading in dim light, or a need for brighter illumination. In advanced dry AMD (known as <strong>geographic atrophy</strong>), patches of the macula waste away completely, creating areas of missing central vision.</p>
+
+    <p>Currently, there is no cure for dry AMD. However, lifestyle modifications and nutritional supplements (discussed below) can slow its progression. Excitingly, new treatments for geographic atrophy have recently become available, offering hope for patients with advanced dry AMD.</p>
+
+    <h3>Wet AMD (Neovascular AMD)</h3>
+
+    <p>Wet AMD accounts for only about 10–20% of AMD cases, but it is responsible for the majority of severe vision loss from the disease. In wet AMD, abnormal new blood vessels grow beneath the retina — a process called <strong>choroidal neovascularisation</strong>. These new vessels are fragile and leaky. They ooze fluid and blood under and into the retina, causing rapid swelling, distortion, and damage to the macular tissue.</p>
+
+    <p>Unlike dry AMD, wet AMD can cause sudden and significant vision loss over days to weeks. This is why it requires urgent treatment.</p>
+
+    <p>The good news is that wet AMD is the more treatable form. <strong>Anti-VEGF injections</strong>, delivered directly into the eye, can stop the growth of these abnormal blood vessels, reduce leakage, and in many cases stabilise or even improve vision. I will discuss these injections in more detail below.</p>
+
+    <h2 id="risk-factors">Risk Factors</h2>
+
+    <p>Several factors increase your risk of developing AMD:</p>
+
+    <ul>
+      <li><strong>Age</strong>: The risk increases significantly after 50, and rises sharply after 70. AMD is uncommon before 50.</li>
+      <li><strong>Smoking</strong>: This is the single most important modifiable risk factor. Smokers are two to four times more likely to develop AMD than non-smokers. If you smoke, stopping is one of the most impactful things you can do for your eye health.</li>
+      <li><strong>Family history</strong>: If a parent or sibling has AMD, your risk is substantially higher. There is a strong genetic component to the disease.</li>
+      <li><strong>Ethnicity</strong>: AMD is more common in people of European descent, though it affects all ethnic groups.</li>
+      <li><strong>Cardiovascular risk factors</strong>: High blood pressure, high cholesterol, obesity, and a diet low in fruits and vegetables have all been associated with increased AMD risk.</li>
+      <li><strong>Prolonged sun exposure</strong>: There is some evidence that cumulative UV light exposure may contribute, though this is less firmly established than the other risk factors.</li>
+    </ul>
+
+    <h2 id="symptoms">Symptoms</h2>
+
+    <p>In its early stages, AMD often causes no noticeable symptoms. This is why regular eye examinations are so important, particularly after the age of 50.</p>
+
+    <p>As AMD progresses, you may notice:</p>
+
+    <ul>
+      <li><strong>Blurred or fuzzy central vision</strong>, even with your glasses on</li>
+      <li><strong>Distortion of straight lines</strong>: door frames, text, or tiles may appear wavy or bent. This is a hallmark symptom, particularly of wet AMD</li>
+      <li><strong>A dark or empty area</strong> in the centre of your vision</li>
+      <li><strong>Difficulty with detailed tasks</strong>: reading, sewing, recognising faces at a distance</li>
+      <li><strong>Needing brighter light</strong> for close-up tasks</li>
+      <li><strong>Colours appearing less vivid</strong> than before</li>
+    </ul>
+
+    <div class="urgent-box">
+      <h4>Seek urgent assessment</h4>
+      <p>If you notice sudden distortion of straight lines or a rapid decline in central vision, this may indicate wet AMD and requires an urgent eye examination.</p>
+    </div>
+
+    <h2 id="diagnosis">Diagnosis</h2>
+
+    <p>Your eye doctor will typically diagnose AMD through:</p>
+
+    <ul>
+      <li><strong>Dilated eye examination</strong>: Eye drops are used to widen your pupils, allowing a detailed view of the macula and retina.</li>
+      <li><strong>Optical coherence tomography (OCT)</strong>: This is an essential tool. OCT provides high-resolution, cross-sectional images of the retina, allowing us to see drusen deposits, fluid under or within the retina, and areas of atrophy with remarkable detail. It is non-invasive, painless, and takes only a few minutes.</li>
+      <li><strong>OCT angiography (OCTA)</strong>: A newer imaging technique that can visualise blood vessel networks in the retina without the need for dye injection, helping to detect abnormal new vessels.</li>
+      <li><strong>Fluorescein angiography</strong>: In some cases, a dye is injected into a vein in your arm and photographs are taken as it circulates through the retinal blood vessels. This can precisely identify leaking blood vessels in wet AMD.</li>
+      <li><strong>Amsler grid testing</strong>: A simple grid of straight lines that you can use at home. If the lines appear wavy, distorted, or missing, this may indicate macular changes and should prompt a visit to your eye doctor.</li>
+    </ul>
+
+    <h2 id="treatment">Treatment</h2>
+
+    <h3>Dry AMD</h3>
+
+    <p>For early and intermediate dry AMD, the focus is on monitoring and risk reduction:</p>
+
+    <div class="info-box">
+      <h4>AREDS2 Supplements</h4>
+      <p>The Age-Related Eye Disease Study (AREDS2) demonstrated that a specific combination of vitamins and minerals — vitamin C, vitamin E, lutein, zeaxanthin, zinc, and copper — can reduce the risk of progression from intermediate to advanced AMD by about 25%. These supplements are widely available and are recommended for patients with intermediate AMD. They are not beneficial for people who do not yet have AMD.</p>
+    </div>
+
+    <ul>
+      <li><strong>Lifestyle modifications</strong>: Stop smoking, maintain a healthy weight, eat a diet rich in leafy green vegetables and fish, exercise regularly, and manage blood pressure and cholesterol.</li>
+      <li><strong>Regular monitoring</strong>: Routine OCT scans and clinical examinations to track any changes. Patients are also encouraged to use an Amsler grid at home to self-monitor for new distortion.</li>
+    </ul>
+
+    <p>For advanced dry AMD (geographic atrophy), newer treatments including complement inhibitor injections have recently been approved. These can slow the rate of atrophy progression, though they do not reverse existing damage. Your retinal specialist can discuss whether these are appropriate for your situation.</p>
+
+    <h3>Wet AMD</h3>
+
+    <p>Wet AMD is treated primarily with <strong>anti-VEGF (vascular endothelial growth factor) injections</strong>. VEGF is the protein that drives the growth of abnormal blood vessels. By blocking it, these injections can:</p>
+
+    <ul>
+      <li>Stop new blood vessel growth</li>
+      <li>Reduce fluid leakage</li>
+      <li>Stabilise and often improve vision</li>
+    </ul>
+
+    <p>The most commonly used anti-VEGF agents include ranibizumab, aflibercept, brolucizumab, and faricimab. These are administered as intravitreal injections — meaning they are injected directly into the vitreous cavity of the eye. The procedure is performed in the clinic and takes only a few minutes. (I discuss this in detail in my separate article on intravitreal injections.)</p>
+
+    <p>Treatment typically begins with a series of monthly injections (usually three), followed by ongoing injections at intervals determined by your response. Some patients require injections every four to eight weeks indefinitely, while newer agents like faricimab may allow longer intervals of up to 16 weeks in some patients. The goal is always to use the minimum number of injections needed to keep the disease under control.</p>
+
+    <div class="pull-quote">
+      <p>"Before these treatments became available in the mid-2000s, wet AMD almost invariably led to severe central vision loss. Today, with timely treatment, the majority of patients can maintain stable vision, and about a third experience meaningful improvement."</p>
+      <cite>— Dr. Chee Wai Wong</cite>
+    </div>
+
+    <h2 id="living-with-amd">Living with AMD</h2>
+
+    <p>AMD affects central vision but spares peripheral vision. Even in advanced cases, most patients retain enough side vision to maintain independence. However, the loss of detailed central vision can be profoundly frustrating.</p>
+
+    <div class="info-box">
+      <h4>Practical tips for living with AMD</h4>
+      <ul>
+        <li><strong>Low vision aids</strong>: Magnifying glasses, large-print books, screen magnification software, and talking devices can make a significant difference to daily life.</li>
+        <li><strong>Good lighting</strong>: Bright, directed lighting helps maximise remaining vision.</li>
+        <li><strong>Contrast enhancement</strong>: Using high-contrast settings on devices and choosing bold colours for household items can make things easier to see.</li>
+        <li><strong>Low vision rehabilitation</strong>: Specialised occupational therapists and low vision services can teach techniques to make the most of your remaining vision.</li>
+      </ul>
+    </div>
+
+    <h2 id="the-bottom-line">The Bottom Line</h2>
+
+    <p>AMD is a common condition that becomes more prevalent with age. While it cannot currently be cured, it can be managed. Dry AMD progresses slowly and can be slowed with supplements and lifestyle changes. Wet AMD, though more aggressive, responds well to anti-VEGF injection therapy when treated promptly.</p>
+
+    <p>The most important thing you can do is have regular eye examinations, particularly after the age of 50. If you notice any distortion of straight lines, blurring of central vision, or a dark spot in the centre of your visual field, see an eye doctor without delay. Early detection and treatment make a real difference.</p>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <p class="sidebar-label">On This Page</p>
+      <ul class="toc-list">
+        <li><a href="#what-is-the-macula">What is the Macula</a></li>
+        <li><a href="#dry-vs-wet-amd">Dry vs Wet AMD</a></li>
+        <li><a href="#risk-factors">Risk Factors</a></li>
+        <li><a href="#symptoms">Symptoms</a></li>
+        <li><a href="#diagnosis">Diagnosis</a></li>
+        <li><a href="#treatment">Treatment</a></li>
+        <li><a href="#living-with-amd">Living with AMD</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <p class="sidebar-label">At a Glance</p>
+      <div class="sidebar-stat"><p class="n">1 in 3</p><p class="l">Adults over 75 affected by some degree of AMD</p></div>
+      <div class="sidebar-stat"><p class="n">90%</p><p class="l">Of severe AMD vision loss caused by wet AMD — the most treatable form</p></div>
+      <div class="sidebar-stat"><p class="n">~1/3</p><p class="l">Of wet AMD patients experience meaningful vision improvement with anti-VEGF</p></div>
+      <a href="../index.html#contact" class="btn-book">Book a Consultation</a>
+    </div>
+    <div class="sidebar-card">
+      <p class="sidebar-label">Related Reading</p>
+      <p style="font-size:0.82rem; color:var(--muted); margin-bottom:0.75rem; font-weight:300;">→ <a href="article-macular-hole.html" style="color:var(--teal); text-decoration:none;">Macular Hole Surgery &amp; Recovery</a></p>
+      <p style="font-size:0.82rem; color:var(--muted); margin-bottom:0.75rem; font-weight:300;">→ <a href="article-intravitreal-injections.html" style="color:var(--teal); text-decoration:none;">Intravitreal Injections: What to Expect</a></p>
+      <p style="font-size:0.82rem; color:var(--muted); font-weight:300;">→ <a href="article-diabetic-retinopathy.html" style="color:var(--teal); text-decoration:none;">Diabetic Eye Disease Guide</a></p>
+    </div>
+  </aside>
+</div>
+
+<section class="article-footer-cta">
+  <h2>Noticing distortion or blurring<br><strong>of your central vision?</strong></h2>
+  <p>Straight lines appearing wavy, a dark spot in the centre of your vision, or any sudden change in central vision should be assessed urgently. Early treatment of wet AMD can preserve sight.</p>
+  <a href="../index.html#contact" class="btn-gold">Book an Assessment</a>
+</section>
+
+<section class="related-articles">
+  <div class="related-inner">
+    <p style="font-size:0.68rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--teal); margin-bottom:0.5rem;">Further Reading</p>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:var(--navy);">More from Dr. Wong</h2>
+    <div class="related-grid">
+      <a href="article-macular-hole.html" class="related-card">
+        <p class="related-tag">Macular Disease</p>
+        <p class="related-title">Macular Hole: What It Is, Who Gets It &amp; Face-Down Recovery</p>
+        <p class="related-desc">A small but impactful defect in the centre of the retina. Modern vitrectomy achieves closure in over 90% of cases.</p>
+      </a>
+      <a href="article-intravitreal-injections.html" class="related-card">
+        <p class="related-tag">Patient Guide</p>
+        <p class="related-title">Intravitreal Injections: What to Expect</p>
+        <p class="related-desc">The standard treatment for wet AMD. Most patients find it far more tolerable than they expected.</p>
+      </a>
+      <a href="article-diabetic-retinopathy.html" class="related-card">
+        <p class="related-tag">Macular Disease</p>
+        <p class="related-title">Diabetic Eye Disease: Protecting Your Sight</p>
+        <p class="related-desc">Diabetes is a leading cause of preventable blindness — but with regular screening and timely treatment, most vision loss is avoidable.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Dr. Chee Wai Wong · Asia Pacific Eye Centre, Gleneagles Hospital, Singapore</span>
+  <span><a href="../index.html#about">About</a> · <a href="../index.html#services">Services</a> · <a href="../index.html#research">Research</a> · <a href="../blog.html">Eye Health Insights</a> · <a href="../index.html#contact">Contact</a></span>
+</footer>
+
+<a href="https://wa.me/6592357063" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp the clinic"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+</body>
+</html>
