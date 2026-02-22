@@ -1,8 +1,2 @@
-# Screenshots and local dev artifacts
-temporary screenshots/
-
-# Local server
-serve.mjs
-
-# macOS
-.DS_Store
+.claude/
+*.zip

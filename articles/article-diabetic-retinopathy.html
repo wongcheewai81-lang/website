@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diabetic Retinopathy: What Every Diabetic Must Know | Dr. Chee Wai Wong</title>
+  <meta name="description" content="Diabetic retinopathy is the leading cause of preventable blindness in working-age adults. Singapore vitreoretinal surgeon Dr. Chee Wai Wong explains the stages, screening, and treatment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #0f2340; --teal: #2a7c7c; --teal-light: #3d9e9e; --gold: #c8a96e; --cream: #faf7f2; --text: #1a2e3b; --muted: #6b7f8a; --border: rgba(15,35,64,0.1); --urgent: #c0392b; --urgent-bg: #fdf2f0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: var(--navy) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 2rem; }
+    .article-hero { background: linear-gradient(135deg, #0e2218 0%, #0f2340 60%, #1a2e0e 100%); padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -40px; right: 8%; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,110,0.07) 0%, transparent 65%); }
+    .article-hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+    .article-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .article-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.85rem; border-radius: 2rem; }
+    .tag-diabetes { background: rgba(42,124,124,0.2); color: var(--teal-light); border: 1px solid rgba(42,124,124,0.2); }
+    .tag-prevention { background: rgba(200,169,110,0.15); color: var(--gold); border: 1px solid rgba(200,169,110,0.25); }
+    .article-date { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .article-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 300; color: #fff; line-height: 1.12; margin-bottom: 1.25rem; }
+    .article-hero h1 strong { font-weight: 600; }
+    .article-hero .lead { font-size: 1.08rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.6); max-width: 640px; }
+    .article-byline { margin-top: 2rem; display: flex; align-items: center; gap: 1rem; }
+    .byline-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #fff; flex-shrink: 0; }
+    .byline-name { font-size: 0.9rem; font-weight: 500; color: #fff; }
+    .byline-cred { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+    .article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 4rem; max-width: 1100px; margin: 0 auto; padding: 4rem 4rem 6rem; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 500; color: var(--navy); line-height: 1.2; margin: 2.5rem 0 1rem; }
+    .article-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--navy); margin: 2rem 0 0.75rem; }
+    .article-body p { font-size: 0.97rem; line-height: 1.8; color: var(--text); margin-bottom: 1.25rem; font-weight: 300; }
+    .article-body p strong { font-weight: 600; color: var(--navy); }
+    .article-body ul, .article-body ol { margin: 0.75rem 0 1.25rem 1.25rem; }
+    .article-body li { font-size: 0.95rem; line-height: 1.75; color: var(--text); margin-bottom: 0.4rem; font-weight: 300; }
+    .article-body li strong { font-weight: 600; }
+    .pull-quote { border-left: 3px solid var(--teal); padding: 1rem 1.5rem; margin: 2rem 0; background: rgba(42,124,124,0.04); border-radius: 0 0.75rem 0.75rem 0; }
+    .pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; font-weight: 400; color: var(--navy); line-height: 1.55; margin: 0; }
+    .pull-quote cite { display: block; font-size: 0.75rem; font-style: normal; color: var(--muted); margin-top: 0.5rem; font-family: 'DM Sans', sans-serif; }
+    .warning-box { background: var(--urgent-bg); border: 1px solid rgba(192,57,43,0.2); border-radius: 1rem; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+    .warning-box h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--urgent); margin-bottom: 0.75rem; }
+    .warning-box p, .warning-box li { font-size: 0.9rem; color: #7b2318; line-height: 1.65; font-weight: 300; margin-bottom: 0.3rem; }
+    .warning-box ul { padding-left: 1rem; }
+    .info-box { background: rgba(42,124,124,0.06); border: 1px solid rgba(42,124,124,0.15); border-radius: 1rem; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+    .info-box h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+    .info-box p, .info-box li { font-size: 0.9rem; color: var(--text); line-height: 1.65; font-weight: 300; }
+    .info-box ul { padding-left: 1rem; }
+    .info-box li { margin-bottom: 0.3rem; }
+    .stage-timeline { position: relative; margin: 2rem 0; }
+    .stage-item { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; margin-bottom: 1px; background: #fff; border: 1px solid var(--border); padding: 1.25rem 1.5rem; align-items: start; }
+    .stage-item:first-child { border-radius: 1rem 1rem 0 0; }
+    .stage-item:last-child { border-radius: 0 0 1rem 1rem; }
+    .stage-label { text-align: center; padding: 0.5rem; border-radius: 0.5rem; }
+    .stage-label .sn { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; line-height: 1; }
+    .stage-label .sl { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.2rem; }
+    .s1 .stage-label { background: rgba(42,124,124,0.08); } .s1 .sn, .s1 .sl { color: var(--teal); }
+    .s2 .stage-label { background: rgba(200,169,110,0.1); } .s2 .sn, .s2 .sl { color: #9a7030; }
+    .s3 .stage-label { background: rgba(192,57,43,0.08); } .s3 .sn, .s3 .sl { color: var(--urgent); }
+    .s4 .stage-label { background: rgba(15,35,64,0.08); } .s4 .sn, .s4 .sl { color: var(--navy); }
+    .stage-content h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+    .stage-content p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; font-weight: 300; margin-bottom: 0.4rem; }
+    .stage-action { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .sa-watch { color: var(--teal); }
+    .sa-treat { color: var(--urgent); }
+    .sa-urgent { color: var(--urgent); }
+    .screen-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.88rem; }
+    .screen-table th { background: var(--navy); color: var(--gold); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.75rem 1rem; text-align: left; }
+    .screen-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--text); font-weight: 300; vertical-align: top; line-height: 1.55; }
+    .screen-table tr:last-child td { border-bottom: none; }
+    .screen-table tr:nth-child(even) td { background: rgba(15,35,64,0.02); }
+    .treatment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .treatment-card { background: #fff; border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.25rem; }
+    .tc-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .tc-label.first { color: var(--teal); }
+    .tc-label.second { color: #9a7030; }
+    .tc-label.third { color: var(--urgent); }
+    .tc-label.fourth { color: var(--navy); }
+    .treatment-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; }
+    .treatment-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; font-weight: 300; margin: 0; }
+    .stat-callout { background: var(--navy); border-radius: 1rem; padding: 1.5rem; margin: 1.75rem 0; text-align: center; }
+    .stat-callout .n { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; }
+    .stat-callout .l { font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 300; margin-top: 0.3rem; line-height: 1.5; }
+    .sidebar-card { background: #fff; border-radius: 1rem; border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .sidebar-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .sidebar-stat { text-align: center; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .sidebar-stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .sidebar-stat .n { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--navy); }
+    .sidebar-stat .l { font-size: 0.72rem; color: var(--muted); line-height: 1.5; }
+    .btn-book { display: block; background: var(--navy); color: #fff; text-align: center; padding: 0.85rem 1rem; border-radius: 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-top: 1rem; transition: background 0.2s; }
+    .btn-book:hover { background: var(--teal); }
+    .toc-list { list-style: none; }
+    .toc-list li { border-bottom: 1px solid var(--border); }
+    .toc-list li:last-child { border-bottom: none; }
+    .toc-list a { display: block; font-size: 0.82rem; color: var(--muted); text-decoration: none; padding: 0.6rem 0; transition: color 0.2s; font-weight: 300; }
+    .toc-list a:hover { color: var(--teal); }
+    .article-footer-cta { background: var(--navy); padding: 4rem; text-align: center; }
+    .article-footer-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; color: #fff; margin-bottom: 0.75rem; }
+    .article-footer-cta h2 strong { font-weight: 600; }
+    .article-footer-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.45); font-weight: 300; max-width: 480px; margin: 0 auto 2rem; line-height: 1.7; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--navy); padding: 0.85rem 2.25rem; border-radius: 3rem; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.25s; }
+    .btn-gold:hover { background: #d9bf91; transform: translateY(-2px); }
+    .related-articles { background: var(--cream); padding: 4rem; }
+    .related-inner { max-width: 1100px; margin: 0 auto; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+    .related-card { background: #fff; border-radius: 1rem; border: 1px solid var(--border); padding: 1.5rem; text-decoration: none; transition: box-shadow 0.25s, transform 0.2s; display: block; }
+    .related-card:hover { box-shadow: 0 8px 32px rgba(15,35,64,0.1); transform: translateY(-3px); }
+    .related-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+    .related-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--navy); line-height: 1.35; margin-bottom: 0.4rem; }
+    .related-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; font-weight: 300; }
+    footer { background: #07141f; color: rgba(255,255,255,0.35); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; flex-wrap: wrap; gap: 1rem; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: var(--teal-light); }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
+      .article-hero { padding: 7rem 1.5rem 4rem; }
+      .article-layout { grid-template-columns: 1fr; gap: 0; padding: 2.5rem 1.5rem 4rem; }
+      .article-sidebar { order: -1; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .stage-item { grid-template-columns: 90px 1fr; }
+      .treatment-grid { grid-template-columns: 1fr; }
+      .related-articles, .article-footer-cta { padding: 3rem 1.5rem; }
+      .related-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Dr. <span>Chee Wai</span> Wong</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../index.html#education">Patient Info</a></li>
+    <li><a href="../index.html#research">Research</a></li>
+    <li><a href="../blog.html">Eye Health Insights</a></li>
+    <li><a href="../media.html">Media</a></li>
+    <li><a href="../index.html#contact" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-meta">
+      <span class="article-tag tag-diabetes">Diabetic Eye Disease</span>
+      <span class="article-tag tag-prevention">Prevention First</span>
+      <span class="article-date">For patients with diabetes & their families</span>
+    </div>
+    <h1>Diabetic Retinopathy:<br><strong>What Every Diabetic Patient<br>Must Know</strong></h1>
+    <p class="lead">The leading cause of preventable blindness in working-age adults worldwide — and almost entirely avoidable with timely screening and good diabetes control. If you have diabetes, your eyes are at risk whether you know it or not. Here is what you need to understand.</p>
+    <div class="article-byline">
+      <div class="byline-avatar">CW</div>
+      <div>
+        <p class="byline-name">Dr. Chee Wai Wong</p>
+        <p class="byline-cred">Vitreoretinal Surgeon · Co-investigator, Lancet Digital Health AI Screening Study (2021) · Asia Pacific Eye Centre</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-layout">
+  <article class="article-body">
+
+    <p>Diabetic retinopathy is damage to the blood vessels of the retina caused by chronically elevated blood glucose. It is the most common microvascular complication of diabetes and, in Singapore — where diabetes prevalence is among the highest in Asia — it is a public health crisis hiding in plain sight. Nearly one in three people with diabetes will develop some degree of retinopathy, and a significant proportion will progress to sight-threatening disease if they do not receive timely screening and treatment.</p>
+    <p>The tragedy of diabetic retinopathy is that it causes no pain, no redness, and often no noticeable visual symptoms until it is advanced. By the time a patient notices their vision has deteriorated, significant and often irreversible damage may already have occurred. This is why screening — not symptom-driven presentation — is the cornerstone of management.</p>
+
+    <div class="pull-quote">
+      <p>"Diabetic retinopathy is the condition I most wish patients understood earlier. Not because it is difficult to treat — it isn't — but because by the time it is found at an advanced stage, so much of what could have been preserved is already lost."</p>
+      <cite>— Dr. Chee Wai Wong</cite>
+    </div>
+
+    <h2 id="mechanism">How Diabetes Damages the Retina</h2>
+    <p>The retina is one of the most metabolically active tissues in the body, requiring a constant and precisely regulated blood supply. Chronic hyperglycaemia damages the walls of the tiny retinal capillaries through several mechanisms — thickening of the basement membrane, loss of pericytes (cells that maintain capillary integrity), and endothelial dysfunction. The result is a progressive sequence of structural failures in the retinal vasculature.</p>
+    <p>Early changes include the formation of microaneurysms — tiny outpouchings in weakened capillary walls — and increased vascular permeability, causing fluid to leak into the retinal tissue. As the disease progresses, capillaries become occluded and areas of retina lose their blood supply entirely (capillary non-perfusion). The ischaemic retina then releases vascular endothelial growth factor (VEGF) — a chemical distress signal that drives the growth of new, fragile abnormal blood vessels. These neovascular vessels bleed easily into the vitreous and can cause traction retinal detachment — the most sight-threatening complications of diabetic eye disease.</p>
+
+    <h2 id="stages">The Stages of Diabetic Retinopathy</h2>
+    <p>Diabetic retinopathy is classified into non-proliferative (NPDR) and proliferative (PDR) stages, with diabetic macular oedema (DMO) as a potentially concurrent complication at any stage.</p>
+
+    <div class="stage-timeline">
+      <div class="stage-item s1">
+        <div class="stage-label"><p class="sn">NPDR</p><p class="sl">Mild</p></div>
+        <div class="stage-content">
+          <h4>Mild Non-Proliferative DR</h4>
+          <p>A few microaneurysms visible on fundoscopy. No haemorrhages, hard exudates, or venous changes. Typically no visual symptoms. The earliest detectable sign of retinal microvascular damage.</p>
+          <p class="stage-action sa-watch">→ Annual screening. Optimise glycaemic and blood pressure control.</p>
+        </div>
+      </div>
+      <div class="stage-item s1" style="background:rgba(42,124,124,0.02);">
+        <div class="stage-label"><p class="sn">NPDR</p><p class="sl">Moderate</p></div>
+        <div class="stage-content">
+          <h4>Moderate Non-Proliferative DR</h4>
+          <p>More numerous microaneurysms, dot-and-blot haemorrhages, hard exudates, and sometimes cotton-wool spots (nerve fibre layer infarcts). May involve the macula, causing early DMO.</p>
+          <p class="stage-action sa-watch">→ 6-monthly review. OCT for macular oedema. Systemic optimisation critical.</p>
+        </div>
+      </div>
+      <div class="stage-item s2">
+        <div class="stage-label"><p class="sn">NPDR</p><p class="sl">Severe</p></div>
+        <div class="stage-content">
+          <h4>Severe Non-Proliferative DR</h4>
+          <p>The "4-2-1 rule": 20+ intraretinal haemorrhages in all 4 quadrants, venous beading in 2+ quadrants, or intraretinal microvascular abnormalities (IRMA) in 1+ quadrant. High short-term risk of progression to PDR.</p>
+          <p class="stage-action sa-treat">→ Urgent specialist review. ~50% progress to PDR within 1 year without treatment.</p>
+        </div>
+      </div>
+      <div class="stage-item s3">
+        <div class="stage-label"><p class="sn">PDR</p><p class="sl">Proliferative</p></div>
+        <div class="stage-content">
+          <h4>Proliferative Diabetic Retinopathy</h4>
+          <p>New blood vessels grow on the retinal surface or optic disc (neovascularisation). These fragile vessels bleed into the vitreous (vitreous haemorrhage) and contract, causing tractional retinal detachment. High risk of severe vision loss without treatment.</p>
+          <p class="stage-action sa-urgent">→ Urgent treatment: pan-retinal photocoagulation and/or anti-VEGF injections. Surgery if complications occur.</p>
+        </div>
+      </div>
+      <div class="stage-item s4">
+        <div class="stage-label"><p class="sn">DMO</p><p class="sl">Any stage</p></div>
+        <div class="stage-content">
+          <h4>Diabetic Macular Oedema</h4>
+          <p>Fluid leaking from damaged capillaries accumulates in the macula at any stage of retinopathy. The most common cause of vision loss in diabetic patients — affecting central vision needed for reading, driving, and recognising faces.</p>
+          <p class="stage-action sa-treat">→ Anti-VEGF injections (first-line). Laser or steroid implants in selected cases.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="symptoms">Why You May Notice Nothing — Until It's Too Late</h2>
+    <p>This is the most important clinical point about diabetic retinopathy: <strong>it is asymptomatic in its early and even intermediate stages</strong>. The retina has no pain fibres. Microaneurysms, haemorrhages, and even moderate macular oedema can all be present without any subjective visual disturbance.</p>
+    <p>By the time vision becomes noticeably blurred, central distortion appears, or floaters develop from a vitreous haemorrhage — the disease is already at a stage that requires urgent intervention and where some permanent vision loss may have occurred. Screening before symptoms develop is not optional. It is the entire point.</p>
+
+    <div class="warning-box">
+      <h4>⚠ Seek urgent assessment if you have diabetes and notice</h4>
+      <ul>
+        <li>Sudden increase in floaters, especially a red or dark cloud in vision (vitreous haemorrhage)</li>
+        <li>A curtain or shadow moving across part of your visual field (tractional retinal detachment)</li>
+        <li>Sudden severe blurring of central vision</li>
+        <li>Central distortion — straight lines appearing wavy (macular oedema)</li>
+      </ul>
+    </div>
+
+    <h2 id="screening">Screening: Who, How Often, and What to Expect</h2>
+    <p>The Singapore National Diabetes Retinal Photography programme screens approximately 300,000 Singaporeans annually using retinal photography at polyclinics — an approach validated by landmark AI research in which Dr. Wong's team at the Singapore Eye Research Institute was a key contributor (Lancet Digital Health, 2021). The AI system achieved diagnostic accuracy comparable to trained ophthalmologists for detecting referable diabetic retinopathy.</p>
+
+    <table class="screen-table">
+      <thead>
+        <tr><th>Patient Group</th><th>Recommended Frequency</th><th>Modality</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Type 2 diabetes, no retinopathy</strong></td><td>Annual</td><td>Retinal photography (polyclinic or specialist)</td></tr>
+        <tr><td><strong>Type 1 diabetes, diagnosed &lt;10 years</strong></td><td>Annual from year 5</td><td>Dilated fundus examination + photography</td></tr>
+        <tr><td><strong>Mild NPDR</strong></td><td>Annual</td><td>Dilated fundus exam + OCT macula</td></tr>
+        <tr><td><strong>Moderate NPDR</strong></td><td>Every 6 months</td><td>Dilated fundus exam + OCT + fluorescein angiography if needed</td></tr>
+        <tr><td><strong>Severe NPDR</strong></td><td>Every 3 months</td><td>Specialist review, consider treatment</td></tr>
+        <tr><td><strong>PDR or DMO</strong></td><td>As directed by specialist</td><td>Active treatment phase — monthly or more frequent</td></tr>
+        <tr><td><strong>Pregnancy with diabetes</strong></td><td>Each trimester</td><td>Retinopathy can progress rapidly during pregnancy</td></tr>
+        <tr><td><strong>New diagnosis of type 2 diabetes</strong></td><td>At diagnosis</td><td>Retinopathy may already be present at diagnosis</td></tr>
+      </tbody>
+    </table>
+
+    <div class="stat-callout">
+      <p class="n">90%</p>
+      <p class="l">of vision loss from diabetic retinopathy is preventable<br>with timely screening and appropriate treatment</p>
+    </div>
+
+    <h2 id="treatment">Treatment Options</h2>
+    <p>Treatment depends on the stage of retinopathy and whether diabetic macular oedema is present. The available options have expanded dramatically over the past two decades, and outcomes for treated patients are substantially better than they were even 15 years ago.</p>
+
+    <div class="treatment-grid">
+      <div class="treatment-card">
+        <p class="tc-label first">First-line for DMO</p>
+        <h4>Anti-VEGF Injections</h4>
+        <p>Intravitreal injections of drugs that block vascular endothelial growth factor (ranibizumab, bevacizumab, aflibercept) reduce macular oedema and improve visual acuity. Given monthly or bimonthly initially, then extended as the eye stabilises. Multiple injections are typically required.</p>
+      </div>
+      <div class="treatment-card">
+        <p class="tc-label second">PDR & severe NPDR</p>
+        <h4>Pan-Retinal Photocoagulation (PRP)</h4>
+        <p>Laser treatment applied to the peripheral retina destroys ischaemic tissue, reducing VEGF production and causing regression of abnormal new vessels. Typically delivered in 1–3 sessions. May cause some peripheral and night vision loss — a tolerable trade-off to prevent catastrophic central vision loss.</p>
+      </div>
+      <div class="treatment-card">
+        <p class="tc-label third">DMO non-responders</p>
+        <h4>Intravitreal Steroid Implants</h4>
+        <p>Sustained-release dexamethasone or fluocinolone implants (Ozurdex, Iluvien) reduce macular inflammation and oedema, particularly in patients who do not respond adequately to anti-VEGF. Risk of cataract and elevated intraocular pressure requires monitoring.</p>
+      </div>
+      <div class="treatment-card">
+        <p class="tc-label fourth">Complications of PDR</p>
+        <h4>Vitrectomy Surgery</h4>
+        <p>When vitreous haemorrhage does not clear spontaneously, or tractional retinal detachment threatens or involves the macula, vitreoretinal surgery is required. The vitreous and fibrovascular membranes are removed, haemorrhage cleared, and the retina reattached. Combined with laser and/or anti-VEGF as appropriate.</p>
+      </div>
+    </div>
+
+    <h2 id="systemic">The Systemic Side of Diabetic Eye Disease</h2>
+    <p>Treatment of diabetic retinopathy without addressing the underlying metabolic disease is futile. Every percentage point reduction in HbA1c reduces the risk of retinopathy progression by approximately 35%. Blood pressure control is equally important — hypertension dramatically accelerates retinal vascular damage. Renal function and lipid levels also play a role.</p>
+    <p>The ophthalmologist's role is not to manage diabetes — that is the GP's and endocrinologist's domain. But the retina provides the clearest window into the health of the body's smallest blood vessels, and diabetic retinopathy findings should always prompt a conversation between patient and their GP about systemic optimisation.</p>
+
+    <div class="info-box">
+      <h4>Singapore Context: The National Diabetes Retinal Photography Programme</h4>
+      <p>Singapore operates one of the world's most systematic national diabetic retinopathy screening programmes, using retinal photography at polyclinics to screen over 300,000 patients annually. The AI-based reading system — validated in a landmark Lancet Digital Health study co-authored by Dr. Wong — demonstrated autonomous diagnostic accuracy equivalent to trained specialists, enabling rapid grading at population scale. Patients found to have referable retinopathy are referred to ophthalmologists for dilated examination and treatment.</p>
+      <p style="margin-top:0.5rem;">If you have diabetes and have not had a retinal photograph in the past 12 months, you are overdue.</p>
+    </div>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <h3>My vision is fine. Do I really need annual eye checks?</h3>
+    <p>Yes — emphatically. This is the most dangerous misconception about diabetic retinopathy. Vision often remains good until the disease is at an advanced, sight-threatening stage. By the time you notice visual symptoms, the window for preventing significant permanent loss may have already partially closed. Annual retinal screening when you have diabetes is not precautionary — it is essential.</p>
+
+    <h3>My blood sugar is well controlled. Am I still at risk?</h3>
+    <p>Good glycaemic control dramatically reduces risk and slows progression — but does not eliminate it entirely. Patients with excellent HbA1c can still develop retinopathy, particularly if they have had diabetes for many years, have concurrent hypertension, or had a period of poor control earlier in their disease course. Annual screening remains important regardless of how well-managed your diabetes is.</p>
+
+    <h3>Will laser treatment affect my vision?</h3>
+    <p>Pan-retinal photocoagulation (PRP) laser treats the peripheral retina and can cause some reduction in peripheral and night vision, as well as reduced contrast sensitivity. This sounds alarming — but the alternative is uncontrolled proliferative retinopathy, which risks catastrophic loss of central vision. In the vast majority of patients, PRP preserves the central vision that matters most for daily life, at the cost of some peripheral awareness. This trade-off is well worth it when the alternative is blindness.</p>
+
+    <h3>How many anti-VEGF injections will I need?</h3>
+    <p>This varies considerably between patients and depends on the severity of macular oedema, the underlying retinopathy stage, and individual response to treatment. Most treatment protocols begin with monthly injections for 3–6 months, then extend the interval if the eye remains stable. Some patients require ongoing injections at 2–3 monthly intervals for years; others achieve durable remission after an initial course. The goal is always to extend intervals as much as the eye will safely allow.</p>
+
+    <h3>I've been told I need vitrectomy for a diabetic vitreous haemorrhage. What should I expect?</h3>
+    <p>Vitreous haemorrhage from diabetic retinopathy will sometimes clear spontaneously — the eye's natural fluid dynamics can absorb the blood over weeks to months. If it does not clear (or if the underlying traction is causing retinal detachment), vitrectomy is required. The procedure removes the blood-filled vitreous and addresses the underlying fibrovascular membranes. Visual outcomes depend heavily on the state of the retina underneath — in eyes without macular involvement, vision recovery after vitrectomy is often very good.</p>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <p class="sidebar-label">On This Page</p>
+      <ul class="toc-list">
+        <li><a href="#mechanism">How diabetes damages the retina</a></li>
+        <li><a href="#stages">Stages of retinopathy</a></li>
+        <li><a href="#symptoms">Why you may notice nothing</a></li>
+        <li><a href="#screening">Screening guide</a></li>
+        <li><a href="#treatment">Treatment options</a></li>
+        <li><a href="#systemic">Systemic management</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card" style="background:#fdf9f0; border-color:rgba(200,169,110,0.25);">
+      <p class="sidebar-label" style="color:#9a7030;">Key Fact</p>
+      <p style="font-size:1.6rem; font-family:'Cormorant Garamond',serif; font-weight:300; color:var(--navy); line-height:1.1; margin-bottom:0.5rem;">90% preventable</p>
+      <p style="font-size:0.82rem; color:var(--muted); font-weight:300; line-height:1.6;">Vision loss from diabetic retinopathy is almost entirely preventable — with regular screening and early treatment.</p>
+    </div>
+    <div class="sidebar-card">
+      <p class="sidebar-label">At a Glance</p>
+      <div class="sidebar-stat"><p class="n">1 in 3</p><p class="l">People with diabetes develop retinopathy</p></div>
+      <div class="sidebar-stat"><p class="n">300k+</p><p class="l">Screened annually in Singapore's national programme</p></div>
+      <a href="../index.html#contact" class="btn-book">Book a Diabetic Eye Check</a>
+    </div>
+    <div class="sidebar-card">
+      <p class="sidebar-label">Related Reading</p>
+      <p style="font-size:0.82rem; color:var(--muted); margin-bottom:0.75rem; font-weight:300;">→ <a href="article-epiretinal-membrane.html" style="color:var(--teal); text-decoration:none;">Epiretinal Membrane</a></p>
+      <p style="font-size:0.82rem; color:var(--muted); margin-bottom:0.75rem; font-weight:300;">→ <a href="../blog.html" style="color:var(--teal); text-decoration:none;">Macular Hole Guide</a></p>
+      <p style="font-size:0.82rem; color:var(--muted); font-weight:300;">→ <a href="../blog.html" style="color:var(--teal); text-decoration:none;">Retinal Detachment</a></p>
+    </div>
+  </aside>
+</div>
+
+<section class="article-footer-cta">
+  <h2>Have diabetes and haven't<br><strong>had a retinal check this year?</strong></h2>
+  <p>Don't wait for symptoms. A dilated fundus examination and OCT takes 30 minutes and can detect retinopathy years before it affects your vision — when treatment is most effective.</p>
+  <a href="../index.html#contact" class="btn-gold">Book a Diabetic Eye Check</a>
+</section>
+
+<section class="related-articles">
+  <div class="related-inner">
+    <p style="font-size:0.68rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--teal); margin-bottom:0.5rem;">Further Reading</p>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:var(--navy);">More from Dr. Wong</h2>
+    <div class="related-grid">
+      <a href="article-epiretinal-membrane.html" class="related-card">
+        <p class="related-tag">Macular Disease</p>
+        <p class="related-title">Epiretinal Membrane: When to Watch, When to Operate</p>
+        <p class="related-desc">A thin scar on the macular surface that distorts vision. Understanding the surgical decision.</p>
+      </a>
+      <a href="../blog.html" class="related-card">
+        <p class="related-tag">Macular Surgery</p>
+        <p class="related-title">Macular Hole: What It Is, Who Gets It & Face-Down Recovery</p>
+        <p class="related-desc">A different kind of macular emergency — with a highly effective surgical solution.</p>
+      </a>
+      <a href="../blog.html" class="related-card">
+        <p class="related-tag">Medical Emergency</p>
+        <p class="related-title">Retinal Detachment: Symptoms, Surgery & Recovery</p>
+        <p class="related-desc">Another urgent retinal condition — requiring same-day assessment and swift surgery.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Dr. Chee Wai Wong · Asia Pacific Eye Centre, Gleneagles Hospital, Singapore</span>
+  <span><a href="../index.html#about">About</a> · <a href="../index.html#services">Services</a> · <a href="../index.html#research">Research</a> · <a href="../blog.html">Eye Health Insights</a> · <a href="../index.html#contact">Contact</a></span>
+</footer>
+</body>
+</html>
