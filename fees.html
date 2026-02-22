@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f2340'/%3E%3Cpath d='M 22 4 C 3 4 3 28 22 28' fill='none' stroke='%233d9e9e' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M 22 4 C 3 4 3 28 22 28' fill='none' stroke='%23c8a96e' stroke-width='5' stroke-dasharray='7 9999' stroke-dashoffset='-12' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fees, Medisave & Insurance | Dr. Chee Wai Wong — Vitreoretinal Surgeon, Singapore</title>
+  <meta name="description" content="Information on consultation and surgical fees, Medisave usage, and insurance panels for Dr. Chee Wai Wong at Asia Pacific Eye Centre, Gleneagles Hospital." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fees, Medisave & Insurance | Dr. Chee Wai Wong" />
+  <meta property="og:description" content="Information on consultation and surgical fees, Medisave usage, and insurance panels for Dr. Chee Wai Wong at Asia Pacific Eye Centre, Gleneagles Hospital." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Fees, Medisave & Insurance | Dr. Chee Wai Wong" />
+  <meta name="twitter:description" content="Information on consultation and surgical fees, Medisave usage, and insurance panels for Dr. Chee Wai Wong at Asia Pacific Eye Centre, Gleneagles Hospital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f2340; --teal: #2a7c7c; --teal-light: #3d9e9e;
+      --gold: #c8a96e; --cream: #faf7f2; --warm-white: #fff8f0;
+      --text: #1a2e3b; --muted: #6b7f8a; --border: rgba(15,35,64,0.1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(250,247,242,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { background: var(--navy) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 2rem; }
+
+    /* HERO */
+    .hero { background: var(--navy); padding: 8rem 4rem 5.5rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -80px; right: -60px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 65%); }
+    .hero::after { content: ''; position: absolute; bottom: -60px; left: 8%; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(42,124,124,0.1) 0%, transparent 65%); }
+    .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 1rem; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 300; color: #fff; line-height: 1.08; margin-bottom: 1.25rem; }
+    .hero h1 strong { font-weight: 600; }
+    .hero .lead { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 600px; }
+
+    /* SECTION STRUCTURE */
+    .section { max-width: 1100px; margin: 0 auto; padding: 4rem 4rem 0; }
+    .section:last-of-type { padding-bottom: 5rem; }
+    .section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; font-weight: 400; color: var(--navy); margin-bottom: 0.75rem; }
+    .section-intro { font-size: 0.92rem; color: var(--muted); font-weight: 300; line-height: 1.75; max-width: 720px; margin-bottom: 2rem; }
+
+    /* PROCEDURE TABLE */
+    .procedure-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: 1rem; overflow: hidden; margin-bottom: 1.5rem; }
+    .procedure-row { background: #fff; padding: 1.5rem 1.75rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; transition: background 0.15s; }
+    .procedure-row:hover { background: var(--warm-white); }
+    .proc-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.2rem; }
+    .proc-name { font-size: 0.98rem; font-weight: 400; color: var(--navy); margin-bottom: 0.15rem; }
+    .proc-note { font-size: 0.8rem; color: var(--muted); font-weight: 300; }
+    .proc-badge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 2rem; white-space: nowrap; }
+    .badge-medisave { background: rgba(42,124,124,0.1); color: var(--teal); border: 1px solid rgba(42,124,124,0.2); }
+    .badge-enquire { background: rgba(200,169,110,0.12); color: #a07840; border: 1px solid rgba(200,169,110,0.25); }
+
+    /* MOH LINK BLOCK */
+    .moh-block { background: rgba(42,124,124,0.06); border: 1px solid rgba(42,124,124,0.15); border-radius: 1rem; padding: 1.5rem 1.75rem; display: flex; align-items: flex-start; gap: 1.25rem; }
+    .moh-icon { flex-shrink: 0; width: 40px; height: 40px; background: rgba(42,124,124,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .moh-block p { font-size: 0.85rem; color: var(--muted); font-weight: 300; line-height: 1.7; margin-bottom: 0.75rem; }
+    .moh-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .moh-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 500; color: var(--teal); text-decoration: none; padding: 0.4rem 1rem; border-radius: 2rem; border: 1px solid rgba(42,124,124,0.25); background: #fff; transition: all 0.2s; }
+    .moh-link:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+    /* INSURANCE PANELS */
+    .panels-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: 1rem; overflow: hidden; margin-bottom: 1.5rem; }
+    .panel-card { background: #fff; padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.75rem; transition: background 0.15s; }
+    .panel-card:hover { background: var(--warm-white); }
+    .panel-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.25rem; }
+    .panel-name { font-size: 0.92rem; font-weight: 500; color: var(--navy); }
+    .panel-type { font-size: 0.72rem; color: var(--muted); font-weight: 300; }
+
+    /* BILLING INFO */
+    .billing-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
+    .billing-card { background: #fff; border: 1px solid var(--border); border-radius: 1rem; padding: 1.75rem; }
+    .billing-card-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(15,35,64,0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .billing-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--navy); margin-bottom: 0.5rem; }
+    .billing-card p { font-size: 0.85rem; color: var(--muted); font-weight: 300; line-height: 1.7; }
+
+    /* CTA / ENQUIRY */
+    .enquiry-section { background: var(--navy); padding: 4rem; margin-top: 4rem; }
+    .enquiry-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .enquiry-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: #fff; margin-bottom: 0.75rem; }
+    .enquiry-inner h2 strong { font-weight: 600; }
+    .enquiry-inner p { font-size: 0.92rem; color: rgba(255,255,255,0.45); font-weight: 300; line-height: 1.75; margin-bottom: 1.5rem; }
+    .enquiry-bullets { list-style: none; }
+    .enquiry-bullets li { font-size: 0.88rem; color: rgba(255,255,255,0.55); font-weight: 300; padding: 0.4rem 0; display: flex; gap: 0.75rem; align-items: flex-start; }
+    .enquiry-bullets li::before { content: '→'; color: var(--teal-light); flex-shrink: 0; }
+    .enquiry-contact { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 2rem; }
+    .enquiry-contact h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: #fff; font-weight: 400; margin-bottom: 1.25rem; }
+    .enq-row { padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; gap: 1rem; align-items: flex-start; }
+    .enq-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .enq-icon { font-size: 1rem; flex-shrink: 0; }
+    .enq-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 0.15rem; }
+    .enq-value { font-size: 0.88rem; color: rgba(255,255,255,0.7); font-weight: 300; }
+    .enq-value a { color: var(--teal-light); text-decoration: none; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--navy); padding: 0.85rem 2.25rem; border-radius: 3rem; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.25s; margin-top: 1.5rem; }
+    .btn-gold:hover { background: #d9bf91; transform: translateY(-2px); }
+
+    footer { background: #07141f; color: rgba(255,255,255,0.35); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; flex-wrap: wrap; gap: 1rem; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: var(--teal-light); }
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 500; width: 50px; height: 50px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 18px rgba(37,211,102,0.38); text-decoration: none; transition: background 0.2s, transform 0.2s; }
+    .wa-float:hover { background: #20bd5a; transform: translateY(-2px); }
+
+    @media (max-width: 960px) {
+      #navbar { padding: 1rem 1.5rem; } .nav-links { display: none; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .section { padding: 3rem 1.5rem 0; }
+      .panels-grid { grid-template-columns: repeat(2, 1fr); }
+      .billing-cards { grid-template-columns: 1fr; }
+      .procedure-row { grid-template-columns: 1fr; }
+      .proc-badge { align-self: flex-start; }
+      .enquiry-section { padding: 3rem 1.5rem; }
+      .enquiry-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer { flex-direction: column; text-align: center; padding: 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      .panels-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">Dr. <span>Chee Wai</span> Wong</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#education">Patient Info</a></li>
+    <li><a href="index.html#blog">Insights</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="fees.html" class="active">Fees</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Fees, Medisave & Insurance</p>
+    <h1>Transparent billing.<br><strong>No surprises.</strong></h1>
+    <p class="lead">Dr. Wong's practice is committed to clear, upfront communication about costs. Many surgical procedures are Medisave-claimable, and major insurance panels are accepted at Asia Pacific Eye Centre, Gleneagles Hospital.</p>
+  </div>
+</section>
+
+<!-- MEDISAVE -->
+<div class="section" style="padding-top:4rem;">
+  <p class="section-label">Medisave</p>
+  <p class="section-title">Surgical procedures & Medisave</p>
+  <p class="section-intro">Medisave can be used to offset costs for approved surgical procedures performed at Gleneagles Hospital. The following vitreoretinal procedures are eligible for Medisave claims, subject to the applicable withdrawal limits.</p>
+
+  <div class="procedure-list">
+    <div class="procedure-row">
+      <div>
+        <p class="proc-label">TOSP Code SL801R</p>
+        <p class="proc-name">Retinal Detachment Repair — Standard Complexity</p>
+        <p class="proc-note">Includes scleral buckle, laser retinopexy, and standard pars plana vitrectomy for uncomplicated retinal detachments.</p>
+      </div>
+      <span class="proc-badge badge-medisave">Medisave-claimable</span>
+    </div>
+    <div class="procedure-row">
+      <div>
+        <p class="proc-label">TOSP Code SL802R</p>
+        <p class="proc-name">Retinal Detachment Repair — Complex / Recurrent</p>
+        <p class="proc-note">For complex or recurrent retinal detachments requiring advanced techniques such as silicone oil tamponade, membrane peeling, or multiple procedures.</p>
+      </div>
+      <span class="proc-badge badge-medisave">Medisave-claimable</span>
+    </div>
+    <div class="procedure-row">
+      <div>
+        <p class="proc-label">Vitreoretinal Surgery</p>
+        <p class="proc-name">Vitrectomy for Macular Hole or Epiretinal Membrane</p>
+        <p class="proc-note">Pars plana vitrectomy with internal limiting membrane (ILM) peel for macular hole and epiretinal membrane removal.</p>
+      </div>
+      <span class="proc-badge badge-medisave">Medisave-claimable</span>
+    </div>
+    <div class="procedure-row">
+      <div>
+        <p class="proc-label">Intravitreal Procedure</p>
+        <p class="proc-name">Intravitreal Injections (Anti-VEGF / Steroid)</p>
+        <p class="proc-note">Injections for diabetic macular oedema, wet AMD, and retinal vein occlusion. Eligibility and withdrawal limits depend on procedure classification and hospitalisation status.</p>
+      </div>
+      <span class="proc-badge badge-enquire">Enquire for details</span>
+    </div>
+    <div class="procedure-row">
+      <div>
+        <p class="proc-label">IOL Surgery</p>
+        <p class="proc-name">IOL Repositioning or Replacement (Dislocated Lens)</p>
+        <p class="proc-note">Surgical management of dislocated intraocular lenses following trauma or previous cataract surgery.</p>
+      </div>
+      <span class="proc-badge badge-medisave">Medisave-claimable</span>
+    </div>
+  </div>
+
+  <div class="moh-block">
+    <div class="moh-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#2a7c7c"/>
+      </svg>
+    </div>
+    <div>
+      <p>Medisave withdrawal limits and claimable amounts are set by the Ministry of Health and are updated periodically. Please refer to the official MOH fee benchmark pages for current figures:</p>
+      <div class="moh-links">
+        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/hospital-bills-and-fee-benchmarks/" target="_blank" rel="noopener" class="moh-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          MOH Fee Benchmarks Hub
+        </a>
+        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/cost-financing/tosp-sl801r-eye-bill-information" target="_blank" rel="noopener" class="moh-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          SL801R — Retinal Detachment (Standard)
+        </a>
+        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/cost-financing/tosp-sl802r-eye-bill-information" target="_blank" rel="noopener" class="moh-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          SL802R — Retinal Detachment (Complex)
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INSURANCE PANELS -->
+<div class="section" style="padding-top:3.5rem;">
+  <p class="section-label">Insurance</p>
+  <p class="section-title">Insurance panels accepted</p>
+  <p class="section-intro">Dr. Wong is on panel with the following insurers at Asia Pacific Eye Centre, Gleneagles Hospital. Patients with these policies may be eligible for direct billing or cashless claims. Please check your policy terms or contact your insurer to confirm coverage for specific procedures.</p>
+
+  <div class="panels-grid">
+    <div class="panel-card">
+      <div class="panel-icon" style="background:rgba(0,100,60,0.08);">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="rgba(0,100,60,0.1)"/>
+          <path d="M16 7l2.5 5 5.5.8-4 3.9.95 5.5L16 19.5l-4.95 2.7.95-5.5-4-3.9 5.5-.8L16 7z" fill="#006633" stroke="none"/>
+        </svg>
+      </div>
+      <p class="panel-name">Great Eastern</p>
+      <p class="panel-type">Life & health insurance</p>
+    </div>
+    <div class="panel-card">
+      <div class="panel-icon" style="background:rgba(220,0,0,0.07);">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="rgba(220,0,0,0.08)"/>
+          <circle cx="16" cy="16" r="7" fill="none" stroke="#cc0000" stroke-width="2.5"/>
+          <path d="M16 10v6l4 2" stroke="#cc0000" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="panel-name">HSBC Life</p>
+      <p class="panel-type">Life & health insurance</p>
+    </div>
+    <div class="panel-card">
+      <div class="panel-icon" style="background:rgba(0,60,160,0.08);">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="rgba(0,60,160,0.08)"/>
+          <path d="M8 20 C8 12 24 12 24 20" stroke="#003caa" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="16" cy="13" r="3" fill="#003caa"/>
+        </svg>
+      </div>
+      <p class="panel-name">Prudential</p>
+      <p class="panel-type">Life & health insurance</p>
+    </div>
+    <div class="panel-card">
+      <div class="panel-icon" style="background:rgba(0,90,200,0.08);">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="rgba(0,90,200,0.08)"/>
+          <path d="M10 22 L16 10 L22 22" stroke="#005ac8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M12.5 18h7" stroke="#005ac8" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="panel-name">Singlife</p>
+      <p class="panel-type">Life & health insurance</p>
+    </div>
+  </div>
+
+  <p style="font-size:0.82rem; color:var(--muted); font-weight:300; line-height:1.7; padding: 0.25rem 0.5rem;">Panel status is accurate as of early 2026. Coverage terms and panel status may change — please verify directly with your insurer. For letters of guarantee or pre-authorisation, contact the clinic team in advance of your appointment.</p>
+</div>
+
+<!-- BILLING INFO -->
+<div class="section" style="padding-top:3.5rem; padding-bottom:5rem;">
+  <p class="section-label">Billing</p>
+  <p class="section-title">What to expect</p>
+
+  <div class="billing-cards">
+    <div class="billing-card">
+      <div class="billing-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2a7c7c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </div>
+      <h3>Consultation fees</h3>
+      <p>First consultation and follow-up fees are provided at the time of booking. A fee estimate will be shared before any procedure. Contact the clinic for current consultation rates.</p>
+    </div>
+    <div class="billing-card">
+      <div class="billing-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2a7c7c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+        </svg>
+      </div>
+      <h3>Surgical estimates</h3>
+      <p>Before any surgery, you will receive a written fee estimate covering surgeon fees, anaesthesia, hospital charges, and consumables. You will have time to review and clarify any items.</p>
+    </div>
+    <div class="billing-card">
+      <div class="billing-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2a7c7c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <h3>Medisave & insurance claims</h3>
+      <p>The clinic team will assist with Medisave withdrawal forms and liaise with your insurer for pre-authorisation letters and direct billing where applicable. Please bring your insurance documents to your appointment.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA / ENQUIRY -->
+<div class="enquiry-section">
+  <div class="enquiry-inner">
+    <div>
+      <h2>Questions about<br><strong>fees or coverage?</strong></h2>
+      <p>The clinic team is happy to answer questions about fees, Medisave eligibility, insurance claims, and billing before your appointment. You can also speak to us at the front desk.</p>
+      <ul class="enquiry-bullets">
+        <li>Fee estimates before every procedure</li>
+        <li>Medisave withdrawal assistance</li>
+        <li>Insurance pre-authorisation support</li>
+        <li>Transparent, itemised billing</li>
+      </ul>
+      <a href="index.html#contact" class="btn-gold">Book an Appointment</a>
+    </div>
+    <div class="enquiry-contact">
+      <h3>Contact the clinic</h3>
+      <div class="enq-row">
+        <span class="enq-icon">📞</span>
+        <div>
+          <p class="enq-label">Phone / WhatsApp</p>
+          <p class="enq-value"><a href="tel:+6592357063">+65 9235 7063</a></p>
+        </div>
+      </div>
+      <div class="enq-row">
+        <span class="enq-icon">✉️</span>
+        <div>
+          <p class="enq-label">Email</p>
+          <p class="enq-value"><a href="mailto:contact@asiapacificeyecentre.com.sg">contact@asiapacificeyecentre.com.sg</a></p>
+        </div>
+      </div>
+      <div class="enq-row">
+        <span class="enq-icon">📍</span>
+        <div>
+          <p class="enq-label">Location</p>
+          <p class="enq-value">Asia Pacific Eye Centre<br>Gleneagles Hospital, Singapore</p>
+        </div>
+      </div>
+      <div class="enq-row">
+        <span class="enq-icon">🕐</span>
+        <div>
+          <p class="enq-label">Clinic hours</p>
+          <p class="enq-value">Mon – Fri: 9am – 5pm<br>Sat: 9am – 1pm</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Dr. Chee Wai Wong · Asia Pacific Eye Centre, Gleneagles Hospital, Singapore</span>
+  <span>
+    <a href="index.html#about">About</a> ·
+    <a href="index.html#blog">Insights</a> ·
+    <a href="media.html">Media</a> ·
+    <a href="fees.html">Fees</a> ·
+    <a href="index.html#contact">Contact</a>
+  </span>
+</footer>
+
+<a href="https://wa.me/6592357063" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp the clinic">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
