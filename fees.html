@@ -128,6 +128,15 @@
     @media (max-width: 600px) {
       .panels-grid { grid-template-columns: 1fr 1fr; }
     }
+    /* COST GUIDE CARDS */
+    .cost-guide { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    .cost-card { background: #fff; border-radius: 0.75rem; padding: 2rem; box-shadow: 0 2px 8px rgba(15,35,64,0.06), 0 1px 2px rgba(15,35,64,0.04); }
+    .cost-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem; }
+    .cost-card ul { list-style: none; }
+    .cost-card li { font-size: 0.88rem; font-weight: 300; line-height: 1.7; color: var(--text); padding: 0.5rem 0; border-bottom: 1px solid var(--rule); }
+    .cost-card li:last-child { border-bottom: none; }
+    .cost-card li strong { font-weight: 500; color: var(--navy); }
+    @media (max-width: 700px) { .cost-guide { grid-template-columns: 1fr; } }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGBW3DHSCL"></script>
@@ -302,6 +311,54 @@
   </div>
 
   <p style="font-size:0.82rem; color:var(--muted); font-weight:300; line-height:1.7; padding: 0.25rem 0.5rem;">Panel status is accurate as of early 2026. Coverage terms and panel status may change — please verify directly with your insurer. For letters of guarantee or pre-authorisation, contact the clinic team in advance of your appointment.</p>
+</div>
+
+<!-- RETINAL SURGERY COSTS -->
+<div class="section" id="surgery-costs" style="padding-top:3.5rem;">
+  <p class="section-label">Costs</p>
+  <p class="section-title">Retinal surgery costs in Singapore</p>
+  <p class="section-intro">The total cost of retinal surgery depends on the complexity of the procedure, the type of anaesthesia, hospital charges, and whether Medisave or insurance is used. Below is a general guide to what is involved in the fee structure — please contact the clinic for a personalised estimate.</p>
+
+  <div class="cost-guide">
+    <div class="cost-card">
+      <h3>What's included in the fee estimate</h3>
+      <ul>
+        <li><strong>Surgeon's fee</strong> — covers the procedure, pre-operative assessment, and post-operative follow-up visits</li>
+        <li><strong>Anaesthesia</strong> — most vitreoretinal surgeries are performed under local anaesthesia; general anaesthesia incurs additional cost</li>
+        <li><strong>Hospital facility fee</strong> — day surgery centre charges at Gleneagles Hospital, including the operating theatre and recovery room</li>
+        <li><strong>Consumables</strong> — surgical instruments, intraocular gas or silicone oil tamponade, laser probes, and other disposables</li>
+        <li><strong>Medications</strong> — post-operative eye drops and any intraoperative drugs</li>
+      </ul>
+    </div>
+    <div class="cost-card">
+      <h3>Factors that affect cost</h3>
+      <ul>
+        <li><strong>Procedure complexity</strong> — a straightforward vitrectomy for epiretinal membrane costs less than a complex retinal detachment repair with silicone oil</li>
+        <li><strong>Combined procedures</strong> — some cases require cataract surgery at the same sitting, adding to the total</li>
+        <li><strong>Tamponade type</strong> — gas tamponade is included in most cases; silicone oil adds consumable cost and requires a second procedure for removal</li>
+        <li><strong>Length of stay</strong> — most retinal surgeries are day surgery, but complex cases may require overnight observation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="moh-block" style="margin-top:2rem;">
+    <div class="moh-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#2a7c7c"/>
+      </svg>
+    </div>
+    <div>
+      <p>MOH publishes fee benchmarks for common surgical procedures at private hospitals, including vitreoretinal surgeries. These benchmarks show the typical range of total bills (surgeon fee + hospital charges) and can help you set expectations before your consultation.</p>
+      <div class="moh-links">
+        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/hospital-bills-and-fee-benchmarks/" target="_blank" rel="noopener" class="moh-link">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          MOH Fee Benchmarks — Eye Surgery
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:0.88rem; color:var(--text); font-weight:400; line-height:1.75; margin-top:2rem; padding: 1.5rem; background: rgba(42,124,124,0.05); border-radius: 0.75rem; border: 1px solid rgba(42,124,124,0.1);"><strong>No-surprise policy:</strong> Dr. Wong's practice provides a written fee estimate before any procedure. The estimate itemises all expected charges so there are no unexpected costs. If you have questions about a specific procedure, please <a href="index.html#contact" style="color:var(--teal); font-weight:500;">contact the clinic</a> for a personalised estimate.</p>
 </div>
 
 <!-- BILLING INFO -->
