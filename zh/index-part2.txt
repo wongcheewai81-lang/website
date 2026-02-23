@@ -1,0 +1,615 @@
+<!-- ══════════════════════ SERVICES ══════════════════════ -->
+<section id="services" class="section">
+  <div class="section-inner">
+    <div class="services-header reveal" style="display:grid; grid-template-columns:1fr auto; gap:var(--sp-5); align-items:center;">
+      <div>
+        <p class="eyebrow">眼病与治疗</p>
+        <h2 class="heading" style="margin-bottom:8px;">专业护理您的<strong>视网膜疾病</strong></h2>
+        <p class="lead" style="max-width:560px;">黄医生的诊疗重点是视网膜和玻璃体疾病的医学和手术管理。早期干预至关重要。</p>
+      </div>
+      <div style="border-radius:16px; overflow:hidden; box-shadow:var(--sh-lg); width:280px; flex-shrink:0;">
+        <img src="../images/clinic-consultation.jpg" alt="黄医生用眼球解剖模型与患者进行咨询" style="width:100%; height:200px; object-fit:cover; object-position:65% 20%; display:block;" />
+      </div>
+    </div>
+
+    <div class="services-grid reveal" style="transition-delay:0.1s;">
+      <div class="service-card featured">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M15 9l1.5-1.5" stroke-width="1.2" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="service-name">视网膜脱离手术</div>
+        <p class="service-desc">这是医学急症。黄医生提供急症和择期手术修复，采用玻璃体切除术和先进技术来恢复和保护视力。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="5" stroke-width="1"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <div class="service-name">黄斑变性</div>
+        <p class="service-desc">年龄相关性黄斑变性(AMD)是老年人视力丧失的主要原因。黄医生提供玻璃体腔注射和个性化管理方案。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2c0 0-7 9.5-7 13.5a7 7 0 0 0 14 0C19 11.5 12 2 12 2z"/>
+            <path d="M9 16a3.5 3.5 0 0 0 4.5 0" stroke-width="1.2" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="service-name">糖尿病视网膜病变</div>
+        <p class="service-desc">糖尿病患者面临视网膜损伤的高风险。黄医生提供激光治疗、玻璃体腔注射和根据您的病情量身定制的手术护理。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="5" y="2" width="14" height="20" rx="2"/>
+            <path d="M9 7h6"/>
+            <path d="M9 11h6"/>
+            <path d="M9 15h4"/>
+          </svg>
+        </div>
+        <div class="service-name">视网膜咨询</div>
+        <p class="service-desc">全面视网膜评估，包括OCT成像、眼底摄影、荧光血管造影和个性化护理规划。</p>
+      </div>
+    </div>
+
+    <div class="center-actions reveal" style="transition-delay:0.15s;">
+      <a href="blog.html" class="btn-navy">查看所有眼病与治疗 →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ EDUCATION ══════════════════════ -->
+<section id="education" class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">患者信息</p>
+      <h2 class="heading">了解您的<strong>眼病</strong></h2>
+      <p class="lead">知识令人放心。黄医生相信通过清晰、易懂的信息使患者及其家人能够了解他们的病情和治疗选择。</p>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu-card reveal" style="transition-delay:0.08s;">
+        <div class="edu-header">
+          <h3>什么是视网膜脱离？</h3>
+          <p>紧急病症 · 需要手术</p>
+        </div>
+        <div class="edu-body">
+          <p>视网膜是眼睛后部的感光层。当它从其下方的组织上剥离时，称为视网膜脱离，需要紧急医疗护理。</p>
+          <ul class="edu-points">
+            <li>突然的飞蚊症、闪光或视野中的"窗帘"是警告信号</li>
+            <li>大多数脱离是由视网膜的撕裂或孔洞引起的</li>
+            <li>手术效果显著，尤其是早期治疗时</li>
+            <li>如果您注意到症状，请立即就医，不要等待</li>
+          </ul>
+        </div>
+      </div>
+      <div class="edu-card reveal" style="transition-delay:0.14s;">
+        <div class="edu-header">
+          <h3>什么是黄斑变性？</h3>
+          <p>年龄相关病症 · 持续管理</p>
+        </div>
+        <div class="edu-body">
+          <p>年龄相关性黄斑变性(AMD)影响黄斑，即视网膜中负责清晰详细视力的中心部分。这是60岁以上人群中最常见的视力丧失原因。</p>
+          <ul class="edu-points">
+            <li>干性AMD进展缓慢，湿性AMD可能导致快速视力丧失</li>
+            <li>中心视力的模糊、扭曲或暗点是常见症状</li>
+            <li>抗VEGF注射可以明显延缓湿性AMD进展</li>
+            <li>定期监测对于尽早发现变化至关重要</li>
+          </ul>
+        </div>
+      </div>
+      <div class="edu-card reveal" style="transition-delay:0.20s;">
+        <div class="edu-header">
+          <h3>初次就诊期间会发生什么</h3>
+          <p>诊疗就诊 · 友好和全面</p>
+        </div>
+        <div class="edu-body">
+          <p>您与黄医生的首次约诊既是交流也是检查。在进行任何检查或治疗之前，我们会花时间了解您的病史、关切和目标。</p>
+          <ul class="edu-points">
+            <li>全面的病史采集和症状回顾</li>
+            <li>使用专科设备的散瞳眼部检查</li>
+            <li>必要时进行OCT和影像扫描</li>
+            <li>清晰解释检查结果和所有可用选择</li>
+          </ul>
+        </div>
+      </div>
+      <div class="edu-card reveal" style="transition-delay:0.26s;">
+        <div class="edu-header">
+          <h3>手术后</h3>
+          <p>术后护理 · 康复指南</p>
+        </div>
+        <div class="edu-body">
+          <p>视网膜手术后的恢复需要仔细的关注和随访。黄医生及其团队提供详细的术后指导，随时可以解决您的疑虑。</p>
+          <ul class="edu-points">
+            <li>手术后，您可能需要保持特定的头部位置</li>
+            <li>在恢复期避免剧烈运动和飞行</li>
+            <li>视力改善可能需要数周到数月</li>
+            <li>随访预约对于监测愈合至关重要</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="center-actions reveal" style="transition-delay:0.3s;">
+      <a href="blog.html" class="btn-teal-outline">完整患者信息指南 →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ MEDIA ══════════════════════ -->
+<section id="media" class="section">
+  <div class="section-inner">
+    <div class="media-header reveal">
+      <div>
+        <p class="eyebrow">媒体与新闻</p>
+        <h2 class="heading" style="margin-bottom:0;">黄医生<strong>登上新闻</strong></h2>
+      </div>
+      <a href="media.html" class="btn-navy">查看所有媒体报道 →</a>
+    </div>
+
+    <div class="reveal" style="transition-delay:0.05s; margin-bottom:var(--sp-4);">
+      <div style="position:relative; border-radius:20px; overflow:hidden; height:320px; box-shadow:var(--sh-lg);">
+        <img src="../images/myopia-meeting-2025.jpg" alt="黄医生在2025年新加坡国际近视会议上演讲" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;" />
+        <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(7,22,42,0.75) 0%, transparent 60%);"></div>
+        <div style="position:absolute; bottom:var(--sp-4); left:var(--sp-4);">
+          <p style="font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:6px;">国际近视会议2025 · 新加坡</p>
+          <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:#fff; line-height:1.3; max-width:420px;">我如何使用视网膜工作站管理高度近视患者</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-grid reveal" style="transition-delay:0.1s;">
+      <div class="media-card">
+        <div class="media-outlet">Channel NewsAsia</div>
+        <h3 class="media-headline">持续释放脂质体类固醇消除白内障手术后的炎症</h3>
+        <p class="media-date">2021</p>
+      </div>
+      <div class="media-card">
+        <div class="media-outlet">The Straits Times</div>
+        <h3 class="media-headline">新型给药创新针对白内障术后炎症</h3>
+        <p class="media-date">2021</p>
+      </div>
+      <div class="media-card">
+        <div class="media-outlet">Lianhe Zaobao</div>
+        <h3 class="media-headline">持续释放脂质体类固醇用于白内障手术后消炎 <span style="font-size:0.85em; color:var(--muted);">Sustained-release liposomal steroid for post-cataract inflammation</span></h3>
+        <p class="media-date">2021</p>
+      </div>
+      <div class="media-card">
+        <div class="media-outlet">英文广播电台</div>
+        <h3 class="media-headline">关于年龄相关性黄斑变性和高度近视的广播采访</h3>
+        <p class="media-date">2019 – 2021</p>
+      </div>
+      <div class="media-card">
+        <div class="media-outlet">中文广播电台</div>
+        <h3 class="media-headline">高度近视与老年黄斑变性 <span style="font-size:0.85em; color:var(--muted);">Age-related macular degeneration and high myopia</span></h3>
+        <p class="media-date">2019 – 2021</p>
+      </div>
+      <div class="media-card">
+        <div class="media-outlet">Mettanews.id · Indonesia</div>
+        <h3 class="media-headline"><a href="https://mettanews.id/kupas-tuntas-kaitan-diabetes-dengan-stroke-dan-komplikasi-pada-mata-bersama-healthmetrics-indonesia/" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">健康讲座：糖尿病及其对眼睛的并发症 — HealthMetrics Indonesia, Solo</a></h3>
+        <p class="media-date">2025年8月</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ BLOG ══════════════════════ -->
+<section id="blog" class="section">
+  <div class="section-inner">
+    <div class="blog-header reveal">
+      <div>
+        <p class="eyebrow">文章与见解</p>
+        <h2 class="heading" style="margin-bottom:0;">眼睛健康，<strong>清楚解释</strong></h2>
+      </div>
+      <a href="blog.html" class="btn-teal-outline">查看所有文章 →</a>
+    </div>
+
+    <div class="blog-grid reveal" style="transition-delay:0.1s;">
+      <a href="articles/article-floaters.html" class="blog-card">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,#1a4d4d 0%,#2a7c7c 100%); display:flex; align-items:center; justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="24" cy="24" rx="18" ry="11" stroke="rgba(255,255,255,0.9)" stroke-width="2"/>
+            <circle cx="24" cy="24" r="4" fill="rgba(255,255,255,0.9)"/>
+            <circle cx="14" cy="19" r="2" fill="rgba(255,255,255,0.55)"/>
+            <circle cx="33" cy="20" r="1.5" fill="rgba(255,255,255,0.55)"/>
+            <circle cx="18" cy="30" r="1.5" fill="rgba(255,255,255,0.55)"/>
+            <circle cx="31" cy="29" r="2" fill="rgba(255,255,255,0.55)"/>
+          </svg>
+        </div>
+        <div class="blog-content">
+          <span class="blog-tag">视网膜健康</span>
+          <h3 class="blog-title">眼睛飞蚊症：何时恐慌，何时无需担心</h3>
+          <p class="blog-excerpt">大多数飞蚊症是无害的，但有些预示着视网膜急症。了解哪些症状需要同日复诊，哪些可以等待常规预约。</p>
+          <div class="blog-meta-row">
+            <span class="blog-read-time">黄志伟医生 · 5分钟阅读</span>
+            <span class="blog-arrow" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8L8 2M8 2H4M8 2V6"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a href="articles/article-retinal-detachment.html" class="blog-card">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,#5c1a1a 0%,#8b2e2e 100%); display:flex; align-items:center; justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="24" cy="24" rx="18" ry="11" stroke="rgba(255,255,255,0.9)" stroke-width="2"/>
+            <circle cx="24" cy="24" r="4" fill="rgba(255,255,255,0.9)"/>
+            <path d="M30 17 Q34 24 30 31" stroke="rgba(255,200,200,0.85)" stroke-width="1.5" stroke-dasharray="2 2" fill="none"/>
+            <path d="M18 17 Q14 24 18 31" stroke="rgba(255,200,200,0.85)" stroke-width="1.5" stroke-dasharray="2 2" fill="none"/>
+            <line x1="24" y1="10" x2="24" y2="6" stroke="rgba(255,100,100,0.9)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="5" r="2" fill="rgba(255,100,100,0.9)"/>
+          </svg>
+        </div>
+        <div class="blog-content">
+          <span class="blog-tag">急症</span>
+          <h3 class="blog-title">视网膜脱离：警告信号、手术与康复</h3>
+          <p class="blog-excerpt">视网膜脱离是一种危害视力的医学急症。了解警告信号、手术涉及的内容以及康复的样子。</p>
+          <div class="blog-meta-row">
+            <span class="blog-read-time">黄志伟医生 · 7分钟阅读</span>
+            <span class="blog-arrow" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8L8 2M8 2H4M8 2V6"/></svg></span>
+          </div>
+        </div>
+      </a>
+      <a href="articles/article-high-myopia.html" class="blog-card">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,#1a2d4d 0%,#2a4a7c 100%); display:flex; align-items:center; justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="24" cy="24" rx="21" ry="11" stroke="rgba(255,255,255,0.9)" stroke-width="2"/>
+            <circle cx="24" cy="24" r="4" fill="rgba(255,255,255,0.9)"/>
+            <line x1="6" y1="24" x2="3" y2="24" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-dasharray="1.5 2"/>
+            <line x1="42" y1="24" x2="45" y2="24" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-dasharray="1.5 2"/>
+          </svg>
+        </div>
+        <div class="blog-content">
+          <span class="blog-tag">近视</span>
+          <h3 class="blog-title">高度近视：管理终身的视网膜风险</h3>
+          <p class="blog-excerpt">高度近视不仅会使您的视力模糊，还会拉伸并变薄视网膜，增加终身脱离、黄斑裂孔和青光眼的风险。</p>
+          <div class="blog-meta-row">
+            <span class="blog-read-time">黄志伟医生 · 8分钟阅读</span>
+            <span class="blog-arrow" aria-hidden="true"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8L8 2M8 2H4M8 2V6"/></svg></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ INNOVATIONS TEASER ══════════════════════ -->
+<section class="section" style="padding-bottom:3.5rem;">
+  <div class="section-inner">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1.75rem;" class="reveal">
+      <div>
+        <p class="eyebrow">新兴治疗与创新</p>
+        <h2 class="heading" style="margin-bottom:0.6rem;">为<strong>视网膜疾病</strong>带来新希望</h2>
+        <p style="font-size:0.92rem; color:var(--muted); font-weight:300; max-width:540px; line-height:1.7;">黄医生追踪新获批的治疗方法以及即将在新加坡推出的治疗——从世界首个遗传性视网膜病变基因疗法到AI辅助视网膜成像。</p>
+      </div>
+      <a href="innovations.html" class="btn-navy">探索创新 →</a>
+    </div>
+    <div class="reveal" style="transition-delay:0.1s; display:grid; grid-template-columns:repeat(auto-fill, minmax(185px, 1fr)); gap:0.75rem;">
+
+      <a href="innovations.html" style="display:block; background:#fff; border:1px solid rgba(15,35,64,0.1); border-radius:0.85rem; padding:1.1rem 1.25rem; text-decoration:none; transition:box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.boxShadow='0 4px 18px rgba(15,35,64,0.1)';this.style.borderColor='rgba(42,124,124,0.35)';" onmouseout="this.style.boxShadow='';this.style.borderColor='rgba(15,35,64,0.1)';">
+        <span style="display:inline-flex; align-items:center; gap:0.35rem; font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.75rem; border-radius:2rem; background:rgba(42,124,124,0.1); color:#2a7c7c; border:1px solid rgba(42,124,124,0.25); margin-bottom:0.65rem;"><span style="width:6px; height:6px; border-radius:50%; background:#2a7c7c; flex-shrink:0;"></span>现已推出</span>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:#0f2340; line-height:1.2; margin-bottom:0.3rem;">CIRRUS PathFinder™</p>
+        <p style="font-size:0.8rem; color:#6b7f8a; font-weight:300; line-height:1.5;">AI辅助视网膜OCT分析</p>
+      </a>
+
+      <a href="innovations.html" style="display:block; background:#fff; border:1px solid rgba(15,35,64,0.1); border-radius:0.85rem; padding:1.1rem 1.25rem; text-decoration:none; transition:box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.boxShadow='0 4px 18px rgba(15,35,64,0.1)';this.style.borderColor='rgba(42,124,124,0.35)';" onmouseout="this.style.boxShadow='';this.style.borderColor='rgba(15,35,64,0.1)';">
+        <span style="display:inline-flex; align-items:center; gap:0.35rem; font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.75rem; border-radius:2rem; background:rgba(42,124,124,0.1); color:#2a7c7c; border:1px solid rgba(42,124,124,0.25); margin-bottom:0.65rem;"><span style="width:6px; height:6px; border-radius:50%; background:#2a7c7c; flex-shrink:0;"></span>现已推出</span>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:#0f2340; line-height:1.2; margin-bottom:0.3rem;">LUXTURNA®</p>
+        <p style="font-size:0.8rem; color:#6b7f8a; font-weight:300; line-height:1.5;">遗传性视网膜病变基因疗法</p>
+      </a>
+
+      <a href="innovations.html" style="display:block; background:#fff; border:1px solid rgba(15,35,64,0.1); border-radius:0.85rem; padding:1.1rem 1.25rem; text-decoration:none; transition:box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.boxShadow='0 4px 18px rgba(15,35,64,0.1)';this.style.borderColor='rgba(42,124,124,0.35)';" onmouseout="this.style.boxShadow='';this.style.borderColor='rgba(15,35,64,0.1)';">
+        <span style="display:inline-flex; align-items:center; gap:0.35rem; font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.75rem; border-radius:2rem; background:rgba(42,124,124,0.1); color:#2a7c7c; border:1px solid rgba(42,124,124,0.25); margin-bottom:0.65rem;"><span style="width:6px; height:6px; border-radius:50%; background:#2a7c7c; flex-shrink:0;"></span>现已推出</span>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:#0f2340; line-height:1.2; margin-bottom:0.3rem;">巩膜固定LAL</p>
+        <p style="font-size:0.8rem; color:#6b7f8a; font-weight:300; line-height:1.5;">可调节光学晶状体（Yamane技术）</p>
+      </a>
+
+      <a href="innovations.html" style="display:block; background:#fff; border:1px solid rgba(15,35,64,0.1); border-radius:0.85rem; padding:1.1rem 1.25rem; text-decoration:none; transition:box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.boxShadow='0 4px 18px rgba(15,35,64,0.1)';this.style.borderColor='rgba(200,169,110,0.45)';" onmouseout="this.style.boxShadow='';this.style.borderColor='rgba(15,35,64,0.1)';">
+        <span style="display:inline-flex; align-items:center; gap:0.35rem; font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.75rem; border-radius:2rem; background:rgba(200,169,110,0.14); color:#a07840; border:1px solid rgba(200,169,110,0.3); margin-bottom:0.65rem;"><span style="width:6px; height:6px; border-radius:50%; background:#c8a96e; flex-shrink:0;"></span>即将推出</span>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:#0f2340; line-height:1.2; margin-bottom:0.3rem;">IZERVAY™</p>
+        <p style="font-size:0.8rem; color:#6b7f8a; font-weight:300; line-height:1.5;">地理萎缩 — 干性AMD</p>
+      </a>
+
+      <a href="innovations.html" style="display:block; background:#fff; border:1px solid rgba(15,35,64,0.1); border-radius:0.85rem; padding:1.1rem 1.25rem; text-decoration:none; transition:box-shadow 0.2s, border-color 0.2s;" onmouseover="this.style.boxShadow='0 4px 18px rgba(15,35,64,0.1)';this.style.borderColor='rgba(200,169,110,0.45)';" onmouseout="this.style.boxShadow='';this.style.borderColor='rgba(15,35,64,0.1)';">
+        <span style="display:inline-flex; align-items:center; gap:0.35rem; font-size:0.62rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.75rem; border-radius:2rem; background:rgba(200,169,110,0.14); color:#a07840; border:1px solid rgba(200,169,110,0.3); margin-bottom:0.65rem;"><span style="width:6px; height:6px; border-radius:50%; background:#c8a96e; flex-shrink:0;"></span>即将推出</span>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:#0f2340; line-height:1.2; margin-bottom:0.3rem;">Susvimo®</p>
+        <p style="font-size:0.8rem; color:#6b7f8a; font-weight:300; line-height:1.5;">糖尿病视网膜病变可补充植入物</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- wave: light blog → dark testimonials -->
+<div aria-hidden="true" style="background:var(--navy); overflow:hidden; height:64px; line-height:0; margin-bottom:-1px;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%; height:64px; display:block;">
+    <path d="M0,0 L1440,0 L1440,22 Q720,64 0,22 Z" fill="#f0ece4"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════ TESTIMONIALS ══════════════════════ -->
+<!-- PLACEHOLDER: Replace the three quotes below with real verified patient testimonials before publishing -->
+<section id="testimonials" class="section grain">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;">
+      <p class="eyebrow eyebrow-gold" style="justify-content:center;">患者体验</p>
+      <h2 class="heading heading-cream">患者怎么说</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard reveal">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">言语无法表达我对黄志伟医生的感谢和欣赏。他在我提出很多问题时没有表现出高高在上的态度，真诚地倾听我的想法，让我感到不仅仅是又一个患者。为此，我非常感谢。</p>
+        <div>
+          <div class="tcard-author">BP Soh</div>
+          <div class="tcard-condition">常规眼部护理 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.1s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">黄志伟医生是一位高度熟练和知识渊博的眼科医生。他提供了杰出的护理，在3小时内安排了手术。他的专业知识和同情的方法使我们感到舒适和得到良好照顾。强烈推荐黄医生及其团队。</p>
+        <div>
+          <div class="tcard-author">chvaelae 123</div>
+          <div class="tcard-condition">急症手术 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.2s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">我与黄志伟医生进行了眼部检查，他非常耐心，也很好地解释了我的病情。他一直是我眼病症状的医生，并向我保证。非常好的医生，医术精湛。</p>
+        <div>
+          <div class="tcard-author">Angel Tan</div>
+          <div class="tcard-condition">眼病管理 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.3s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">黄医生提供了杰出的护理和手术。从初次咨询、手术本身到后续就诊，一切都处理得很好。特别感谢诊疗室经理Yolanda和她的团队提供的超一流服务。</p>
+        <div>
+          <div class="tcard-author">bun H AG</div>
+          <div class="tcard-condition">手术与随访护理 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.4s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">我与黄志伟医生进行了眼科手术以治疗视网膜脱离和晶状体脱位，我对所获得的护理感到非常满意。他清楚地解释了病情、手术计划以及预期结果，这有助于缓解我在手术前的忧虑。手术进行顺利，我的恢复在他的细心随访护理下进展良好。黄医生不仅医术高明，而且富有同情心和尽责。我非常感谢他的专业知识，并对任何面临严重眼病的人有信心地推荐他。</p>
+        <div>
+          <div class="tcard-author">Kelvin Peh</div>
+          <div class="tcard-condition">视网膜脱离和晶状体脱位手术 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.5s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">我们在Asia Pacific Eye Centre与黄志伟医生一起为孩子进行眼部检查时有了美好的体验。医生非常耐心、温柔，花时间使我的孩子在整个过程中感到舒适。他清楚而专业地解释了近视的诊断，并为我们提供了管理近视的有益指导。我们真诚地感谢所给予的护理和关注，这使本来可能压力很大的就诊感到令人放心和积极。强烈推荐！</p>
+        <div>
+          <div class="tcard-author">Zhengzheng Zhang</div>
+          <div class="tcard-condition">小儿近视 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.6s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">黄医生非常友好，谈话很愉快。他对我的病情进行了清楚而准确的解释。他的诊断温和，在他的专业领域拥有丰富的经验。我相信我的眼睛在黄医生的护理下得到妥善照顾。</p>
+        <div>
+          <div class="tcard-author">J</div>
+          <div class="tcard-condition">眼部咨询 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.7s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">黄志伟医生在我患视网膜脱离后为我进行了眼科手术，救我免于失明。与黄医生的随访总是令人愉快的，因为他友善、细心，对患者的照顾很周到！强烈推荐黄医生和APEC！</p>
+        <div>
+          <div class="tcard-author">ZhiYuan Ng</div>
+          <div class="tcard-condition">视网膜脱离手术 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.8s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">我一直在黄志伟医生的诊疗下治疗干眼症炎症。黄医生总是专业、细心、耐心和温和的。他花时间详细解释，在每次预约都不会仓促。到目前为止，每次预约的等待时间都相当短暂。每次就诊都是令人愉快的体验，我会高度推荐黄医生给其他人。</p>
+        <div>
+          <div class="tcard-author">RedBeanBun</div>
+          <div class="tcard-condition">干眼症治疗 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:0.9s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">黄医生是一位杰出的医生！他认真倾听，清楚地解释所有事情，使我感到安心。谢谢。</p>
+        <div>
+          <div class="tcard-author">Danny Halim</div>
+          <div class="tcard-condition">眼部咨询 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:1.0s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">我由黄医生进行了玻璃体切除术来修复视网膜脱离，并在Asia Pacific Eye Centre继续随访。黄医生是一位高度经验丰富、关怀备至、敬业的外科医生。尽管手术非常复杂（我有增生性玻璃体视网膜病变），他耐心地彻底解释了一切，使我感到非常平静和有把握。他还提供了许多有益的术前和术后眼部护理提示，取得了良好的视觉效果。一定会因他一流的医术和优异的服务推荐黄医生。</p>
+        <div>
+          <div class="tcard-author">XKairene</div>
+          <div class="tcard-condition">玻璃体切除术 · 复杂性增生性玻璃体视网膜病变 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:1.1s;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">黄医生是我最喜欢的眼医生。他提供了清楚的解释，并花时间解决我的疑虑。谢谢。</p>
+        <div>
+          <div class="tcard-author">Nutthanun Kamjorn</div>
+          <div class="tcard-condition">眼部咨询 · Google评价</div>
+        </div>
+      </div>
+      <div class="tcard reveal" style="transition-delay:1.2s; grid-column: 1 / -1;">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-quote">我的儿子戴OK镜眼睛不舒服。我们去Asia Pacific做了详细的眼科检查。黄医生非常专业和耐心，回答了我们许多问题。非常满意。</p>
+        <p style="font-size:0.75rem; color:rgba(250,247,242,0.3); margin-top:8px; font-style:normal;">原文（中文）：儿子戴OK镜眼睛不舒服，去Asia Pacific做了个详细的眼科检查，黄医生很专业有耐心，回答了我们很多问题，很满意</p>
+        <div>
+          <div class="tcard-author">lijun qiang</div>
+          <div class="tcard-condition">小儿角膜塑形镜 · Google评价 · 从中文翻译</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave: dark testimonials → light contact -->
+<div aria-hidden="true" style="background:var(--page); overflow:hidden; height:64px; line-height:0; margin-top:-1px;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%; height:64px; display:block;">
+    <path d="M0,0 L1440,0 L1440,22 Q720,64 0,22 Z" fill="var(--navy)"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════ CONTACT ══════════════════════ -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">预约挂号</p>
+        <h2 class="heading">让我们照顾您的<strong>视力</strong></h2>
+        <p class="lead">黄医生的诊所位于新加坡，欢迎来自各个背景的患者。我们接受自付患者和医疗储蓄账户合格患者。</p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>诊所地址</strong>
+              Asia Pacific Eye Centre<br>Gleneagles Hospital，医院楼3楼<br>Napier Road 6A，新加坡 258500
+              <a href="https://maps.google.com/?q=Asia+Pacific+Eye+Centre+Gleneagles+Hospital+6A+Napier+Road+Singapore" target="_blank" rel="noopener" class="contact-directions-btn">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                获取路线
+              </a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>电话</strong>
+              <a href="tel:+6592357063">+65 9235 7063</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>邮箱</strong>
+              <a href="mailto:contact@asiapacificeyecentre.com.sg">contact@asiapacificeyecentre.com.sg</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>诊所时间</strong>
+              <div class="contact-hours-grid">
+                <div class="hours-pill">
+                  <div class="hours-pill-day">星期一至星期五</div>
+                  <div class="hours-pill-time">上午9:00 – 下午5:00</div>
+                </div>
+                <div class="hours-pill">
+                  <div class="hours-pill-day">星期六</div>
+                  <div class="hours-pill-time">上午9:00 – 下午1:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:0.12s;">
+        <div class="contact-form-wrap">
+          <p class="form-title">给我们发送信息</p>
+
+          <!-- SUCCESS STATE -->
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2a7c7c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>已收到信息</h3>
+            <p>感谢您，我们会在一个工作日内与您联系。对于紧急眼部疑虑，请直接致电我们 <a href="tel:+6592357063" style="color:var(--teal);">+65 9235 7063</a>。</p>
+          </div>
+
+          <!-- ─────────────────────────────────────────────────────────────────
+               Formspree: create a free form at https://formspree.io and replace
+               "YOUR_FORM_ID" in the action URL below with your actual form ID.
+               ───────────────────────────────────────────────────────────────── -->
+          <form id="contactForm" action="https://formspree.io/f/mykdnlvw" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New Appointment Request — Dr Chee Wai Wong" />
+
+            <div class="form-row">
+              <div class="form-group" id="fg-first">
+                <label for="f-first">名 <span style="color:#c0392b;">*</span></label>
+                <input id="f-first" name="first_name" type="text" placeholder="例如 美铃" autocomplete="given-name" />
+                <span class="form-error-msg">请输入您的名字。</span>
+              </div>
+              <div class="form-group" id="fg-last">
+                <label for="f-last">姓 <span style="color:#c0392b;">*</span></label>
+                <input id="f-last" name="last_name" type="text" placeholder="例如 陈" autocomplete="family-name" />
+                <span class="form-error-msg">请输入您的姓氏。</span>
+              </div>
+            </div>
+            <div class="form-group" id="fg-email">
+              <label for="f-email">电子邮箱地址 <span style="color:#c0392b;">*</span></label>
+              <input id="f-email" name="email" type="email" placeholder="例如 meiling@email.com" autocomplete="email" />
+              <span class="form-error-msg">请输入有效的电子邮箱地址。</span>
+            </div>
+            <div class="form-group">
+              <label for="f-phone">电话号码</label>
+              <input id="f-phone" name="phone" type="tel" placeholder="+65 XXXX XXXX" autocomplete="tel" />
+            </div>
+            <div class="form-group" id="fg-reason">
+              <label for="f-reason">就诊原因 <span style="color:#c0392b;">*</span></label>
+              <select id="f-reason" name="reason">
+                <option value="">请选择...</option>
+                <option>视网膜脱离（紧急）</option>
+                <option>黄斑变性随访</option>
+                <option>糖尿病眼部检查</option>
+                <option>第二意见</option>
+                <option>一般视网膜咨询</option>
+              </select>
+              <span class="form-error-msg">请选择就诊原因。</span>
+            </div>
+            <div class="form-group">
+              <label for="f-msg">信息（可选）</label>
+              <textarea id="f-msg" name="message" placeholder="请简要告诉我们您的症状或顾虑..."></textarea>
+            </div>
+            <button class="btn-form" type="submit" id="formSubmitBtn">预约挂号 →</button>
+            <div class="form-network-error" id="formNetworkError">
+              发送信息出错。请重试，或致电我们 <a href="tel:+6592357063" style="color:#c0392b;">+65 9235 7063</a>。
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="10 28 118 130" width="26" height="28" aria-hidden="true" style="opacity:0.45; flex-shrink:0;">
+        <path d="M 114,14 C 4,14 4,166 114,166" fill="none" stroke="#faf7f2" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/>
+        <path d="M 114,26 C 18,26 18,154 114,154" fill="none" stroke="#3d9e9e" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+        <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#3d9e9e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#c8a96e" stroke-width="4" stroke-dasharray="36 9999" stroke-dashoffset="-72" stroke-linecap="round"/>
+      </svg>
+      <div class="footer-left">© 2026 黄志伟医生 · 玻璃体视网膜外科医生 · Asia Pacific Eye Centre, Gleneagles Hospital，新加坡</div>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="#about">关于</a>
+      <a href="#services">服务</a>
+      <a href="#education">患者信息</a>
+      <a href="#myopia">近视之旅</a>
+      <a href="#research">研究</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </div>
+</footer>

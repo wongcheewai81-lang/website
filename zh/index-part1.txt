@@ -1,0 +1,393 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGBW3DHSCL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KGBW3DHSCL');
+</script>
+</head>
+<body>
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ══════════════════════ NAV ══════════════════════ -->
+<nav id="navbar">
+  <a href="/" class="nav-logo" aria-label="黄志伟医生 — 首页">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" width="160" height="60" aria-hidden="true">
+      <defs>
+        <linearGradient id="nav-gg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#c8a96e"/>
+          <stop offset="100%" stop-color="#e0c88a"/>
+        </linearGradient>
+      </defs>
+      <path d="M 114,14 C 4,14 4,166 114,166" fill="none" stroke="#0f2340" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+      <path d="M 114,26 C 18,26 18,154 114,154" fill="none" stroke="#2a7c7c" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+      <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#3d9e9e" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#c8a96e" stroke-width="4" stroke-dasharray="36 9999" stroke-dashoffset="-72" stroke-linecap="round"/>
+      <line x1="125" y1="90"  x2="58" y2="90"  stroke="#c8a96e" stroke-width="0.85" stroke-dasharray="2,3" opacity="0.65"/>
+      <line x1="125" y1="72"  x2="58" y2="80"  stroke="#c8a96e" stroke-width="0.5"  stroke-dasharray="2,3" opacity="0.35"/>
+      <line x1="125" y1="108" x2="58" y2="100" stroke="#c8a96e" stroke-width="0.5"  stroke-dasharray="2,3" opacity="0.35"/>
+      <line x1="130" y1="36"  x2="130" y2="148" stroke="#0f2340" stroke-width="0.75" opacity="0.18"/>
+      <text x="148" y="70"  font-family="'DM Sans', sans-serif" font-size="11" font-weight="300" letter-spacing="3" fill="#6b7f8a">DR.</text>
+      <text x="146" y="104" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="600" letter-spacing="0.5" fill="#0f2340">Chee Wai</text>
+      <text x="146" y="140" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="300" letter-spacing="0.5" fill="#2a7c7c">Wong</text>
+      <line x1="146" y1="150" x2="342" y2="150" stroke="url(#nav-gg)" stroke-width="0.75" opacity="0.8"/>
+      <text x="146" y="163" font-family="'DM Sans', sans-serif" font-size="9" font-weight="400" letter-spacing="2.5" fill="#6b7f8a">VITREORETINAL SURGEON · SINGAPORE</text>
+    </svg>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about">关于</a></li>
+    <li><a href="#services">专长</a></li>
+    <li><a href="#myopia">近视</a></li>
+    <li><a href="#education">患者指南</a></li>
+    <li><a href="#blog">资讯</a></li>
+    <li><a href="media.html">媒体</a></li>
+    <li><a href="fees.html">费用</a></li>
+    <li><a href="clinical-trials.html">研究</a></li>
+    <li><a href="innovations.html">创新</a></li>
+    <li><span class="nav-lang-switch"><a href="../index.html">EN</a> | <a href="index.html" class="active-lang">中文</a></span></li>
+    <li><a href="#contact" class="nav-cta">预约咨询</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="切换导航菜单" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+<div class="mobile-nav-panel" id="mobileNav" aria-hidden="true">
+  <a href="#about">关于</a>
+  <a href="#services">专长</a>
+  <a href="#myopia">近视</a>
+  <a href="#education">患者指南</a>
+  <a href="#blog">资讯</a>
+  <a href="blog.html">博客</a>
+  <a href="media.html">媒体</a>
+  <a href="fees.html">费用</a>
+  <a href="#contact" class="mob-cta">预约咨询</a>
+</div>
+
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">新加坡 · 玻璃体视网膜专家</div>
+    <h1 class="hero-name">
+      黄志伟医生<strong></strong>
+      <span class="last"></span>
+      <span class="hero-subtitle" style="display:block;font-size:0.32em;font-weight:400;letter-spacing:0.04em;margin-top:0.25em;opacity:0.88;">眼科医学博士及玻璃体视网膜外科医生，新加坡</span>
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-tagline">
+      <em>当近视不仅仅是眼镜问题时。</em><br><br>
+      新加坡的近视疫情无声而至 — 直到它不再无声。黄医生是那位了解高度近视数十年对眼睛造成什么影响的外科医生，也是当它成为外科紧急情况时进行手术的医生。
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">预约咨询</a>
+      <a href="#about" class="btn-outline">了解黄医生</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <img src="../images/talk-eye-specialists.jpg" alt="黄志伟医生在蔡司-罗氏研讨会上演讲，新加坡" style="object-position: center 15%;" />
+    </div>
+    <div class="hero-stats-row">
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count-to="116" data-suffix="+">116+</span>
+        <span class="hero-stat-label">论文发表</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count-to="36" data-prefix="H-">H-36</span>
+        <span class="hero-stat-label">H指数</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count-to="2" data-prefix="Top " data-suffix="%">Top 2%</span>
+        <span class="hero-stat-label">斯坦福/爱思唯尔</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- decorative large logomark — stroke widths stay as authored; at 520px the scale is 4× so 1.5→6px rendered, which is correct for background decoration -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 180"
+    style="position:absolute; right:4%; bottom:-5%; width:520px; height:520px; opacity:0.04; pointer-events:none; z-index:0;" aria-hidden="true">
+    <path d="M 114,14 C 4,14 4,166 114,166" fill="none" stroke="#faf7f2" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M 114,26 C 18,26 18,154 114,154" fill="none" stroke="#3d9e9e" stroke-width="1" stroke-linecap="round"/>
+    <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#3d9e9e" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#c8a96e" stroke-width="4" stroke-dasharray="36 9999" stroke-dashoffset="-72" stroke-linecap="round"/>
+    <line x1="125" y1="90" x2="58" y2="90" stroke="#c8a96e" stroke-width="0.85" stroke-dasharray="2,3"/>
+  </svg>
+</section>
+
+
+<!-- wave: dark hero → white logo strip -->
+<div aria-hidden="true" style="background:#ffffff; overflow:hidden; height:64px; line-height:0; margin-top:-1px;">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%; height:64px; display:block;">
+    <path d="M0,0 L1440,0 L1440,22 Q720,64 0,22 Z" fill="#07162a"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════ LOGO STRIP ══════════════════════ -->
+<div style="background:#ffffff; border-bottom:1px solid rgba(15,35,64,0.08); display:flex; align-items:center; justify-content:center; gap:48px; padding:28px 48px; flex-wrap:wrap;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" width="220" height="83" aria-label="黄志伟医生 — 玻璃体视网膜外科医生">
+    <defs>
+      <linearGradient id="ls-gg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#c8a96e"/>
+        <stop offset="100%" stop-color="#e0c88a"/>
+      </linearGradient>
+    </defs>
+    <path d="M 114,14 C 4,14 4,166 114,166" fill="none" stroke="#0f2340" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+    <path d="M 114,26 C 18,26 18,154 114,154" fill="none" stroke="#2a7c7c" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+    <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#3d9e9e" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M 114,38 C 32,38 32,142 114,142" fill="none" stroke="#c8a96e" stroke-width="4" stroke-dasharray="36 9999" stroke-dashoffset="-72" stroke-linecap="round"/>
+    <line x1="125" y1="90" x2="58" y2="90" stroke="#c8a96e" stroke-width="0.85" stroke-dasharray="2,3" opacity="0.65"/>
+    <line x1="125" y1="72" x2="58" y2="80" stroke="#c8a96e" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.35"/>
+    <line x1="125" y1="108" x2="58" y2="100" stroke="#c8a96e" stroke-width="0.5" stroke-dasharray="2,3" opacity="0.35"/>
+    <line x1="130" y1="36" x2="130" y2="148" stroke="#0f2340" stroke-width="0.75" opacity="0.18"/>
+    <text x="148" y="70" font-family="'DM Sans', sans-serif" font-size="11" font-weight="300" letter-spacing="3" fill="#6b7f8a">DR.</text>
+    <text x="146" y="104" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="600" letter-spacing="0.5" fill="#0f2340">Chee Wai</text>
+    <text x="146" y="140" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="300" letter-spacing="0.5" fill="#2a7c7c">Wong</text>
+    <line x1="146" y1="150" x2="342" y2="150" stroke="url(#ls-gg)" stroke-width="0.75" opacity="0.8"/>
+    <text x="146" y="163" font-family="'DM Sans', sans-serif" font-size="9" font-weight="400" letter-spacing="2.5" fill="#6b7f8a">VITREORETINAL SURGEON · SINGAPORE</text>
+  </svg>
+  <div style="width:1px; height:52px; background:rgba(15,35,64,0.12);"></div>
+  <img src="https://www.asiapacificeyecentre.com.sg/wp-content/uploads/2024/03/APEC-Logo_CMYK-130x63-1.png" alt="Asia Pacific Eye Centre" height="52" style="opacity:0.85;" />
+</div>
+
+
+<!-- ══════════════════════ ABOUT ══════════════════════ -->
+<section id="about" class="section">
+  <div class="section-inner about-grid">
+
+    <div class="about-text reveal">
+      <p class="eyebrow">关于黄医生</p>
+      <h2 class="heading">新加坡的近视疫情有<strong>外科后果</strong></h2>
+      <p class="lead">
+        黄志伟医生是新加坡治疗近视相关并发症的首屈一指的玻璃体视网膜外科医生 — 一位花费二十年研究高度近视在一生中对眼睛造成什么影响的医生，也是当它成为紧急情况时进行手术的医生。
+      </p>
+      <p class="lead" style="margin-top: 16px;">
+        他既是外科医生，也是拥有116多篇同行评审论文和H指数36的研究者，拥有国际专利的临床创新者，以及为新加坡家庭终身提供伴随性医疗的合作伙伴，帮助他们应对近视疫情的全程。
+      </p>
+
+      <div class="credentials">
+        <div class="credential">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>博士学位，乌得勒支大学</strong>
+            眼部给药系统 — NMRC奖学金资助
+          </div>
+        </div>
+        <div class="credential">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>FAMS（眼科）</strong>
+            新加坡医学院院士
+          </div>
+        </div>
+        <div class="credential">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>国际演讲者</strong>
+            AAO、EURETINA、APAO、WOC — 9个国家
+          </div>
+        </div>
+        <div class="credential">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>斯坦福/爱思唯尔前2%</strong>
+            全球被引用最多的研究人员（2022年）
+          </div>
+        </div>
+      </div>
+
+      <a href="media.html" class="about-link">
+        完整传记及资质 →
+      </a>
+    </div>
+
+    <div class="about-visual reveal" style="transition-delay:0.12s;">
+      <div class="about-accent-orb"></div>
+      <div style="border-radius:20px; overflow:hidden; margin-bottom:var(--sp-3); box-shadow:var(--sh-lg);">
+        <img src="../images/clinic-apec-sign.jpg" alt="黄医生在亚太眼科中心，格伦伊格尔医院" style="width:100%; height:280px; object-fit:cover; object-position:center 62%; display:block;" />
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">当近视不仅仅是眼镜问题时 — 那是患者最需要我的时刻。而这一时刻每年都在越来越多新加坡人身上发生。</p>
+        <span class="quote-cite">— 黄志伟医生</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════ PILLARS ══════════════════════ -->
+<section id="pillars" class="section grain">
+  <div class="section-inner">
+    <div class="pillars-header reveal">
+      <p class="eyebrow eyebrow-gold" style="justify-content:center;">黄医生是谁</p>
+      <h2 class="heading heading-cream" style="text-align:center;">四大支柱。<strong>一位医生。</strong></h2>
+      <p class="lead" style="margin:16px auto 0; text-align:center; color:rgba(250,247,242,0.45); font-style:italic; font-family:'Cormorant Garamond',serif; font-size:1.1rem; max-width:600px;">二十年的研究、手术和创新 — 由单一信念统一。</p>
+    </div>
+
+    <div class="pillars-grid reveal" style="transition-delay:0.1s;">
+      <div class="pillar-card">
+        <span class="pillar-num">01</span>
+        <p class="pillar-label">外科医生</p>
+        <h3 class="pillar-name">当近视成为紧急情况时</h3>
+        <span class="pillar-hook">"我对近视数十年来无声构建的并发症进行手术。"</span>
+        <p class="pillar-desc">近视相关并发症手术的全谱 — 视网膜脱离、黄斑孔、近视性黄斑劈裂、晶状体脱位。已研究1,530个视网膜脱离病例。</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">02</span>
+        <p class="pillar-label">权威医生</p>
+        <h3 class="pillar-name">全球近视疫情终归于视网膜</h3>
+        <span class="pillar-hook">"我早就预见到了。我发表了证据。"</span>
+        <p class="pillar-desc">116多篇同行评审论文。H指数36。总引用数4,491次。斯坦福/爱思唯尔前2%。世界卫生组织/IAPB咨询参与。《柳叶刀数字健康》。</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">03</span>
+        <p class="pillar-label">创新者</p>
+        <h3 class="pillar-name">我不仅仅是治疗。我在创新。</h3>
+        <span class="pillar-hook">"当其他人在手术时，我在建设未来。"</span>
+        <p class="pillar-desc">眼部给药系统博士学位（乌得勒支）。国际专利持有人。第一/二期临床试验主持人。Eden Ophthalmic联合创始人。</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">04</span>
+        <p class="pillar-label">终身医疗医生</p>
+        <h3 class="pillar-name">从您孩子的近视检查到您的视网膜手术</h3>
+        <span class="pillar-hook">"医患关系跨越一生。"</span>
+        <p class="pillar-desc">一位新加坡家长为他们的10岁孩子带来近视检查。二十年后，同一患者发生视网膜脱离。他们回来了。他进行了手术。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ RESEARCH STRIP ══════════════════════ -->
+<section id="research" class="section grain">
+  <div class="section-inner">
+    <div class="research-header reveal">
+      <div>
+        <p class="eyebrow eyebrow-gold">研究与论文发表</p>
+        <h2 class="heading heading-cream" style="margin-bottom:0;">那位<strong>发表证据的</strong>外科医生</h2>
+      </div>
+      <a href="media.html" class="btn-ghost-light">查看论文 →</a>
+    </div>
+    <div class="research-grid reveal" style="transition-delay:0.1s;">
+      <div class="research-stat">
+        <span class="research-stat-num" data-count-to="116" data-suffix="+">116+</span>
+        <span class="research-stat-label">同行评审论文</span>
+      </div>
+      <div class="research-stat">
+        <span class="research-stat-num" data-count-to="36" data-prefix="H-">H-36</span>
+        <span class="research-stat-label">H指数</span>
+      </div>
+      <div class="research-stat">
+        <span class="research-stat-num" data-count-to="4491" data-comma="true">4,491</span>
+        <span class="research-stat-label">总引用数</span>
+      </div>
+      <div class="research-stat">
+        <span class="research-stat-num" data-count-to="2" data-prefix="Top " data-suffix="%">Top 2%</span>
+        <span class="research-stat-label">斯坦福/爱思唯尔 2022</span>
+      </div>
+    </div>
+    <p class="research-note reveal" style="transition-delay:0.15s;">标志性论文选集：Retina 2015（1,032位患者）· 《柳叶刀数字健康》2021 · 《英国眼科杂志》2022（12年SEED队列）· 《药物递送与转化研究》2021（第一/二期试验）</p>
+    <div class="reveal" style="transition-delay:0.2s; display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;">
+      <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AF9nlQthwxo4YgUeN5aw3b-DsfHRgM3Qe8qogRXl1CsI7t3K7cGFThFVVL29X09VvejfLh72DUfbDNoDJ8DHuw&user=KulTQJMAAAAJ" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.6rem; padding:0.7rem 1.4rem; border-radius:3rem; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:rgba(250,247,242,0.8); font-size:0.82rem; font-weight:500; letter-spacing:0.04em; text-decoration:none; transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.borderColor='rgba(255,255,255,0.4)';" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.2)';">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5z" fill="rgba(250,247,242,0.7)"/><path d="M2 17l10 5 10-5" stroke="rgba(250,247,242,0.7)" stroke-width="2" stroke-linecap="round"/><path d="M2 12l10 5 10-5" stroke="rgba(250,247,242,0.7)" stroke-width="2" stroke-linecap="round"/></svg>
+        Google Scholar
+      </a>
+      <a href="https://www.researchgate.net/profile/Chee-Wong-3?ev=hdr_xprf" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.6rem; padding:0.7rem 1.4rem; border-radius:3rem; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:rgba(250,247,242,0.8); font-size:0.82rem; font-weight:500; letter-spacing:0.04em; text-decoration:none; transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.borderColor='rgba(255,255,255,0.4)';" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.2)';">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(250,247,242,0.7)" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 11.3c-.96-1.7-2.4-3-4.14-3.75.7-.88 1.12-2 1.12-3.2C16.57 1.95 14.62 0 12.22 0c-1.83 0-3.4 1.07-4.15 2.63-.26-.03-.53-.04-.8-.04C3.25 2.59 0 5.84 0 9.86c0 3.28 2.1 6.08 5.04 7.19C5.87 20.5 8.77 23 12.22 23c3.25 0 6.06-2.26 6.95-5.42A7.307 7.307 0 0 0 22 12c0-.28-.02-.55-.05-.82-.56.07-1.56.2-2.36.12zM7.27 2.86c.24-.03.49-.04.74-.04 2.2 0 3.98 1.78 3.98 3.98s-1.78 3.98-3.98 3.98S4.03 9.02 4.03 6.8c0-1.75 1.12-3.24 2.72-3.77.17-.06.34-.11.52-.17zm5 17.28c-2.87 0-5.2-2.33-5.2-5.2s2.33-5.2 5.2-5.2 5.2 2.33 5.2 5.2-2.33 5.2-5.2 5.2z"/></svg>
+        ResearchGate
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ MYOPIA JOURNEY ══════════════════════ -->
+<section id="myopia" class="section grain">
+  <div class="section-inner">
+    <div class="journey-header reveal">
+      <p class="eyebrow" style="color:rgba(61,158,158,0.9);">近视级联</p>
+      <h2 class="heading heading-cream">近视如何成为<strong>外科紧急情况</strong></h2>
+      <p class="lead" style="color:rgba(250,247,242,0.5); max-width:600px;">大多数新加坡人认为近视只是眼镜处方。他们不知道的是，高度近视眼睛在数十年内会发生什么 — 以及为什么尽早发现能改变一切。</p>
+    </div>
+
+    <div class="journey-timeline reveal" style="transition-delay:0.1s;">
+      <div class="journey-step">
+        <div class="journey-dot j-safe"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(61,158,158,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12C5.5 6 9.5 4 12 4s6.5 2 10 8c-3.5 6-7.5 8-10 8s-6.5-2-10-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <span class="journey-step-tag">低风险</span>
+        <p class="journey-age">年龄 6–10岁</p>
+        <p class="journey-event">近视开始</p>
+        <p class="journey-note">眼镜。正常生活。大多数家长认为故事到此结束。</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-dot j-safe"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(61,158,158,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <span class="journey-step-tag">进行中</span>
+        <p class="journey-age">年龄 10–20岁</p>
+        <p class="journey-event">进行性近视</p>
+        <p class="journey-note">每增加一屈光度，眼睛拉长约0.35毫米。在–8D时，眼睛明显伸长。</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-dot j-watch"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <span class="journey-step-tag">谨慎</span>
+        <p class="journey-age">年龄 20–40岁</p>
+        <p class="journey-event">无声的结构变化</p>
+        <p class="journey-note">视网膜变薄。格子样变性。风险无形地积累。</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-dot j-watch"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <span class="journey-step-tag">警告</span>
+        <p class="journey-age">年龄 40–55岁</p>
+        <p class="journey-event">早期并发症</p>
+        <p class="journey-note">黄斑牵引。黄斑劈裂。10.3%在12年内出现黄斑变性。</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-dot j-urgent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(224,120,104,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <span class="journey-step-tag">严重</span>
+        <p class="journey-age">年龄 50岁以上</p>
+        <p class="journey-event">外科紧急情况</p>
+        <p class="journey-note">视网膜脱离。黄斑孔。需在数小时至数天内手术。</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-dot j-resolved"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(61,158,158,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <span class="journey-step-tag">保护</span>
+        <p class="journey-age">与黄医生合作</p>
+        <p class="journey-event">视力保护</p>
+        <p class="journey-note">越早开始合作关系，每个阶段的预后就越好。</p>
+      </div>
+    </div>
+
+    <div class="journey-footer reveal" style="transition-delay:0.15s;">
+      <div class="journey-quote">
+        <p>"新加坡拥有地球上最高的近视发病率。高度近视在数十年间无声地重塑眼睛 — 创造一个越来越严重的外科紧急情况级联。我是从两个角度都理解这一级联的外科医生。"</p>
+        <cite>— 黄志伟医生</cite>
+      </div>
+      <div class="journey-stats">
+        <div class="journey-stat-row">
+          <span class="big-num">80%</span>
+          <span class="stat-text">新加坡年轻成人是近视 — 地球上最高的发病率</span>
+        </div>
+        <div class="journey-stat-row">
+          <span class="big-num">10.3%</span>
+          <span class="stat-text">12年近视性黄斑变性发生率（SEED研究，828个受试者）</span>
+        </div>
+        <div class="journey-stat-row">
+          <span class="big-num">47.6亿</span>
+          <span class="stat-text">2050年预计近视人口 — 全球人口的一半</span>
+        </div>
+      </div>
+    </div>
+    <div class="center-actions reveal" style="transition-delay:0.2s;">
+      <a href="articles/article-high-myopia.html" class="btn-ghost-light">探索完整的近视历程 →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════ SERVICES ══════════════════════ -->
+<section id="services" class="section">
+  <div class="section-inner">

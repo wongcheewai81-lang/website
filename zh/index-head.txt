@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="content-language" content="zh-Hans" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f2340'/%3E%3Cpath d='M 22 4 C 3 4 3 28 22 28' fill='none' stroke='%233d9e9e' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M 22 4 C 3 4 3 28 22 28' fill='none' stroke='%23c8a96e' stroke-width='5' stroke-dasharray='7 9999' stroke-dashoffset='-12' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <title>黄志伟医生 | 新加坡玻璃体视网膜外科专家</title>
+  <meta name="description" content="黄志伟医生是新加坡知名的玻璃体视网膜外科专家，专注于视网膜脱离手术、黄斑变性和高度近视相关并发症的治疗。" />
+  <link rel="canonical" href="https://cheewaiwong.com/zh/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="黄志伟医生 | 新加坡玻璃体视网膜外科专家" />
+  <meta property="og:description" content="黄志伟医生是新加坡知名的玻璃体视网膜外科专家，专注于视网膜脱离手术、黄斑变性和高度近视相关并发症的治疗。" />
+  <meta property="og:url" content="https://cheewaiwong.com/zh/" />
+  <meta property="og:site_name" content="黄志伟医生 | 新加坡玻璃体视网膜外科专家" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="黄志伟医生 | 新加坡玻璃体视网膜外科专家" />
+  <meta name="twitter:description" content="黄志伟医生是新加坡知名的玻璃体视网膜外科专家，专注于视网膜脱离手术、黄斑变性和高度近视相关并发症的治疗。" />
+  <meta property="og:image" content="https://cheewaiwong.com/images/dr-chee-wai-wong.jpg" />
+  <meta name="twitter:image" content="https://cheewaiwong.com/images/dr-chee-wai-wong.jpg" />
+  <meta name="keywords" content="新加坡玻璃体视网膜外科医生, 新加坡视网膜脱离手术, 新加坡黄斑变性, 鹰阁医院眼科专家, 黄志伟医生" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dr Chee Wai Wong",
+    "url": "https://cheewaiwong.com/zh/",
+    "telephone": "+6592357063",
+    "email": "contact@asiapacificeyecentre.com.sg",
+    "image": "https://cheewaiwong.com/images/dr-chee-wai-wong.jpg",
+    "medicalSpecialty": "Ophthalmology",
+    "knowsAbout": [
+      "Retinal Detachment Surgery",
+      "Vitrectomy",
+      "Age-related Macular Degeneration",
+      "Intravitreal Injections",
+      "High Myopia Complications",
+      "Macular Hole Surgery",
+      "Dislocated Intraocular Lens",
+      "Diabetic Retinopathy",
+      "Epiretinal Membrane"
+    ],
+    "worksFor": {
+      "@type": "MedicalOrganization",
+      "name": "Asia Pacific Eye Centre",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6A Napier Road, Gleneagles Hospital, Level 3 Hospital Block",
+        "addressLocality": "Singapore",
+        "postalCode": "258500",
+        "addressCountry": "SG"
+      },
+      "telephone": "+6592357063",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ]
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "National University of Singapore"
+    },
+    "description": "黄志伟医生是新加坡鹰阁医院亚太眼科中心的玻璃体视网膜外科专家。他拥有超过15年的临床经验，专注于视网膜脱离手术、年龄相关性黄斑变性、玻璃体腔注射、高度近视并发症、黄斑裂孔修复和人工晶状体脱位手术。他在同行评审期刊上发表了大量学术论文。"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />

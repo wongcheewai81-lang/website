@@ -1,0 +1,235 @@
+<!-- ── STAT COUNTER ANIMATION ── -->
+<script>
+  (function () {
+    function animateCounter(el) {
+      if (el._counted) return;
+      el._counted = true;
+      var target = parseInt(el.dataset.countTo, 10);
+      var prefix = el.dataset.prefix || '';
+      var suffix = el.dataset.suffix || '';
+      var useComma = el.hasAttribute('data-comma');
+      var duration = 1600;
+      var startTime = null;
+
+      function format(n) {
+        var rounded = Math.round(n);
+        if (useComma) return rounded.toLocaleString('en-US');
+        return rounded.toString();
+      }
+
+      function tick(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var elapsed = timestamp - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + format(ease * target) + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = prefix + format(target) + suffix;
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    // Observe containers, not tiny inline spans.
+    // Hero stats: no reveal parent, fire immediately on load.
+    // Research grid: inside a .reveal (opacity:0), so delay 400ms
+    // to let the reveal animation start before counting begins.
+    var heroStats    = document.querySelector('.hero-stats-row');
+    var researchGrid = document.querySelector('.research-grid');
+
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var delay = entry.target === researchGrid ? 400 : 0;
+        entry.target.querySelectorAll('[data-count-to]').forEach(function (el) {
+          setTimeout(function () { animateCounter(el); }, delay);
+        });
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.25 });
+
+    if (heroStats)    obs.observe(heroStats);
+    if (researchGrid) obs.observe(researchGrid);
+  })();
+</script>
+
+<!-- ── SCROLL PROGRESS ── -->
+<script>
+  (function () {
+    var bar = document.getElementById('scroll-progress');
+    function updateBar() {
+      var scrollTop = window.scrollY || window.pageYOffset;
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docH > 0 ? scrollTop / docH : 0;
+      bar.style.transform = 'scaleX(' + pct + ')';
+    }
+    window.addEventListener('scroll', updateBar, { passive: true });
+    updateBar();
+  })();
+</script>
+
+<!-- ── MOBILE NAV ── -->
+<script>
+  (function () {
+    var btn   = document.getElementById('navHamburger');
+    var panel = document.getElementById('mobileNav');
+    var nav   = document.getElementById('navbar');
+    if (!btn || !panel) return;
+    function close() {
+      panel.classList.remove('open');
+      nav.classList.remove('mob-open');
+      btn.setAttribute('aria-expanded', 'false');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+    btn.addEventListener('click', function () {
+      var isOpen = panel.classList.toggle('open');
+      nav.classList.toggle('mob-open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    });
+    panel.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', close);
+    });
+    document.addEventListener('click', function (e) {
+      if (!nav.contains(e.target) && !panel.contains(e.target)) close();
+    });
+  })();
+</script>
+
+<!-- ── MOBILE NAV LINKS (Chinese) ── -->
+<nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="#about">关于</a>
+  <a href="#services">专长</a>
+  <a href="#research">研究</a>
+  <a href="#articles">文章</a>
+  <a href="#media">媒体</a>
+  <a href="#contact">联系</a>
+  <a href="#contact" class="cta-link">预约咨询</a>
+</nav>
+
+<!-- ── CONTACT FORM ── -->
+<script>
+  (function () {
+    var form     = document.getElementById('contactForm');
+    var success  = document.getElementById('formSuccess');
+    var netErr   = document.getElementById('formNetworkError');
+    var submitBtn = document.getElementById('formSubmitBtn');
+    if (!form) return;
+
+    function markValid(el, groupId) {
+      var g = document.getElementById(groupId);
+      if (!g) return;
+      el.classList.remove('invalid');
+      g.classList.remove('has-error');
+    }
+
+    function markInvalid(el, groupId) {
+      var g = document.getElementById(groupId);
+      if (!g) return;
+      el.classList.add('invalid');
+      g.classList.add('has-error');
+    }
+
+    function validate() {
+      var ok = true;
+      var first  = document.getElementById('f-first');
+      var last   = document.getElementById('f-last');
+      var email  = document.getElementById('f-email');
+      var reason = document.getElementById('f-reason');
+
+      if (!first.value.trim())  { markInvalid(first,  'fg-first');  ok = false; } else { markValid(first,  'fg-first'); }
+      if (!last.value.trim())   { markInvalid(last,   'fg-last');   ok = false; } else { markValid(last,   'fg-last'); }
+      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { markInvalid(email, 'fg-email'); ok = false; } else { markValid(email, 'fg-email'); }
+      if (!reason.value)        { markInvalid(reason, 'fg-reason'); ok = false; } else { markValid(reason, 'fg-reason'); }
+      return ok;
+    }
+
+    // Live clear-on-fix for required fields
+    ['f-first','f-last','f-email','f-reason'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', function () { el.classList.remove('invalid'); document.getElementById('fg-' + id.replace('f-',''))?.classList.remove('has-error'); });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      netErr.style.display = 'none';
+      if (!validate()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '发送中…';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_submit', { event_category: 'contact', event_label: 'appointment_request' });
+          }
+        } else {
+          res.json().then(function (data) {
+            netErr.style.display = 'block';
+          }).catch(function () { netErr.style.display = 'block'; });
+          submitBtn.disabled = false;
+          submitBtn.textContent = '预约咨询 →';
+        }
+      }).catch(function () {
+        netErr.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = '预约咨询 →';
+      });
+    });
+  })();
+</script>
+
+<!-- ── CONTACT FORM SUCCESS MESSAGE (Chinese) ── -->
+<div id="formSuccess" style="display:none; text-align:center;">
+  <h3>感谢您的咨询！</h3>
+  <p>我们已收到您的预约请求。我们的团队将很快与您联系以确认您的咨询时间。</p>
+</div>
+
+<!-- ── CONTACT FORM NETWORK ERROR (Chinese) ── -->
+<div id="formNetworkError" style="display:none; text-align:center; color:#e74c3c;">
+  <p>提交失败。请检查您的网络连接后重试。</p>
+</div>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a href="https://wa.me/6592357063" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="通过 WhatsApp 联系诊所">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script>
+  (function () {
+    var wa   = document.getElementById('waFloat');
+    var hero = document.getElementById('hero');
+    if (!wa) return;
+    function update() {
+      var threshold = hero ? hero.offsetHeight * 0.6 : 300;
+      wa.classList.toggle('visible', (window.scrollY || window.pageYOffset) > threshold);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+
+<!-- ── FLOATING CTA ── -->
+<a href="#contact" class="float-cta" id="floatCta">预约咨询</a>
+<script>
+  (function () {
+    var btn = document.getElementById('floatCta');
+    var hero = document.getElementById('hero');
+    function update() {
+      var scrollY = window.scrollY || window.pageYOffset;
+      var threshold = hero ? hero.offsetHeight * 0.6 : 500;
+      btn.classList.toggle('visible', scrollY > threshold);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
