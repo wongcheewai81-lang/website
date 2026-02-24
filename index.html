@@ -740,6 +740,15 @@
     .edu-card:hover { box-shadow: var(--sh-md); transform: translateY(-3px); }
     .edu-header {
       background: var(--navy); padding: var(--sp-3) var(--sp-4);
+      display: flex; align-items: center; gap: var(--sp-3);
+    }
+    .edu-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(61,158,158,0.18);
+      border: 1px solid rgba(61,158,158,0.28);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal-lt);
     }
     .edu-header h3 {
       font-family: 'Cormorant Garamond', serif;
@@ -754,8 +763,9 @@
       font-size: 0.83rem; line-height: 1.5; color: var(--muted);
     }
     .edu-points li::before {
-      content: ''; width: 5px; height: 5px; border-radius: 50%;
-      background: var(--teal); flex-shrink: 0; margin-top: 6px;
+      content: ''; width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px;
+      background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 6L9 17l-5-5' stroke='%232a7c7c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+      border-radius: 0;
     }
 
     .btn-teal-outline {
@@ -1703,8 +1713,14 @@
     <div class="edu-grid">
       <div class="edu-card reveal" style="transition-delay:0.08s;">
         <div class="edu-header">
-          <h3>What is Retinal Detachment?</h3>
-          <p>Emergency Condition · Surgery Required</p>
+          <div class="edu-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <div><h3>What is Retinal Detachment?</h3>
+          <p>Emergency Condition · Surgery Required</p></div>
         </div>
         <div class="edu-body">
           <p>The retina is the light-sensitive layer at the back of your eye. When it peels away from the tissue beneath it, this is called a retinal detachment — and it requires urgent medical attention.</p>
@@ -1718,8 +1734,15 @@
       </div>
       <div class="edu-card reveal" style="transition-delay:0.14s;">
         <div class="edu-header">
-          <h3>What is Macular Degeneration?</h3>
-          <p>Age-Related Condition · Ongoing Management</p>
+          <div class="edu-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+              <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+            </svg>
+          </div>
+          <div><h3>What is Macular Degeneration?</h3>
+          <p>Age-Related Condition · Ongoing Management</p></div>
         </div>
         <div class="edu-body">
           <p>Age-related macular degeneration (AMD) affects the macula — the central part of your retina responsible for sharp, detailed vision. It is the most common cause of vision loss in people over 60.</p>
@@ -1733,8 +1756,15 @@
       </div>
       <div class="edu-card reveal" style="transition-delay:0.20s;">
         <div class="edu-header">
-          <h3>What to Expect at Your First Visit</h3>
-          <p>Clinic Visit · Friendly &amp; Thorough</p>
+          <div class="edu-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
+              <rect x="9" y="3" width="6" height="4" rx="1"/>
+              <line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12" y2="16"/>
+            </svg>
+          </div>
+          <div><h3>What to Expect at Your First Visit</h3>
+          <p>Clinic Visit · Friendly &amp; Thorough</p></div>
         </div>
         <div class="edu-body">
           <p>Your first appointment with Dr. Wong is a conversation as much as an examination. We take the time to understand your history, concerns, and goals before any investigation or treatment.</p>
@@ -1748,8 +1778,14 @@
       </div>
       <div class="edu-card reveal" style="transition-delay:0.26s;">
         <div class="edu-header">
-          <h3>After Your Surgery</h3>
-          <p>Post-Operative Care · Recovery Guide</p>
+          <div class="edu-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <div><h3>After Your Surgery</h3>
+          <p>Post-Operative Care · Recovery Guide</p></div>
         </div>
         <div class="edu-body">
           <p>Recovery after retinal surgery requires careful attention and follow-up. Dr. Wong and his team provide detailed post-operative guidance and are always reachable with concerns.</p>
