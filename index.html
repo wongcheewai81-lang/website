@@ -161,6 +161,16 @@
       overflow-x: hidden;
     }
 
+    /* ── IMAGE BLUR-UP ── */
+    .img-lazy-wrap {
+      position: relative; overflow: hidden; background: var(--page);
+    }
+    .img-lazy-wrap img {
+      transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1), filter 0.5s cubic-bezier(0.22,1,0.36,1);
+      opacity: 0.3; filter: blur(8px);
+    }
+    .img-lazy-wrap img.loaded { opacity: 1; filter: blur(0); }
+
     /* ── GRAIN TEXTURE ── */
     .grain::after {
       content: '';
@@ -225,6 +235,37 @@
     .nav-lang-switch a { color: var(--muted); text-decoration: none; margin: 0 0.25rem; }
     .nav-lang-switch a:hover { color: var(--teal); }
     .nav-lang-switch .active-lang { color: var(--teal); font-weight: 600; }
+
+    /* ── STICKY MINI-NAV ── */
+    .mini-nav {
+      position: fixed; top: 72px; left: 0; right: 0; z-index: 198;
+      background: rgba(250,247,242,0.85);
+      backdrop-filter: blur(12px) saturate(1.3);
+      -webkit-backdrop-filter: blur(12px) saturate(1.3);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 var(--sp-6);
+      opacity: 0; transform: translateY(-100%); pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .mini-nav.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .mini-nav-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 4px;
+      padding: 8px 0; overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .mini-nav-inner::-webkit-scrollbar { display: none; }
+    .mini-nav-pill {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em;
+      color: var(--muted); text-decoration: none;
+      padding: 6px 14px; border-radius: 100px; white-space: nowrap;
+      transition: color 0.2s cubic-bezier(0.22,1,0.36,1), background 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .mini-nav-pill:hover { color: var(--teal); background: rgba(42,124,124,0.06); }
+    .mini-nav-pill:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+    .mini-nav-pill.active { color: var(--teal); background: rgba(42,124,124,0.1); font-weight: 600; }
 
     /* ── HERO ── */
     #hero {
@@ -292,6 +333,20 @@
       animation: fadeUp 0.7s 0.18s cubic-bezier(0.22,1,0.36,1) both;
     }
 
+    .hero-rotate-line {
+      display: block; margin-bottom: 8px; font-style: normal;
+      color: var(--teal-lt); font-weight: 400; font-size: inherit;
+      min-height: 1.7em;
+    }
+    .hero-rotate-word {
+      display: inline-block;
+      transition: opacity 0.45s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.45s cubic-bezier(0.22,1,0.36,1);
+      opacity: 1; transform: translateY(0);
+    }
+    .hero-rotate-word.out { opacity: 0; transform: translateY(-8px); }
+    .hero-rotate-word.in { opacity: 0; transform: translateY(8px); }
+
     .hero-tagline {
       font-size: 1.05rem; font-weight: 300; line-height: 1.75;
       color: rgba(250,247,242,0.7); max-width: 480px;
@@ -349,7 +404,7 @@
     }
     .hero-photo-frame img {
       width: 100%; height: 100%; object-fit: cover; object-position: top center;
-      display: block;
+      display: block; will-change: transform;
     }
     .hero-photo-frame::after {
       content: '';
@@ -732,6 +787,23 @@
       color: var(--teal);
     }
     .service-card.featured .service-icon { background: rgba(15,35,64,0.08); color: var(--navy); }
+
+    /* service icon SVG draw-on */
+    .service-icon svg path, .service-icon svg circle, .service-icon svg line,
+    .service-icon svg polyline, .service-icon svg rect {
+      stroke-dasharray: 200; stroke-dashoffset: 200;
+      transition: stroke-dashoffset 0.8s cubic-bezier(0.22,1,0.36,1);
+    }
+    .services-grid.visible .service-icon svg path,
+    .services-grid.visible .service-icon svg circle,
+    .services-grid.visible .service-icon svg line,
+    .services-grid.visible .service-icon svg polyline,
+    .services-grid.visible .service-icon svg rect { stroke-dashoffset: 0; }
+    .services-grid.visible .service-card:nth-child(2) .service-icon svg * { transition-delay: 0.1s; }
+    .services-grid.visible .service-card:nth-child(3) .service-icon svg * { transition-delay: 0.2s; }
+    .services-grid.visible .service-card:nth-child(4) .service-icon svg * { transition-delay: 0.3s; }
+    .services-grid.visible .service-card:nth-child(5) .service-icon svg * { transition-delay: 0.4s; }
+
     .service-card::after {
       content: ''; position: absolute;
       bottom: -20px; right: -20px;
@@ -1059,13 +1131,34 @@
       color: rgba(255,255,255,0.015);
       pointer-events: none; user-select: none;
     }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--sp-4);
-      margin-top: var(--sp-5);
+    /* ── TESTIMONIAL CAROUSEL ── */
+    .testimonials-carousel { position: relative; margin-top: var(--sp-5); overflow: hidden; }
+    .testimonials-track {
+      display: flex; transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); will-change: transform;
     }
+    .carousel-nav {
+      display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: var(--sp-4);
+    }
+    .carousel-arrow {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(250,247,242,0.7); display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-arrow:hover { background: rgba(255,255,255,0.15); transform: scale(1.05); }
+    .carousel-arrow:active { transform: scale(0.95); }
+    .carousel-arrow:focus-visible { outline: 2px solid var(--teal-lt); outline-offset: 2px; }
+    .carousel-dots { display: flex; gap: 8px; }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 50%; padding: 0;
+      background: rgba(255,255,255,0.2); border: none; cursor: pointer;
+      transition: background 0.25s cubic-bezier(0.22,1,0.36,1), transform 0.25s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-dot.active { background: var(--teal-lt); transform: scale(1.25); }
+    .carousel-dot:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
     .tcard {
+      flex: 0 0 calc(50% - 12px); margin-right: 24px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 20px;
@@ -1139,6 +1232,50 @@
     }
     .float-cta.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .float-cta:hover { background: var(--teal-lt); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(42,124,124,0.4); }
+
+    /* ── BACK TO TOP ── */
+    .back-to-top {
+      position: fixed; bottom: 28px; left: 28px; z-index: 500;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--navy); color: #fff; border: none;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(15,35,64,0.25);
+      opacity: 0; transform: translateY(12px); pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.2s;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .back-to-top:hover { background: var(--teal); transform: translateY(-2px); }
+    .back-to-top:active { transform: translateY(0); }
+    .back-to-top:focus-visible { outline: 2px solid var(--teal-lt); outline-offset: 3px; }
+
+    /* ── SOCIAL PROOF TOAST ── */
+    .social-proof-toast {
+      position: fixed; bottom: 88px; left: 28px; z-index: 490;
+      background: #fff; border: 1px solid rgba(15,35,64,0.10); border-radius: 12px;
+      padding: 14px 40px 14px 16px; max-width: 320px;
+      box-shadow: 0 8px 32px rgba(15,35,64,0.12), 0 2px 8px rgba(15,35,64,0.06);
+      display: flex; align-items: flex-start; gap: 12px;
+      opacity: 0; transform: translateY(20px) translateX(-20px); pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .social-proof-toast.visible { opacity: 1; transform: translateY(0) translateX(0); pointer-events: auto; }
+    .sp-toast-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(42,124,124,0.1); display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0; color: var(--teal);
+    }
+    .sp-toast-text { font-size: 0.82rem; font-weight: 400; color: var(--text); line-height: 1.5; }
+    .sp-toast-time { font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+    .sp-toast-close {
+      position: absolute; top: 8px; right: 8px;
+      width: 24px; height: 24px; border: none; background: none;
+      cursor: pointer; color: var(--muted); display: flex;
+      align-items: center; justify-content: center; border-radius: 4px; transition: color 0.2s;
+    }
+    .sp-toast-close:hover { color: var(--navy); }
+    .sp-toast-close:focus-visible { outline: 2px solid var(--teal); outline-offset: 1px; }
 
     /* ── STICKY MOBILE CALL BAR ── */
     .mobile-call-bar {
@@ -1390,12 +1527,16 @@
       .form-row { grid-template-columns: 1fr; }
       .section { padding: var(--sp-6) var(--sp-4); }
       footer { padding: var(--sp-4); }
-      .testimonials-grid { grid-template-columns: 1fr; }
+      .tcard { flex: 0 0 100%; margin-right: 0; }
+      .carousel-arrow { display: none; }
       .float-cta { bottom: 80px; right: 20px; padding: 0.75rem 1.3rem; }
       .wa-float { bottom: 140px; right: 20px; }
       .mobile-call-bar { display: block; }
       .hero-phone-mobile { display: inline-flex; }
       .hero-stats-mobile { display: flex; }
+      .mini-nav { display: none; }
+      .back-to-top { bottom: 80px; left: 20px; }
+      .social-proof-toast { display: none !important; }
       body { padding-bottom: 64px; }
     }
   </style>
@@ -1470,6 +1611,16 @@
   <a href="#contact" class="mob-cta">Book Consultation</a>
 </div>
 
+<!-- ── STICKY MINI-NAV ── -->
+<div class="mini-nav" id="miniNav" aria-label="Section navigation">
+  <div class="mini-nav-inner">
+    <a href="#about" class="mini-nav-pill" data-section="about">About</a>
+    <a href="#services" class="mini-nav-pill" data-section="services">Services</a>
+    <a href="#research" class="mini-nav-pill" data-section="research">Research</a>
+    <a href="#testimonials" class="mini-nav-pill" data-section="testimonials">Patients</a>
+    <a href="#contact" class="mini-nav-pill" data-section="contact">Contact</a>
+  </div>
+</div>
 
 <!-- ══════════════════════ HERO ══════════════════════ -->
 <section id="hero">
@@ -1486,6 +1637,7 @@
       <span>Three Gold Medals — Ophthalmology Exit Examination</span>
     </div>
     <p class="hero-tagline">
+      <span class="hero-rotate-line" aria-live="polite" aria-atomic="true">Specialist in <span class="hero-rotate-word" id="rotateWord">retinal detachment</span></span>
       <em>For when myopia becomes more than just glasses.</em><br><br>
       Singapore's myopia epidemic is silent — until it isn't. Dr. Wong is the surgeon who understands what decades of high myopia does to the eye, and who operates when it becomes a surgical emergency.
     </p>
@@ -1630,8 +1782,8 @@
 
     <div class="about-visual reveal" style="transition-delay:0.12s;">
       <div class="about-accent-orb"></div>
-      <div style="border-radius:20px; overflow:hidden; margin-bottom:var(--sp-3); box-shadow:var(--sh-lg);">
-        <img src="images/clinic-apec-sign.jpg" alt="Dr. Wong at Asia Pacific Eye Centre, Gleneagles Hospital" style="width:100%; height:280px; object-fit:cover; object-position:center 62%; display:block;" />
+      <div class="img-lazy-wrap" style="border-radius:20px; overflow:hidden; margin-bottom:var(--sp-3); box-shadow:var(--sh-lg);">
+        <img src="images/clinic-apec-sign.jpg" loading="lazy" alt="Dr. Wong at Asia Pacific Eye Centre, Gleneagles Hospital" style="width:100%; height:280px; object-fit:cover; object-position:center 62%; display:block;" />
       </div>
       <div class="quote-card">
         <span class="quote-mark">"</span>
@@ -1820,8 +1972,8 @@
         <h2 class="heading" style="margin-bottom:8px;">Specialist care for <strong>retinal conditions</strong></h2>
         <p class="lead" style="max-width:560px;">Dr. Wong's practice focuses on retinal and vitreous disease, and complex cataract surgery in eyes with prior vitrectomy, high myopia, or concurrent retinal pathology. Early intervention is key.</p>
       </div>
-      <div style="border-radius:16px; overflow:hidden; box-shadow:var(--sh-lg); width:280px; flex-shrink:0;">
-        <img src="images/clinic-consultation.jpg" alt="Dr. Wong consulting with a patient using an eye anatomy model" style="width:100%; height:200px; object-fit:cover; object-position:65% 20%; display:block;" />
+      <div class="img-lazy-wrap" style="border-radius:16px; overflow:hidden; box-shadow:var(--sh-lg); width:280px; flex-shrink:0;">
+        <img src="images/clinic-consultation.jpg" loading="lazy" alt="Dr. Wong consulting with a patient using an eye anatomy model" style="width:100%; height:200px; object-fit:cover; object-position:65% 20%; display:block;" />
       </div>
     </div>
 
@@ -2008,8 +2160,8 @@
     </div>
 
     <div class="reveal" style="transition-delay:0.05s; margin-bottom:var(--sp-4);">
-      <div style="position:relative; border-radius:20px; overflow:hidden; height:320px; box-shadow:var(--sh-lg);">
-        <img src="images/myopia-meeting-2025.jpg" alt="Dr. Wong presenting at the International Myopia Meeting 2025, Singapore" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;" />
+      <div class="img-lazy-wrap" style="position:relative; border-radius:20px; overflow:hidden; height:320px; box-shadow:var(--sh-lg);">
+        <img src="images/myopia-meeting-2025.jpg" loading="lazy" alt="Dr. Wong presenting at the International Myopia Meeting 2025, Singapore" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;" />
         <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(7,22,42,0.75) 0%, transparent 60%);"></div>
         <div style="position:absolute; bottom:var(--sp-4); left:var(--sp-4);">
           <p style="font-size:0.65rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:6px;">International Myopia Meeting 2025 · Singapore</p>
@@ -2194,8 +2346,9 @@
       <p class="eyebrow eyebrow-gold" style="justify-content:center;">Patient Experiences</p>
       <h2 class="heading heading-cream">What patients say</h2>
     </div>
-    <div class="testimonials-grid">
-      <div class="tcard reveal">
+    <div class="testimonials-carousel reveal" style="transition-delay:0.1s;" aria-roledescription="carousel" aria-label="Patient testimonials">
+      <div class="testimonials-track" id="testimonialTrack">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">No amount of words can show how grateful and appreciative I am of Dr Wong Chee Wai. He was not condescending when I asked him a lot of questions and genuinely listened and made me feel that I'm not just another patient. For that, I'm thankful.</p>
         <div>
@@ -2203,7 +2356,7 @@
           <div class="tcard-condition">Regular Eye Care · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:0.1s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">Dr. Wong Chee Wai is a highly skilled and knowledgeable eye specialist. He provided exceptional care, arranging surgery within 3 hours. His expertise and compassionate approach made us feel comfortable and well-cared for. Highly recommend Dr. Wong and his team.</p>
         <div>
@@ -2211,7 +2364,7 @@
           <div class="tcard-condition">Emergency Surgery · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:0.2s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">Did eye review with Dr Wong Chee Wai, and he is very patient and explains thoroughly as well on the situation. He has been a go to doctor for my eye condition, and assures me. Very good and skilled doctor.</p>
         <div>
@@ -2219,7 +2372,7 @@
           <div class="tcard-condition">Eye Condition Management · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:0.3s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">Excellent care and surgery by Dr Wong. From first consult, the surgery itself and follow up visits were all nicely done. Great thank you to Yolanda the clinic manager and her team for their above and beyond service.</p>
         <div>
@@ -2227,7 +2380,7 @@
           <div class="tcard-condition">Surgery &amp; Follow-up Care · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:0.4s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">I had eye surgery with Dr Wong Chee Wai to treat a retinal detachment and lens dislocation, and I couldn't be more pleased with the care I received. He clearly explained the condition, surgical plan, and what to expect, which helped ease my concerns going into the procedure. The surgery went smoothly, and my recovery has been progressing well under his attentive follow-up care. Dr Wong is not only highly skilled but also compassionate and thorough. I'm very thankful for his expertise and would confidently recommend him to anyone facing a serious eye issue.</p>
         <div>
@@ -2235,7 +2388,7 @@
           <div class="tcard-condition">Retinal Detachment &amp; Lens Dislocation Surgery · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:0.5s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">We had a wonderful experience with Dr Wong Chee Wai at Asia Pacific Eye Centre, when bringing in my child for an eye check. The doctor was incredibly patient, gentle, and took the time to make my child feel comfortable throughout the entire process. He explained the diagnosis of myopia clearly and professionally, and gave us helpful guidance on the next steps to manage it. We truly appreciate the care and attention given — it made a potentially stressful visit feel reassuring and positive. Highly recommended!</p>
         <div>
@@ -2243,7 +2396,7 @@
           <div class="tcard-condition">Paediatric Myopia · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:0.6s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">Dr Wong is very friendly and pleasant to talk to. He made clear and precise explanations prior to my condition. His diagnosis is gentle and he is definitely very experienced in his area of expertise. I know my eyes are in good care under Dr Wong.</p>
         <div>
@@ -2251,7 +2404,7 @@
           <div class="tcard-condition">Eye Consultation · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:0.7s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">Dr Wong Chee Wai performed a surgery for my eye after I suffered with retinal detachment and saved me from going blind. Follow ups with Dr Wong were always pleasant as he is kind, meticulous and takes great care of his patients! Dr Wong and APEC are highly recommended!</p>
         <div>
@@ -2259,7 +2412,7 @@
           <div class="tcard-condition">Retinal Detachment Surgery · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:0.8s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">I have been seeing Dr Wong Chee Wai for treatment of my dry inflamed eyes. Dr Wong is always professional, attentive, patient and gentle. He takes time to explain in detail and nothing was rushed through for every appointment. So far rather short waiting time for every appointment I was there. It has always been a pleasant experience visiting and I would highly recommend Dr Wong to others.</p>
         <div>
@@ -2267,7 +2420,7 @@
           <div class="tcard-condition">Dry Eye Treatment · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:0.9s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">Dr Wong is an excellent doctor! He listened carefully, explained everything simply, and made me feel at ease. Thank you.</p>
         <div>
@@ -2275,7 +2428,7 @@
           <div class="tcard-condition">Eye Consultation · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:1.0s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">I had vitrectomy done by Dr Wong to fix my retinal detachment, and continued my follow up with him at Asia Pacific Eye Centre. Dr Wong is a highly experienced, caring, and dedicated surgeon. Despite the very complex surgery (I had PVR), he patiently explained everything thoroughly, and made me feel very calm and assured. He had also given many helpful tips on pre and post surgery eye care, resulting in a good visual outcome. Will definitely recommend Dr Wong for his top notch skills and excellent service.</p>
         <div>
@@ -2283,7 +2436,7 @@
           <div class="tcard-condition">Vitrectomy · Complex PVR · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:1.1s;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">Dr Wong is my favourite eye doctor. He provided clear explanations and took the time to address my concerns. Thank you.</p>
         <div>
@@ -2291,7 +2444,7 @@
           <div class="tcard-condition">Eye Consultation · Google Review</div>
         </div>
       </div>
-      <div class="tcard reveal" style="transition-delay:1.2s; grid-column: 1 / -1;">
+      <div class="tcard">
         <div class="tcard-stars">★★★★★</div>
         <p class="tcard-quote">My son was uncomfortable wearing orthokeratology (OK) lenses. We went to Asia Pacific for a detailed eye examination. Dr Wong was very professional and patient, and answered many of our questions. Very satisfied.</p>
         <p style="font-size:0.75rem; color:rgba(250,247,242,0.3); margin-top:8px; font-style:normal;">原文（中文）：儿子戴OK镜眼睛不舒服，去Asia Pacific做了个详细的眼科检查，黄医生很专业有耐心，回答了我们很多问题，很满意</p>
@@ -2299,6 +2452,16 @@
           <div class="tcard-author">lijun qiang</div>
           <div class="tcard-condition">Paediatric Orthokeratology · Google Review · Translated from Chinese</div>
         </div>
+      </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-arrow carousel-prev" aria-label="Previous testimonials">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Testimonial pages"></div>
+        <button class="carousel-arrow carousel-next" aria-label="Next testimonials">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -2542,6 +2705,82 @@
   revealEls.forEach(el => revealObserver.observe(el));
 </script>
 
+<!-- ── STICKY MINI-NAV ── -->
+<script>
+(function () {
+  var mn = document.getElementById('miniNav');
+  var hero = document.getElementById('hero');
+  if (!mn || !hero) return;
+  var pills = mn.querySelectorAll('.mini-nav-pill');
+  var ids = [];
+  pills.forEach(function(p){ ids.push(p.dataset.section); });
+  function vis() {
+    var t = hero.offsetHeight * 0.8;
+    mn.classList.toggle('visible', (window.scrollY || window.pageYOffset) > t);
+  }
+  window.addEventListener('scroll', vis, {passive:true});
+  vis();
+  var so = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) {
+        var id = e.target.id;
+        pills.forEach(function(p){ p.classList.toggle('active', p.dataset.section === id); });
+      }
+    });
+  }, { threshold: 0, rootMargin: '-100px 0px -60% 0px' });
+  ids.forEach(function(id){ var s = document.getElementById(id); if(s) so.observe(s); });
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(e){
+      e.preventDefault();
+      var t = document.getElementById(this.dataset.section);
+      if(t){ window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' }); }
+    });
+  });
+})();
+</script>
+
+<!-- ── ROTATING HERO TEXT ── -->
+<script>
+(function () {
+  var el = document.getElementById('rotateWord');
+  if (!el) return;
+  var words = ['retinal detachment','macular degeneration','high myopia','cataract surgery','diabetic retinopathy'];
+  var idx = 0;
+  setInterval(function () {
+    el.classList.add('out');
+    setTimeout(function () {
+      idx = (idx + 1) % words.length;
+      el.textContent = words[idx];
+      el.classList.remove('out');
+      el.classList.add('in');
+      void el.offsetWidth;
+      el.classList.remove('in');
+    }, 400);
+  }, 3200);
+})();
+</script>
+
+<!-- ── HERO PARALLAX ── -->
+<script>
+(function () {
+  if (window.innerWidth <= 768) return;
+  var hero = document.getElementById('hero');
+  var img = document.querySelector('.hero-photo-frame img');
+  if (!hero || !img) return;
+  var ticking = false;
+  function update() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    if (scrollY <= hero.offsetHeight) {
+      img.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+})();
+</script>
+
 <!-- ── STAT COUNTER ANIMATION ── -->
 <script>
   (function () {
@@ -2626,6 +2865,61 @@
       });
     });
   })();
+</script>
+
+<!-- ── TESTIMONIAL CAROUSEL ── -->
+<script>
+(function () {
+  var track = document.getElementById('testimonialTrack');
+  var dotsC = document.getElementById('carouselDots');
+  if (!track || !dotsC) return;
+  var cards = track.querySelectorAll('.tcard');
+  var total = cards.length, cur = 0, timer;
+  function isMobile() { return window.innerWidth <= 768; }
+  function perView() { return isMobile() ? 1 : 2; }
+  function pages() { return Math.ceil(total / perView()); }
+  function buildDots() {
+    dotsC.innerHTML = '';
+    for (var i = 0; i < pages(); i++) {
+      var d = document.createElement('button');
+      d.className = 'carousel-dot' + (i === cur ? ' active' : '');
+      d.setAttribute('role','tab');
+      d.setAttribute('aria-label','Page '+(i+1));
+      d.dataset.i = i;
+      d.addEventListener('click', function(){ goTo(parseInt(this.dataset.i)); });
+      dotsC.appendChild(d);
+    }
+  }
+  function goTo(i) {
+    var p = pages();
+    if (i < 0) i = p - 1;
+    if (i >= p) i = 0;
+    cur = i;
+    var w = isMobile() ? track.parentElement.offsetWidth : (cards[0].offsetWidth + 24);
+    var off = cur * perView() * w;
+    var max = track.scrollWidth - track.parentElement.offsetWidth;
+    if (off > max) off = max;
+    track.style.transform = 'translateX(-' + off + 'px)';
+    var dots = dotsC.querySelectorAll('.carousel-dot');
+    dots.forEach(function(d, j) { d.classList.toggle('active', j === cur); });
+  }
+  function start() { stop(); timer = setInterval(function(){ goTo(cur+1); }, 5500); }
+  function stop() { if (timer) clearInterval(timer); }
+  document.querySelector('.carousel-prev').addEventListener('click', function(){ goTo(cur-1); start(); });
+  document.querySelector('.carousel-next').addEventListener('click', function(){ goTo(cur+1); start(); });
+  var wrap = track.parentElement;
+  wrap.addEventListener('mouseenter', stop);
+  wrap.addEventListener('mouseleave', start);
+  wrap.addEventListener('touchstart', stop, {passive:true});
+  wrap.addEventListener('touchend', function(){ setTimeout(start, 3000); }, {passive:true});
+  var sx=0, dx=0;
+  track.addEventListener('touchstart', function(e){ sx=e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchmove', function(e){ dx=e.touches[0].clientX-sx; }, {passive:true});
+  track.addEventListener('touchend', function(){ if(Math.abs(dx)>50){ dx<0?goTo(cur+1):goTo(cur-1); } dx=0; }, {passive:true});
+  var rt;
+  window.addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(function(){ buildDots(); goTo(0); },200); });
+  buildDots(); start();
+})();
 </script>
 
 <!-- ── SCROLL PROGRESS ── -->
@@ -2751,6 +3045,67 @@
   })();
 </script>
 
+<!-- ── SOCIAL PROOF TOAST ── -->
+<div class="social-proof-toast" id="socialProofToast" role="status" aria-live="polite">
+  <div class="sp-toast-icon" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+  </div>
+  <div>
+    <div class="sp-toast-text" id="spToastText"></div>
+    <div class="sp-toast-time" id="spToastTime"></div>
+  </div>
+  <button class="sp-toast-close" aria-label="Dismiss notification">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+</div>
+<script>
+(function () {
+  if (window.innerWidth <= 768) return;
+  var toast = document.getElementById('socialProofToast');
+  var textEl = document.getElementById('spToastText');
+  var timeEl = document.getElementById('spToastTime');
+  if (!toast || !textEl) return;
+  var msgs = [
+    { text: 'A patient from Jakarta just booked a consultation', time: '2 minutes ago' },
+    { text: 'Someone viewed Dr Wong\u2019s retinal detachment article', time: '5 minutes ago' },
+    { text: 'A patient from Kuala Lumpur enquired about cataract surgery', time: '8 minutes ago' },
+    { text: '12 patients viewed this page today', time: 'Just now' }
+  ];
+  var idx = 0, dismissed = false;
+  function show() {
+    if (dismissed) return;
+    var m = msgs[idx % msgs.length];
+    textEl.textContent = m.text;
+    timeEl.textContent = m.time;
+    toast.classList.add('visible');
+    setTimeout(function () { toast.classList.remove('visible'); idx++; }, 5000);
+  }
+  toast.querySelector('.sp-toast-close').addEventListener('click', function () {
+    toast.classList.remove('visible'); dismissed = true;
+  });
+  setTimeout(function () { show(); setInterval(show, 35000); }, 9000);
+})();
+</script>
+
+<!-- ── BACK TO TOP ── -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function () {
+  var btn = document.getElementById('backToTop');
+  var hero = document.getElementById('hero');
+  if (!btn) return;
+  function update() {
+    var threshold = hero ? hero.offsetHeight * 0.6 : 500;
+    btn.classList.toggle('visible', (window.scrollY || window.pageYOffset) > threshold);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+  btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+})();
+</script>
+
 <!-- ── WHATSAPP FLOAT ── -->
 <a href="https://wa.me/6592357063?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20with%20Dr%20Wong." class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp the clinic">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -2798,6 +3153,17 @@
     </a>
   </div>
 </div>
+
+<!-- ── LAZY IMAGE BLUR-UP ── -->
+<script>
+(function () {
+  document.querySelectorAll('.img-lazy-wrap img[loading="lazy"]').forEach(function (img) {
+    function reveal() { img.classList.add('loaded'); }
+    if (img.complete) { reveal(); }
+    else { img.addEventListener('load', reveal); }
+  });
+})();
+</script>
 
 <!-- ── GOOGLE ADS CONVERSION TRACKING ── -->
 <script>
