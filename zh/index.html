@@ -1142,6 +1142,14 @@
       font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em;
     }
     .mobile-nav-panel .mob-cta:hover { background: var(--teal); }
+    .mob-lang-switch {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 14px 0; border-bottom: 1px solid var(--rule);
+      font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; color: var(--muted);
+    }
+    .mob-lang-switch a { color: var(--muted); text-decoration: none; text-transform: none; }
+    .mob-lang-switch a:hover { color: var(--teal); }
+    .mob-lang-switch .active-lang { color: var(--teal); font-weight: 600; }
 
     /* ── JOURNEY STEP TAGS ── */
     .journey-step-tag {
@@ -1299,6 +1307,7 @@
   <a href="../blog.html">博客</a>
   <a href="../media.html">媒体</a>
   <a href="fees.html">费用</a>
+  <span class="mob-lang-switch"><a href="../index.html">EN</a> | <a href="index.html" class="active-lang">中文</a></span>
   <a href="#contact" class="mob-cta">预约咨询</a>
 </div>
 

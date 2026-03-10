@@ -79,6 +79,46 @@
     "description": "Dr Chee Wai Wong is a vitreoretinal surgeon at Asia Pacific Eye Centre, Gleneagles Hospital, Singapore. Awarded three Gold Medals for best performance in the Advanced Specialist Training Exit Examination in Ophthalmology. With over 15 years of experience, he specialises in retinal detachment surgery, AMD, intravitreal injections, high myopia complications, macular hole repair, dislocated IOL surgery, and complex cataract surgery including post-vitrectomy cataracts and cataracts in highly myopic eyes. He has published extensively in peer-reviewed journals."
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What conditions does Dr Wong treat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dr Wong is a vitreoretinal surgeon who treats conditions affecting the retina and the back of the eye. His core specialities include retinal detachment, macular degeneration (AMD), diabetic retinopathy, macular holes, epiretinal membranes, dislocated intraocular lenses, and high myopia complications. He also performs cataract surgery, particularly complex cases such as cataracts following vitrectomy and cataracts in highly myopic eyes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is retinal detachment surgery painful?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The surgery is performed under local or general anaesthesia, so you will not feel pain during the procedure. Mild discomfort and a foreign-body sensation are normal in the first few days after surgery, but these are manageable with prescribed painkillers and eye drops. Most patients describe the recovery as far less painful than they expected."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does cataract surgery cost in Singapore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At a private practice like Asia Pacific Eye Centre, cataract surgery typically costs between $8,000 and $11,000 per eye. The total depends on the type of intraocular lens (IOL) chosen, the complexity of the case, and whether Medisave or insurance is used. All-inclusive pricing is discussed during the consultation so there are no surprises."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I book an appointment with Dr Wong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can book an appointment by calling +65 9235 7063, sending a WhatsApp message, or filling out the contact form on the website. The clinic is located at Asia Pacific Eye Centre, Gleneagles Hospital, 6A Napier Road, Singapore. Walk-in consultations are also welcome during clinic hours."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
@@ -1147,6 +1187,23 @@
     .hero-phone-mobile:hover { color: var(--cream); }
     .hero-phone-mobile:focus-visible { outline: 2px solid var(--teal-lt); outline-offset: 3px; border-radius: 2px; }
 
+    /* ── HERO STATS MOBILE ── */
+    .hero-stats-mobile {
+      display: none; flex-wrap: wrap; gap: 8px;
+      margin-top: var(--sp-3);
+      animation: fadeUp 0.7s 0.40s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .hero-stat-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(42,124,124,0.12); border: 1px solid rgba(42,124,124,0.2);
+      border-radius: 100px; padding: 6px 14px;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.03em;
+      color: rgba(250,247,242,0.8);
+    }
+    .hero-stat-chip strong {
+      color: var(--teal-lt); font-weight: 600;
+    }
+
     /* ── SCROLL PROGRESS ── */
     #scroll-progress {
       position: fixed; top: 0; left: 0; right: 0; z-index: 400;
@@ -1207,6 +1264,14 @@
       font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em;
     }
     .mobile-nav-panel .mob-cta:hover { background: var(--teal); }
+    .mob-lang-switch {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 14px 0; border-bottom: 1px solid var(--rule);
+      font-size: 0.85rem; font-weight: 400; letter-spacing: 0.08em; color: var(--muted);
+    }
+    .mob-lang-switch a { color: var(--muted); text-decoration: none; text-transform: none; }
+    .mob-lang-switch a:hover { color: var(--teal); }
+    .mob-lang-switch .active-lang { color: var(--teal); font-weight: 600; }
 
     /* ── JOURNEY STEP TAGS ── */
     .journey-step-tag {
@@ -1267,6 +1332,41 @@
     .contact-directions-btn:hover { color: var(--navy); }
     .contact-directions-btn:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
 
+    /* ── FAQ ACCORDION ── */
+    #faq { background: var(--cream); }
+    .faq-accordion { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--rule);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--rule); }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2);
+      padding: var(--sp-3) 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 600; line-height: 1.4;
+      color: var(--navy); text-align: left;
+      transition: color 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .faq-question:hover { color: var(--teal); }
+    .faq-question:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; border-radius: 2px; }
+    .faq-chevron {
+      flex-shrink: 0; width: 20px; height: 20px; color: var(--muted);
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), color 0.2s;
+    }
+    .faq-item.active .faq-chevron { transform: rotate(180deg); color: var(--teal); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height 0.4s cubic-bezier(0.22,1,0.36,1), opacity 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .faq-item.active .faq-answer { opacity: 1; }
+    .faq-answer-inner {
+      padding: 0 0 var(--sp-4) 0;
+      font-size: 0.92rem; line-height: 1.75; color: var(--text);
+    }
+    .faq-answer-inner a { color: var(--teal); text-decoration: none; font-weight: 400; }
+    .faq-answer-inner a:hover { text-decoration: underline; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       #navbar { padding: 0 var(--sp-5); }
@@ -1295,6 +1395,7 @@
       .wa-float { bottom: 140px; right: 20px; }
       .mobile-call-bar { display: block; }
       .hero-phone-mobile { display: inline-flex; }
+      .hero-stats-mobile { display: flex; }
       body { padding-bottom: 64px; }
     }
   </style>
@@ -1365,6 +1466,7 @@
   <a href="blog.html">Blog</a>
   <a href="media.html">Media</a>
   <a href="fees.html">Fees</a>
+  <span class="mob-lang-switch"><a href="index.html" class="active-lang">EN</a> | <a href="zh/index.html">中文</a></span>
   <a href="#contact" class="mob-cta">Book Consultation</a>
 </div>
 
@@ -1395,6 +1497,11 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
       +65 9235 7063
     </a>
+    <div class="hero-stats-mobile">
+      <span class="hero-stat-chip"><strong data-count-to="116" data-suffix="+">116+</strong> Publications</span>
+      <span class="hero-stat-chip"><strong data-count-to="3">3</strong> Gold Medals</span>
+      <span class="hero-stat-chip">Top <strong data-count-to="2" data-suffix="%">2%</strong> Researcher</span>
+    </div>
   </div>
 
   <div class="hero-right">
@@ -2197,12 +2304,68 @@
   </div>
 </section>
 
-<!-- wave: dark testimonials → light contact -->
-<div aria-hidden="true" style="background:var(--page); overflow:hidden; height:64px; line-height:0; margin-top:-1px;">
+<!-- wave: dark testimonials → light FAQ -->
+<div aria-hidden="true" style="background:var(--cream); overflow:hidden; height:64px; line-height:0; margin-top:-1px;">
   <svg viewBox="0 0 1440 64" preserveAspectRatio="none" style="width:100%; height:64px; display:block;">
     <path d="M0,0 L1440,0 L1440,22 Q720,64 0,22 Z" fill="var(--navy)"/>
   </svg>
 </div>
+
+<!-- ══════════════════════ FAQ ══════════════════════ -->
+<section id="faq" class="section">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;">
+      <p class="eyebrow" style="justify-content:center;">Common Questions</p>
+      <h2 class="heading">Frequently asked <strong>questions</strong></h2>
+    </div>
+    <div class="faq-accordion reveal" style="transition-delay:0.1s;">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What conditions does Dr Wong treat?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            Dr Wong is a vitreoretinal surgeon who treats conditions affecting the retina and the back of the eye. His core specialities include retinal detachment, macular degeneration (AMD), diabetic retinopathy, macular holes, epiretinal membranes, dislocated intraocular lenses, and high myopia complications. He also performs cataract surgery, particularly complex cases such as cataracts following vitrectomy and cataracts in highly myopic eyes. <a href="about.html">Learn more about Dr Wong &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is retinal detachment surgery painful?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            The surgery is performed under local or general anaesthesia, so you will not feel pain during the procedure. Mild discomfort and a foreign-body sensation are normal in the first few days after surgery, but these are manageable with prescribed painkillers and eye drops. Most patients describe the recovery as far less painful than they expected. <a href="articles/article-retinal-detachment.html">Read about retinal detachment &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How much does cataract surgery cost in Singapore?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            At a private practice like Asia Pacific Eye Centre, cataract surgery typically costs between $8,000 and $11,000 per eye. The total depends on the type of intraocular lens (IOL) chosen, the complexity of the case, and whether Medisave or insurance is used. All-inclusive pricing is discussed during the consultation so there are no surprises. <a href="articles/article-cataract.html">Learn about cataract surgery &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How can I book an appointment with Dr Wong?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            You can book an appointment by calling <a href="tel:+6592357063">+65 9235 7063</a>, sending a <a href="https://wa.me/6592357063?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20with%20Dr%20Wong.">WhatsApp message</a>, or filling out the <a href="#contact">contact form</a> below. The clinic is located at Asia Pacific Eye Centre, Gleneagles Hospital, 6A Napier Road, Singapore. Walk-in consultations are also welcome during clinic hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════ CONTACT ══════════════════════ -->
 <section id="contact" class="section">
@@ -2418,8 +2581,9 @@
     // Hero stats: no reveal parent, fire immediately on load.
     // Research grid: inside a .reveal (opacity:0), so delay 400ms
     // to let the reveal animation start before counting begins.
-    var heroStats    = document.querySelector('.hero-stats-row');
-    var researchGrid = document.querySelector('.research-grid');
+    var heroStats      = document.querySelector('.hero-stats-row');
+    var heroStatsMobile = document.querySelector('.hero-stats-mobile');
+    var researchGrid   = document.querySelector('.research-grid');
 
     var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -2432,8 +2596,35 @@
       });
     }, { threshold: 0.25 });
 
-    if (heroStats)    obs.observe(heroStats);
-    if (researchGrid) obs.observe(researchGrid);
+    if (heroStats)       obs.observe(heroStats);
+    if (heroStatsMobile) obs.observe(heroStatsMobile);
+    if (researchGrid)    obs.observe(researchGrid);
+  })();
+</script>
+
+<!-- ── FAQ ACCORDION ── -->
+<script>
+  (function () {
+    var items = document.querySelectorAll('.faq-item');
+    items.forEach(function (item) {
+      var btn = item.querySelector('.faq-question');
+      var answer = item.querySelector('.faq-answer');
+      btn.addEventListener('click', function () {
+        var isOpen = item.classList.contains('active');
+        // close all
+        items.forEach(function (other) {
+          other.classList.remove('active');
+          other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          other.querySelector('.faq-answer').style.maxHeight = null;
+        });
+        // open clicked (if it was closed)
+        if (!isOpen) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
   })();
 </script>
 
@@ -2561,7 +2752,7 @@
 </script>
 
 <!-- ── WHATSAPP FLOAT ── -->
-<a href="https://wa.me/6592357063" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp the clinic">
+<a href="https://wa.me/6592357063?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20with%20Dr%20Wong." class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp the clinic">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 <script>
@@ -2601,7 +2792,7 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
       Call Now
     </a>
-    <a href="https://wa.me/6592357063" class="mcb-wa" target="_blank" rel="noopener">
+    <a href="https://wa.me/6592357063?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20with%20Dr%20Wong." class="mcb-wa" target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp
     </a>
