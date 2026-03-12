@@ -310,6 +310,12 @@
       pointer-events: none;
     }
 
+    .hero-credential-chip {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 1rem; border-radius: 3rem;
+      background: rgba(200,169,110,0.08); border: 1px solid rgba(200,169,110,0.2);
+      font-size: 0.78rem; color: rgba(250,247,242,0.7); margin-bottom: 0.5rem;
+    }
     .hero-stats-row {
       display: flex; gap: var(--sp-4);
     }
@@ -527,7 +533,7 @@
     }
     .research-header .heading { margin-bottom: 0; }
     .research-grid {
-      display: grid; grid-template-columns: repeat(4,1fr);
+      display: grid; grid-template-columns: repeat(5,1fr);
       gap: var(--sp-2);
     }
     .research-stat {
@@ -1216,7 +1222,7 @@
       .section { padding: var(--sp-6) var(--sp-5); }
       #hero { padding: 96px var(--sp-5) var(--sp-5); gap: var(--sp-4); }
       .pillars-grid, .services-grid { grid-template-columns: 1fr 1fr; }
-      .research-grid { grid-template-columns: repeat(2,1fr); }
+      .research-grid { grid-template-columns: repeat(3,1fr); }
       .journey-timeline { grid-template-columns: repeat(3,1fr); }
       footer { padding: var(--sp-4) var(--sp-5); }
     }
@@ -1322,6 +1328,14 @@
       <span class="hero-subtitle" style="display:block;font-size:0.32em;font-weight:400;letter-spacing:0.04em;margin-top:0.25em;opacity:0.88;">眼科医学博士及玻璃体视网膜外科医生，新加坡</span>
     </h1>
     <div class="hero-rule"></div>
+    <div class="hero-credential-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8 15l-2 7 6-3 6 3-2-7" fill="var(--gold-lt)" opacity="0.7"/></svg>
+      <span>三枚金牌 — 眼科专科出院考试</span>
+    </div>
+    <div class="hero-credential-chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
+      <span>退行性近视领域全球排名前列的专家 — Expertscape</span>
+    </div>
     <p class="hero-tagline">
       <em>当近视不仅仅是眼镜问题时。</em><br><br>
       新加坡的近视疫情无声而至 — 直到它不再无声。黄医生是那位了解高度近视数十年对眼睛造成什么影响的外科医生，也是当它成为外科紧急情况时进行手术的医生。
@@ -1348,6 +1362,10 @@
       <div class="hero-stat">
         <span class="hero-stat-num" data-count-to="2" data-prefix="Top " data-suffix="%">Top 2%</span>
         <span class="hero-stat-label">斯坦福/爱思唯尔</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">Top 0.3%</span>
+        <span class="hero-stat-label">退行性近视 · Expertscape</span>
       </div>
     </div>
   </div>
@@ -1442,6 +1460,13 @@
             全球被引用最多的研究人员（2022年）
           </div>
         </div>
+        <div class="credential">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>Expertscape — 全球前 0.3%</strong>
+            退行性近视 — 由 <a href="https://expertscape.com" target="_blank" rel="noopener" style="color:var(--teal); text-decoration:underline; text-underline-offset:2px;">Expertscape</a> 根据近期同行评审出版物在全球 30,000+ 主题中对医生和研究人员进行排名
+          </div>
+        </div>
       </div>
 
       <a href="../media.html" class="about-link">
@@ -1534,6 +1559,11 @@
       <div class="research-stat">
         <span class="research-stat-num" data-count-to="2" data-prefix="Top " data-suffix="%">Top 2%</span>
         <span class="research-stat-label">斯坦福/爱思唯尔 2022</span>
+      </div>
+      <div class="research-stat" style="border-color:rgba(200,169,110,0.25); background:rgba(200,169,110,0.08);">
+        <span class="research-stat-num" style="font-size:1.6rem;">World Top 0.3%</span>
+        <span class="research-stat-label" style="color:rgba(250,247,242,0.5);">退行性近视</span>
+        <span class="research-stat-label" style="margin-top:2px; font-size:0.6rem; letter-spacing:0.12em;">EXPERTSCAPE</span>
       </div>
     </div>
     <p class="research-note reveal" style="transition-delay:0.15s;">标志性论文选集：Retina 2015（1,032位患者）· 《柳叶刀数字健康》2021 · 《英国眼科杂志》2022（12年SEED队列）· 《药物递送与转化研究》2021（第一/二期试验）</p>
