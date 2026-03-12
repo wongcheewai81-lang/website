@@ -26,4 +26,4 @@ Allow: /
 User-agent: bingbot
 Allow: /
 
-Sitemap: https://cheewaiwong.com/sitemap.xml
+Sitemap: https://drwongcheewai.com/sitemap.xml
