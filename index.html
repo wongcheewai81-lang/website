@@ -137,7 +137,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" /></noscript>
   <style>
     /* ── TOKENS ── */
     :root {
@@ -164,11 +165,16 @@
       --sh-teal: 0 8px 32px rgba(42,124,124,0.18), 0 2px 8px rgba(42,124,124,0.10);
     }
 
+    /* ── FONT FALLBACK (render text immediately while web fonts load) ── */
+    body, .nav-links a, .nav-lang-switch, .mini-nav-pill, .blog-read-time, .blog-tag, .hero-eyebrow {
+      font-display: swap;
+    }
+
     /* ── RESET ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-weight: 300;
       font-size: 16px;
       line-height: 1.7;
@@ -1558,15 +1564,13 @@
       body { padding-bottom: 64px; }
     }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGBW3DHSCL"></script>
+  <!-- Google tag (gtag.js) — loaded async, config deferred -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-KGBW3DHSCL');
-    gtag('config', 'AW-17969566370'); /* Google Ads conversion tracking */
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGBW3DHSCL" onload="gtag('config','G-KGBW3DHSCL');gtag('config','AW-17969566370')"></script>
 </head>
 <body>
 <div id="scroll-progress" aria-hidden="true"></div>
@@ -1685,7 +1689,7 @@
     <div class="hero-photo-frame">
       <picture>
         <source srcset="images/talk-eye-specialists.webp" type="image/webp" />
-        <img src="images/talk-eye-specialists.jpg" alt="Dr. Wong Chee Wai speaking at Zeiss–Roche symposium, Singapore" style="object-position: center 15%;" fetchpriority="high" />
+        <img src="images/talk-eye-specialists.jpg" alt="Dr. Wong Chee Wai speaking at Zeiss–Roche symposium, Singapore" width="1204" height="1600" style="object-position: center 15%;" fetchpriority="high" />
       </picture>
     </div>
     <div class="hero-stats-row">
@@ -1751,7 +1755,7 @@
     <text x="146" y="163" font-family="'DM Sans', sans-serif" font-size="9" font-weight="400" letter-spacing="2.5" fill="#6b7f8a">VITREORETINAL SURGEON · SINGAPORE</text>
   </svg>
   <div style="width:1px; height:52px; background:rgba(15,35,64,0.12);"></div>
-  <img src="https://www.asiapacificeyecentre.com.sg/wp-content/uploads/2024/03/APEC-Logo_CMYK-130x63-1.png" alt="Asia Pacific Eye Centre" height="52" loading="lazy" decoding="async" style="opacity:0.85;" />
+  <img src="https://www.asiapacificeyecentre.com.sg/wp-content/uploads/2024/03/APEC-Logo_CMYK-130x63-1.png" alt="Asia Pacific Eye Centre" width="107" height="52" loading="lazy" decoding="async" style="opacity:0.85;" />
 </div>
 
 
@@ -1824,7 +1828,7 @@
       <div class="img-lazy-wrap" style="border-radius:20px; overflow:hidden; margin-bottom:var(--sp-3); box-shadow:var(--sh-lg);">
         <picture>
           <source srcset="images/clinic-apec-sign.webp" type="image/webp" />
-          <img src="images/clinic-apec-sign.jpg" loading="lazy" alt="Dr. Wong at Asia Pacific Eye Centre, Gleneagles Hospital" style="width:100%; height:280px; object-fit:cover; object-position:center 62%; display:block;" />
+          <img src="images/clinic-apec-sign.jpg" loading="lazy" decoding="async" alt="Dr. Wong at Asia Pacific Eye Centre, Gleneagles Hospital" width="1066" height="1600" style="width:100%; height:280px; object-fit:cover; object-position:center 62%; display:block;" />
         </picture>
       </div>
       <div class="quote-card">
@@ -2022,7 +2026,7 @@
       <div class="img-lazy-wrap" style="border-radius:16px; overflow:hidden; box-shadow:var(--sh-lg); width:280px; flex-shrink:0;">
         <picture>
           <source srcset="images/clinic-consultation.webp" type="image/webp" />
-          <img src="images/clinic-consultation.jpg" loading="lazy" alt="Dr. Wong consulting with a patient using an eye anatomy model" style="width:100%; height:200px; object-fit:cover; object-position:65% 20%; display:block;" />
+          <img src="images/clinic-consultation.jpg" loading="lazy" decoding="async" alt="Dr. Wong consulting with a patient using an eye anatomy model" width="1600" height="1066" style="width:100%; height:200px; object-fit:cover; object-position:65% 20%; display:block;" />
         </picture>
       </div>
     </div>
@@ -2213,7 +2217,7 @@
       <div class="img-lazy-wrap" style="position:relative; border-radius:20px; overflow:hidden; height:320px; box-shadow:var(--sh-lg);">
         <picture>
           <source srcset="images/myopia-meeting-2025.webp" type="image/webp" />
-          <img src="images/myopia-meeting-2025.jpg" loading="lazy" alt="Dr. Wong presenting at the International Myopia Meeting 2025, Singapore" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;" />
+          <img src="images/myopia-meeting-2025.jpg" loading="lazy" decoding="async" alt="Dr. Wong presenting at the International Myopia Meeting 2025, Singapore" width="2048" height="1536" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;" />
         </picture>
         <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(7,22,42,0.75) 0%, transparent 60%);"></div>
         <div style="position:absolute; bottom:var(--sp-4); left:var(--sp-4);">
