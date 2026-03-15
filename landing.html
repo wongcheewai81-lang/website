@@ -353,13 +353,28 @@
       .wa-float { bottom: 140px; right: 20px; }
     }
   </style>
-  <!-- Google tag (gtag.js) — loaded async, config deferred -->
+  <!-- Google tag (gtag.js) — deferred until first user interaction -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    (function(){
+      var loaded = false;
+      function loadGtag(){
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KGBW3DHSCL';
+        s.async = true;
+        s.onload = function(){ gtag('config','G-KGBW3DHSCL'); gtag('config','AW-17969566370'); };
+        document.head.appendChild(s);
+      }
+      ['scroll','click','touchstart','keydown'].forEach(function(e){
+        window.addEventListener(e, loadGtag, {once:true, passive:true});
+      });
+      setTimeout(loadGtag, 5000);
+    })();
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGBW3DHSCL" onload="gtag('config','G-KGBW3DHSCL');gtag('config','AW-17969566370')"></script>
 </head>
 <body>
 

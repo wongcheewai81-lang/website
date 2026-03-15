@@ -59,6 +59,13 @@
   updateBar();
 
 
+  /* ── Cached hero height (avoid forced reflow on every scroll) ── */
+  var hero = document.getElementById('hero');
+  var _heroH = hero ? hero.offsetHeight : 600;
+  window.addEventListener('resize', function () {
+    _heroH = hero ? hero.offsetHeight : 600;
+  }, { passive: true });
+
   /* ── DEFERRED: Non-critical features (run when browser is idle) ── */
   var _defer = window.requestIdleCallback || function (cb) { setTimeout(cb, 200); };
   _defer(function () {
@@ -66,14 +73,12 @@
     /* Sticky mini-nav */
     (function () {
       var mn = document.getElementById('miniNav');
-      var hero = document.getElementById('hero');
       if (!mn || !hero) return;
       var pills = mn.querySelectorAll('.mini-nav-pill');
       var ids = [];
       pills.forEach(function(p){ ids.push(p.dataset.section); });
       function vis() {
-        var t = hero.offsetHeight * 0.8;
-        mn.classList.toggle('visible', (window.scrollY || window.pageYOffset) > t);
+        mn.classList.toggle('visible', (window.scrollY || window.pageYOffset) > _heroH * 0.8);
       }
       window.addEventListener('scroll', vis, {passive:true});
       vis();
@@ -117,13 +122,12 @@
     /* Hero parallax (desktop only) */
     (function () {
       if (window.innerWidth <= 768) return;
-      var hero = document.getElementById('hero');
       var img = document.querySelector('.hero-photo-frame img');
       if (!hero || !img) return;
       var ticking = false;
       function update() {
         var scrollY = window.scrollY || window.pageYOffset;
-        if (scrollY <= hero.offsetHeight) {
+        if (scrollY <= _heroH) {
           img.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
         }
         ticking = false;
@@ -178,23 +182,20 @@
       if (researchGrid)    obs.observe(researchGrid);
     })();
 
-    /* FAQ accordion */
+    /* FAQ accordion (CSS grid animation — no maxHeight reflow) */
     (function () {
       var items = document.querySelectorAll('.faq-item');
       items.forEach(function (item) {
         var btn = item.querySelector('.faq-question');
-        var answer = item.querySelector('.faq-answer');
         btn.addEventListener('click', function () {
           var isOpen = item.classList.contains('active');
           items.forEach(function (other) {
             other.classList.remove('active');
             other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-            other.querySelector('.faq-answer').style.maxHeight = null;
           });
           if (!isOpen) {
             item.classList.add('active');
             btn.setAttribute('aria-expanded', 'true');
-            answer.style.maxHeight = answer.scrollHeight + 'px';
           }
         });
       });
@@ -355,44 +356,21 @@
       setTimeout(function () { show(); setInterval(show, 35000); }, 9000);
     })();
 
-    /* Back to top */
+    /* Back to top, WhatsApp float, Floating CTA — single scroll listener */
     (function () {
-      var btn = document.getElementById('backToTop');
-      var hero = document.getElementById('hero');
-      if (!btn) return;
-      function update() {
-        var threshold = hero ? hero.offsetHeight * 0.6 : 500;
-        btn.classList.toggle('visible', (window.scrollY || window.pageYOffset) > threshold);
-      }
-      window.addEventListener('scroll', update, { passive: true });
-      update();
-      btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-    })();
-
-    /* WhatsApp float visibility */
-    (function () {
-      var wa   = document.getElementById('waFloat');
-      var hero = document.getElementById('hero');
-      if (!wa) return;
-      function update() {
-        var threshold = hero ? hero.offsetHeight * 0.6 : 300;
-        wa.classList.toggle('visible', (window.scrollY || window.pageYOffset) > threshold);
-      }
-      window.addEventListener('scroll', update, { passive: true });
-      update();
-    })();
-
-    /* Floating CTA visibility */
-    (function () {
-      var btn = document.getElementById('floatCta');
-      var hero = document.getElementById('hero');
-      function update() {
+      var btt = document.getElementById('backToTop');
+      var wa  = document.getElementById('waFloat');
+      var fCta = document.getElementById('floatCta');
+      function updateFloats() {
         var scrollY = window.scrollY || window.pageYOffset;
-        var threshold = hero ? hero.offsetHeight * 0.6 : 500;
-        btn.classList.toggle('visible', scrollY > threshold);
+        var threshold = _heroH * 0.6;
+        if (btt) btt.classList.toggle('visible', scrollY > threshold);
+        if (wa)  wa.classList.toggle('visible', scrollY > threshold);
+        if (fCta) fCta.classList.toggle('visible', scrollY > threshold);
       }
-      window.addEventListener('scroll', update, { passive: true });
-      update();
+      window.addEventListener('scroll', updateFloats, { passive: true });
+      updateFloats();
+      if (btt) btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     })();
 
     /* Lazy image blur-up */
