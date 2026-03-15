@@ -94,7 +94,7 @@
     }
     .lp-hero-inner {
       max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr 280px; gap: var(--sp-5); align-items: center;
+      display: grid; grid-template-columns: 1fr auto; gap: var(--sp-5); align-items: center;
     }
     .lp-hero-text { min-width: 0; }
     .lp-eyebrow {
@@ -121,7 +121,7 @@
       font-size: 0.95rem; font-weight: 300; line-height: 1.7; color: rgba(250,247,242,0.7);
       max-width: 520px; margin-bottom: var(--sp-4);
     }
-    .lp-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .lp-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
     .lp-btn-call {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--teal); color: #fff; padding: 14px 28px;
@@ -181,6 +181,7 @@
     }
 
     .lp-hero-photo {
+      width: 260px; flex-shrink: 0;
       border-radius: 16px; overflow: hidden; box-shadow: var(--sh-lg);
       border: 2px solid rgba(200,169,110,0.2);
     }
@@ -336,6 +337,8 @@
     }
     @media (max-width: 768px) {
       .lp-hero { padding: var(--sp-6) var(--sp-4) var(--sp-5); }
+      .lp-hero-actions { flex-direction: column; }
+      .lp-hero-actions a { text-align: center; justify-content: center; }
       .lp-badges-inner { justify-content: flex-start; }
       .lp-trust-grid { grid-template-columns: 1fr 1fr; }
       .lp-combo-inner { grid-template-columns: 1fr; }
