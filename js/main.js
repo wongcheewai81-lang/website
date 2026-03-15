@@ -48,22 +48,21 @@
     });
   }
 
-  // Scroll progress bar
+  // Scroll progress bar (cache docH to avoid forced reflow on every scroll)
   var bar = document.getElementById('scroll-progress');
+  var _docH = document.documentElement.scrollHeight - window.innerHeight;
   function updateBar() {
-    var scrollTop = window.scrollY || window.pageYOffset;
-    var docH = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.transform = 'scaleX(' + (docH > 0 ? scrollTop / docH : 0) + ')';
+    bar.style.transform = 'scaleX(' + (_docH > 0 ? (window.scrollY || window.pageYOffset) / _docH : 0) + ')';
   }
   window.addEventListener('scroll', updateBar, { passive: true });
   updateBar();
-
 
   /* ── Cached hero height (avoid forced reflow on every scroll) ── */
   var hero = document.getElementById('hero');
   var _heroH = hero ? hero.offsetHeight : 600;
   window.addEventListener('resize', function () {
     _heroH = hero ? hero.offsetHeight : 600;
+    _docH = document.documentElement.scrollHeight - window.innerHeight;
   }, { passive: true });
 
   /* ── DEFERRED: Non-critical features (run when browser is idle) ── */
