@@ -216,7 +216,7 @@
 
     .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 
-    .nav-links { display: flex; gap: var(--sp-5); list-style: none; }
+    .nav-links { display: flex; gap: var(--sp-3); list-style: none; align-items: center; }
     .nav-links a {
       font-size: 0.75rem; font-weight: 500; letter-spacing: 0.10em;
       text-transform: uppercase; color: var(--muted); text-decoration: none;
@@ -238,7 +238,7 @@
       padding: 0.5rem 1.4rem; border-radius: 100px;
       font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em;
       text-decoration: none; text-transform: uppercase;
-      border: 1.5px solid var(--navy);
+      border: 1.5px solid var(--navy); white-space: nowrap; flex-shrink: 0;
       transition: background 0.25s cubic-bezier(0.22,1,0.36,1),
                   transform 0.2s cubic-bezier(0.22,1,0.36,1);
     }
@@ -1531,10 +1531,12 @@
       .journey-timeline { grid-template-columns: repeat(3,1fr); }
       footer { padding: var(--sp-4) var(--sp-5); }
     }
-    @media (max-width: 768px) {
-      #navbar { padding: 0 var(--sp-3); }
+    @media (max-width: 1180px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 768px) {
+      #navbar { padding: 0 var(--sp-3); }
       #hero { grid-template-columns: 1fr; padding: 96px var(--sp-4) var(--sp-5); }
       .hero-right { display: none; }
       .about-grid, .contact-grid, .journey-footer { grid-template-columns: 1fr; }
