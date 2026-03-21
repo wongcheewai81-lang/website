@@ -48,18 +48,21 @@
     });
   }
 
-  // Scroll progress bar (cache docH to avoid forced reflow on every scroll)
+  // Scroll progress bar
   var bar = document.getElementById('scroll-progress');
-  var _docH = document.documentElement.scrollHeight - window.innerHeight;
+  var _docH = 0;
+  var hero = document.getElementById('hero');
+  var _heroH = 600;
   function updateBar() {
     bar.style.transform = 'scaleX(' + (_docH > 0 ? (window.scrollY || window.pageYOffset) / _docH : 0) + ')';
   }
+  // Defer layout reads to after first paint to avoid forced reflow
+  requestAnimationFrame(function () {
+    _docH = document.documentElement.scrollHeight - window.innerHeight;
+    _heroH = hero ? hero.offsetHeight : 600;
+    updateBar();
+  });
   window.addEventListener('scroll', updateBar, { passive: true });
-  updateBar();
-
-  /* ── Cached hero height (avoid forced reflow on every scroll) ── */
-  var hero = document.getElementById('hero');
-  var _heroH = hero ? hero.offsetHeight : 600;
   window.addEventListener('resize', function () {
     _heroH = hero ? hero.offsetHeight : 600;
     _docH = document.documentElement.scrollHeight - window.innerHeight;
