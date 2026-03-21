@@ -48,25 +48,23 @@
     });
   }
 
-  // Scroll progress bar
+  // Scroll progress bar — lazy layout reads (no forced reflow at parse time)
   var bar = document.getElementById('scroll-progress');
   var _docH = 0;
   var hero = document.getElementById('hero');
   var _heroH = 600;
+  var _measured = false;
+  function _measure() {
+    _docH = document.documentElement.scrollHeight - window.innerHeight;
+    _heroH = hero ? hero.offsetHeight : 600;
+    _measured = true;
+  }
   function updateBar() {
+    if (!_measured) _measure();
     bar.style.transform = 'scaleX(' + (_docH > 0 ? (window.scrollY || window.pageYOffset) / _docH : 0) + ')';
   }
-  // Defer layout reads to after first paint to avoid forced reflow
-  requestAnimationFrame(function () {
-    _docH = document.documentElement.scrollHeight - window.innerHeight;
-    _heroH = hero ? hero.offsetHeight : 600;
-    updateBar();
-  });
   window.addEventListener('scroll', updateBar, { passive: true });
-  window.addEventListener('resize', function () {
-    _heroH = hero ? hero.offsetHeight : 600;
-    _docH = document.documentElement.scrollHeight - window.innerHeight;
-  }, { passive: true });
+  window.addEventListener('resize', _measure, { passive: true });
 
   /* ── DEFERRED: Non-critical features (run when browser is idle) ── */
   var _defer = window.requestIdleCallback || function (cb) { setTimeout(cb, 200); };
