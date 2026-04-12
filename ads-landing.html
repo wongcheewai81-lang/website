@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if(/cheewaiwong.com$/i.test(location.hostname))location.replace("https://drwongcheewai.com"+location.pathname+location.search+location.hash);</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Dr Wong Chee Wai | Retinal Eye Specialist Singapore | Book Now</title>
+  <meta name="description" content="Specialist vitreoretinal surgeon at Gleneagles Hospital. Three Gold Medals. Expert in retinal detachment, AMD, diabetic eye care, and complex cataract surgery. Book consultation now." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f2340'/%3E%3Cpath d='M 22 4 C 3 4 3 28 22 28' fill='none' stroke='%233d9e9e' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M 22 4 C 3 4 3 28 22 28' fill='none' stroke='%23c8a96e' stroke-width='5' stroke-dasharray='7 9999' stroke-dashoffset='-12' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f2340; --navy-deep: #07162a;
+      --teal: #2a7c7c; --teal-lt: #3d9e9e;
+      --gold: #c8a96e; --gold-lt: #e0c88a;
+      --cream: #faf7f2; --page: #f0ece4;
+      --text: #1a2e3b; --muted: #6b7f8a;
+      --rule: rgba(15,35,64,0.10);
+      --sp-1: 8px; --sp-2: 16px; --sp-3: 24px; --sp-4: 32px; --sp-5: 48px; --sp-6: 64px; --sp-7: 96px;
+      --sh-sm: 0 1px 3px rgba(15,35,64,0.06), 0 1px 2px rgba(15,35,64,0.04);
+      --sh-md: 0 4px 16px rgba(15,35,64,0.08), 0 2px 6px rgba(15,35,64,0.05);
+      --sh-lg: 0 12px 40px rgba(15,35,64,0.10), 0 4px 12px rgba(15,35,64,0.06);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--cream); color: var(--text);
+      line-height: 1.7; -webkit-font-smoothing: antialiased; padding-bottom: 64px;
+    }
+
+    /* ── HERO ── */
+    .ads-hero {
+      background: var(--navy-deep); color: #fff; padding: var(--sp-7) var(--sp-5) var(--sp-6);
+      position: relative;
+    }
+    .ads-hero::before {
+      content: ''; position: absolute; inset: 0; overflow: hidden;
+      background: radial-gradient(ellipse at 20% 50%, rgba(42,124,124,0.12), transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(200,169,110,0.08), transparent 50%);
+      pointer-events: none;
+    }
+    .ads-hero-inner {
+      max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr auto; gap: var(--sp-5); align-items: center;
+    }
+    .ads-hero-text { min-width: 0; }
+    .ads-eyebrow {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: var(--sp-2);
+    }
+    .ads-hero h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: var(--sp-1);
+    }
+    .ads-hero h1 strong { font-weight: 600; }
+    .ads-hero-subtitle {
+      font-size: 1rem; font-weight: 400; letter-spacing: 0.04em; opacity: 0.85; margin-bottom: var(--sp-3);
+    }
+    .ads-credential-chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(200,169,110,0.12); border: 1px solid rgba(200,169,110,0.25);
+      border-radius: 100px; padding: 6px 14px;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--gold-lt); margin-bottom: var(--sp-3);
+    }
+    .ads-hero-value {
+      font-size: 0.95rem; font-weight: 300; line-height: 1.7; color: rgba(250,247,242,0.7);
+      max-width: 520px; margin-bottom: var(--sp-4);
+    }
+    .ads-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
+    .ads-btn-call {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal); color: #fff; padding: 14px 28px;
+      border-radius: 6px; font-size: 0.92rem; font-weight: 500;
+      text-decoration: none; letter-spacing: 0.02em; white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(42,124,124,0.3);
+      transition: background 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ads-btn-call:hover { background: var(--teal-lt); transform: translateY(-1px); }
+    .ads-btn-call:active { transform: scale(0.98); }
+    .ads-btn-call:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .ads-btn-wa {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #25d366; color: #fff; padding: 14px 28px;
+      border-radius: 6px; font-size: 0.92rem; font-weight: 500;
+      text-decoration: none; letter-spacing: 0.02em; white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+      transition: background 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ads-btn-wa:hover { background: #20bd5a; transform: translateY(-1px); }
+    .ads-btn-wa:active { transform: scale(0.98); }
+    .ads-btn-wa:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .ads-btn-book {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #fff; padding: 14px 28px;
+      border: 1px solid rgba(250,247,242,0.25); border-radius: 6px;
+      font-size: 0.92rem; font-weight: 400; text-decoration: none; white-space: nowrap;
+      transition: background 0.2s cubic-bezier(0.22,1,0.36,1), border-color 0.2s;
+    }
+    .ads-btn-book:hover { background: rgba(250,247,242,0.06); border-color: rgba(250,247,242,0.4); }
+    .ads-btn-book:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    /* ── DOCTOR PHOTO ── */
+    .ads-hero-photo {
+      width: 260px; flex-shrink: 0;
+      border-radius: 16px; overflow: hidden; box-shadow: var(--sh-lg);
+      border: 2px solid rgba(200,169,110,0.2);
+    }
+    .ads-hero-photo img, .ads-hero-photo picture { width: 100%; height: 340px; object-fit: cover; object-position: center 15%; display: block; }
+    .ads-hero-photo picture img { width: 100%; height: 100%; }
+
+    /* ── TRUST BADGES ── */
+    .ads-badges {
+      padding: var(--sp-3) var(--sp-5) 0; background: var(--cream);
+    }
+    .ads-badges-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    }
+    .ads-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 16px; border-radius: 100px;
+      background: rgba(15,35,64,0.04); border: 1px solid var(--rule);
+      font-size: 0.75rem; font-weight: 500; color: var(--navy);
+      letter-spacing: 0.02em; white-space: nowrap;
+    }
+    .ads-badge svg { flex-shrink: 0; }
+
+    /* ── TRUST SIGNALS ── */
+    .ads-trust {
+      padding: var(--sp-5) var(--sp-5); background: var(--cream);
+    }
+    .ads-trust-inner { max-width: 1000px; margin: 0 auto; }
+    .ads-trust-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-2);
+    }
+    .ads-trust-card {
+      background: #fff; border-radius: 12px; padding: var(--sp-3) var(--sp-3);
+      text-align: center; box-shadow: var(--sh-sm); border: 1px solid var(--rule);
+      transition: box-shadow 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ads-trust-card:hover { box-shadow: var(--sh-md); transform: translateY(-2px); }
+    .ads-trust-icon {
+      width: 40px; height: 40px; border-radius: 50%; margin: 0 auto var(--sp-1);
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(200,169,110,0.1); color: var(--gold);
+    }
+    .ads-trust-num {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600;
+      color: var(--navy); line-height: 1.2;
+    }
+    .ads-trust-label { font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-top: 2px; }
+
+    /* ── SERVICES + FORM COMBO ── */
+    .ads-combo {
+      background: var(--navy); padding: var(--sp-5) var(--sp-5); color: #fff;
+    }
+    .ads-combo-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 380px; gap: var(--sp-5); align-items: start;
+    }
+
+    /* ── SERVICES ── */
+    .ads-service-list { display: flex; flex-direction: column; gap: 10px; }
+    .ads-service-item {
+      display: flex; align-items: center; gap: var(--sp-2);
+      background: rgba(250,247,242,0.04); border: 1px solid rgba(250,247,242,0.08);
+      border-radius: 10px; padding: var(--sp-2) var(--sp-3);
+      text-decoration: none; color: #fff;
+      transition: background 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ads-service-item:hover { background: rgba(250,247,242,0.08); transform: translateX(3px); }
+    .ads-service-item:focus-visible { outline: 2px solid var(--teal-lt); outline-offset: 2px; }
+    .ads-service-icon {
+      width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(42,124,124,0.15); color: var(--teal-lt);
+    }
+    .ads-service-text { flex: 1; min-width: 0; }
+    .ads-service-name { font-size: 0.9rem; font-weight: 500; }
+    .ads-service-desc { font-size: 0.78rem; font-weight: 300; color: rgba(250,247,242,0.55); line-height: 1.5; }
+    .ads-service-arrow { color: rgba(250,247,242,0.3); flex-shrink: 0; }
+
+    /* ── CONTACT FORM ── */
+    .ads-form-wrap {
+      background: #fff; border-radius: 16px; padding: var(--sp-4);
+      box-shadow: var(--sh-md); border: 1px solid var(--rule);
+    }
+    .ads-form-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600;
+      color: var(--navy); margin-bottom: var(--sp-3);
+    }
+    .ads-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .ads-form .form-group { margin-bottom: 14px; }
+    .ads-form label {
+      display: block; font-size: 0.78rem; font-weight: 500; color: var(--navy);
+      margin-bottom: 4px; letter-spacing: 0.02em;
+    }
+    .ads-form input, .ads-form select, .ads-form textarea {
+      width: 100%; padding: 10px 14px; border: 1px solid var(--rule);
+      border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+      color: var(--text); background: var(--cream);
+      transition: border-color 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s;
+    }
+    .ads-form input:focus, .ads-form select:focus, .ads-form textarea:focus {
+      outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(42,124,124,0.1);
+    }
+    .ads-form textarea { min-height: 80px; resize: vertical; }
+    .ads-form select { cursor: pointer; }
+    .ads-form .form-error { border-color: #c0392b !important; }
+    .ads-form .form-error-msg {
+      display: none; font-size: 0.72rem; color: #c0392b; margin-top: 4px;
+    }
+    .ads-form .form-error ~ .form-error-msg { display: block; }
+    .ads-form-submit {
+      width: 100%; padding: 14px; border: none; border-radius: 8px;
+      background: var(--teal); color: #fff; font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem; font-weight: 500; cursor: pointer; letter-spacing: 0.02em;
+      box-shadow: 0 4px 16px rgba(42,124,124,0.25);
+      transition: background 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ads-form-submit:hover { background: var(--teal-lt); transform: translateY(-1px); }
+    .ads-form-submit:active { transform: scale(0.98); }
+    .ads-form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .ads-form-submit:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    .ads-form-success {
+      display: none; text-align: center; padding: var(--sp-4) var(--sp-2);
+    }
+    .ads-form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--navy); margin: var(--sp-2) 0 var(--sp-1); }
+    .ads-form-success p { font-size: 0.88rem; color: var(--muted); }
+    .ads-form-success a { color: var(--teal); }
+    .ads-form-net-error {
+      display: none; background: rgba(192,57,43,0.06); border: 1px solid rgba(192,57,43,0.15);
+      border-radius: 8px; padding: 12px 16px; margin-top: 12px; font-size: 0.82rem; color: #c0392b;
+    }
+
+    /* ── FOOTER ── */
+    .ads-footer {
+      background: var(--navy-deep); color: rgba(250,247,242,0.4);
+      padding: var(--sp-3) var(--sp-5); text-align: center;
+      font-size: 0.78rem; font-weight: 300; line-height: 1.6;
+    }
+
+    /* ── STICKY MOBILE CALL BAR ── */
+    .mobile-call-bar {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 600;
+      background: var(--navy-deep);
+      padding: 10px 16px;
+      padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+      border-top: 1px solid rgba(200,169,110,0.2);
+      box-shadow: 0 -4px 20px rgba(7,22,42,0.3);
+    }
+    .mobile-call-bar-inner { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; }
+    .mobile-call-bar a {
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 16px; border-radius: 100px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.03em; text-decoration: none;
+      transition: background 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .mobile-call-bar a:active { transform: scale(0.97); }
+    .mobile-call-bar a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .mcb-call { background: var(--teal); color: #fff; box-shadow: 0 4px 16px rgba(42,124,124,0.3); }
+    .mcb-call:hover { background: var(--teal-lt); }
+    .mcb-wa { background: #25d366; color: #fff; box-shadow: 0 4px 16px rgba(37,211,102,0.25); }
+    .mcb-wa:hover { background: #20bd5a; }
+
+    /* ── FLOATING WHATSAPP ── */
+    .wa-float {
+      position: fixed; bottom: 88px; right: 28px; z-index: 500;
+      width: 56px; height: 56px; border-radius: 50%; background: #25d366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.35); text-decoration: none;
+      transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s;
+    }
+    .wa-float:hover { transform: scale(1.08); box-shadow: 0 8px 28px rgba(37,211,102,0.45); }
+    .wa-float:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .ads-hero-inner { grid-template-columns: 1fr; }
+      .ads-hero-photo { display: none; }
+    }
+    @media (max-width: 768px) {
+      .ads-hero { padding: var(--sp-6) var(--sp-4) var(--sp-5); }
+      .ads-hero-actions { flex-direction: column; }
+      .ads-hero-actions a { width: 100%; text-align: center; justify-content: center; }
+      .ads-badges-inner { justify-content: flex-start; }
+      .ads-trust-grid { grid-template-columns: 1fr 1fr; }
+      .ads-combo-inner { grid-template-columns: 1fr; }
+      .ads-form .form-row { grid-template-columns: 1fr; }
+      .mobile-call-bar { display: block; }
+      .wa-float { bottom: 140px; right: 20px; }
+    }
+  </style>
+  <!-- Google tag (gtag.js) — deferred until first user interaction -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    (function(){
+      var loaded = false;
+      function loadGtag(){
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-KGBW3DHSCL';
+        s.async = true;
+        s.onload = function(){
+          gtag('config','G-KGBW3DHSCL');
+          gtag('config','AW-17969566370');
+        };
+        document.head.appendChild(s);
+      }
+      ['scroll','click','touchstart','keydown'].forEach(function(e){
+        window.addEventListener(e, loadGtag, {once:true, passive:true});
+      });
+      setTimeout(loadGtag, 12000);
+    })();
+
+    function gtag_report_conversion(url) {
+      if (typeof gtag !== "undefined") {
+        gtag('event', 'conversion', {'send_to': 'AW-17969566370/Z8w_CLCrsK4YEPPjm_4p'});
+      }
+      if (url) { window.location = url; }
+      return false;
+    }
+  </script>
+</head>
+<body>
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section class="ads-hero">
+  <div class="ads-hero-inner">
+    <div class="ads-hero-text">
+      <p class="ads-eyebrow">Vitreoretinal Surgeon · Gleneagles Hospital, Singapore</p>
+      <h1 id="heroHeadline">Dr <strong>Wong</strong> <span style="color:var(--teal-lt);">Chee Wai</span></h1>
+      <p class="ads-hero-subtitle">Subspecialist Vitreoretinal Surgeon</p>
+      <div class="ads-credential-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8 15l-2 7 6-3 6 3-2-7" fill="var(--gold-lt)" opacity="0.7"/></svg>
+        <span>Three Gold Medals — Ophthalmology Exit Examination</span>
+      </div>
+      <p class="ads-hero-value" id="heroValue">Expert care for complex retinal conditions. Over 15 years of experience and 170+ peer-reviewed publications.</p>
+      <div class="ads-hero-actions">
+        <a href="tel:+6592357063" class="ads-btn-call" onclick="gtag_report_conversion('tel:+6592357063'); return false;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          Call +65 9235 7063
+        </a>
+        <a href="https://wa.me/6592357063?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20with%20Dr%20Wong.%20My%20eye%20condition%20is%3A%20" class="ads-btn-wa" target="_blank" rel="noopener" onclick="gtag_report_conversion();">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#adsForm" class="ads-btn-book">Book Below ↓</a>
+      </div>
+    </div>
+    <div class="ads-hero-photo">
+      <picture>
+        <source srcset="images/dr-wong-chee-wai.webp" type="image/webp" />
+        <img src="images/dr-wong-chee-wai.jpg" alt="Dr Wong Chee Wai, Vitreoretinal Surgeon, Gleneagles Hospital Singapore" width="1400" height="2100" loading="eager" />
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TRUST BADGES ══════════════════════ -->
+<div class="ads-badges">
+  <div class="ads-badges-inner">
+    <span class="ads-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      Medisave Eligible
+    </span>
+    <span class="ads-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Emergency Same-Day Surgery
+    </span>
+    <span class="ads-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
+      Patients from 15+ Countries
+    </span>
+    <span class="ads-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Gleneagles Hospital
+    </span>
+  </div>
+</div>
+
+<!-- ══════════════════════ TRUST SIGNALS ══════════════════════ -->
+<section class="ads-trust">
+  <div class="ads-trust-inner">
+    <div class="ads-trust-grid">
+      <div class="ads-trust-card">
+        <div class="ads-trust-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8 15l-2 7 6-3 6 3-2-7" fill="var(--gold)" opacity="0.6"/></svg>
+        </div>
+        <div class="ads-trust-num">3</div>
+        <div class="ads-trust-label">Gold Medals</div>
+      </div>
+      <div class="ads-trust-card">
+        <div class="ads-trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+        </div>
+        <div class="ads-trust-num">170+</div>
+        <div class="ads-trust-label">Publications</div>
+      </div>
+      <div class="ads-trust-card">
+        <div class="ads-trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="ads-trust-num">15+</div>
+        <div class="ads-trust-label">Years Experience</div>
+      </div>
+      <div class="ads-trust-card">
+        <div class="ads-trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <div class="ads-trust-num">Top 2%</div>
+        <div class="ads-trust-label">Stanford / Elsevier Cited Researchers</div>
+      </div>
+      <div class="ads-trust-card" style="border-color:rgba(200,169,110,0.3);">
+        <div class="ads-trust-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
+        </div>
+        <div class="ads-trust-num">Top 0.3%</div>
+        <div class="ads-trust-label">Degenerative Myopia Worldwide · Expertscape</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ SERVICES + CONTACT FORM ══════════════════════ -->
+<section class="ads-combo" id="adsForm">
+  <div class="ads-combo-inner">
+    <div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; margin-bottom:var(--sp-4); color:#fff;">Specialist care for <strong style="font-weight:600; color:var(--teal-lt);">complex eye conditions</strong></h2>
+      <div class="ads-service-list">
+        <a href="articles/article-retinal-detachment.html" class="ads-service-item">
+          <div class="ads-service-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/><circle cx="12" cy="12" r="3"/><path d="M15 9l1.5-1.5" stroke-width="1.2" opacity="0.7"/></svg>
+          </div>
+          <div class="ads-service-text">
+            <div class="ads-service-name">Retinal Detachment Surgery</div>
+            <div class="ads-service-desc">Emergency and elective retinal repair using vitrectomy</div>
+          </div>
+          <svg class="ads-service-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="articles/article-amd.html" class="ads-service-item">
+          <div class="ads-service-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5" stroke-width="1"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div class="ads-service-text">
+            <div class="ads-service-name">Macular Degeneration (AMD)</div>
+            <div class="ads-service-desc">Anti-VEGF injections for wet and dry AMD</div>
+          </div>
+          <svg class="ads-service-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="articles/article-diabetic-retinopathy.html" class="ads-service-item">
+          <div class="ads-service-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 0-7 9.5-7 13.5a7 7 0 0 0 14 0C19 11.5 12 2 12 2z"/><path d="M9 16a3.5 3.5 0 0 0 4.5 0" stroke-width="1.2" opacity="0.7"/></svg>
+          </div>
+          <div class="ads-service-text">
+            <div class="ads-service-name">Diabetic Retinopathy</div>
+            <div class="ads-service-desc">Laser, anti-VEGF, and surgical care</div>
+          </div>
+          <svg class="ads-service-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="articles/article-cataract.html" class="ads-service-item">
+          <div class="ads-service-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/><circle cx="12" cy="12" r="3.2"/></svg>
+          </div>
+          <div class="ads-service-text">
+            <div class="ads-service-name">Cataract Surgery</div>
+            <div class="ads-service-desc">Complex cataract surgery in post-vitrectomy eyes</div>
+          </div>
+          <svg class="ads-service-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="articles/article-high-myopia.html" class="ads-service-item">
+          <div class="ads-service-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><ellipse cx="12" cy="12" rx="9" ry="6"/><circle cx="12" cy="12" r="3" stroke-width="1"/></svg>
+          </div>
+          <div class="ads-service-text">
+            <div class="ads-service-name">High Myopia Complications</div>
+            <div class="ads-service-desc">Myopic macular degeneration and structural complications</div>
+          </div>
+          <svg class="ads-service-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+
+      <!-- Contact info below services -->
+      <div style="margin-top:var(--sp-4); display:flex; flex-wrap:wrap; gap:var(--sp-3);">
+        <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem; color:rgba(250,247,242,0.65);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Gleneagles Hospital, 6A Napier Rd
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span style="color:rgba(250,247,242,0.65);">Mon–Fri 9–5pm · Sat 9–1pm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ads-form-wrap">
+      <p class="ads-form-title">Request an Appointment</p>
+
+      <div class="ads-form-success" id="adsFormSuccess">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+        <h3>Message received</h3>
+        <p>Thank you — we'll be in touch within one business day.<br>For urgent eye concerns, call <a href="tel:+6592357063">+65 9235 7063</a>.</p>
+      </div>
+
+      <form class="ads-form" id="adsContactForm" action="https://formspree.io/f/mykdnlvw" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Google Ads Lead — Dr Wong Chee Wai" />
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="utm_source" id="utm_source" />
+        <input type="hidden" name="utm_medium" id="utm_medium" />
+        <input type="hidden" name="utm_campaign" id="utm_campaign" />
+        <input type="hidden" name="utm_term" id="utm_term" />
+        <input type="hidden" name="utm_content" id="utm_content" />
+        <input type="hidden" name="condition" id="condition" />
+
+        <div class="form-row">
+          <div class="form-group" id="ads-fg-first">
+            <label for="ads-first">First Name <span style="color:#c0392b;">*</span></label>
+            <input id="ads-first" name="first_name" type="text" placeholder="e.g. Mei Ling" autocomplete="given-name" />
+            <span class="form-error-msg">Please enter your first name.</span>
+          </div>
+          <div class="form-group" id="ads-fg-last">
+            <label for="ads-last">Last Name <span style="color:#c0392b;">*</span></label>
+            <input id="ads-last" name="last_name" type="text" placeholder="e.g. Tan" autocomplete="family-name" />
+            <span class="form-error-msg">Please enter your last name.</span>
+          </div>
+        </div>
+        <div class="form-group" id="ads-fg-email">
+          <label for="ads-email">Email Address <span style="color:#c0392b;">*</span></label>
+          <input id="ads-email" name="email" type="email" placeholder="e.g. meiling@email.com" autocomplete="email" />
+          <span class="form-error-msg">Please enter a valid email address.</span>
+        </div>
+        <div class="form-group">
+          <label for="ads-phone">Phone Number</label>
+          <input id="ads-phone" name="phone" type="tel" placeholder="+65 XXXX XXXX" autocomplete="tel" />
+        </div>
+        <div class="form-group" id="ads-fg-reason">
+          <label for="ads-reason">Reason for Visit <span style="color:#c0392b;">*</span></label>
+          <select id="ads-reason" name="reason">
+            <option value="">Please select...</option>
+            <option>Retinal Detachment (urgent)</option>
+            <option>Macular Degeneration Follow-up</option>
+            <option>Diabetic Eye Check</option>
+            <option>Cataract Surgery Consultation</option>
+            <option>Second Opinion</option>
+            <option>General Retinal Consultation</option>
+          </select>
+          <span class="form-error-msg">Please select a reason for your visit.</span>
+        </div>
+        <div class="form-group">
+          <label for="ads-msg">Message (optional)</label>
+          <textarea id="ads-msg" name="message" placeholder="Tell us briefly about your symptoms or concerns..."></textarea>
+        </div>
+        <button class="ads-form-submit" type="submit" id="adsFormSubmitBtn">Request Appointment →</button>
+        <div class="ads-form-net-error" id="adsFormNetError">
+          Something went wrong. Please try again or call us directly on <a href="tel:+6592357063" style="color:#c0392b;">+65 9235 7063</a>.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer class="ads-footer">
+  &copy; 2026 Dr Wong Chee Wai &middot; Vitreoretinal Surgeon &middot; Asia Pacific Eye Centre, Gleneagles Hospital, Singapore
+</footer>
+
+<!-- ── FLOATING WHATSAPP ── -->
+<a href="https://wa.me/6592357063?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20with%20Dr%20Wong.%20My%20eye%20condition%20is%3A%20" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp the clinic" onclick="gtag_report_conversion(); return true;">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ── STICKY MOBILE CALL BAR ── -->
+<div class="mobile-call-bar" aria-label="Quick contact">
+  <div class="mobile-call-bar-inner">
+    <a href="tel:+6592357063" class="mcb-call" onclick="gtag_report_conversion('tel:+6592357063'); return false;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      Call Now
+    </a>
+    <a href="https://wa.me/6592357063?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20with%20Dr%20Wong.%20My%20eye%20condition%20is%3A%20" class="mcb-wa" target="_blank" rel="noopener" onclick="gtag_report_conversion(); return true;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<script>
+  // ════════════════════════════════════════════════════════════════════
+  // DYNAMIC CONDITION HEADLINE & VALUE PROP
+  // ════════════════════════════════════════════════════════════════════
+  const conditionMap = {
+    'retinal-detachment': {
+      headline: 'Retinal Detachment Surgery',
+      value: 'Expert emergency and elective retinal repair. Same-day surgery available for urgent cases.'
+    },
+    'amd': {
+      headline: 'Macular Degeneration Treatment',
+      value: 'Advanced anti-VEGF injection therapy for age-related macular degeneration. Proven results.'
+    },
+    'diabetic': {
+      headline: 'Diabetic Eye Care',
+      value: 'Comprehensive care for diabetic retinopathy including laser and anti-VEGF treatment.'
+    },
+    'cataract': {
+      headline: 'Cataract Surgery',
+      value: 'Specialist in complex cataracts including post-vitrectomy cases. Premium lens options available.'
+    },
+    'myopia': {
+      headline: 'High Myopia Eye Care',
+      value: 'Specialist in myopic macular degeneration and high myopia complications.'
+    },
+    'floaters': {
+      headline: 'Eye Floaters Assessment',
+      value: 'Professional evaluation to determine if floaters require intervention or monitoring.'
+    },
+    'injection': {
+      headline: 'Intravitreal Injection Therapy',
+      value: 'Precise anti-VEGF and steroid injections for AMD, diabetic eye disease, and retinal conditions.'
+    }
+  };
+
+  function updateHeadlineFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const condition = params.get('condition');
+
+    // Populate hidden condition field
+    document.getElementById('condition').value = condition || '';
+
+    // Update headline and value if condition param exists
+    if (condition && conditionMap[condition]) {
+      const headline = document.getElementById('heroHeadline');
+      const value = document.getElementById('heroValue');
+
+      const data = conditionMap[condition];
+      headline.innerHTML = data.headline;
+      value.textContent = data.value;
+    }
+  }
+
+  // ════════════════════════════════════════════════════════════════════
+  // UTM PARAMETER CAPTURE
+  // ════════════════════════════════════════════════════════════════════
+  function captureUTMParams() {
+    const params = new URLSearchParams(window.location.search);
+    const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
+    utmFields.forEach(field => {
+      const value = params.get(field);
+      if (value) {
+        const el = document.getElementById(field);
+        if (el) el.value = value;
+      }
+    });
+  }
+
+  // ════════════════════════════════════════════════════════════════════
+  // FORM VALIDATION & SUBMISSION
+  // ════════════════════════════════════════════════════════════════════
+  document.getElementById('adsContactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const firstNameInput = document.getElementById('ads-first');
+    const lastNameInput = document.getElementById('ads-last');
+    const emailInput = document.getElementById('ads-email');
+    const reasonSelect = document.getElementById('ads-reason');
+    const submitBtn = document.getElementById('adsFormSubmitBtn');
+    const errorDiv = document.getElementById('adsFormNetError');
+    const successDiv = document.getElementById('adsFormSuccess');
+
+    // Validation
+    let isValid = true;
+
+    // First name validation
+    if (!firstNameInput.value.trim()) {
+      firstNameInput.classList.add('form-error');
+      isValid = false;
+    } else {
+      firstNameInput.classList.remove('form-error');
+    }
+
+    // Last name validation
+    if (!lastNameInput.value.trim()) {
+      lastNameInput.classList.add('form-error');
+      isValid = false;
+    } else {
+      lastNameInput.classList.remove('form-error');
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+      emailInput.classList.add('form-error');
+      isValid = false;
+    } else {
+      emailInput.classList.remove('form-error');
+    }
+
+    // Reason validation
+    if (!reasonSelect.value) {
+      reasonSelect.classList.add('form-error');
+      isValid = false;
+    } else {
+      reasonSelect.classList.remove('form-error');
+    }
+
+    if (!isValid) return;
+
+    submitBtn.disabled = true;
+    errorDiv.style.display = 'none';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successDiv.style.display = 'block';
+
+        // Fire conversion
+        gtag_report_conversion();
+
+        // Scroll to success message
+        successDiv.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (error) {
+      errorDiv.style.display = 'block';
+      submitBtn.disabled = false;
+    }
+  });
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    updateHeadlineFromURL();
+    captureUTMParams();
+  });
+</script>
+</body>
+</html>
