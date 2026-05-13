@@ -1280,33 +1280,35 @@
                Formspree: create a free form at https://formspree.io and replace
                "YOUR_FORM_ID" in the action URL below with your actual form ID.
                ───────────────────────────────────────────────────────────────── -->
-          <form id="contactForm" action="https://formspree.io/f/mykdnlvw" method="POST" novalidate>
+          <form id="contactForm" action="https://formspree.io/f/mykdnlvw" method="POST">
             <input type="hidden" name="_subject" value="New Appointment Request — Dr Wong Chee Wai" />
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
 
             <div class="form-row">
               <div class="form-group" id="fg-first">
                 <label for="f-first">First Name <span style="color:#c0392b;">*</span></label>
-                <input id="f-first" name="first_name" type="text" placeholder="e.g. Mei Ling" autocomplete="given-name" />
+                <input id="f-first" name="first_name" type="text" placeholder="e.g. Mei Ling" autocomplete="given-name" required />
                 <span class="form-error-msg">Please enter your first name.</span>
               </div>
               <div class="form-group" id="fg-last">
                 <label for="f-last">Last Name <span style="color:#c0392b;">*</span></label>
-                <input id="f-last" name="last_name" type="text" placeholder="e.g. Tan" autocomplete="family-name" />
+                <input id="f-last" name="last_name" type="text" placeholder="e.g. Tan" autocomplete="family-name" required />
                 <span class="form-error-msg">Please enter your last name.</span>
               </div>
             </div>
             <div class="form-group" id="fg-email">
               <label for="f-email">Email Address <span style="color:#c0392b;">*</span></label>
-              <input id="f-email" name="email" type="email" placeholder="e.g. meiling@email.com" autocomplete="email" />
+              <input id="f-email" name="email" type="email" placeholder="e.g. meiling@email.com" autocomplete="email" required />
               <span class="form-error-msg">Please enter a valid email address.</span>
             </div>
-            <div class="form-group">
-              <label for="f-phone">Phone Number</label>
-              <input id="f-phone" name="phone" type="tel" placeholder="+65 XXXX XXXX" autocomplete="tel" />
+            <div class="form-group" id="fg-phone">
+              <label for="f-phone">Phone Number <span style="color:#c0392b;">*</span></label>
+              <input id="f-phone" name="phone" type="tel" placeholder="+65 XXXX XXXX" autocomplete="tel" inputmode="tel" pattern="[+0-9\s\-()]{8,}" required />
+              <span class="form-error-msg">Please enter a valid phone number (at least 8 digits).</span>
             </div>
             <div class="form-group" id="fg-reason">
               <label for="f-reason">Reason for Visit <span style="color:#c0392b;">*</span></label>
-              <select id="f-reason" name="reason">
+              <select id="f-reason" name="reason" autocomplete="off" required>
                 <option value="">Please select...</option>
                 <option>Retinal Detachment (urgent)</option>
                 <option>Macular Degeneration Follow-up</option>
@@ -1316,9 +1318,10 @@
               </select>
               <span class="form-error-msg">Please select a reason for your visit.</span>
             </div>
-            <div class="form-group">
-              <label for="f-msg">Message (optional)</label>
-              <textarea id="f-msg" name="message" placeholder="Tell us briefly about your symptoms or concerns..."></textarea>
+            <div class="form-group" id="fg-msg">
+              <label for="f-msg">Message <span style="color:#c0392b;">*</span></label>
+              <textarea id="f-msg" name="message" placeholder="Tell us briefly about your symptoms or concerns (at least 20 characters)..." autocomplete="off" minlength="20" required></textarea>
+              <span class="form-error-msg">Please write at least 20 characters describing your concern.</span>
             </div>
             <button class="btn-form" type="submit" id="formSubmitBtn">Request Appointment →</button>
             <div class="form-network-error" id="formNetworkError">

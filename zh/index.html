@@ -2213,33 +2213,35 @@
                Formspree: create a free form at https://formspree.io and replace
                "YOUR_FORM_ID" in the action URL below with your actual form ID.
                ───────────────────────────────────────────────────────────────── -->
-          <form id="contactForm" action="https://formspree.io/f/mykdnlvw" method="POST" novalidate>
+          <form id="contactForm" action="https://formspree.io/f/mykdnlvw" method="POST">
             <input type="hidden" name="_subject" value="New Appointment Request — Dr Wong Chee Wai" />
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
 
             <div class="form-row">
               <div class="form-group" id="fg-first">
                 <label for="f-first">名 <span style="color:#c0392b;">*</span></label>
-                <input id="f-first" name="first_name" type="text" placeholder="例如 美铃" autocomplete="given-name" />
+                <input id="f-first" name="first_name" type="text" placeholder="例如 美铃" autocomplete="given-name" required />
                 <span class="form-error-msg">请输入您的名字。</span>
               </div>
               <div class="form-group" id="fg-last">
                 <label for="f-last">姓 <span style="color:#c0392b;">*</span></label>
-                <input id="f-last" name="last_name" type="text" placeholder="例如 陈" autocomplete="family-name" />
+                <input id="f-last" name="last_name" type="text" placeholder="例如 陈" autocomplete="family-name" required />
                 <span class="form-error-msg">请输入您的姓氏。</span>
               </div>
             </div>
             <div class="form-group" id="fg-email">
               <label for="f-email">电子邮箱地址 <span style="color:#c0392b;">*</span></label>
-              <input id="f-email" name="email" type="email" placeholder="例如 meiling@email.com" autocomplete="email" />
+              <input id="f-email" name="email" type="email" placeholder="例如 meiling@email.com" autocomplete="email" required />
               <span class="form-error-msg">请输入有效的电子邮箱地址。</span>
             </div>
-            <div class="form-group">
-              <label for="f-phone">电话号码</label>
-              <input id="f-phone" name="phone" type="tel" placeholder="+65 XXXX XXXX" autocomplete="tel" />
+            <div class="form-group" id="fg-phone">
+              <label for="f-phone">电话号码 <span style="color:#c0392b;">*</span></label>
+              <input id="f-phone" name="phone" type="tel" placeholder="+65 XXXX XXXX" autocomplete="tel" inputmode="tel" pattern="[+0-9\s\-()]{8,}" required />
+              <span class="form-error-msg">请输入有效的电话号码（至少 8 位数字）。</span>
             </div>
             <div class="form-group" id="fg-reason">
               <label for="f-reason">就诊原因 <span style="color:#c0392b;">*</span></label>
-              <select id="f-reason" name="reason">
+              <select id="f-reason" name="reason" autocomplete="off" required>
                 <option value="">请选择...</option>
                 <option>视网膜脱离（紧急）</option>
                 <option>黄斑变性随访</option>
@@ -2249,9 +2251,10 @@
               </select>
               <span class="form-error-msg">请选择就诊原因。</span>
             </div>
-            <div class="form-group">
-              <label for="f-msg">信息（可选）</label>
-              <textarea id="f-msg" name="message" placeholder="请简要告诉我们您的症状或顾虑..."></textarea>
+            <div class="form-group" id="fg-msg">
+              <label for="f-msg">信息 <span style="color:#c0392b;">*</span></label>
+              <textarea id="f-msg" name="message" placeholder="请简要告诉我们您的症状或顾虑（至少 20 个字符）..." autocomplete="off" minlength="20" required></textarea>
+              <span class="form-error-msg">请至少输入 20 个字符描述您的情况。</span>
             </div>
             <button class="btn-form" type="submit" id="formSubmitBtn">预约挂号 →</button>
             <div class="form-network-error" id="formNetworkError">
@@ -2439,45 +2442,43 @@
     var submitBtn = document.getElementById('formSubmitBtn');
     if (!form) return;
 
-    function markValid(el, groupId) {
-      var g = document.getElementById(groupId);
-      if (!g) return;
+    function clearError(el) {
       el.classList.remove('invalid');
-      g.classList.remove('has-error');
+      var wrap = el.closest('.form-group');
+      if (wrap) wrap.classList.remove('has-error');
     }
-
-    function markInvalid(el, groupId) {
-      var g = document.getElementById(groupId);
-      if (!g) return;
+    function markError(el) {
       el.classList.add('invalid');
-      g.classList.add('has-error');
+      var wrap = el.closest('.form-group');
+      if (wrap) wrap.classList.add('has-error');
+    }
+    function clearAllErrors() {
+      form.querySelectorAll('.form-group.has-error').forEach(function (g) { g.classList.remove('has-error'); });
+      form.querySelectorAll('.invalid').forEach(function (el) { el.classList.remove('invalid'); });
     }
 
-    function validate() {
-      var ok = true;
-      var first  = document.getElementById('f-first');
-      var last   = document.getElementById('f-last');
-      var email  = document.getElementById('f-email');
-      var reason = document.getElementById('f-reason');
+    form.addEventListener('invalid', function (e) {
+      e.preventDefault();
+      if (e.target.name === '_gotcha') return;
+      markError(e.target);
+    }, true);
 
-      if (!first.value.trim())  { markInvalid(first,  'fg-first');  ok = false; } else { markValid(first,  'fg-first'); }
-      if (!last.value.trim())   { markInvalid(last,   'fg-last');   ok = false; } else { markValid(last,   'fg-last'); }
-      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { markInvalid(email, 'fg-email'); ok = false; } else { markValid(email, 'fg-email'); }
-      if (!reason.value)        { markInvalid(reason, 'fg-reason'); ok = false; } else { markValid(reason, 'fg-reason'); }
-      return ok;
-    }
-
-    // Live clear-on-fix for required fields
-    ['f-first','f-last','f-email','f-reason'].forEach(function(id) {
+    ['f-first','f-last','f-email','f-phone','f-reason','f-msg'].forEach(function (id) {
       var el = document.getElementById(id);
       if (!el) return;
-      el.addEventListener('input', function () { el.classList.remove('invalid'); document.getElementById('fg-' + id.replace('f-',''))?.classList.remove('has-error'); });
+      var evt = el.tagName === 'SELECT' ? 'change' : 'input';
+      el.addEventListener(evt, function () { clearError(el); });
     });
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       netErr.style.display = 'none';
-      if (!validate()) return;
+      clearAllErrors();
+      if (!form.checkValidity()) {
+        var firstInvalid = form.querySelector('.form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
 
       submitBtn.disabled = true;
       submitBtn.textContent = '发送中…';

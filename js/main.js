@@ -279,39 +279,45 @@
       var netErr   = document.getElementById('formNetworkError');
       var submitBtn = document.getElementById('formSubmitBtn');
       if (!form) return;
-      function markValid(el, groupId) {
-        var g = document.getElementById(groupId);
-        if (!g) return;
+
+      function clearError(el) {
         el.classList.remove('invalid');
-        g.classList.remove('has-error');
+        var wrap = el.closest('.form-group');
+        if (wrap) wrap.classList.remove('has-error');
       }
-      function markInvalid(el, groupId) {
-        var g = document.getElementById(groupId);
-        if (!g) return;
+      function markError(el) {
         el.classList.add('invalid');
-        g.classList.add('has-error');
+        var wrap = el.closest('.form-group');
+        if (wrap) wrap.classList.add('has-error');
       }
-      function validate() {
-        var ok = true;
-        var first  = document.getElementById('f-first');
-        var last   = document.getElementById('f-last');
-        var email  = document.getElementById('f-email');
-        var reason = document.getElementById('f-reason');
-        if (!first.value.trim())  { markInvalid(first,  'fg-first');  ok = false; } else { markValid(first,  'fg-first'); }
-        if (!last.value.trim())   { markInvalid(last,   'fg-last');   ok = false; } else { markValid(last,   'fg-last'); }
-        if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { markInvalid(email, 'fg-email'); ok = false; } else { markValid(email, 'fg-email'); }
-        if (!reason.value)        { markInvalid(reason, 'fg-reason'); ok = false; } else { markValid(reason, 'fg-reason'); }
-        return ok;
+      function clearAllErrors() {
+        form.querySelectorAll('.form-group.has-error').forEach(function (g) { g.classList.remove('has-error'); });
+        form.querySelectorAll('.invalid').forEach(function (el) { el.classList.remove('invalid'); });
       }
-      ['f-first','f-last','f-email','f-reason'].forEach(function(id) {
+
+      // Suppress native validation tooltips, surface our inline error UI
+      form.addEventListener('invalid', function (e) {
+        e.preventDefault();
+        if (e.target.name === '_gotcha') return;
+        markError(e.target);
+      }, true);
+
+      ['f-first','f-last','f-email','f-phone','f-reason','f-msg'].forEach(function (id) {
         var el = document.getElementById(id);
         if (!el) return;
-        el.addEventListener('input', function () { el.classList.remove('invalid'); document.getElementById('fg-' + id.replace('f-',''))?.classList.remove('has-error'); });
+        var evt = el.tagName === 'SELECT' ? 'change' : 'input';
+        el.addEventListener(evt, function () { clearError(el); });
       });
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         netErr.style.display = 'none';
-        if (!validate()) return;
+        clearAllErrors();
+        if (!form.checkValidity()) {
+          var firstInvalid = form.querySelector('.form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending\u2026';
         fetch(form.action, {
