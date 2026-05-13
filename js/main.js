@@ -139,6 +139,18 @@
 
     /* Stat counter animation */
     (function () {
+      var all = document.querySelectorAll('[data-count-to]');
+      if (!all.length) return;
+      function finalText(el) {
+        var target = parseInt(el.dataset.countTo, 10);
+        var prefix = el.dataset.prefix || '';
+        var suffix = el.dataset.suffix || '';
+        var useComma = el.hasAttribute('data-comma');
+        return prefix + (useComma ? target.toLocaleString('en-US') : target.toString()) + suffix;
+      }
+      all.forEach(function (el) { el.textContent = finalText(el); });
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;
       function animateCounter(el) {
         if (el._counted) return;
         el._counted = true;
@@ -160,16 +172,22 @@
           var ease = 1 - Math.pow(1 - progress, 3);
           el.textContent = prefix + format(ease * target) + suffix;
           if (progress < 1) { requestAnimationFrame(tick); }
-          else { el.textContent = prefix + format(target) + suffix; }
+          else { el.textContent = finalText(el); }
         }
         requestAnimationFrame(tick);
       }
       var heroStats      = document.querySelector('.hero-stats-row');
       var heroStatsMobile = document.querySelector('.hero-stats-mobile');
       var researchGrid   = document.querySelector('.research-grid');
+      var initialLoadCutoff = performance.now() + 1000;
       var obs = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
+          if (performance.now() < initialLoadCutoff) {
+            entry.target.querySelectorAll('[data-count-to]').forEach(function (el) { el._counted = true; });
+            obs.unobserve(entry.target);
+            return;
+          }
           var delay = entry.target === researchGrid ? 400 : 0;
           entry.target.querySelectorAll('[data-count-to]').forEach(function (el) {
             setTimeout(function () { animateCounter(el); }, delay);
