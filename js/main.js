@@ -305,8 +305,24 @@
             form.style.display = 'none';
             success.style.display = 'block';
             if (typeof gtag === 'function') {
+              var userData = {};
+              var emailVal = (document.getElementById('f-email').value || '').trim().toLowerCase();
+              var firstVal = (document.getElementById('f-first').value || '').trim();
+              var lastVal  = (document.getElementById('f-last').value  || '').trim();
+              var phoneRaw = (document.getElementById('f-phone').value || '').trim();
+              if (emailVal) userData.email = emailVal;
+              if (phoneRaw) {
+                var hasPlus = phoneRaw.charAt(0) === '+';
+                var digits = phoneRaw.replace(/\D/g, '');
+                if (digits) userData.phone_number = hasPlus ? ('+' + digits) : ('+65' + digits);
+              }
+              var address = {};
+              if (firstVal) address.first_name = firstVal;
+              if (lastVal)  address.last_name  = lastVal;
+              if (address.first_name || address.last_name) userData.address = address;
+              gtag('set', 'user_data', userData);
               gtag('event', 'form_submit', { event_category: 'contact', event_label: 'appointment_request' });
-              gtag('event', 'conversion', { 'send_to': 'AW-17969566370/X_lTCKTP8_8bEKKlx_hC', 'value': 1.0, 'currency': 'SGD' });
+              gtag('event', 'conversion', { 'send_to': 'AW-17969566370/X_1TCKTP8_8bEKK1x_hC', 'value': 1.0, 'currency': 'SGD' });
             }
           } else {
             res.json().then(function () { netErr.style.display = 'block'; }).catch(function () { netErr.style.display = 'block'; });
