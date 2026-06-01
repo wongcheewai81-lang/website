@@ -26,6 +26,33 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(function (el) { revealObserver.observe(el); });
 
+  // Desktop nav "More" dropdown — sync aria-expanded with hover/focus/click state
+  (function () {
+    var trigger = document.querySelector('.nav-more-trigger');
+    if (!trigger) return;
+    var wrap = trigger.closest('.nav-more');
+    if (!wrap) return;
+    function setOpen(o) { trigger.setAttribute('aria-expanded', o ? 'true' : 'false'); }
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      setOpen(trigger.getAttribute('aria-expanded') !== 'true');
+    });
+    wrap.addEventListener('mouseenter', function () { setOpen(true); });
+    wrap.addEventListener('mouseleave', function () { setOpen(false); });
+    wrap.addEventListener('focusin',  function () { setOpen(true); });
+    wrap.addEventListener('focusout', function (e) {
+      if (!wrap.contains(e.relatedTarget)) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+        setOpen(false); trigger.focus();
+      }
+    });
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) setOpen(false);
+    });
+  })();
+
   // Mobile nav
   var btn = document.getElementById('navHamburger');
   var panel = document.getElementById('mobileNav');

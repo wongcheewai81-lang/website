@@ -137,6 +137,26 @@
       .related-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; text-align: center; padding: 1.5rem; }
     }
+  
+/* ═══════════════════ REDESIGN 2026 · "WARM CLARITY" (articles layer) ═══════════════════
+   Removable: delete from this banner to the end of the style block. */
+:root{ --amber:#e0a85c; --amber-lt:#f0d3a3; --ivory:#fcf9f4; --warm-rule:rgba(122,92,52,0.16); }
+body{ background:#fcf9f4; }
+.article-hero{ background:radial-gradient(125% 130% at 82% 0%, #173a63 0%, #0d2747 46%, #081a31 100%); }
+.article-hero::before{
+  background:
+    radial-gradient(48% 62% at 84% 72%, rgba(224,168,92,0.30) 0%, transparent 62%),
+    radial-gradient(58% 64% at 12% 22%, rgba(61,158,158,0.16) 0%, transparent 60%);
+}
+.article-hero .eyebrow, .article-eyebrow, .hero-eyebrow, .eyebrow{ color:#e0a85c; }
+.article-hero h1{ letter-spacing:-0.025em; }
+.related-card,.sidebar-card,.grade-card,.lens-card,.comparison-card,.treatment-card{
+  border-radius:18px; border:1px solid var(--warm-rule);
+  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1),border-color .3s;
+}
+.related-card:hover,.sidebar-card:hover,.grade-card:hover,.lens-card:hover,.comparison-card:hover,.treatment-card:hover{
+  transform:translateY(-5px); box-shadow:0 14px 36px rgba(54,42,26,0.12); border-color:rgba(224,168,92,0.42);
+}
   </style>
   <script type="application/ld+json">
   {
