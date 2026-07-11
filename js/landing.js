@@ -67,7 +67,7 @@
             if (address.first_name || address.last_name) userData.address = address;
             gtag('set', 'user_data', userData);
             gtag('event', 'form_submit', { event_category: 'contact', event_label: 'appointment_request', page_source: 'google_ads_landing' });
-            gtag('event', 'conversion', { 'send_to': 'AW-17969566370/X_1TCKTP8_8bEKK1x_hC', 'value': 1.0, 'currency': 'SGD' });
+            gtag('event', 'conversion', { 'send_to': 'AW-17969566370/X_lTCKTP8_8bEKKlx_hC', 'value': 1.0, 'currency': 'SGD' });
           }
         } else {
           netErr.style.display = 'block';
