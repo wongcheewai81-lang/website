@@ -77,6 +77,7 @@ Dr Wong's peer-reviewed research, indexed on PubMed:
 
 ## Profiles & Verification (sameAs)
 
+- ORCID: https://orcid.org/0000-0002-3972-700X
 - Google Scholar: https://scholar.google.com/citations?user=KulTQJMAAAAJ
 - ResearchGate: https://www.researchgate.net/profile/Chee-Wong-3
 - Gleneagles Hospital profile: https://www.gleneagles.com.sg/patient-services/specialists/profile/wong-chee-wai
