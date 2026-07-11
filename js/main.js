@@ -451,7 +451,7 @@
     document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
       link.addEventListener('click', function() {
         if (typeof gtag === 'function') {
-          gtag('event', 'conversion', { 'send_to': 'AW-17969566370/JDIHCOuH944cEKKlx_hC', 'value': 1.0, 'currency': 'SGD' });
+          gtag('event', 'conversion', { 'send_to': 'AW-17969566370/xfj-CNHA8M4cEKKlx_hC', 'value': 1.0, 'currency': 'SGD' });
           gtag('event', 'phone_call_click', { event_category: 'contact', event_label: 'tel_link' });
         }
       });
