@@ -83,6 +83,10 @@
     .speaking-role { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 2rem; white-space: nowrap; }
     .role-invited { background: rgba(42,124,124,0.1); color: var(--teal); border: 1px solid rgba(42,124,124,0.15); }
     .role-speaker { background: rgba(15,35,64,0.07); color: var(--navy); border: 1px solid rgba(15,35,64,0.12); }
+    .speaking-item--featured { align-items: start; }
+    .speaking-media { grid-column: 2; margin-top: 0.25rem; max-width: 440px; position: relative; border-radius: 0.7rem; overflow: hidden; box-shadow: 0 1px 2px rgba(15,35,64,0.07), 0 10px 28px -10px rgba(15,35,64,0.22); }
+    .speaking-media img { display: block; width: 100%; height: auto; }
+    .speaking-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,35,64,0.22), rgba(15,35,64,0) 60%); pointer-events: none; }
 
     /* MEDIA ENQUIRIES */
     .enquiry-section { background: var(--navy); padding: 4rem; margin-top: 4rem; }
@@ -116,6 +120,7 @@
       .section { padding: 3rem 1.5rem 0; }
       .media-grid-featured { grid-template-columns: 1fr; }
       .speaking-item { grid-template-columns: 60px 1fr; }
+      .speaking-media { max-width: 100%; }
       .speaking-role { display: none; }
       .enquiry-section { padding: 3rem 1.5rem; }
       .enquiry-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -346,6 +351,21 @@ body{ background:#fcf9f4; }
   <p class="section-title">Speaking engagements</p>
 
   <div class="speaking-list">
+    <div class="speaking-item speaking-item--featured">
+      <div class="speaking-year">2026</div>
+      <div>
+        <p class="speaking-conference">ZEISS Retina in Focus: Advancing Retinal Imaging, Defining Surgical Precision</p>
+        <p class="speaking-title">Integrating ICG Imaging into My Clinical Practice</p>
+        <p class="speaking-location">Pullman Singapore Orchard · Singapore · July 2026</p>
+      </div>
+      <span class="speaking-role role-invited">Invited Speaker</span>
+      <figure class="speaking-media">
+        <picture>
+          <source type="image/webp" srcset="images/zeiss-retina-in-focus-2026-340w.webp 340w, images/zeiss-retina-in-focus-2026-680w.webp 680w, images/zeiss-retina-in-focus-2026-1020w.webp 1020w" sizes="(max-width: 960px) 90vw, 440px" />
+          <img src="images/zeiss-retina-in-focus-2026-680w.jpg" srcset="images/zeiss-retina-in-focus-2026-340w.jpg 340w, images/zeiss-retina-in-focus-2026-680w.jpg 680w, images/zeiss-retina-in-focus-2026-1020w.jpg 1020w" sizes="(max-width: 960px) 90vw, 440px" alt="Dr. Wong Chee Wai presenting indocyanine green angiography images at ZEISS Retina in Focus, Pullman Singapore Orchard" width="680" height="454" loading="lazy" decoding="async" />
+        </picture>
+      </figure>
+    </div>
     <div class="speaking-item">
       <div class="speaking-year">2026</div>
       <div>
