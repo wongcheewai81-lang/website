@@ -89,6 +89,11 @@
     .panel-type { font-size: 0.72rem; color: var(--muted); font-weight: 300; }
     .corp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 1rem; overflow: hidden; margin-bottom: 1.25rem; }
     .corp-card { background: #fff; padding: 1.5rem 1.6rem; }
+    .ins-callout { background: var(--navy); border-radius: 1rem; padding: 2.25rem 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; margin: 2.5rem 0 0; }
+    .ins-callout h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: #fff; margin-bottom: 0.6rem; line-height: 1.25; }
+    .ins-callout h3 strong { font-weight: 600; }
+    .ins-callout p { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.62); line-height: 1.75; max-width: 640px; margin: 0; }
+    .ins-callout .btn-gold { white-space: nowrap; }
     .corp-logo { height: 38px; max-width: 155px; display: flex; align-items: center; margin-bottom: 0.7rem; }
     .corp-logo img { max-height: 36px; max-width: 100%; width: auto; object-fit: contain; }
     .corp-name { font-size: 0.95rem; font-weight: 500; color: var(--navy); margin-bottom: 0.15rem; }
@@ -144,6 +149,7 @@
       .section { padding: 3rem 1.5rem 0; }
       .panels-grid { grid-template-columns: repeat(2, 1fr); }
       .corp-grid { grid-template-columns: 1fr; }
+      .ins-callout { grid-template-columns: 1fr; padding: 1.75rem 1.5rem; }
       .billing-cards { grid-template-columns: 1fr; }
       .procedure-row { grid-template-columns: 1fr; }
       .proc-badge { align-self: flex-start; }
@@ -331,6 +337,7 @@ body{ background:#fcf9f4; }
     <li class="nav-more">
       <button type="button" class="nav-more-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="navMoreMenu">More <span class="caret" aria-hidden="true">▾</span></button>
       <ul id="navMoreMenu" class="nav-more-menu" role="menu">
+        <li role="none"><a href="insurance.html" role="menuitem">Insurance</a></li>
         <li role="none"><a href="index.html#myopia" role="menuitem">Myopia</a></li>
         <li role="none"><a href="international-patients.html" role="menuitem">International</a></li>
         <li role="none"><a href="media.html" role="menuitem">Media</a></li>
@@ -349,6 +356,16 @@ body{ background:#fcf9f4; }
     <p class="lead">Dr. Wong's practice is committed to clear, upfront communication about costs. Many surgical procedures are Medisave-claimable, and major insurance panels are accepted at Asia Pacific Eye Centre, Gleneagles Hospital.</p>
   </div>
 </section>
+
+<div class="section" style="padding-top:2.5rem; padding-bottom:0;">
+  <div class="ins-callout">
+    <div>
+      <h3>The insurance rules changed on<br><strong>1 April 2026.</strong></h3>
+      <p>Panel or non-panel, pre-authorisation, letters of guarantee, and what you are actually left to pay. If you are worried about the cost of surgery, or have been told to find a panel doctor, read this before you delay treatment.</p>
+    </div>
+    <a href="insurance.html" class="btn-gold">Read the insurance guide</a>
+  </div>
+</div>
 
 <!-- MEDISAVE -->
 <div class="section" style="padding-top:4rem;">
@@ -598,7 +615,7 @@ body{ background:#fcf9f4; }
   </div>
   <div class="faq-item">
     <h3>Which insurance plans does Dr Wong accept?</h3>
-    <p>Dr Wong is on the panels of Great Eastern, HSBC Life, Prudential and Singlife. He also participates in corporate and employer schemes administered through Cigna, Parkway Shenton, Alliance Cigna, Alliance MediNet, MHC and Adept. If your insurer or scheme is not listed, please contact the clinic, as we may still be able to assist with claims or reimbursement.</p>
+    <p>Dr Wong is on the panels of Great Eastern, HSBC Life, Prudential and Singlife. He also participates in corporate and employer schemes administered through Cigna, Parkway Shenton, Alliance Cigna, Alliance MediNet, MHC and Adept. If your insurer or scheme is not listed, please contact the clinic, as we may still be able to assist with claims or reimbursement. Our <a href="insurance.html" style="color:var(--teal);">insurance guide</a> explains panel and non-panel claims, pre-authorisation and what you pay.</p>
   </div>
   <div class="faq-item">
     <h3>Do I need a referral to see Dr Wong?</h3>
