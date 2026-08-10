@@ -1,2 +1,25 @@
 .claude/
 *.zip
+
+# macOS
+.DS_Store
+
+# Local website/server config
+.htaccess
+
+# Local working directories
+temporary screenshots/
+landmark papers/
+web traffic strategy/
+_to_delete/
+brand_assets/images/
+
+# Personal documents and exports
+*.docx
+*.xlsx
+
+# Local tooling files
+serve.mjs
+seo-fixes.js
+verify-faq-schema.js
+scripts/restructure-nav.py

@@ -83,10 +83,16 @@
     .panels-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: 1rem; overflow: hidden; margin-bottom: 1.5rem; }
     .panel-card { background: #fff; padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.75rem; transition: background 0.15s; }
     .panel-card:hover { background: var(--warm-white); }
-    .panel-icon { height: 54px; max-width: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; padding: 4px 8px; }
-    .panel-icon img { max-height: 50px; max-width: 170px; width: auto; object-fit: contain; }
+    .panel-icon { height: 54px; width: 100%; max-width: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; padding: 4px 8px; }
+    .panel-icon img { max-height: 50px; max-width: 100%; width: auto; object-fit: contain; }
     .panel-name { font-size: 0.92rem; font-weight: 500; color: var(--navy); }
     .panel-type { font-size: 0.72rem; color: var(--muted); font-weight: 300; }
+    .corp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 1rem; overflow: hidden; margin-bottom: 1.25rem; }
+    .corp-card { background: #fff; padding: 1.5rem 1.6rem; }
+    .corp-name { font-size: 0.95rem; font-weight: 500; color: var(--navy); margin-bottom: 0.15rem; }
+    .corp-kind { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.7rem; }
+    .corp-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.3rem 0.5rem; margin: 0; padding: 0; }
+    .corp-list li { font-size: 0.76rem; font-weight: 300; color: var(--muted); background: var(--warm-white); border: 1px solid var(--border); border-radius: 2rem; padding: 0.12rem 0.6rem; }
 
     /* BILLING INFO */
     .billing-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; }
@@ -135,6 +141,7 @@
       .hero { padding: 7rem 1.5rem 4rem; }
       .section { padding: 3rem 1.5rem 0; }
       .panels-grid { grid-template-columns: repeat(2, 1fr); }
+      .corp-grid { grid-template-columns: 1fr; }
       .billing-cards { grid-template-columns: 1fr; }
       .procedure-row { grid-template-columns: 1fr; }
       .proc-badge { align-self: flex-start; }
@@ -350,25 +357,17 @@ body{ background:#fcf9f4; }
   <div class="procedure-list">
     <div class="procedure-row">
       <div>
-        <p class="proc-label">TOSP Code SL801R</p>
-        <p class="proc-name">Retinal Detachment Repair — Standard Complexity</p>
-        <p class="proc-note">Includes scleral buckle, laser retinopexy, and standard pars plana vitrectomy for uncomplicated retinal detachments.</p>
+        <p class="proc-label">TOSP Code SL801V</p>
+        <p class="proc-name">Posterior Vitrectomy (Pars Plana)</p>
+        <p class="proc-note">The code used for most of my vitreoretinal surgery. It covers epiretinal membrane peel, macular hole repair, and retinal detachment repaired by vitrectomy, including endolaser and lensectomy where required.</p>
       </div>
       <span class="proc-badge badge-medisave">Medisave-claimable</span>
     </div>
     <div class="procedure-row">
       <div>
         <p class="proc-label">TOSP Code SL802R</p>
-        <p class="proc-name">Retinal Detachment Repair — Complex / Recurrent</p>
-        <p class="proc-note">For complex or recurrent retinal detachments requiring advanced techniques such as silicone oil tamponade, membrane peeling, or multiple procedures.</p>
-      </div>
-      <span class="proc-badge badge-medisave">Medisave-claimable</span>
-    </div>
-    <div class="procedure-row">
-      <div>
-        <p class="proc-label">Vitreoretinal Surgery</p>
-        <p class="proc-name">Vitrectomy for Macular Hole or Epiretinal Membrane</p>
-        <p class="proc-note">Pars plana vitrectomy with internal limiting membrane (ILM) peel for macular hole and epiretinal membrane removal.</p>
+        <p class="proc-name">Scleral Buckle for Retinal Detachment</p>
+        <p class="proc-note">Retinal detachment repaired by scleral buckling rather than vitrectomy, using more than one plomb or an encircling band. This is the other code I use commonly.</p>
       </div>
       <span class="proc-badge badge-medisave">Medisave-claimable</span>
     </div>
@@ -403,13 +402,13 @@ body{ background:#fcf9f4; }
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           MOH Fee Benchmarks Hub
         </a>
-        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/cost-financing/tosp-sl801r-eye-bill-information" target="_blank" rel="nofollow noopener" class="moh-link">
+        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/cost-financing/tosp-sl801v-eye-bill-information" target="_blank" rel="nofollow noopener" class="moh-link">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          SL801R — Retinal Detachment (Standard)
+          SL801V: Posterior Vitrectomy
         </a>
-        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/cost-financing/tosp-sl802r-eye-bill-information" target="_blank" rel="nofollow noopener" class="moh-link">
+        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/cost-financing/tosp-sl802r-bill-information" target="_blank" rel="nofollow noopener" class="moh-link">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          SL802R — Retinal Detachment (Complex)
+          SL802R: Retinal Detachment (Complex)
         </a>
       </div>
     </div>
@@ -453,33 +452,69 @@ body{ background:#fcf9f4; }
     </div>
   </div>
 
-  <p style="font-size:0.82rem; color:var(--muted); font-weight:300; line-height:1.7; padding: 0.25rem 0.5rem;">Panel status is accurate as of early 2026. Coverage terms and panel status may change — please verify directly with your insurer. For letters of guarantee or pre-authorisation, contact the clinic team in advance of your appointment.</p>
+  <p class="section-title" style="font-size:1.5rem; margin-top:2.5rem;">Corporate and employer schemes</p>
+  <p class="section-intro">Many patients are covered through an employer scheme administered by a third-party network rather than directly by an insurer. Dr. Wong participates in the following corporate panels. The insurers listed under each network are those whose members the network administers.</p>
+
+  <div class="corp-grid">
+    <div class="corp-card">
+      <p class="corp-kind">Direct</p>
+      <p class="corp-name">Cigna</p>
+    </div>
+    <div class="corp-card">
+      <p class="corp-kind">Network</p>
+      <p class="corp-name">Parkway Shenton</p>
+      <ul class="corp-list"><li>AIA</li><li>Allianz</li></ul>
+    </div>
+    <div class="corp-card">
+      <p class="corp-kind">Network</p>
+      <p class="corp-name">Alliance Cigna</p>
+    </div>
+    <div class="corp-card">
+      <p class="corp-kind">Network</p>
+      <p class="corp-name">Alliance MediNet</p>
+      <ul class="corp-list"><li>AIA</li><li>HSBC</li><li>Singlife</li><li>Great Eastern</li><li>NTUC Income</li><li>Tokio Marine</li></ul>
+    </div>
+    <div class="corp-card">
+      <p class="corp-kind">Network</p>
+      <p class="corp-name">MHC</p>
+      <ul class="corp-list"><li>AIA</li><li>QBE</li><li>Great Eastern</li><li>NTUC Income</li><li>Better Health</li></ul>
+    </div>
+    <div class="corp-card">
+      <p class="corp-kind">Network</p>
+      <p class="corp-name">Adept</p>
+      <ul class="corp-list"><li>Allianz</li><li>HSBC</li><li>NTUC Income</li><li>Great Eastern</li><li>NOW Health International</li><li>Tokio Marine</li><li>DA Care</li></ul>
+    </div>
+  </div>
+
+  <p style="font-size:0.82rem; color:var(--muted); font-weight:300; line-height:1.7; padding: 0.25rem 0.5rem;">Requirements differ between networks. Some employer schemes need a letter of guarantee before surgery is scheduled, and a few do not cover procedures performed in the clinic. Contact the clinic with your card or scheme details and we will confirm what applies to you before anything is booked.</p>
+
+  <p style="font-size:0.82rem; color:var(--muted); font-weight:300; line-height:1.7; padding: 0.25rem 0.5rem;">Panel status is accurate as of early 2026. Coverage terms and panel status may change, please verify directly with your insurer. For letters of guarantee or pre-authorisation, contact the clinic team in advance of your appointment.</p>
 </div>
 
 <!-- RETINAL SURGERY COSTS -->
 <div class="section" id="surgery-costs" style="padding-top:3.5rem;">
   <p class="section-label">Costs</p>
   <p class="section-title">Retinal surgery costs in Singapore</p>
-  <p class="section-intro">The total cost of retinal surgery depends on the complexity of the procedure, the type of anaesthesia, hospital charges, and whether Medisave or insurance is used. Below is a general guide to what is involved in the fee structure — please contact the clinic for a personalised estimate.</p>
+  <p class="section-intro">The total cost of retinal surgery depends on the complexity of the procedure, the type of anaesthesia, hospital charges, and whether Medisave or insurance is used. Below is a general guide to what is involved in the fee structure, please contact the clinic for a personalised estimate.</p>
 
   <div class="cost-guide">
     <div class="cost-card">
       <h3>What's included in the fee estimate</h3>
       <ul>
-        <li><strong>Surgeon's fee</strong> — covers the procedure, pre-operative assessment, and post-operative follow-up visits</li>
-        <li><strong>Anaesthesia</strong> — most vitreoretinal surgeries are performed under local anaesthesia; general anaesthesia incurs additional cost</li>
-        <li><strong>Hospital facility fee</strong> — day surgery centre charges at Gleneagles Hospital, including the operating theatre and recovery room</li>
-        <li><strong>Consumables</strong> — surgical instruments, intraocular gas or silicone oil tamponade, laser probes, and other disposables</li>
-        <li><strong>Medications</strong> — post-operative eye drops and any intraoperative drugs</li>
+        <li><strong>Surgeon's fee</strong>: covers the procedure, pre-operative assessment, and post-operative follow-up visits</li>
+        <li><strong>Anaesthesia</strong>: most vitreoretinal surgeries are performed under local anaesthesia; general anaesthesia incurs additional cost</li>
+        <li><strong>Hospital facility fee</strong>: day surgery centre charges at Gleneagles Hospital, including the operating theatre and recovery room</li>
+        <li><strong>Consumables</strong>: surgical instruments, intraocular gas or silicone oil tamponade, laser probes, and other disposables</li>
+        <li><strong>Medications</strong>: post-operative eye drops and any intraoperative drugs</li>
       </ul>
     </div>
     <div class="cost-card">
       <h3>Factors that affect cost</h3>
       <ul>
-        <li><strong>Procedure complexity</strong> — a straightforward vitrectomy for epiretinal membrane costs less than a complex retinal detachment repair with silicone oil</li>
-        <li><strong>Combined procedures</strong> — some cases require cataract surgery at the same sitting, adding to the total</li>
-        <li><strong>Tamponade type</strong> — gas tamponade is included in most cases; silicone oil adds consumable cost and requires a second procedure for removal</li>
-        <li><strong>Length of stay</strong> — most retinal surgeries are day surgery, but complex cases may require overnight observation</li>
+        <li><strong>Procedure complexity</strong>: a straightforward vitrectomy for epiretinal membrane costs less than a complex retinal detachment repair with silicone oil</li>
+        <li><strong>Combined procedures</strong>: some cases require cataract surgery at the same sitting, adding to the total</li>
+        <li><strong>Tamponade type</strong>: gas tamponade is included in most cases; silicone oil adds consumable cost and requires a second procedure for removal</li>
+        <li><strong>Length of stay</strong>: most retinal surgeries are day surgery, but complex cases may require overnight observation</li>
       </ul>
     </div>
   </div>
@@ -495,8 +530,8 @@ body{ background:#fcf9f4; }
       <div class="moh-links">
         <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/hospital-bills-and-fee-benchmarks/" target="_blank" rel="nofollow noopener" class="moh-link">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          MOH Fee Benchmarks — Eye Surgery
-        </a>
+ MOH Fee Benchmarks, Eye Surgery
+ </a>
       </div>
     </div>
   </div>
@@ -547,7 +582,7 @@ body{ background:#fcf9f4; }
 
   <div class="faq-item">
     <h3>Can I use MediSave for retinal surgery?</h3>
-    <p>Yes. Many retinal procedures — including vitrectomy, retinal detachment repair, and intravitreal injections — are MediSave-claimable under the Ministry of Health's approved surgical table. The clinic team will help you with the MediSave withdrawal paperwork.</p>
+    <p>Yes. Many retinal procedures (including vitrectomy, retinal detachment repair, and intravitreal injections) are MediSave-claimable under the Ministry of Health's approved surgical table. The clinic team will help you with the MediSave withdrawal paperwork.</p>
   </div>
   <div class="faq-item">
     <h3>How much can I claim from MediSave?</h3>
@@ -555,7 +590,7 @@ body{ background:#fcf9f4; }
   </div>
   <div class="faq-item">
     <h3>Which insurance plans does Dr Wong accept?</h3>
-    <p>Dr Wong is on the panels of Great Eastern, HSBC Life, Prudential, and Singlife. If your insurer is not listed, please contact the clinic — we may still be able to assist with claims or reimbursement.</p>
+    <p>Dr Wong is on the panels of Great Eastern, HSBC Life, Prudential and Singlife. He also participates in corporate and employer schemes administered through Cigna, Parkway Shenton, Alliance Cigna, Alliance MediNet, MHC and Adept. If your insurer or scheme is not listed, please contact the clinic, as we may still be able to assist with claims or reimbursement.</p>
   </div>
   <div class="faq-item">
     <h3>Do I need a referral to see Dr Wong?</h3>
@@ -563,7 +598,7 @@ body{ background:#fcf9f4; }
   </div>
   <div class="faq-item">
     <h3>Will I know the costs before my procedure?</h3>
-    <p>Yes. Before any surgery, you will receive a written fee estimate covering surgeon fees, anaesthesia, hospital charges, and consumables. There are no surprise bills — you will have time to review and ask questions before proceeding.</p>
+    <p>Yes. Before any surgery, you will receive a written fee estimate covering surgeon fees, anaesthesia, hospital charges, and consumables. There are no surprise bills. You will have time to review and ask questions before proceeding.</p>
   </div>
   <div class="faq-item">
     <h3>Can I use both MediSave and insurance together?</h3>
@@ -616,7 +651,7 @@ body{ background:#fcf9f4; }
         <span class="enq-icon">🕐</span>
         <div>
           <p class="enq-label">Clinic hours</p>
-          <p class="enq-value">Mon – Fri: 9am – 5pm<br>Sat: 9am – 1pm</p>
+          <p class="enq-value">Mon to Fri: 9am to 5pm<br>Sat: 9am to 1pm</p>
         </div>
       </div>
     </div>
