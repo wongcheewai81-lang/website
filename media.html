@@ -74,19 +74,18 @@
 
     /* SPEAKING */
     .speaking-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border-radius: 1rem; overflow: hidden; }
-    .speaking-item { background: #fff; padding: 1.5rem 1.75rem; display: grid; grid-template-columns: 80px 1fr auto; gap: 1.5rem; align-items: center; transition: background 0.15s; }
+    .speaking-item { background: #fff; padding: 1.5rem 1.75rem; display: grid; grid-template-columns: 80px 1fr 140px auto; gap: 1.5rem; align-items: center; transition: background 0.15s; }
     .speaking-item:hover { background: var(--warm-white); }
     .speaking-year { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--gold); line-height: 1; }
     .speaking-conference { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.2rem; }
     .speaking-title { font-size: 0.95rem; font-weight: 400; color: var(--navy); margin-bottom: 0.15rem; }
     .speaking-location { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
-    .speaking-role { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 2rem; white-space: nowrap; }
+    .speaking-role { grid-column: 4; grid-row: 1; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 2rem; white-space: nowrap; }
     .role-invited { background: rgba(42,124,124,0.1); color: var(--teal); border: 1px solid rgba(42,124,124,0.15); }
     .role-speaker { background: rgba(15,35,64,0.07); color: var(--navy); border: 1px solid rgba(15,35,64,0.12); }
-    .speaking-item--featured { align-items: start; }
-    .speaking-media { grid-column: 2; margin-top: 0.25rem; max-width: 440px; position: relative; border-radius: 0.7rem; overflow: hidden; box-shadow: 0 1px 2px rgba(15,35,64,0.07), 0 10px 28px -10px rgba(15,35,64,0.22); }
-    .speaking-media img { display: block; width: 100%; height: auto; }
-    .speaking-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,35,64,0.22), rgba(15,35,64,0) 60%); pointer-events: none; }
+    .speaking-media { grid-column: 3; grid-row: 1; position: relative; width: 140px; aspect-ratio: 3 / 2; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 1px 2px rgba(15,35,64,0.07), 0 6px 16px -8px rgba(15,35,64,0.2); }
+    .speaking-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .speaking-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,35,64,0.18), rgba(15,35,64,0) 65%); pointer-events: none; }
 
     /* MEDIA ENQUIRIES */
     .enquiry-section { background: var(--navy); padding: 4rem; margin-top: 4rem; }
@@ -120,7 +119,7 @@
       .section { padding: 3rem 1.5rem 0; }
       .media-grid-featured { grid-template-columns: 1fr; }
       .speaking-item { grid-template-columns: 60px 1fr; }
-      .speaking-media { max-width: 100%; }
+      .speaking-media { grid-column: 2; grid-row: auto; width: 180px; margin-top: 0.85rem; }
       .speaking-role { display: none; }
       .enquiry-section { padding: 3rem 1.5rem; }
       .enquiry-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -351,7 +350,7 @@ body{ background:#fcf9f4; }
   <p class="section-title">Speaking engagements</p>
 
   <div class="speaking-list">
-    <div class="speaking-item speaking-item--featured">
+    <div class="speaking-item">
       <div class="speaking-year">2026</div>
       <div>
         <p class="speaking-conference">ZEISS Retina in Focus: Advancing Retinal Imaging, Defining Surgical Precision</p>
@@ -361,8 +360,8 @@ body{ background:#fcf9f4; }
       <span class="speaking-role role-invited">Invited Speaker</span>
       <figure class="speaking-media">
         <picture>
-          <source type="image/webp" srcset="images/zeiss-retina-in-focus-2026-340w.webp 340w, images/zeiss-retina-in-focus-2026-680w.webp 680w, images/zeiss-retina-in-focus-2026-1020w.webp 1020w" sizes="(max-width: 960px) 90vw, 440px" />
-          <img src="images/zeiss-retina-in-focus-2026-680w.jpg" srcset="images/zeiss-retina-in-focus-2026-340w.jpg 340w, images/zeiss-retina-in-focus-2026-680w.jpg 680w, images/zeiss-retina-in-focus-2026-1020w.jpg 1020w" sizes="(max-width: 960px) 90vw, 440px" alt="Dr. Wong Chee Wai presenting indocyanine green angiography images at ZEISS Retina in Focus, Pullman Singapore Orchard" width="680" height="454" loading="lazy" decoding="async" />
+          <source type="image/webp" srcset="images/zeiss-retina-in-focus-2026-340w.webp 340w, images/zeiss-retina-in-focus-2026-680w.webp 680w, images/zeiss-retina-in-focus-2026-1020w.webp 1020w" sizes="(max-width: 960px) 180px, 140px" />
+          <img src="images/zeiss-retina-in-focus-2026-680w.jpg" srcset="images/zeiss-retina-in-focus-2026-340w.jpg 340w, images/zeiss-retina-in-focus-2026-680w.jpg 680w, images/zeiss-retina-in-focus-2026-1020w.jpg 1020w" sizes="(max-width: 960px) 180px, 140px" alt="Dr. Wong Chee Wai presenting indocyanine green angiography images at ZEISS Retina in Focus, Pullman Singapore Orchard" width="680" height="454" loading="lazy" decoding="async" />
         </picture>
       </figure>
     </div>
@@ -410,6 +409,12 @@ body{ background:#fcf9f4; }
         <p class="speaking-location">Singapore</p>
       </div>
       <span class="speaking-role role-invited">Invited Speaker</span>
+      <figure class="speaking-media">
+        <picture>
+          <source type="image/webp" srcset="images/myopia-meeting-2025-340w.webp 340w, images/myopia-meeting-2025-680w.webp 680w" sizes="(max-width: 960px) 180px, 140px" />
+          <img src="images/myopia-meeting-2025-340w.jpg" srcset="images/myopia-meeting-2025-340w.jpg 340w, images/myopia-meeting-2025-680w.jpg 680w" sizes="(max-width: 960px) 180px, 140px" alt="Dr. Wong Chee Wai presenting at the International Myopia Meeting 2025, Singapore" width="340" height="255" loading="lazy" decoding="async" style="object-position: center 30%;" />
+        </picture>
+      </figure>
     </div>
     <div class="speaking-item">
       <div class="speaking-year">2025</div>
