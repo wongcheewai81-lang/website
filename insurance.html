@@ -277,6 +277,11 @@ body{ background:#fcf9f4; }
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "Is retinal surgery the kind of procedure insurers actually cover?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Posterior vitrectomy (SL801V) and scleral buckling (SL802R) are listed in the Ministry of Health's Table of Surgical Procedures, are Medisave claimable and have published bill benchmarks, so insurers assess them routinely. What limits a claim is usually the policy rather than the procedure: an exclusion applied when the policy was underwritten, a condition that existed before the policy started, a waiting period on a recently bought policy, or something not disclosed at application. MediShield Life also covers every Singapore citizen and permanent resident for life, regardless of age or pre-existing conditions." }
+      },
+      {
+        "@type": "Question",
         "name": "Can I still claim on my insurance if my surgeon is not on my insurer's panel?",
         "acceptedAnswer": { "@type": "Answer", "text": "Yes. Seeing a doctor who is not on your insurer's panel does not make your claim invalid. Your Integrated Shield Plan still pays according to your policy terms. What panel status affects is the co-payment cap under a rider, and even that can be preserved by obtaining pre-authorisation before treatment. Insurers' own rider documents confirm that the co-payment cap applies to pre-authorised treatment including at non-panel providers." }
       },
@@ -374,6 +379,7 @@ body{ background:#fcf9f4; }
       <ul style="margin:0 0 0 1.1rem; padding:0;">
         <li style="font-size:0.9rem; font-weight:300; line-height:1.75; color:var(--text); margin-bottom:0.5rem;">Your claim does not depend on your surgeon being on your insurer's panel. A non-panel claim is still payable.</li>
         <li style="font-size:0.9rem; font-weight:300; line-height:1.75; color:var(--text); margin-bottom:0.5rem;">Pre-authorisation, not panel status, is what decides whether you pay the hospital upfront.</li>
+        <li style="font-size:0.9rem; font-weight:300; line-height:1.75; color:var(--text); margin-bottom:0.5rem;">Retinal surgery is standard, MOH-listed surgery that insurers assess routinely. What limits a claim is the policy, not the procedure.</li>
         <li style="font-size:0.9rem; font-weight:300; line-height:1.75; color:var(--text);">If your condition is urgent, treatment should not wait for paperwork. Sight lost to delay is often not recoverable.</li>
       </ul>
     </div>
@@ -431,6 +437,19 @@ body{ background:#fcf9f4; }
       <p style="font-size:0.9rem; font-weight:300; line-height:1.75; color:var(--text);">You will need to move to a compliant rider by your first renewal after 1 April 2028. Your insurer or your insurance adviser can confirm which applies to you.</p>
     </div>
   </div>
+</div>
+
+<!-- IS IT COVERED -->
+<div class="section" style="padding-top:3.5rem;">
+  <p class="section-label">Cover</p>
+  <p class="section-title">Whether this kind of surgery is covered at all</p>
+  <p class="section-intro">Separately from the panel question, patients ask whether retinal surgery is the sort of thing insurers pay for, or whether it is unusual enough that a claim will be a fight. It is not unusual.</p>
+
+  <p style="font-size:0.95rem; font-weight:300; line-height:1.8; color:var(--text); max-width:760px; margin-bottom:1.25rem;">The two operations I perform most often, posterior vitrectomy and scleral buckling, are listed in the Ministry of Health's Table of Surgical Procedures, are Medisave claimable, and have published bill benchmarks that anyone can look up. Insurers assess them routinely. Surgery for a sight-threatening retinal condition is ordinary, well-understood surgery as far as a claims department is concerned.</p>
+
+  <p style="font-size:0.95rem; font-weight:300; line-height:1.8; color:var(--text); max-width:760px; margin-bottom:1.25rem;">What restricts a claim is almost never the procedure. It is the policy, and it was decided when the policy was written rather than in the clinic. The genuine limits are an exclusion applied at underwriting, a condition that existed before the policy started, a waiting period on a policy bought recently, or something not disclosed at application. If you have been told that a particular condition or a particular eye is excluded, tell the clinic before surgery is scheduled so that we plan around it rather than discover it afterwards.</p>
+
+  <p style="font-size:0.95rem; font-weight:300; line-height:1.8; color:var(--text); max-width:760px;">There is also a floor beneath all of this. MediShield Life covers every Singapore citizen and permanent resident for life, regardless of age or pre-existing conditions, and nobody can be excluded from it. So even where an Integrated Shield Plan or a rider pays less than you hoped, you are not without cover.</p>
 </div>
 
 <!-- PANEL AND NON-PANEL -->
@@ -537,12 +556,20 @@ body{ background:#fcf9f4; }
     <div>
       <div class="calc-field">
         <label for="calcProc">Procedure</label>
-        <span class="hint">Both of the codes I use most often sit in TOSP Table 6B.</span>
+        <span class="hint">Both of the codes I use most often sit in TOSP Table 6B, so the Medisave surgical limit is the same for each.</span>
         <select id="calcProc">
-          <option value="6B|3610|day">SL801V, posterior vitrectomy, day surgery</option>
-          <option value="6B|3610|in">SL801V, posterior vitrectomy, inpatient</option>
-          <option value="6B|3610|in2">SL802R, scleral buckle, inpatient</option>
-          <option value="other|0|other">Another procedure</option>
+          <option value="3610">SL801V, posterior vitrectomy</option>
+          <option value="3610">SL802R, scleral buckle</option>
+          <option value="0">Another procedure</option>
+        </select>
+      </div>
+
+      <div class="calc-field">
+        <label for="calcSetting">Day surgery or overnight stay</label>
+        <span class="hint">This changes the Medisave allowance for ward charges, and it changes your deductible.</span>
+        <select id="calcSetting">
+          <option value="day">Day surgery, home the same day</option>
+          <option value="in">Inpatient, staying overnight or longer</option>
         </select>
       </div>
 
@@ -560,8 +587,8 @@ body{ background:#fcf9f4; }
 
       <div class="calc-field">
         <label for="calcDed">Your deductible, S$</label>
-        <span class="hint">From your policy schedule. As a guide, private plans commonly apply S$2,000 to unsubsidised day surgery and S$3,500 to a private hospital inpatient stay. Since 1 April 2026 the mandated minimum runs S$1,500 to S$3,500 by ward class.</span>
-        <input type="number" id="calcDed" value="2000" min="0" step="100" />
+        <span class="hint">From your policy schedule, and it depends on which of the two settings above applies. As a guide, private plans commonly apply S$2,000 to day surgery and S$3,500 to an overnight stay in a private hospital.</span>
+        <input type="number" id="calcDed" value="2000" min="0" step="100" placeholder="e.g. 2000" />
       </div>
 
       <div class="calc-field">
@@ -595,6 +622,10 @@ body{ background:#fcf9f4; }
 <div class="fees-faq">
   <p class="section-eyebrow">Common questions</p>
   <h2>Insurance questions patients ask me</h2>
+  <div class="faq-item">
+    <h3>Is retinal surgery the kind of procedure insurers actually cover?</h3>
+    <p>Yes. Posterior vitrectomy (SL801V) and scleral buckling (SL802R) are listed in the Ministry of Health's Table of Surgical Procedures, are Medisave claimable and have published bill benchmarks, so insurers assess them routinely. What limits a claim is usually the policy rather than the procedure: an exclusion applied when the policy was underwritten, a condition that existed before the policy started, a waiting period on a recently bought policy, or something not disclosed at application. MediShield Life also covers every Singapore citizen and permanent resident for life, regardless of age or pre-existing conditions.</p>
+  </div>
   <div class="faq-item">
     <h3>Can I still claim on my insurance if my surgeon is not on my insurer's panel?</h3>
     <p>Yes. Seeing a doctor who is not on your insurer's panel does not make your claim invalid. Your Integrated Shield Plan still pays according to your policy terms. What panel status affects is the co-payment cap under a rider, and even that can be preserved by obtaining pre-authorisation before treatment. Insurers' own rider documents confirm that the co-payment cap applies to pre-authorised treatment including at non-panel providers.</p>
@@ -734,18 +765,20 @@ body{ background:#fcf9f4; }
 (function () {
   var f = function (n) { return 'S$' + Math.round(n).toLocaleString('en-SG'); };
   var el = function (id) { return document.getElementById(id); };
-  var ids = ['calcProc','calcBill','calcSurg','calcDed','calcCoins','calcCap'];
+  var ids = ['calcProc','calcSetting','calcBill','calcSurg','calcDed','calcCoins','calcCap'];
   var CAP = 6000;
+  var TYPICAL = { day: 2000, 'in': 3500 };
 
   function run() {
-    var proc  = el('calcProc').value.split('|');
-    var limit = parseFloat(proc[1]) || 0;
-    var mode  = proc[2];
+    var limit = parseFloat(el('calcProc').value) || 0;
+    var mode  = el('calcSetting').value;
     var bill  = Math.max(0, parseFloat(el('calcBill').value) || 0);
     var surg  = parseFloat(el('calcSurg').value);
-    var ded   = Math.max(0, parseFloat(el('calcDed').value) || 0);
+    var dedIn = el('calcDed').value;
     var pct   = Math.min(100, Math.max(0, parseFloat(el('calcCoins').value) || 0));
     var capOn = el('calcCap').checked;
+    var haveDed = dedIn !== '' && !isNaN(parseFloat(dedIn));
+    var ded   = haveDed ? Math.max(0, parseFloat(dedIn)) : 0;
 
     ded = Math.min(ded, bill);
     var base   = Math.max(0, bill - ded);
@@ -755,15 +788,20 @@ body{ background:#fcf9f4; }
     var insurer = Math.max(0, bill - share);
 
     el('oBill').textContent  = f(bill);
-    el('oDed').textContent   = f(ded);
+    el('oDed').textContent   = haveDed ? f(ded) : 'enter yours';
     el('oPct').textContent   = pct;
     el('oBase').textContent  = Math.round(base).toLocaleString('en-SG');
     el('oCoins').textContent = f(coins);
-    el('oIns').textContent   = f(insurer);
-    el('oShare').textContent = f(share);
+    el('oIns').textContent   = haveDed ? f(insurer) : '-';
+    el('oShare').textContent = haveDed ? f(share) : '-';
 
     var flag = el('oCapFlag');
-    if (capOn && raw > CAP) {
+    if (!haveDed) {
+      flag.hidden = false;
+      flag.textContent = 'Enter your deductible to see your share. It is commonly S$' +
+        TYPICAL[mode].toLocaleString('en-SG') + ' for ' + (mode === 'day' ? 'day surgery' : 'an overnight stay') +
+        ', but read the figure off your own policy schedule.';
+    } else if (capOn && raw > CAP) {
       flag.hidden = false;
       flag.textContent = 'The cap has reduced your co-insurance from ' + f(raw) + ' to ' + f(CAP) + '.';
     } else if (!capOn && raw > CAP) {
@@ -774,20 +812,28 @@ body{ background:#fcf9f4; }
     }
 
     var medi = 0, note = '';
-    if (mode === 'other' || !limit) {
+    if (!limit) {
       note = 'Select one of the listed procedures to see the Medisave surgical limit, or check the limit for your code on the CPF schedule.';
     } else {
       var cappedBySurg = isFinite(surg) && surg > 0 ? Math.min(limit, surg) : limit;
-      medi = Math.min(share, cappedBySurg);
+      medi = haveDed ? Math.min(share, cappedBySurg) : 0;
       note = 'The Medisave surgical withdrawal limit for TOSP Table 6B is ' + f(limit) + '.'
            + (isFinite(surg) && surg > 0 ? ' Your surgical fee of ' + f(surg) + ' is the other constraint.' : '')
            + (mode === 'day' ? ' Day surgery also allows up to S$830 a day towards ward charges.'
-                             : ' An inpatient stay also allows up to S$1,130 a day towards ward charges for the first two days, then S$400 a day.');
+                             : ' An overnight stay also allows up to S$1,130 a day towards ward charges for the first two days, then S$400 a day.');
     }
-    el('oMedi').textContent = f(medi);
-    el('oCash').textContent = f(Math.max(0, share - medi));
+    el('oMedi').textContent = haveDed ? f(medi) : '-';
+    el('oCash').textContent = haveDed ? f(Math.max(0, share - medi)) : '-';
     el('oMediNote').textContent = note;
   }
+
+  // changing the setting clears a stale deductible so it cannot be carried over
+  el('calcSetting').addEventListener('change', function () {
+    var d = el('calcDed');
+    d.value = '';
+    d.placeholder = 'e.g. ' + TYPICAL[el('calcSetting').value].toLocaleString('en-SG');
+    run();
+  });
 
   ids.forEach(function (id) {
     var n = el(id);
