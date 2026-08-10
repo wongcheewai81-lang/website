@@ -23,3 +23,10 @@ serve.mjs
 seo-fixes.js
 verify-faq-schema.js
 scripts/restructure-nav.py
+
+# Personal drafts and exports
+CLAUDE.md
+FAQ-SCHEMA-REPORT.md
+GBP-Description-Draft.md
+SCHEMA-IMPLEMENTATION-SUMMARY.txt
+add-faq-schema.js

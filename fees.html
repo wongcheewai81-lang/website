@@ -89,6 +89,8 @@
     .panel-type { font-size: 0.72rem; color: var(--muted); font-weight: 300; }
     .corp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-radius: 1rem; overflow: hidden; margin-bottom: 1.25rem; }
     .corp-card { background: #fff; padding: 1.5rem 1.6rem; }
+    .corp-logo { height: 30px; max-width: 150px; display: flex; align-items: center; margin-bottom: 0.7rem; }
+    .corp-logo img { max-height: 28px; max-width: 100%; width: auto; object-fit: contain; }
     .corp-name { font-size: 0.95rem; font-weight: 500; color: var(--navy); margin-bottom: 0.15rem; }
     .corp-kind { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.7rem; }
     .corp-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.3rem 0.5rem; margin: 0; padding: 0; }
@@ -402,7 +404,7 @@ body{ background:#fcf9f4; }
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           MOH Fee Benchmarks Hub
         </a>
-        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/cost-financing/tosp-sl801v-eye-bill-information" target="_blank" rel="nofollow noopener" class="moh-link">
+        <a href="https://www.moh.gov.sg/managing-expenses/bills-and-fee-benchmarks/cost-financing/tosp-sl801v-bill-information" target="_blank" rel="nofollow noopener" class="moh-link">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           SL801V: Posterior Vitrectomy
         </a>
@@ -458,29 +460,35 @@ body{ background:#fcf9f4; }
   <div class="corp-grid">
     <div class="corp-card">
       <p class="corp-kind">Direct</p>
+      <div class="corp-logo"><img src="images/logos/cigna.svg" alt="Cigna logo" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src=this.src.replace('.svg','.png');}else{this.closest('.corp-logo').style.display='none';}" /></div>
       <p class="corp-name">Cigna</p>
     </div>
     <div class="corp-card">
       <p class="corp-kind">Network</p>
+      <div class="corp-logo"><img src="images/logos/parkway-shenton.svg" alt="Parkway Shenton logo" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src=this.src.replace('.svg','.png');}else{this.closest('.corp-logo').style.display='none';}" /></div>
       <p class="corp-name">Parkway Shenton</p>
       <ul class="corp-list"><li>AIA</li><li>Allianz</li></ul>
     </div>
     <div class="corp-card">
       <p class="corp-kind">Network</p>
+      <div class="corp-logo"><img src="images/logos/alliance.svg" alt="Alliance Healthcare logo" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src=this.src.replace('.svg','.png');}else{this.closest('.corp-logo').style.display='none';}" /></div>
       <p class="corp-name">Alliance Cigna</p>
     </div>
     <div class="corp-card">
       <p class="corp-kind">Network</p>
+      <div class="corp-logo"><img src="images/logos/alliance.svg" alt="Alliance Healthcare logo" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src=this.src.replace('.svg','.png');}else{this.closest('.corp-logo').style.display='none';}" /></div>
       <p class="corp-name">Alliance MediNet</p>
       <ul class="corp-list"><li>AIA</li><li>HSBC</li><li>Singlife</li><li>Great Eastern</li><li>NTUC Income</li><li>Tokio Marine</li></ul>
     </div>
     <div class="corp-card">
       <p class="corp-kind">Network</p>
+      <div class="corp-logo"><img src="images/logos/mhc.svg" alt="MHC logo" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src=this.src.replace('.svg','.png');}else{this.closest('.corp-logo').style.display='none';}" /></div>
       <p class="corp-name">MHC</p>
       <ul class="corp-list"><li>AIA</li><li>QBE</li><li>Great Eastern</li><li>NTUC Income</li><li>Better Health</li></ul>
     </div>
     <div class="corp-card">
       <p class="corp-kind">Network</p>
+      <div class="corp-logo"><img src="images/logos/adept.svg" alt="Adept logo" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src=this.src.replace('.svg','.png');}else{this.closest('.corp-logo').style.display='none';}" /></div>
       <p class="corp-name">Adept</p>
       <ul class="corp-list"><li>Allianz</li><li>HSBC</li><li>NTUC Income</li><li>Great Eastern</li><li>NOW Health International</li><li>Tokio Marine</li><li>DA Care</li></ul>
     </div>
