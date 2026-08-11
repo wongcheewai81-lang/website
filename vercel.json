@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.drwongcheewai.com" }],
+      "destination": "https://drwongcheewai.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "cheewaiwong.com" }],
+      "destination": "https://drwongcheewai.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.cheewaiwong.com" }],
+      "destination": "https://drwongcheewai.com/:path*",
+      "permanent": true
+    }
+  ]
+}
