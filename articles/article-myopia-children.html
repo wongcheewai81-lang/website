@@ -655,5 +655,35 @@ body{ background:#fcf9f4; }
 <script>
 (function(){var b=document.getElementById("scroll-progress");if(!b)return;function u(){var s=window.scrollY||window.pageYOffset;var d=document.documentElement.scrollHeight-window.innerHeight;b.style.transform="scaleX("+(d>0?s/d:0)+")";}window.addEventListener("scroll",u,{passive:true});u();})()
 </script>
+<!-- contact-click-tracking: GA4 events + Google Ads conversions on contact clicks -->
+<script>
+(function () {
+  if (typeof gtag !== 'function') return;
+  var AW = 'AW-17969566370';
+  var LABELS = {
+    form:     AW + '/X_lTCKTP8_8bEKKlx_hC',
+    phone:    AW + '/xfj-CNHA8M4cEKKlx_hC',
+    whatsapp: AW + '/XBc0CInI8v8bEKKlx_hC'
+  };
+  gtag('config', 'AW-17969566370');
+  function track(kind, name) {
+    gtag('event', name, { transport_type: 'beacon' });
+    if (kind && LABELS[kind]) {
+      gtag('event', 'conversion', { send_to: LABELS[kind], value: 1.0, currency: 'SGD' });
+    }
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    var a = t && t.closest ? t.closest('a[href]') : null;
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('tel:') === 0) track('phone', 'phone_click');
+    else if (h.indexOf('https://wa.me/') === 0) track('whatsapp', 'whatsapp_click');
+    else if (h.indexOf('mailto:') === 0) track(null, 'email_click');
+  }, true);
+  var f = document.getElementById('contactForm') || document.getElementById('lpContactForm');
+  if (f) f.addEventListener('submit', function () { track('form', 'contact_form_submit'); });
+})();
+</script>
 </body>
 </html>
